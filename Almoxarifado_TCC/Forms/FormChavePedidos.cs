@@ -34,43 +34,42 @@ namespace Almoxarifado_TCC.Popup
             ClassConexao con = new ClassConexao();
             MySqlConnection conexao = con.getConexao();
             String consulta;
-            consulta = "select e.id_emp as Codigo, u.nome_usuario as Nome, c.num_chave as Chave, e.horario_saida as H_Emprestimo, e.horario_entrada as H_Devolucao from tb_usuario u inner join tb_emprestimo e on u.id_usuario=e.id_usuario inner join tb_chave c on c.id_chave=e.id_chave;";
+            consulta = "select e.id_emp as Codigo, u.nome_usuario as Nome, c.num_chave as Chave, e.horario_emp as H_Emprestimo, e.data_emp as Data_Emprestimo, e.horario_dev as H_Devolucao, e.data_dev as Data_Devolucao from tb_usuario u inner join tb_emp_chave e on u.id_usuario=e.id_usuario inner join tb_chave c on c.id_chave=e.id_chave;";
             MySqlCommand commando = new MySqlCommand(consulta, conexao);
             conexao.Open();//Abro minha conexao
             MySqlDataAdapter dados = new MySqlDataAdapter(commando);
             //Crio uma nova tabela de dados
-            DataTable dtChave = new DataTable();
+            DataTable dtEmp = new DataTable();
 
-            dados.Fill(dtChave);//manipulação dos dados
-            dtvChave.DataSource = dtChave;//chamo o caminho dos dados
+            dados.Fill(dtEmp);//manipulação dos dados
+            dtvEmp.DataSource = dtEmp;//chamo o caminho dos dados
             conexao.Close();
 
-            dtvChave.BorderStyle = BorderStyle.None;
-            dtvChave.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(73, 78, 92);
-            dtvChave.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dtvChave.DefaultCellStyle.SelectionBackColor = Color.FromArgb(39, 43, 52);
-            dtvChave.DefaultCellStyle.SelectionForeColor = Color.White;
-            dtvChave.BackgroundColor = Color.FromArgb(56, 60, 71);
+            dtvEmp.BorderStyle = BorderStyle.None;
+            dtvEmp.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(73, 78, 92);
+            dtvEmp.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dtvEmp.DefaultCellStyle.SelectionBackColor = Color.FromArgb(39, 43, 52);
+            dtvEmp.DefaultCellStyle.SelectionForeColor = Color.White;
+            dtvEmp.BackgroundColor = Color.FromArgb(56, 60, 71);
 
-            dtvChave.EnableHeadersVisualStyles = false;
-            dtvChave.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dtvChave.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(56, 60, 71);
-            dtvChave.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dtvEmp.EnableHeadersVisualStyles = false;
+            dtvEmp.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dtvEmp.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(56, 60, 71);
+            dtvEmp.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
 
         public int id_emp;
 
-        private void dtvChave_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dtvEmp_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int contador = dtvChave.RowCount - 1;
+            int contador = dtvEmp.RowCount - 1;
 
             if (e.RowIndex < contador && e.RowIndex >= 0)
             {
                 //aguarda o codigo da linha selecionada
-                id_emp = Convert.ToInt32(dtvChave.Rows[e.RowIndex].Cells[0].Value);
+                id_emp = Convert.ToInt32(dtvEmp.Rows[e.RowIndex].Cells[0].Value);
 
                 MessageBox.Show("id: " + id_emp);
-
             }
         }
     }

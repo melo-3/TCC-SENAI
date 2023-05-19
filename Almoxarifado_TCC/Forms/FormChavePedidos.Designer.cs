@@ -35,9 +35,9 @@
             this.btnVisualizar = new System.Windows.Forms.Button();
             this.panelLine1 = new System.Windows.Forms.Panel();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
-            this.dtvChave = new System.Windows.Forms.DataGridView();
+            this.dtvEmp = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dtvChave)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtvEmp)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -93,19 +93,19 @@
             this.txtPesquisar.Size = new System.Drawing.Size(373, 20);
             this.txtPesquisar.TabIndex = 14;
             // 
-            // dtvChave
+            // dtvEmp
             // 
-            this.dtvChave.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dtvEmp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtvChave.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtvChave.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            this.dtvChave.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtvEmp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtvEmp.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            this.dtvEmp.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F);
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtvChave.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dtvChave.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtvEmp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtvEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F);
@@ -113,11 +113,11 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(78)))), ((int)(((byte)(92)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ButtonFace;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtvChave.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dtvChave.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            this.dtvChave.Location = new System.Drawing.Point(36, 106);
-            this.dtvChave.Name = "dtvChave";
-            this.dtvChave.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dtvEmp.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dtvEmp.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            this.dtvEmp.Location = new System.Drawing.Point(36, 106);
+            this.dtvEmp.Name = "dtvEmp";
+            this.dtvEmp.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F);
@@ -125,10 +125,10 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtvChave.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dtvChave.Size = new System.Drawing.Size(581, 370);
-            this.dtvChave.TabIndex = 13;
-            this.dtvChave.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvChave_CellClick);
+            this.dtvEmp.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dtvEmp.Size = new System.Drawing.Size(581, 370);
+            this.dtvEmp.TabIndex = 13;
+            this.dtvEmp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvEmp_CellClick);
             // 
             // button2
             // 
@@ -153,14 +153,14 @@
             this.Controls.Add(this.btnVisualizar);
             this.Controls.Add(this.panelLine1);
             this.Controls.Add(this.txtPesquisar);
-            this.Controls.Add(this.dtvChave);
+            this.Controls.Add(this.dtvEmp);
             this.Controls.Add(this.button2);
             this.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Pedidos";
             this.Text = "FormChavePedidos";
             this.Load += new System.EventHandler(this.Pedidos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtvChave)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtvEmp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,7 +172,7 @@
         private System.Windows.Forms.Button btnVisualizar;
         private System.Windows.Forms.Panel panelLine1;
         private System.Windows.Forms.TextBox txtPesquisar;
-        private System.Windows.Forms.DataGridView dtvChave;
+        private System.Windows.Forms.DataGridView dtvEmp;
         private System.Windows.Forms.Button button2;
     }
 }

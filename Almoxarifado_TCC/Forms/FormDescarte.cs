@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Almoxarifado_TCC.Popup
 {
@@ -15,6 +16,36 @@ namespace Almoxarifado_TCC.Popup
         public Descarte()
         {
             InitializeComponent();
+        }
+
+        private void Descarte_Load(object sender, EventArgs e)
+        {
+            ClassConexao con = new ClassConexao();
+            //obtive a conexao
+            MySqlConnection conexao = con.getConexao();
+            String consulta;
+            consulta = "SELECT d.id_descarte as Codigo, i.nome_item as Item, d.quant as Quantidade, d.hora_desc as Hora_Descarte, d.data_desc as Data_Descarte, d.obs as Observacao, d.stats as Status from tb_descarte d inner join tb_item i on d.id_item=i.id_item";
+            MySqlCommand commando = new MySqlCommand(consulta, conexao);
+            conexao.Open();//Abro minha conexao
+            MySqlDataAdapter dados = new MySqlDataAdapter(commando);
+            //Crio uma nova tabela de dados
+            DataTable dtDescarte = new DataTable();
+
+            dados.Fill(dtDescarte);//manipulação dos dados
+            dtvDescarte.DataSource = dtDescarte;//chamo o caminho dos dados
+            conexao.Close();
+
+            dtvDescarte.BorderStyle = BorderStyle.None;
+            dtvDescarte.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(73, 78, 92);
+            dtvDescarte.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dtvDescarte.DefaultCellStyle.SelectionBackColor = Color.FromArgb(39, 43, 52);
+            dtvDescarte.DefaultCellStyle.SelectionForeColor = Color.White;
+            dtvDescarte.BackgroundColor = Color.FromArgb(56, 60, 71);
+
+            dtvDescarte.EnableHeadersVisualStyles = false;
+            dtvDescarte.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dtvDescarte.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(56, 60, 71);
+            dtvDescarte.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
     }
 }
