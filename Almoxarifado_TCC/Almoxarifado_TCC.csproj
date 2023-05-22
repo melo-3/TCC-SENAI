@@ -123,6 +123,12 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="ClassUsuario.cs" />
+    <Compile Include="Forms\EmpItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmpItem.Designer.cs">
+      <DependentUpon>EmpItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Popup\CriarAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +281,9 @@
     <Compile Include="TelaPrincipal.Designer.cs">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\EmpItem.resx">
+      <DependentUpon>EmpItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Popup\CriarAdmin.resx">
       <DependentUpon>CriarAdmin.cs</DependentUpon>
     </EmbeddedResource>

@@ -13,24 +13,27 @@ namespace Almoxarifado_TCC.Popup
 {
     public partial class Pedidos : Form
     {
+
+        private Form activeForm = null;
+
         public Pedidos()
         {
             InitializeComponent();
+            CurrentInstance = this;
         }
 
-        public int codigo_chave = 0;
+        public static Pedidos CurrentInstance;
         public string nome;
 
         private void btnVisualizar_Click(object sender, EventArgs e)
         {
             string tela = "Key_Devolução";
-            int cod = this.codigo_chave;
+            int cod = this.id_emp;
             TelaPrincipal.CurrentInstance.Popups_Tela(tela, cod);
         }
 
-        private void Pedidos_Load(object sender, EventArgs e)
+        public void reset()
         {
-
             ClassConexao con = new ClassConexao();
             MySqlConnection conexao = con.getConexao();
             String consulta;
@@ -44,6 +47,12 @@ namespace Almoxarifado_TCC.Popup
             dados.Fill(dtEmp);//manipulação dos dados
             dtvEmp.DataSource = dtEmp;//chamo o caminho dos dados
             conexao.Close();
+        }
+
+        private void Pedidos_Load(object sender, EventArgs e)
+        {
+
+            reset();
 
             dtvEmp.BorderStyle = BorderStyle.None;
             dtvEmp.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(73, 78, 92);

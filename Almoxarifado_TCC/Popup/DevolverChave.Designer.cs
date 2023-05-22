@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,9 +44,7 @@
             this.btnDevolver = new System.Windows.Forms.Button();
             this.iconChave = new FontAwesome.Sharp.IconPictureBox();
             this.iconCeder = new FontAwesome.Sharp.IconPictureBox();
-            this.Horario_devolucao = new System.Windows.Forms.Timer(this.components);
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Temp_devolucao = new System.Windows.Forms.Timer(this.components);
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconChave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCeder)).BeginInit();
@@ -53,7 +53,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
-            this.panel4.Controls.Add(this.textBox1);
+            this.panel4.Controls.Add(this.txtNome);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.panel3);
             this.panel4.Controls.Add(this.panel1);
@@ -70,6 +70,31 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(189, 334);
             this.panel4.TabIndex = 12;
+            // 
+            // txtNome
+            // 
+            this.txtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNome.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold);
+            this.txtNome.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtNome.Location = new System.Drawing.Point(27, 79);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.ReadOnly = true;
+            this.txtNome.Size = new System.Drawing.Size(133, 19);
+            this.txtNome.TabIndex = 20;
+            this.txtNome.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.label3.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
+            this.label3.Location = new System.Drawing.Point(56, 50);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 18);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Devolução";
             // 
             // panel3
             // 
@@ -218,34 +243,9 @@
             this.iconCeder.TabStop = false;
             this.iconCeder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DevolverChave_MouseDown);
             // 
-            // Horario_devolucao
+            // Temp_devolucao
             // 
-            this.Horario_devolucao.Tick += new System.EventHandler(this.Horario_devolucao_Tick);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
-            this.label3.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
-            this.label3.Location = new System.Drawing.Point(56, 50);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 18);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Devolução";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold);
-            this.textBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.textBox1.Location = new System.Drawing.Point(27, 79);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(133, 19);
-            this.textBox1.TabIndex = 20;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Temp_devolucao.Tick += new System.EventHandler(this.Temp_devolucao_Tick);
             // 
             // DevolverChave
             // 
@@ -259,7 +259,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DevolverChave";
             this.Text = "DevolverChave";
-            this.Load += new System.EventHandler(this.DevolverChave_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DevolverChave_MouseDown);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -284,8 +283,8 @@
         private System.Windows.Forms.Button btnDevolver;
         private FontAwesome.Sharp.IconPictureBox iconChave;
         private FontAwesome.Sharp.IconPictureBox iconCeder;
-        private System.Windows.Forms.Timer Horario_devolucao;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Timer Temp_devolucao;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label3;
     }
 }

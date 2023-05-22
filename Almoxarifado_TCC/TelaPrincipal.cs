@@ -153,7 +153,7 @@ namespace Almoxarifado_TCC
             if (tela == "Key_Emp")
             {
                 BackPopUp.Width = 227;
-                OpenPopup(new Popup.Emprestimo());
+                OpenPopup(new Popup.Emprestimo(codigo));
             }
 
             if (tela == "Key_Add")
@@ -173,7 +173,7 @@ namespace Almoxarifado_TCC
             if (tela == "Key_Devolução")
             {
                 BackPopUp.Width = 227;
-                OpenPopup(new Popup.DevolverChave());
+                OpenPopup(new Popup.DevolverChave(codigo));
             }
 
 
@@ -182,7 +182,7 @@ namespace Almoxarifado_TCC
             if (tela == "Item_Ced")
             {
                 BackPopUp.Width = 227;
-                OpenPopup(new Popup.Ceder());
+                OpenPopup(new Popup.Ceder(codigo));
             }
 
             if (tela == "Item_Add")
@@ -329,6 +329,24 @@ namespace Almoxarifado_TCC
                 apagar_icons();
                 icon_Estoque.IconColor = CoresGlobais.Selecionado;
                 OpenForm(new Popup.Estoque()); // Abre o Form do Estoque
+            }
+        }
+
+        private void icon_emp_item_Click(object sender, EventArgs e)
+        {
+            if (icon_emp_item.IconColor == CoresGlobais.Selecionado)
+            {
+                Popups_Fechar();
+                if (ActiveForm != null)
+                    ActiveForm.Close();
+                apagar_icons();
+            }
+            else
+            {
+                Popups_Fechar();
+                apagar_icons();
+                icon_emp_item.IconColor = CoresGlobais.Selecionado;
+                OpenForm(new Forms.EmpItem());
             }
         }
 
@@ -532,8 +550,8 @@ namespace Almoxarifado_TCC
         }
 
 
-        #endregion
 
+        #endregion
 
     }
 }

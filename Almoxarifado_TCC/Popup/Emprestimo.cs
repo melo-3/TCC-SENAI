@@ -15,14 +15,21 @@ namespace Almoxarifado_TCC.Popup
     public partial class Emprestimo : Form
     {
         public int cod_chave;
-        public Emprestimo()
+        public Emprestimo(int codigo)
         {
+
             InitializeComponent();
-            timer1.Start();
+            cod_chave = codigo;
+            Temp_Emprestimo.Start();
+
+        }
+        public void reset()
+        {
+
             ClassConexao con = new ClassConexao();
             //obtive a conexao
             MySqlConnection conexao = con.getConexao();
-            string consulta = "SELECT cpf as CPF,nome_usuario as Nome from tb_usuario";
+            string consulta = "SELECT cpf as CPF from tb_usuario";
             //Monta meu comando sql
             MySqlCommand commando = new MySqlCommand(consulta, conexao);
             conexao.Open();//Abro minha conexao
@@ -32,6 +39,7 @@ namespace Almoxarifado_TCC.Popup
             DataTable dtUsu = new DataTable();
             dados.Fill(dtUsu);//manipulação dos dados
             dgvUsuario.DataSource = dtUsu;//chamo o caminho dos dados
+
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -58,9 +66,12 @@ namespace Almoxarifado_TCC.Popup
             this.Close();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        public string data;
+
+        private void Temp_Emprestimo_Tick(object sender, EventArgs e)
         {
             txtEmprestimo.Text = DateTime.Now.ToString("HH:mm");
+            data = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         private void txtCpf_Enter(object sender, EventArgs e)
@@ -81,6 +92,7 @@ namespace Almoxarifado_TCC.Popup
 
         private void Emprestimo_Load(object sender, EventArgs e)
         {
+            reset();
             dgvUsuario.BorderStyle = BorderStyle.None;
             dgvUsuario.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             dgvUsuario.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -110,7 +122,7 @@ namespace Almoxarifado_TCC.Popup
                 MySqlConnection conexao = con.getConexao();
                 String consulta = "";
 
-                consulta = "SELECT cpf as CPF,nome_usuario as Nome from tb_usuario where cpf ='" + txtCpf.Text + "'";
+                consulta = "SELECT cpf as CPF from tb_usuario where cpf ='" + txtCpf.Text + "'";
 
                 //Monta meu comando sql
                 MySqlCommand commando = new MySqlCommand(consulta, conexao);
@@ -121,6 +133,11 @@ namespace Almoxarifado_TCC.Popup
                 DataTable dtUsu = new DataTable();
                 dados.Fill(dtUsu);//manipulação dos dados
                 dgvUsuario.DataSource = dtUsu;//chamo o caminho dos dados
+            }
+
+            else if (e.KeyCode == Keys.Enter && txtCpf.Text != "CPF" && txtCpf.Text == "")
+            {
+                reset();
             }
 
         }
@@ -137,19 +154,18 @@ namespace Almoxarifado_TCC.Popup
 
 
             MySqlConnection conexao3 = con.getConexao();
-            string sql3 = "SELECT id_chave from tb_chave where num_chave =" + this.cod_chave + ";";
+            string sql3 = "SELECT id_chave from tb_chave where num_chave =" + this.cod_chave + "";
             conexao3.Open();
             MySqlCommand comando3 = new MySqlCommand(sql3, conexao3);
             MySqlDataReader registro = comando3.ExecuteReader();
             registro.Read();
             idchave = Convert.ToInt32(registro["id_chave"]);
             conexao3.Close();
-            //MessageBox.Show(+idchave + " oioioi");
 
 
 
 
-            string sql = "insert into tb_emprestimo(id_usuario,id_chave,horario_saida) values" + "('" + codigo_usu + "','" + idchave + "','" + txtEmprestimo.Text + "')";
+            string sql = "insert into tb_emp_chave(id_usuario,id_chave,horario_emp,data_emp) values" + "('" + codigo_usu + "','" + idchave + "','" + txtEmprestimo.Text + "','" + data + "')";
             MySqlCommand comando = new MySqlCommand(sql, conexao);
             conexao.Open();
             comando.ExecuteReader();

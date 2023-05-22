@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.iconCeder = new FontAwesome.Sharp.IconPictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -39,10 +40,11 @@
             this.txtCpf = new System.Windows.Forms.TextBox();
             this.lblQuant = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCeder = new System.Windows.Forms.Button();
             this.txtQuant = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.iconBox = new FontAwesome.Sharp.IconPictureBox();
+            this.Hora_Ceder = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.iconCeder)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
@@ -62,7 +64,6 @@
             this.iconCeder.Size = new System.Drawing.Size(80, 80);
             this.iconCeder.TabIndex = 10;
             this.iconCeder.TabStop = false;
-            this.iconCeder.Click += new System.EventHandler(this.iconCeder_Click);
             this.iconCeder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.iconChave_MouseDown);
             // 
             // panel4
@@ -76,7 +77,7 @@
             this.panel4.Controls.Add(this.txtCpf);
             this.panel4.Controls.Add(this.lblQuant);
             this.panel4.Controls.Add(this.panel5);
-            this.panel4.Controls.Add(this.button1);
+            this.panel4.Controls.Add(this.btnCeder);
             this.panel4.Controls.Add(this.txtQuant);
             this.panel4.Controls.Add(this.panel1);
             this.panel4.Location = new System.Drawing.Point(2, 147);
@@ -114,6 +115,7 @@
             this.dgvUsuario.Name = "dgvUsuario";
             this.dgvUsuario.Size = new System.Drawing.Size(164, 91);
             this.dgvUsuario.TabIndex = 10;
+            this.dgvUsuario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuario_CellClick);
             // 
             // btnMax
             // 
@@ -173,6 +175,7 @@
             this.txtCpf.TabIndex = 1;
             this.txtCpf.Text = "CPF";
             this.txtCpf.Enter += new System.EventHandler(this.txtCpf_Enter);
+            this.txtCpf.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCpf_KeyDown);
             this.txtCpf.Leave += new System.EventHandler(this.txtCpf_Leave);
             // 
             // lblQuant
@@ -196,28 +199,31 @@
             this.panel5.Size = new System.Drawing.Size(60, 2);
             this.panel5.TabIndex = 21;
             // 
-            // button1
+            // btnCeder
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(56, 272);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Ceder";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnCeder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            this.btnCeder.FlatAppearance.BorderSize = 0;
+            this.btnCeder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCeder.ForeColor = System.Drawing.Color.White;
+            this.btnCeder.Location = new System.Drawing.Point(56, 272);
+            this.btnCeder.Name = "btnCeder";
+            this.btnCeder.Size = new System.Drawing.Size(75, 23);
+            this.btnCeder.TabIndex = 0;
+            this.btnCeder.Text = "Ceder";
+            this.btnCeder.UseVisualStyleBackColor = false;
+            this.btnCeder.Click += new System.EventHandler(this.btnCeder_Click);
             // 
             // txtQuant
             // 
             this.txtQuant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.txtQuant.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtQuant.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.txtQuant.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.txtQuant.Location = new System.Drawing.Point(63, 208);
             this.txtQuant.Name = "txtQuant";
             this.txtQuant.Size = new System.Drawing.Size(60, 17);
             this.txtQuant.TabIndex = 22;
+            this.txtQuant.Text = "0";
             this.txtQuant.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel1
@@ -242,8 +248,11 @@
             this.iconBox.Size = new System.Drawing.Size(41, 40);
             this.iconBox.TabIndex = 12;
             this.iconBox.TabStop = false;
-            this.iconBox.Click += new System.EventHandler(this.iconBox_Click);
             this.iconBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.iconBox_MouseDown);
+            // 
+            // Hora_Ceder
+            // 
+            this.Hora_Ceder.Tick += new System.EventHandler(this.Hora_Ceder_Tick);
             // 
             // Ceder
             // 
@@ -275,7 +284,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.TextBox txtCpf;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCeder;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvUsuario;
         private System.Windows.Forms.Label lblQuantTotal;
@@ -285,5 +294,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox txtQuant;
         private FontAwesome.Sharp.IconPictureBox iconBox;
+        private System.Windows.Forms.Timer Hora_Ceder;
     }
 }

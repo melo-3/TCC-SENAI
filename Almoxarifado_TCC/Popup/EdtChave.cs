@@ -30,7 +30,6 @@ namespace Almoxarifado_TCC.Popup
             registro.Read();
             txtNumero.Text = Convert.ToString(registro["num_chave"]);
             txtSala.Text = Convert.ToString(registro["sala_lab"]);
-            cbxStatus.Text = Convert.ToString(registro["stats"]);
             txtObs.Text = Convert.ToString(registro["obs"]);
             conexao.Close();
         }
@@ -108,11 +107,10 @@ namespace Almoxarifado_TCC.Popup
             ClassConexao con = new ClassConexao();
             MySqlConnection conexao2 = con.getConexao();
 
-            string SQL = "UPDATE tb_chave SET num_chave = @num_chave, sala_lab = @sala_lab, stats = @stats, obs = @obs WHERE num_chave = " + this.cod_chave + ";";
+            string SQL = "UPDATE tb_chave SET num_chave = @num_chave, sala_lab = @sala_lab, obs = @obs WHERE num_chave = " + this.cod_chave + ";";
             MySqlCommand comando = new MySqlCommand(SQL, conexao2);
             comando.Parameters.AddWithValue("@num_chave", txtNumero.Text);
             comando.Parameters.AddWithValue("@sala_lab", txtSala.Text);
-            comando.Parameters.AddWithValue("@stats", cbxStatus.Text);
             comando.Parameters.AddWithValue("@obs", txtObs.Text);        
           
             try {

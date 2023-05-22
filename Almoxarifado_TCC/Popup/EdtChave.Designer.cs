@@ -34,7 +34,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.lklCancelar = new System.Windows.Forms.LinkLabel();
             this.txtNumero = new System.Windows.Forms.TextBox();
-            this.cbxStatus = new System.Windows.Forms.ComboBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.txtSala = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -65,7 +64,6 @@
             this.panel4.Controls.Add(this.panel3);
             this.panel4.Controls.Add(this.lklCancelar);
             this.panel4.Controls.Add(this.txtNumero);
-            this.panel4.Controls.Add(this.cbxStatus);
             this.panel4.Controls.Add(this.btnEditar);
             this.panel4.Controls.Add(this.txtSala);
             this.panel4.Controls.Add(this.panel2);
@@ -81,7 +79,7 @@
             this.txtObs.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtObs.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.txtObs.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtObs.Location = new System.Drawing.Point(27, 183);
+            this.txtObs.Location = new System.Drawing.Point(27, 170);
             this.txtObs.Name = "txtObs";
             this.txtObs.Size = new System.Drawing.Size(133, 17);
             this.txtObs.TabIndex = 4;
@@ -93,7 +91,7 @@
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel3.Location = new System.Drawing.Point(27, 202);
+            this.panel3.Location = new System.Drawing.Point(27, 189);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(133, 2);
             this.panel3.TabIndex = 8;
@@ -125,22 +123,6 @@
             this.txtNumero.Enter += new System.EventHandler(this.txtNumero_Enter);
             this.txtNumero.Leave += new System.EventHandler(this.txtNumero_Leave);
             // 
-            // cbxStatus
-            // 
-            this.cbxStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
-            this.cbxStatus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbxStatus.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
-            this.cbxStatus.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.cbxStatus.FormattingEnabled = true;
-            this.cbxStatus.Items.AddRange(new object[] {
-            "Disponivel",
-            "Indisponivel"});
-            this.cbxStatus.Location = new System.Drawing.Point(27, 139);
-            this.cbxStatus.Name = "cbxStatus";
-            this.cbxStatus.Size = new System.Drawing.Size(133, 24);
-            this.cbxStatus.TabIndex = 2;
-            this.cbxStatus.Text = "Status";
-            // 
             // btnEditar
             // 
             this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
@@ -161,7 +143,7 @@
             this.txtSala.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSala.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.txtSala.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtSala.Location = new System.Drawing.Point(27, 96);
+            this.txtSala.Location = new System.Drawing.Point(27, 115);
             this.txtSala.Name = "txtSala";
             this.txtSala.Size = new System.Drawing.Size(133, 17);
             this.txtSala.TabIndex = 3;
@@ -173,7 +155,7 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel2.Location = new System.Drawing.Point(27, 115);
+            this.panel2.Location = new System.Drawing.Point(27, 134);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(133, 2);
             this.panel2.TabIndex = 8;
@@ -217,7 +199,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.LinkLabel lklCancelar;
         private System.Windows.Forms.TextBox txtNumero;
-        private System.Windows.Forms.ComboBox cbxStatus;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.TextBox txtSala;
         private System.Windows.Forms.Panel panel2;

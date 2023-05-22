@@ -43,7 +43,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.button1 = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Temp_Emprestimo = new System.Windows.Forms.Timer(this.components);
             this.iconCeder = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.iconChave)).BeginInit();
             this.panel4.SuspendLayout();
@@ -228,9 +228,9 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // timer1
+            // Temp_Emprestimo
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.Temp_Emprestimo.Tick += new System.EventHandler(this.Temp_Emprestimo_Tick);
             // 
             // iconCeder
             // 
@@ -285,7 +285,7 @@
         private System.Windows.Forms.Label lblHorario;
         private System.Windows.Forms.TextBox txtDevolucao;
         private System.Windows.Forms.TextBox txtEmprestimo;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer Temp_Emprestimo;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconPictureBox iconCeder;

@@ -31,14 +31,17 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaPrincipal));
             this.Menu = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.icon_emp_item = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.icon_Config = new FontAwesome.Sharp.IconButton();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.icon_Hist = new FontAwesome.Sharp.IconButton();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.icon_Estoque = new FontAwesome.Sharp.IconButton();
@@ -73,6 +76,7 @@
             this.Mostrar = new System.Windows.Forms.Timer(this.components);
             this.Esconder = new System.Windows.Forms.Timer(this.components);
             this.Menu.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -93,10 +97,11 @@
             this.Menu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.Menu.Controls.Add(this.panel4);
             this.Menu.Controls.Add(this.panel3);
             this.Menu.Controls.Add(this.panel11);
-            this.Menu.Controls.Add(this.panel10);
             this.Menu.Controls.Add(this.panel6);
+            this.Menu.Controls.Add(this.panel10);
             this.Menu.Controls.Add(this.panel7);
             this.Menu.Controls.Add(this.panel8);
             this.Menu.Controls.Add(this.panel9);
@@ -108,6 +113,45 @@
             this.Menu.Name = "Menu";
             this.Menu.Size = new System.Drawing.Size(193, 485);
             this.Menu.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.label9);
+            this.panel4.Controls.Add(this.icon_emp_item);
+            this.panel4.Location = new System.Drawing.Point(4, 215);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(185, 42);
+            this.panel4.TabIndex = 10;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Bahnschrift Light", 9F);
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label9.Location = new System.Drawing.Point(49, 14);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(78, 14);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "Emprestimos";
+            // 
+            // icon_emp_item
+            // 
+            this.icon_emp_item.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.icon_emp_item.FlatAppearance.BorderSize = 0;
+            this.icon_emp_item.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.icon_emp_item.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.icon_emp_item.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.icon_emp_item.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.icon_emp_item.IconChar = FontAwesome.Sharp.IconChar.BoxOpen;
+            this.icon_emp_item.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
+            this.icon_emp_item.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icon_emp_item.IconSize = 30;
+            this.icon_emp_item.Location = new System.Drawing.Point(9, 4);
+            this.icon_emp_item.Name = "icon_emp_item";
+            this.icon_emp_item.Size = new System.Drawing.Size(32, 34);
+            this.icon_emp_item.TabIndex = 10;
+            this.icon_emp_item.UseVisualStyleBackColor = true;
+            this.icon_emp_item.Click += new System.EventHandler(this.icon_emp_item_Click);
             // 
             // panel3
             // 
@@ -161,21 +205,11 @@
             this.panel11.Size = new System.Drawing.Size(169, 1);
             this.panel11.TabIndex = 8;
             // 
-            // panel10
-            // 
-            this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(212)))), ((int)(((byte)(218)))));
-            this.panel10.Location = new System.Drawing.Point(12, 163);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(169, 1);
-            this.panel10.TabIndex = 7;
-            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.label6);
             this.panel6.Controls.Add(this.icon_Hist);
-            this.panel6.Location = new System.Drawing.Point(4, 215);
+            this.panel6.Location = new System.Drawing.Point(4, 303);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(185, 42);
             this.panel6.TabIndex = 7;
@@ -211,6 +245,16 @@
             this.icon_Hist.Click += new System.EventHandler(this.icon_Hist_Click);
             this.icon_Hist.MouseEnter += new System.EventHandler(this.icon_Hist_MouseEnter);
             this.icon_Hist.MouseLeave += new System.EventHandler(this.icon_Hist_MouseLeave);
+            // 
+            // panel10
+            // 
+            this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(212)))), ((int)(((byte)(218)))));
+            this.panel10.Location = new System.Drawing.Point(12, 163);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(169, 1);
+            this.panel10.TabIndex = 7;
             // 
             // panel7
             // 
@@ -645,6 +689,8 @@
             this.Load += new System.EventHandler(this.TelaPrincipal_Load);
             this.Menu.ResumeLayout(false);
             this.Menu.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -714,5 +760,8 @@
         private FontAwesome.Sharp.IconButton icon_Config;
         private System.Windows.Forms.Panel PopUp;
         private FontAwesome.Sharp.IconButton icon_Perfil;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label9;
+        private FontAwesome.Sharp.IconButton icon_emp_item;
     }
 }
