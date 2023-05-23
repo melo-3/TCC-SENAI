@@ -142,7 +142,7 @@
             this.icon_emp_item.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.icon_emp_item.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.icon_emp_item.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.icon_emp_item.IconChar = FontAwesome.Sharp.IconChar.BoxOpen;
+            this.icon_emp_item.IconChar = FontAwesome.Sharp.IconChar.PencilAlt;
             this.icon_emp_item.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
             this.icon_emp_item.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.icon_emp_item.IconSize = 30;
@@ -152,6 +152,8 @@
             this.icon_emp_item.TabIndex = 10;
             this.icon_emp_item.UseVisualStyleBackColor = true;
             this.icon_emp_item.Click += new System.EventHandler(this.icon_emp_item_Click);
+            this.icon_emp_item.MouseEnter += new System.EventHandler(this.icon_emp_item_MouseEnter);
+            this.icon_emp_item.MouseLeave += new System.EventHandler(this.icon_emp_item_MouseLeave);
             // 
             // panel3
             // 

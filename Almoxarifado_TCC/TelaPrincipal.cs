@@ -202,6 +202,14 @@ namespace Almoxarifado_TCC
 
             }
 
+            /// -----Botões form Emprestimo de itens-----
+
+            if (tela == "Item_Devolução")
+            {
+                BackPopUp.Width = 227;
+                OpenPopup(new Popup.DevolverItem(codigo));
+            }
+
             /// -----Botões form Histórico-----
 
             if (tela == "???????")
@@ -451,6 +459,7 @@ namespace Almoxarifado_TCC
             icon_Descartes.IconColor = CoresGlobais.Normal;
             icon_Perfil.IconColor = CoresGlobais.Normal;
             icon_Config.IconColor = CoresGlobais.Normal;
+            icon_emp_item.IconColor= CoresGlobais.Normal;
         }
 
         private void Icon_extend_MouseEnter(object sender, EventArgs e)
@@ -549,9 +558,20 @@ namespace Almoxarifado_TCC
                 icon_Perfil.IconColor = CoresGlobais.Normal;
         }
 
+        private void icon_emp_item_MouseEnter(object sender, EventArgs e)
+        {
+            if (icon_emp_item.IconColor != CoresGlobais.Selecionado)
+                icon_emp_item.IconColor = CoresGlobais.Sobre;
+        }
 
+        private void icon_emp_item_MouseLeave(object sender, EventArgs e)
+        {
+            if (icon_emp_item.IconColor != CoresGlobais.Selecionado)
+                icon_emp_item.IconColor = CoresGlobais.Normal;
+        }
 
         #endregion
+
 
     }
 }

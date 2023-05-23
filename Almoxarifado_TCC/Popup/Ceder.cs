@@ -23,7 +23,7 @@ namespace Almoxarifado_TCC.Popup
         {
             cod_item = cod;
             InitializeComponent();
-            this.TopMost = true;
+            Hora_Ceder.Start();
         }
 
         #region Visuais
@@ -196,33 +196,54 @@ namespace Almoxarifado_TCC.Popup
 
         private void btnCeder_Click(object sender, EventArgs e)
         {
-
             quantAt = Convert.ToInt32(txtQuant.Text);
             quant = quantTt - quantAt;
 
-            /// Insere os dados na tabela de emprestimo
             ClassConexao con = new ClassConexao();
             MySqlConnection conexao = con.getConexao();
-
-            string sql3 = "insert into tb_emp_item(id_item, id_usuario, quant, hora_emp, hora_dev, data_emp, data_dev, obs) values"+"('" + cod_item + "','" + cod_usu + "','" + quantAt + "','" + hora + "','" + "11/11/1111" + "','" + data + "')";
+            string sql = "insert into tb_emp_item(id_item, id_usuario, quant, hora_emp, data_emp) values"+"('" + cod_item + "','" + cod_usu + "','" + quantAt + "','" + hora + "','" + data + "')";
             conexao.Open();
-            MySqlCommand comando3 = new MySqlCommand(sql3, conexao);
-            MySqlDataReader registro = comando3.ExecuteReader();
+            MySqlCommand command = new MySqlCommand(sql, conexao);
+            MySqlDataReader registro = command.ExecuteReader();
             registro.Read();
-
-            ////idchave = Convert.ToInt32(registro["id_chave"]);
-
             conexao.Close();
+
+
+            ClassConexao con1 = new ClassConexao();
+            MySqlConnection conexao1 = con1.getConexao();
+            string sql1 = "UPDATE tb_item SET quant = @quant WHERE id_item = " + cod_item + ";";
+            MySqlCommand command1 = new MySqlCommand(sql1, conexao1);
+            command1.Parameters.AddWithValue("@quant", quant);
+            conexao1.Open();
+            command1.ExecuteNonQuery();
+            conexao1.Close();
+
+            TelaPrincipal.CurrentInstance.Popups_Fechar();
+            this.Close();
+            Popup.Estoque.CurrentInstance.reset();
         }
 
         private void dgvUsuario_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int contador = dgvUsuario.RowCount - 1;
+            string cpf_usu;
 
             if (e.RowIndex < contador && e.RowIndex >= 0)
             {
                 //aguarda o codigo da linha selecionada
-                cod_usu = Convert.ToInt32(dgvUsuario.Rows[e.RowIndex].Cells[0].Value);
+                cpf_usu = Convert.ToString(dgvUsuario.Rows[e.RowIndex].Cells[0].Value);
+
+                ClassConexao con = new ClassConexao();
+                MySqlConnection conexao = con.getConexao();
+                String consulta = "";
+                consulta = "SELECT id_usuario from tb_usuario where cpf ='" + cpf_usu + "'";
+                MySqlCommand commando = new MySqlCommand(consulta, conexao);
+                conexao.Open();
+                MySqlDataReader registro = commando.ExecuteReader();
+                registro.Read();
+                cod_usu = Convert.ToInt32(registro["id_usuario"]);
+                conexao.Close();
+
                 MessageBox.Show("Código usu: " + cod_usu);
             }
             else
