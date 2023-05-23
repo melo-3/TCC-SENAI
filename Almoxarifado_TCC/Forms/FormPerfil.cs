@@ -11,6 +11,7 @@ using System.Threading; // Usado para fechar e abrir uma pagina
 using MySql.Data.MySqlClient;
 using System.Runtime.ConstrainedExecution;
 using FontAwesome.Sharp;
+using System.IO;
 
 namespace Almoxarifado_TCC.Popup
 {
@@ -49,36 +50,44 @@ namespace Almoxarifado_TCC.Popup
 
         public void exe_imagem()
         {
-            //MessageBox.Show("id admin: " + this.codigoid);
-            ClassUsuario usu = new ClassUsuario();//chamo classe usuario
-            ClassConexao con = new ClassConexao();//chamo a classe conexao
-            String logar = "SELECT nome_admin,email,foto FROM tb_admin where id_admin=@id";
+            ClassUsuario usu = new ClassUsuario(); // chamo a classe usuário
+            ClassConexao con = new ClassConexao(); // chamo a classe conexão
+            string logar = "SELECT nome_admin, email, foto FROM tb_admin WHERE id_admin = @id";
             MySqlConnection conexao = con.getConexao();
             MySqlCommand comando = new MySqlCommand(logar, conexao);
-            conexao.Open();
             comando.Parameters.AddWithValue("@id", this.codigoid);
 
-            MySqlDataReader registro = comando.ExecuteReader();//executa a consulta
-            registro.Read();
-            nome = Convert.ToString(registro["nome_admin"]);
-            email = Convert.ToString(registro["email"]);
-            Imagem = Convert.ToString(registro["foto"]);
+            conexao.Open();
 
-            lblNome.Text = nome;
-            lblEmail.Text = email;
-
-            char v = '\\';
-            string Imagem2 = Imagem.Replace('*', v);
-
-            if (Imagem2 == "")
+            MySqlDataReader registro = comando.ExecuteReader(); // executa a consulta
+            if (registro.Read())
             {
+                string nome = registro["nome_admin"].ToString();
+                string email = registro["email"].ToString();
+                object fotoValue = registro["foto"];
+                byte[] imageData = fotoValue != DBNull.Value ? (byte[])fotoValue : null;
 
+                lblNome.Text = nome;
+                lblEmail.Text = email;
+
+                if (imageData != null && imageData.Length > 0)
+                {
+                    using (MemoryStream ms = new MemoryStream(imageData))
+                    {
+                        panelPerfiFoto.BackgroundImage = Image.FromStream(ms);
+                    }
+                }
+                else
+                {
+                    // Caso a imagem seja nula, limpa o controle
+                    panelPerfiFoto.BackgroundImage = null;
+                }
             }
-            else
-            {
-                panelPerfiFoto.BackgroundImage = Image.FromFile(Imagem2);
-            }
+
+            conexao.Close();
         }
+
+
         private void Perfil_Load(object sender, EventArgs e)
         {
             exe_imagem();
@@ -214,47 +223,91 @@ namespace Almoxarifado_TCC.Popup
 
         private void iconFoto_Click(object sender, EventArgs e)
         {
+
             try
             {
-                //abre a caixa de seleção da foto
                 OpenFileDialog foto = new OpenFileDialog();
-                foto.Filter = "Image Files(*.jpg;*.png)|*.jpg; *png";
+                foto.Filter = "Image Files(*.jpg;*.png)|*.jpg;*.png";
+
                 if (foto.ShowDialog() == DialogResult.OK)
-                {//pega o nome do arquivo
-                  label1.Text = foto.FileName;
-                    //captura o nome para o arquivo da foto
-                    Image file = Image.FromFile(foto.FileName);
-                    panelPerfiFoto.BackgroundImage = file;//carrega a foto selecionada
-                    
-                    ClassConexao con = new ClassConexao();
-
-                    MySqlConnection conexao = con.getConexao();
-                    //para a segurança dos dados
-                    char v = '\\';
-
-                    string barras = @label1.Text;
-                    string barras2 = barras.Replace(v, '*');
-                    //MessageBox.Show("Caminho: " + barras2);
-
-                    string sql = "UPDATE tb_admin SET foto = '" + barras2 + "' where id_admin = @id;";
-                    MySqlCommand comando = new MySqlCommand(sql, conexao);
-                    conexao.Open();
-                    comando.Parameters.AddWithValue("@id", this.codigoid);
-
-                    comando.ExecuteReader();
-                    //MessageBox.Show("Foto!");
-                    exe_imagem();
-                }
-                else
                 {
-                    MessageBox.Show("Não escolheu nenhuma imagem");
+                    string filePath = foto.FileName;
+                    byte[] imageData = File.ReadAllBytes(filePath); // Lê os dados da imagem selecionada
+
+                    MySqlConnection connection1 = new MySqlConnection("server=localhost;database=db_almoxarifado;user=root;password=;");
+                    connection1.Open();
+
+                    string updateQuery = "UPDATE tb_admin SET foto = @foto WHERE id_admin = @id";
+                    MySqlCommand command = new MySqlCommand(updateQuery, connection1);
+                    command.Parameters.AddWithValue("@foto", imageData);
+                    command.Parameters.AddWithValue("@id", this.codigoid);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Foto atualizada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao atualizar a foto.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    connection1.Close();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Ocorreu um erro: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+
+
+            MySqlConnection connection = null;
+
+            try
+            {
+                ClassConexao con = new ClassConexao();         //instancia de conexão
+                MySqlConnection conexao = con.getConexao();      //obtive a conexao
+
+                string selectQuery = "SELECT foto FROM tb_admin WHERE id_admin = @id";
+                MySqlCommand command = new MySqlCommand(selectQuery, conexao);
+                command.Parameters.AddWithValue("@id", this.codigoid);
+
+                conexao.Open();
+
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read()) 
+                    {
+                        if (!reader.IsDBNull(0))
+                        {
+                            byte[] imageData = (byte[])reader["foto"];
+
+                            using (MemoryStream ms = new MemoryStream(imageData))
+                            {
+                                picPerfil.Image = Image.FromStream(ms);
+                            }
+                        }
+                        else
+                        {
+                            picPerfil.Image = null; // Se a imagem for nula, limpa o controle PictureBox
+                        }
+                    }
+                }
             }
+            catch (MySqlException ex)
+            {
+                // Lidar com exceções relacionadas ao MySQL aqui
+            }
+            finally
+            {
+                // Certifique-se de fechar a conexão, mesmo em caso de exceção
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
+        }
     }
 }
