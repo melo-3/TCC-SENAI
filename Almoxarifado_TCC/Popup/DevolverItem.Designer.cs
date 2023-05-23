@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.txtObs = new System.Windows.Forms.TextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblDevolucao = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -44,8 +46,6 @@
             this.btnDevolver = new System.Windows.Forms.Button();
             this.iconBox = new FontAwesome.Sharp.IconPictureBox();
             this.iconCeder = new FontAwesome.Sharp.IconPictureBox();
-            this.txtObs = new System.Windows.Forms.TextBox();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.Hora_Devolver = new System.Windows.Forms.Timer(this.components);
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconBox)).BeginInit();
@@ -75,13 +75,36 @@
             this.panel4.Size = new System.Drawing.Size(189, 334);
             this.panel4.TabIndex = 13;
             // 
+            // txtObs
+            // 
+            this.txtObs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.txtObs.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtObs.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.txtObs.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtObs.Location = new System.Drawing.Point(27, 216);
+            this.txtObs.Name = "txtObs";
+            this.txtObs.Size = new System.Drawing.Size(133, 17);
+            this.txtObs.TabIndex = 21;
+            this.txtObs.Text = "Obs";
+            this.txtObs.Enter += new System.EventHandler(this.txtObs_Enter);
+            this.txtObs.Leave += new System.EventHandler(this.txtObs_Leave);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel5.Location = new System.Drawing.Point(27, 235);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(133, 2);
+            this.panel5.TabIndex = 22;
+            // 
             // txtNome
             // 
             this.txtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNome.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold);
             this.txtNome.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtNome.Location = new System.Drawing.Point(27, 79);
+            this.txtNome.Location = new System.Drawing.Point(27, 57);
             this.txtNome.Name = "txtNome";
             this.txtNome.ReadOnly = true;
             this.txtNome.Size = new System.Drawing.Size(133, 19);
@@ -94,7 +117,7 @@
             this.lblDevolucao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.lblDevolucao.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold);
             this.lblDevolucao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
-            this.lblDevolucao.Location = new System.Drawing.Point(56, 50);
+            this.lblDevolucao.Location = new System.Drawing.Point(56, 31);
             this.lblDevolucao.Name = "lblDevolucao";
             this.lblDevolucao.Size = new System.Drawing.Size(75, 18);
             this.lblDevolucao.TabIndex = 19;
@@ -104,7 +127,7 @@
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel3.Location = new System.Drawing.Point(106, 191);
+            this.panel3.Location = new System.Drawing.Point(106, 174);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(71, 2);
             this.panel3.TabIndex = 14;
@@ -113,7 +136,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(12, 191);
+            this.panel1.Location = new System.Drawing.Point(12, 174);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(71, 2);
             this.panel1.TabIndex = 13;
@@ -124,7 +147,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.label2.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(104, 151);
+            this.label2.Location = new System.Drawing.Point(104, 134);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 18);
             this.label2.TabIndex = 18;
@@ -136,7 +159,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.label1.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(8, 149);
+            this.label1.Location = new System.Drawing.Point(8, 132);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 18);
             this.label1.TabIndex = 17;
@@ -148,7 +171,7 @@
             this.lblHorario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.lblHorario.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold);
             this.lblHorario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
-            this.lblHorario.Location = new System.Drawing.Point(60, 120);
+            this.lblHorario.Location = new System.Drawing.Point(60, 103);
             this.lblHorario.Name = "lblHorario";
             this.lblHorario.Size = new System.Drawing.Size(63, 18);
             this.lblHorario.TabIndex = 16;
@@ -160,7 +183,7 @@
             this.txtDevolucao.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDevolucao.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold);
             this.txtDevolucao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
-            this.txtDevolucao.Location = new System.Drawing.Point(105, 172);
+            this.txtDevolucao.Location = new System.Drawing.Point(105, 155);
             this.txtDevolucao.Name = "txtDevolucao";
             this.txtDevolucao.Size = new System.Drawing.Size(72, 19);
             this.txtDevolucao.TabIndex = 15;
@@ -173,7 +196,7 @@
             this.txtEmprestimo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmprestimo.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold);
             this.txtEmprestimo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
-            this.txtEmprestimo.Location = new System.Drawing.Point(13, 172);
+            this.txtEmprestimo.Location = new System.Drawing.Point(13, 155);
             this.txtEmprestimo.Name = "txtEmprestimo";
             this.txtEmprestimo.Size = new System.Drawing.Size(71, 19);
             this.txtEmprestimo.TabIndex = 14;
@@ -184,7 +207,7 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel2.Location = new System.Drawing.Point(27, 71);
+            this.panel2.Location = new System.Drawing.Point(27, 52);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(133, 2);
             this.panel2.TabIndex = 12;
@@ -213,6 +236,7 @@
             this.btnDevolver.TabIndex = 0;
             this.btnDevolver.Text = "Devolver";
             this.btnDevolver.UseVisualStyleBackColor = false;
+            this.btnDevolver.Click += new System.EventHandler(this.btnDevolver_Click);
             // 
             // iconBox
             // 
@@ -242,27 +266,6 @@
             this.iconCeder.Size = new System.Drawing.Size(80, 80);
             this.iconCeder.TabIndex = 16;
             this.iconCeder.TabStop = false;
-            // 
-            // txtObs
-            // 
-            this.txtObs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
-            this.txtObs.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtObs.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
-            this.txtObs.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtObs.Location = new System.Drawing.Point(27, 225);
-            this.txtObs.Name = "txtObs";
-            this.txtObs.Size = new System.Drawing.Size(133, 17);
-            this.txtObs.TabIndex = 21;
-            this.txtObs.Text = "Obs";
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel5.Location = new System.Drawing.Point(27, 244);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(133, 2);
-            this.panel5.TabIndex = 22;
             // 
             // Hora_Devolver
             // 
