@@ -109,8 +109,9 @@ namespace Almoxarifado_TCC.Popup
             conexao2.Close();
 
             TelaPrincipal.CurrentInstance.Popups_Fechar();
+            Forms.EmpItem.CurrentInstance.reset();
             this.Close();
-            //////Popup.Estoque.CurrentInstance.reset();
+            
         }
 
         private void txtObs_Enter(object sender, EventArgs e)
@@ -127,6 +128,12 @@ namespace Almoxarifado_TCC.Popup
             {
                 txtObs.Text = "Obs";
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            TelaPrincipal.CurrentInstance.Popups_Fechar();
+            this.Close();
         }
 
         private void Hora_Devolver_Tick(object sender, EventArgs e)

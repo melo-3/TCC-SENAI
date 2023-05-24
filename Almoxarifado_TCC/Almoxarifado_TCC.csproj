@@ -129,6 +129,12 @@
     <Compile Include="Forms\EmpItem.Designer.cs">
       <DependentUpon>EmpItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Popup\ConfDescarte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\ConfDescarte.Designer.cs">
+      <DependentUpon>ConfDescarte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Popup\CriarAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +225,12 @@
     <Compile Include="Popup\DeletarConta.Designer.cs">
       <DependentUpon>DeletarConta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Popup\Descitem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\Descitem.Designer.cs">
+      <DependentUpon>Descitem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Popup\DevolverChave.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -290,6 +302,9 @@
     <EmbeddedResource Include="Forms\EmpItem.resx">
       <DependentUpon>EmpItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Popup\ConfDescarte.resx">
+      <DependentUpon>ConfDescarte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Popup\CriarAdmin.resx">
       <DependentUpon>CriarAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -334,6 +349,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Popup\DeletarConta.resx">
       <DependentUpon>DeletarConta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\Descitem.resx">
+      <DependentUpon>Descitem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Popup\DevolverChave.resx">
       <DependentUpon>DevolverChave.cs</DependentUpon>

@@ -199,7 +199,8 @@ namespace Almoxarifado_TCC
 
             if (tela == "Item_Desc")
             {
-
+                BackPopUp.Width = 227;
+                OpenPopup(new Popup.Descitem(codigo));
             }
 
             /// -----Botões form Emprestimo de itens-----

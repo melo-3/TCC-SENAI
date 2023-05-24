@@ -14,12 +14,17 @@ namespace Almoxarifado_TCC.Forms
 {
     public partial class EmpItem : Form
     {
+        private Form activeForm = null;
+
         public EmpItem()
         {
             InitializeComponent();
+            CurrentInstance = this;
         }
 
-        private void EmpItem_Load(object sender, EventArgs e)
+        public static EmpItem CurrentInstance;
+
+        public void reset()
         {
             ClassConexao con = new ClassConexao();
             //obtive a conexao
@@ -35,6 +40,10 @@ namespace Almoxarifado_TCC.Forms
             dados.Fill(dtHist);//manipulação dos dados
             dtvEmpItem.DataSource = dtHist;//chamo o caminho dos dados
             conexao.Close();
+        }
+        private void EmpItem_Load(object sender, EventArgs e)
+        {
+            reset();
 
             dtvEmpItem.BorderStyle = BorderStyle.None;
             dtvEmpItem.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(73, 78, 92);
@@ -74,20 +83,45 @@ namespace Almoxarifado_TCC.Forms
                 conexao.Close();
 
                 lblSelecionado.Text = "'"+item+"' foi emprestado por "+usuario;
+                lblSelecionado.ForeColor = Color.DimGray;
                 btnDevolver.Enabled = true;
             }
             else
             {
                 lblSelecionado.Text = "Campo vazio";
-                btnDevolver.Enabled = false;
+                lblSelecionado.ForeColor = Color.DimGray;
+                btnDevolver.Enabled = false; 
             }
         }
 
         private void btnDevolver_Click(object sender, EventArgs e)
         {
-            string tela = "Item_Devolução";
-            int cod = cod_item;
-            TelaPrincipal.CurrentInstance.Popups_Tela(tela, cod);
+            string Verificacao;
+
+            ClassConexao con = new ClassConexao();
+            MySqlConnection conexao = con.getConexao();
+            String consulta = "";
+            consulta = "SELECT hora_dev from tb_emp_item where id_emp_item="+ cod_item + "";
+            MySqlCommand commando = new MySqlCommand(consulta, conexao);
+            conexao.Open();
+            MySqlDataReader registro = commando.ExecuteReader();
+            registro.Read();
+            Verificacao = Convert.ToString(registro["hora_dev"]);
+            conexao.Close();
+
+
+            if (Verificacao != "")
+            {
+                lblSelecionado.Text = "Este item já foi devolvido!";
+                lblSelecionado.ForeColor = Color.Red;
+            }
+            else
+            {
+                string tela = "Item_Devolução";
+                int cod = cod_item;
+                TelaPrincipal.CurrentInstance.Popups_Tela(tela, cod);
+            }
+            
         }
     }
 }

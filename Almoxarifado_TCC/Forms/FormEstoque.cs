@@ -124,7 +124,9 @@ namespace Almoxarifado_TCC.Popup
 
         private void btnDescartar_Click(object sender, EventArgs e)
         {
-
+            string tela = "Item_Desc";
+            int cod = this.codigo_item;
+            TelaPrincipal.CurrentInstance.Popups_Tela(tela, cod);
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)

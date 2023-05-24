@@ -120,9 +120,31 @@ namespace Almoxarifado_TCC.Popup
 
         private void btnEmprestimo_Click(object sender, EventArgs e)
         {
-            string tela = "Key_Emp";
-            int cod = this.codigo_chave;
-            TelaPrincipal.CurrentInstance.Popups_Tela(tela, cod);
+            string Verificacao;
+
+            ClassConexao con = new ClassConexao();
+            MySqlConnection conexao = con.getConexao();
+            String consulta = "";
+            consulta = "SELECT stats from tb_chave where id_chave=" + codigo_chave + "";
+            MySqlCommand commando = new MySqlCommand(consulta, conexao);
+            conexao.Open();
+            MySqlDataReader registro = commando.ExecuteReader();
+            registro.Read();
+            Verificacao = Convert.ToString(registro["stats"]);
+            conexao.Close();
+
+            if (Verificacao == "Indisponível")
+            {
+                lblSelecionado.Text = "Esta chave está indisponível!";
+                lblSelecionado.ForeColor = Color.Red;
+            }
+            else
+            {
+                string tela = "Key_Emp";
+                int cod = this.codigo_chave;
+                TelaPrincipal.CurrentInstance.Popups_Tela(tela, cod);
+            }
+            
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -150,12 +172,27 @@ namespace Almoxarifado_TCC.Popup
         {
             int contador = dtvChave.RowCount - 1;
 
+            lblSelecionado.ForeColor = Color.DimGray;
+
             if (e.RowIndex < contador && e.RowIndex >= 0)
             {
                 //aguarda o codigo da linha selecionada
                 this.codigo_chave = Convert.ToInt32(dtvChave.Rows[e.RowIndex].Cells[0].Value);
-                //MessageBox.Show("Código chave: " + this.codigo_chave);
-                lblSelecionado.Text = "Número " + this.codigo_chave;
+
+                string sala;
+
+                ClassConexao con = new ClassConexao();
+                MySqlConnection conexao = con.getConexao();
+                String consulta = "";
+                consulta = "SELECT sala_lab from tb_chave where id_chave=" + codigo_chave + "";
+                MySqlCommand commando = new MySqlCommand(consulta, conexao);
+                conexao.Open();
+                MySqlDataReader registro = commando.ExecuteReader();
+                registro.Read();
+                sala = Convert.ToString(registro["sala_lab"]);
+                conexao.Close();
+
+                lblSelecionado.Text = sala;
                 btnEditar.Enabled = true;
                 btnExcluir.Enabled = true;
                 btnEmprestimo.Enabled = true;

@@ -24,12 +24,36 @@ namespace Almoxarifado_TCC.Popup
 
         public static Pedidos CurrentInstance;
         public string nome;
+        public int id_emp;
 
         private void btnVisualizar_Click(object sender, EventArgs e)
         {
-            string tela = "Key_Devolução";
-            int cod = this.id_emp;
-            TelaPrincipal.CurrentInstance.Popups_Tela(tela, cod);
+
+            string Verificacao;
+
+            ClassConexao con = new ClassConexao();
+            MySqlConnection conexao = con.getConexao();
+            String consulta = "";
+            consulta = "SELECT horario_dev from tb_emp_chave where id_emp=" + id_emp + "";
+            MySqlCommand commando = new MySqlCommand(consulta, conexao);
+            conexao.Open();
+            MySqlDataReader registro = commando.ExecuteReader();
+            registro.Read();
+            Verificacao = Convert.ToString(registro["horario_dev"]);
+            conexao.Close();
+
+
+            if (Verificacao != "")
+            {
+                lblSelecionado.Text = "Esta chave já foi devolvida!";
+                lblSelecionado.ForeColor = Color.Red;
+            }
+            else
+            {
+                string tela = "Key_Devolução";
+                int cod = this.id_emp;
+                TelaPrincipal.CurrentInstance.Popups_Tela(tela, cod);
+            }
         }
 
         public void reset()
@@ -37,7 +61,7 @@ namespace Almoxarifado_TCC.Popup
             ClassConexao con = new ClassConexao();
             MySqlConnection conexao = con.getConexao();
             String consulta;
-            consulta = "select e.id_emp as Codigo, u.nome_usuario as Nome, c.num_chave as Chave, e.horario_emp as H_Emprestimo, e.data_emp as Data_Emprestimo, e.horario_dev as H_Devolucao, e.data_dev as Data_Devolucao from tb_usuario u inner join tb_emp_chave e on u.id_usuario=e.id_usuario inner join tb_chave c on c.id_chave=e.id_chave;";
+            consulta = "select e.id_emp as Codigo, u.nome_usuario as Nome, c.sala_lab as Chave, e.horario_emp as H_Emprestimo, e.data_emp as Data_Emprestimo, e.horario_dev as H_Devolucao, e.data_dev as Data_Devolucao from tb_usuario u inner join tb_emp_chave e on u.id_usuario=e.id_usuario inner join tb_chave c on c.id_chave=e.id_chave;";
             MySqlCommand commando = new MySqlCommand(consulta, conexao);
             conexao.Open();//Abro minha conexao
             MySqlDataAdapter dados = new MySqlDataAdapter(commando);
@@ -67,18 +91,39 @@ namespace Almoxarifado_TCC.Popup
             dtvEmp.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
 
-        public int id_emp;
+        
 
         private void dtvEmp_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int contador = dtvEmp.RowCount - 1;
+            lblSelecionado.ForeColor = Color.DimGray;
 
             if (e.RowIndex < contador && e.RowIndex >= 0)
             {
                 //aguarda o codigo da linha selecionada
                 id_emp = Convert.ToInt32(dtvEmp.Rows[e.RowIndex].Cells[0].Value);
 
-                MessageBox.Show("id: " + id_emp);
+                string sala, usuario;
+
+                ClassConexao con = new ClassConexao();
+                MySqlConnection conexao = con.getConexao();
+                String consulta = "";
+                consulta = "SELECT c.sala_lab, u.nome_usuario from tb_emp_chave ec inner join tb_usuario u on ec.id_usuario=u.id_usuario inner join tb_chave c on ec.id_chave=c.id_chave where id_emp=" + id_emp;
+                MySqlCommand commando = new MySqlCommand(consulta, conexao);
+                conexao.Open();
+                MySqlDataReader registro = commando.ExecuteReader();
+                registro.Read();
+                sala = Convert.ToString(registro["sala_lab"]);
+                usuario = Convert.ToString(registro["nome_usuario"]);
+                conexao.Close();
+
+                btnVisualizar.Enabled = true;
+                lblSelecionado.Text = "'"+sala+"', foi emprestada por "+usuario;
+            }
+            else
+            {
+                lblSelecionado.Text = "Campo vazio";
+                btnVisualizar.Enabled = false;
             }
         }
     }

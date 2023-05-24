@@ -47,5 +47,34 @@ namespace Almoxarifado_TCC.Popup
             dtvDescarte.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(56, 60, 71);
             dtvDescarte.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
+
+        private void btnDescarte_Click(object sender, EventArgs e)
+        {
+            string Verificacao;
+
+            ClassConexao con = new ClassConexao();
+            MySqlConnection conexao = con.getConexao();
+            String consulta = "";
+            consulta = "SELECT hora_dev from tb_emp_item where id_emp_item=" + cod_item + "";
+            MySqlCommand commando = new MySqlCommand(consulta, conexao);
+            conexao.Open();
+            MySqlDataReader registro = commando.ExecuteReader();
+            registro.Read();
+            Verificacao = Convert.ToString(registro["hora_dev"]);
+            conexao.Close();
+
+
+            if (Verificacao != "")
+            {
+                lblSelecionado.Text = "Este item já foi devolvido!";
+                lblSelecionado.ForeColor = Color.Red;
+            }
+            else
+            {
+                string tela = "Item_Devolução";
+                int cod = cod_item;
+                TelaPrincipal.CurrentInstance.Popups_Tela(tela, cod);
+            }
+        }
     }
 }
