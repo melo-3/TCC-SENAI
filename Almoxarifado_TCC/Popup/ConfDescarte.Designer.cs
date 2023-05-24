@@ -41,6 +41,9 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.btnDescartar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtStatus = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.iconDesc)).BeginInit();
             this.PanelItem.SuspendLayout();
             this.SuspendLayout();
@@ -62,6 +65,9 @@
             // PanelItem
             // 
             this.PanelItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.PanelItem.Controls.Add(this.label2);
+            this.PanelItem.Controls.Add(this.txtStatus);
+            this.PanelItem.Controls.Add(this.panel4);
             this.PanelItem.Controls.Add(this.txtObs);
             this.PanelItem.Controls.Add(this.panel2);
             this.PanelItem.Controls.Add(this.label1);
@@ -85,9 +91,8 @@
             this.txtObs.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtObs.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.txtObs.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtObs.Location = new System.Drawing.Point(28, 211);
+            this.txtObs.Location = new System.Drawing.Point(28, 220);
             this.txtObs.Name = "txtObs";
-            this.txtObs.ReadOnly = true;
             this.txtObs.Size = new System.Drawing.Size(133, 17);
             this.txtObs.TabIndex = 33;
             this.txtObs.Text = "Obs";
@@ -96,7 +101,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(212)))), ((int)(((byte)(218)))));
             this.panel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel2.Location = new System.Drawing.Point(28, 230);
+            this.panel2.Location = new System.Drawing.Point(28, 239);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(133, 2);
             this.panel2.TabIndex = 34;
@@ -106,7 +111,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(54, 135);
+            this.label1.Location = new System.Drawing.Point(54, 156);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 17);
             this.label1.TabIndex = 29;
@@ -116,7 +121,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(212)))), ((int)(((byte)(218)))));
             this.panel5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel5.Location = new System.Drawing.Point(63, 187);
+            this.panel5.Location = new System.Drawing.Point(63, 204);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(60, 2);
             this.panel5.TabIndex = 27;
@@ -127,7 +132,7 @@
             this.txtQuant.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtQuant.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.txtQuant.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtQuant.Location = new System.Drawing.Point(63, 168);
+            this.txtQuant.Location = new System.Drawing.Point(63, 185);
             this.txtQuant.Name = "txtQuant";
             this.txtQuant.ReadOnly = true;
             this.txtQuant.Size = new System.Drawing.Size(60, 17);
@@ -141,7 +146,7 @@
             this.txtDescricao.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescricao.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.txtDescricao.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtDescricao.Location = new System.Drawing.Point(28, 81);
+            this.txtDescricao.Location = new System.Drawing.Point(28, 113);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.ReadOnly = true;
             this.txtDescricao.Size = new System.Drawing.Size(133, 17);
@@ -152,7 +157,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(212)))), ((int)(((byte)(218)))));
             this.panel3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel3.Location = new System.Drawing.Point(28, 100);
+            this.panel3.Location = new System.Drawing.Point(28, 132);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(133, 2);
             this.panel3.TabIndex = 8;
@@ -176,7 +181,7 @@
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNome.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.txtNome.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtNome.Location = new System.Drawing.Point(28, 35);
+            this.txtNome.Location = new System.Drawing.Point(28, 67);
             this.txtNome.Name = "txtNome";
             this.txtNome.ReadOnly = true;
             this.txtNome.Size = new System.Drawing.Size(133, 17);
@@ -201,10 +206,43 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(212)))), ((int)(((byte)(218)))));
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(28, 54);
+            this.panel1.Location = new System.Drawing.Point(28, 86);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(133, 2);
             this.panel1.TabIndex = 7;
+            // 
+            // txtStatus
+            // 
+            this.txtStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.txtStatus.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtStatus.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.txtStatus.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtStatus.Location = new System.Drawing.Point(72, 25);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.ReadOnly = true;
+            this.txtStatus.Size = new System.Drawing.Size(89, 17);
+            this.txtStatus.TabIndex = 35;
+            this.txtStatus.Text = "Nome";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(212)))), ((int)(((byte)(218)))));
+            this.panel4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel4.Location = new System.Drawing.Point(28, 44);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(133, 2);
+            this.panel4.TabIndex = 36;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift Light", 9F);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(25, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 14);
+            this.label2.TabIndex = 37;
+            this.label2.Text = "Status:";
             // 
             // ConfDescarte
             // 
@@ -240,5 +278,8 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Button btnDescartar;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtStatus;
+        private System.Windows.Forms.Panel panel4;
     }
 }

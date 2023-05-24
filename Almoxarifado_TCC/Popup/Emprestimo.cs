@@ -94,15 +94,15 @@ namespace Almoxarifado_TCC.Popup
         {
             reset();
             dgvUsuario.BorderStyle = BorderStyle.None;
-            dgvUsuario.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dgvUsuario.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(56, 60, 71);
             dgvUsuario.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvUsuario.DefaultCellStyle.SelectionBackColor = Color.FromArgb(1, 99, 148);
-            dgvUsuario.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
-            dgvUsuario.BackgroundColor = Color.White;
+            dgvUsuario.DefaultCellStyle.SelectionBackColor = Color.FromArgb(27, 30, 36);
+            dgvUsuario.DefaultCellStyle.SelectionForeColor = Color.White;
+            dgvUsuario.BackgroundColor = Color.FromArgb(39, 43, 52);
 
             dgvUsuario.EnableHeadersVisualStyles = false;
             dgvUsuario.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dgvUsuario.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 75, 112);
+            dgvUsuario.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(39, 43, 52);
             dgvUsuario.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
 

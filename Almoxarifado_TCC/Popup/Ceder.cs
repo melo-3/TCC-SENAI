@@ -57,7 +57,6 @@ namespace Almoxarifado_TCC.Popup
             if (txtCpf.Text == "CPF")
             {
                 txtCpf.Text = "";
-                txtCpf.ForeColor = Color.Black;
             }
         }
 
@@ -66,7 +65,6 @@ namespace Almoxarifado_TCC.Popup
             if (txtCpf.Text == "")
             {
                 txtCpf.Text = "CPF";
-                txtCpf.ForeColor = Color.Black;
             }
         }
 
@@ -119,15 +117,15 @@ namespace Almoxarifado_TCC.Popup
             conexao1.Close();
 
             dgvUsuario.BorderStyle = BorderStyle.None;
-            dgvUsuario.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(73, 78, 92);
+            dgvUsuario.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(56, 60, 71);
             dgvUsuario.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvUsuario.DefaultCellStyle.SelectionBackColor = Color.FromArgb(39, 43, 52);
+            dgvUsuario.DefaultCellStyle.SelectionBackColor = Color.FromArgb(27, 30, 36);
             dgvUsuario.DefaultCellStyle.SelectionForeColor = Color.White;
-            dgvUsuario.BackgroundColor = Color.FromArgb(56, 60, 71);
+            dgvUsuario.BackgroundColor = Color.FromArgb(39, 43, 52);
 
             dgvUsuario.EnableHeadersVisualStyles = false;
             dgvUsuario.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dgvUsuario.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(56, 60, 71);
+            dgvUsuario.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(39, 43, 52);
             dgvUsuario.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
         }
@@ -243,8 +241,8 @@ namespace Almoxarifado_TCC.Popup
                 registro.Read();
                 cod_usu = Convert.ToInt32(registro["id_usuario"]);
                 conexao.Close();
-
-                MessageBox.Show("Código usu: " + cod_usu);
+                txtCpf.Text = cpf_usu;
+                ///MessageBox.Show("Código usu: " + cod_usu);
             }
             else
             {

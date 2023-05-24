@@ -223,9 +223,9 @@
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label6.Location = new System.Drawing.Point(49, 14);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 14);
+            this.label6.Size = new System.Drawing.Size(70, 14);
             this.label6.TabIndex = 10;
-            this.label6.Text = "Histórico";
+            this.label6.Text = "Repositório";
             // 
             // icon_Hist
             // 

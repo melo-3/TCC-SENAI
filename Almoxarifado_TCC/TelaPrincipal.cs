@@ -221,10 +221,10 @@ namespace Almoxarifado_TCC
 
             /// -----Botões form Descartes-----
 
-            if (tela == "???????")
+            if (tela == "Conf_descarte")
             {
                 BackPopUp.Width = 227;
-                ///OpenPopup(new Popup.());
+                OpenPopup(new Popup.ConfDescarte(codigo));
             }
 
         }

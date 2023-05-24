@@ -45,7 +45,6 @@ namespace Almoxarifado_TCC.Popup
             if (txtNome.Text == "Nome")
             {
                 txtNome.Text = "";
-                txtNome.ForeColor = Color.Black;
             }
         }
 
@@ -54,7 +53,6 @@ namespace Almoxarifado_TCC.Popup
             if (txtNome.Text == "")
             {
                 txtNome.Text = "Nome";
-                txtNome.ForeColor = Color.Black;
             }
         }
 
@@ -63,7 +61,6 @@ namespace Almoxarifado_TCC.Popup
             if (txtDescricao.Text == "Descrição")
             {
                 txtDescricao.Text = "";
-                txtDescricao.ForeColor = Color.Black;
             }
         }
 
@@ -72,7 +69,6 @@ namespace Almoxarifado_TCC.Popup
             if (txtDescricao.Text == "")
             {
                 txtDescricao.Text = "Descrição";
-                txtDescricao.ForeColor = Color.Black;
             }
         }
 

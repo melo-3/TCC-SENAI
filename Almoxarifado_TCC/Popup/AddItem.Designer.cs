@@ -35,7 +35,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtQuant = new System.Windows.Forms.TextBox();
-            this.cbCedivel = new System.Windows.Forms.CheckBox();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnCancelar = new System.Windows.Forms.LinkLabel();
@@ -69,7 +68,6 @@
             this.PanelItem.Controls.Add(this.label1);
             this.PanelItem.Controls.Add(this.panel5);
             this.PanelItem.Controls.Add(this.txtQuant);
-            this.PanelItem.Controls.Add(this.cbCedivel);
             this.PanelItem.Controls.Add(this.txtDescricao);
             this.PanelItem.Controls.Add(this.panel3);
             this.PanelItem.Controls.Add(this.btnCancelar);
@@ -93,7 +91,7 @@
             this.btnMax.IconColor = System.Drawing.SystemColors.ButtonFace;
             this.btnMax.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMax.IconSize = 20;
-            this.btnMax.Location = new System.Drawing.Point(129, 165);
+            this.btnMax.Location = new System.Drawing.Point(129, 191);
             this.btnMax.Name = "btnMax";
             this.btnMax.Size = new System.Drawing.Size(23, 23);
             this.btnMax.TabIndex = 31;
@@ -109,7 +107,7 @@
             this.btnMinus.IconColor = System.Drawing.SystemColors.ButtonFace;
             this.btnMinus.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMinus.IconSize = 20;
-            this.btnMinus.Location = new System.Drawing.Point(34, 165);
+            this.btnMinus.Location = new System.Drawing.Point(34, 191);
             this.btnMinus.Name = "btnMinus";
             this.btnMinus.Size = new System.Drawing.Size(23, 23);
             this.btnMinus.TabIndex = 30;
@@ -121,7 +119,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(52, 135);
+            this.label1.Location = new System.Drawing.Point(52, 161);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 17);
             this.label1.TabIndex = 29;
@@ -132,7 +130,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(212)))), ((int)(((byte)(218)))));
             this.panel5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel5.Location = new System.Drawing.Point(63, 187);
+            this.panel5.Location = new System.Drawing.Point(63, 213);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(60, 2);
             this.panel5.TabIndex = 27;
@@ -141,27 +139,16 @@
             // 
             this.txtQuant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.txtQuant.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtQuant.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuant.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.txtQuant.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtQuant.Location = new System.Drawing.Point(63, 168);
+            this.txtQuant.Location = new System.Drawing.Point(63, 194);
             this.txtQuant.Name = "txtQuant";
-            this.txtQuant.Size = new System.Drawing.Size(60, 19);
+            this.txtQuant.ReadOnly = true;
+            this.txtQuant.Size = new System.Drawing.Size(60, 17);
             this.txtQuant.TabIndex = 3;
+            this.txtQuant.Text = "0";
             this.txtQuant.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtQuant.TextChanged += new System.EventHandler(this.txtQuant_TextChanged);
-            // 
-            // cbCedivel
-            // 
-            this.cbCedivel.AutoSize = true;
-            this.cbCedivel.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
-            this.cbCedivel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.cbCedivel.Location = new System.Drawing.Point(57, 209);
-            this.cbCedivel.Name = "cbCedivel";
-            this.cbCedivel.Size = new System.Drawing.Size(63, 17);
-            this.cbCedivel.TabIndex = 4;
-            this.cbCedivel.Text = "Cedível";
-            this.cbCedivel.UseVisualStyleBackColor = true;
-            this.cbCedivel.CheckedChanged += new System.EventHandler(this.cbCedivel_CheckedChanged);
             // 
             // txtDescricao
             // 
@@ -169,7 +156,7 @@
             this.txtDescricao.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescricao.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.txtDescricao.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtDescricao.Location = new System.Drawing.Point(28, 81);
+            this.txtDescricao.Location = new System.Drawing.Point(28, 101);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(133, 17);
             this.txtDescricao.TabIndex = 2;
@@ -182,7 +169,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(212)))), ((int)(((byte)(218)))));
             this.panel3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel3.Location = new System.Drawing.Point(28, 100);
+            this.panel3.Location = new System.Drawing.Point(28, 120);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(133, 2);
             this.panel3.TabIndex = 8;
@@ -206,7 +193,7 @@
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNome.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.txtNome.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtNome.Location = new System.Drawing.Point(28, 35);
+            this.txtNome.Location = new System.Drawing.Point(28, 47);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(133, 17);
             this.txtNome.TabIndex = 1;
@@ -233,7 +220,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(212)))), ((int)(((byte)(218)))));
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(28, 54);
+            this.panel1.Location = new System.Drawing.Point(28, 66);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(133, 2);
             this.panel1.TabIndex = 7;
@@ -274,6 +261,5 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox txtQuant;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox cbCedivel;
     }
 }

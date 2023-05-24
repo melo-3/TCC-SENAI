@@ -13,12 +13,21 @@ namespace Almoxarifado_TCC.Popup
 {
     public partial class Descarte : Form
     {
+
+        private Form activeForm = null;
+
         public Descarte()
         {
             InitializeComponent();
+            CurrentInstance = this;
         }
 
-        private void Descarte_Load(object sender, EventArgs e)
+        public static Descarte CurrentInstance;
+
+        public int cod_desc;
+
+
+        public void reset()
         {
             ClassConexao con = new ClassConexao();
             //obtive a conexao
@@ -34,6 +43,11 @@ namespace Almoxarifado_TCC.Popup
             dados.Fill(dtDescarte);//manipulação dos dados
             dtvDescarte.DataSource = dtDescarte;//chamo o caminho dos dados
             conexao.Close();
+        }
+
+        private void Descarte_Load(object sender, EventArgs e)
+        {
+            reset();
 
             dtvDescarte.BorderStyle = BorderStyle.None;
             dtvDescarte.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(73, 78, 92);
@@ -55,25 +69,59 @@ namespace Almoxarifado_TCC.Popup
             ClassConexao con = new ClassConexao();
             MySqlConnection conexao = con.getConexao();
             String consulta = "";
-            consulta = "SELECT hora_dev from tb_emp_item where id_emp_item=" + cod_item + "";
+            consulta = "SELECT stats from tb_descarte where id_descarte=" + cod_desc;
             MySqlCommand commando = new MySqlCommand(consulta, conexao);
             conexao.Open();
             MySqlDataReader registro = commando.ExecuteReader();
             registro.Read();
-            Verificacao = Convert.ToString(registro["hora_dev"]);
+
+            Verificacao = Convert.ToString(registro["stats"]);
+
             conexao.Close();
 
 
-            if (Verificacao != "")
+            if (Verificacao == "Confirmado")
             {
-                lblSelecionado.Text = "Este item já foi devolvido!";
+                lblSelecionado.Text = "Este item já foi descartado!";
                 lblSelecionado.ForeColor = Color.Red;
             }
             else
             {
-                string tela = "Item_Devolução";
-                int cod = cod_item;
+                string tela = "Conf_descarte";
+                int cod = cod_desc;
                 TelaPrincipal.CurrentInstance.Popups_Tela(tela, cod);
+            }
+        }
+
+        private void dtvDescarte_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int contador = dtvDescarte.RowCount - 1;
+            string item;
+            lblSelecionado.ForeColor = Color.DimGray;
+
+            if (e.RowIndex < contador && e.RowIndex >= 0)
+            {
+                //aguarda o codigo da linha selecionada
+                cod_desc = Convert.ToInt32(dtvDescarte.Rows[e.RowIndex].Cells[0].Value);
+
+                ClassConexao con = new ClassConexao();
+                MySqlConnection conexao = con.getConexao();
+                String consulta = "";
+                consulta = "SELECT i.nome_item from tb_descarte d inner join tb_item i on d.id_item=i.id_item where id_descarte=" + cod_desc;
+                MySqlCommand commando = new MySqlCommand(consulta, conexao);
+                conexao.Open();
+                MySqlDataReader registro = commando.ExecuteReader();
+                registro.Read();
+                item = Convert.ToString(registro["nome_item"]);
+                conexao.Close();
+
+                lblSelecionado.Text = item;
+                btnDescarte.Enabled = true;
+            }
+            else
+            {
+                lblSelecionado.Text = "Campo vazio";
+                btnDescarte.Enabled = false;
             }
         }
     }

@@ -193,8 +193,10 @@
             this.txtQuant.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.txtQuant.Location = new System.Drawing.Point(63, 168);
             this.txtQuant.Name = "txtQuant";
+            this.txtQuant.ReadOnly = true;
             this.txtQuant.Size = new System.Drawing.Size(60, 17);
             this.txtQuant.TabIndex = 9;
+            this.txtQuant.Text = "0";
             this.txtQuant.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lklCancelar
