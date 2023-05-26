@@ -683,3 +683,4 @@ C:\Users\USER 2\Downloads\Almoxarifado_TCC\TCC-SENAI\Almoxarifado_TCC\obj\Debug\
 C:\Users\Aluno\Documents\GitHub\TCC-SENAI\Almoxarifado_TCC\obj\Debug\Almoxarifado_TCC.Popup.DevolverItem.resources
 C:\Users\Aluno\Documents\GitHub\TCC-SENAI\Almoxarifado_TCC\obj\Debug\Almoxarifado_TCC.Popup.Descitem.resources
 C:\Users\Aluno\Documents\GitHub\TCC-SENAI\Almoxarifado_TCC\obj\Debug\Almoxarifado_TCC.Popup.ConfDescarte.resources
+C:\Users\Aluno\Documents\GitHub\TCC-SENAI\Almoxarifado_TCC\obj\Debug\Almoxarifado_TCC.Forms.Gerenciamento.resources

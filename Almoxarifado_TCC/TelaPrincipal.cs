@@ -399,7 +399,7 @@ namespace Almoxarifado_TCC
                 Popups_Fechar();
                 apagar_icons();
                 icon_Config.IconColor = CoresGlobais.Selecionado;
-                // OpenForm(new Popup.???());
+                OpenForm(new Forms.Gerenciamento());
             }
         }
 
@@ -444,7 +444,7 @@ namespace Almoxarifado_TCC
 
         public static class CoresGlobais
         {
-            public static Color Sobre { get; } = Color.FromArgb(165, 184, 201);
+            public static Color Sobre { get; } = Color.FromArgb(73, 78, 92);
             public static Color Normal { get; } = Color.FromArgb(118, 131, 143);
             public static Color Selecionado { get; } = Color.CornflowerBlue; // 58, 98, 135
 
