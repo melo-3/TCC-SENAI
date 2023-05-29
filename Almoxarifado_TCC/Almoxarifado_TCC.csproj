@@ -250,6 +250,12 @@
     <Compile Include="Popup\DevolverItem.Designer.cs">
       <DependentUpon>DevolverItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Popup\EditarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\EditarUsuario.Designer.cs">
+      <DependentUpon>EditarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Popup\EdtChave.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -368,6 +374,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Popup\DevolverItem.resx">
       <DependentUpon>DevolverItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\EditarUsuario.resx">
+      <DependentUpon>EditarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Popup\EdtChave.resx">
       <DependentUpon>EdtChave.cs</DependentUpon>

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls.Primitives;
 using System.Windows.Forms;
 using Almoxarifado_TCC.Popup;
 using MySql.Data.MySqlClient;
@@ -52,6 +53,21 @@ namespace Almoxarifado_TCC.Forms
             conexao1.Close();
         }
 
+        private Form ActivePopup = null; // usado para verificar se existe algum popup ativo
+
+
+        private void OpenPopup(Form ChildPopup)
+        {
+            if (ActivePopup != null)
+                ActivePopup.Close();
+            ActivePopup = ChildPopup;
+            ChildPopup.TopLevel = false;
+            ChildPopup.FormBorderStyle = FormBorderStyle.None;
+            ChildPopup.Dock = DockStyle.Fill;
+            PopUp.Controls.Add(ChildPopup);
+            ChildPopup.BringToFront();
+            ChildPopup.Show();
+        }
 
         private void Gerenciamento_Load(object sender, EventArgs e)
         {
@@ -190,6 +206,11 @@ namespace Almoxarifado_TCC.Forms
         {
             if (txtPesquisar.Text == "")
                 txtPesquisar.Text = "Pesquisar";
+        }
+
+        private void btnVisualizar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

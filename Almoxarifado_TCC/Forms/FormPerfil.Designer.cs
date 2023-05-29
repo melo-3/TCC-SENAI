@@ -107,7 +107,7 @@
             this.panelPerfiFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panelPerfiFoto.Controls.Add(this.iconFoto);
             this.panelPerfiFoto.Controls.Add(this.picPerfil);
-            this.panelPerfiFoto.Location = new System.Drawing.Point(318, 27);
+            this.panelPerfiFoto.Location = new System.Drawing.Point(309, 27);
             this.panelPerfiFoto.Name = "panelPerfiFoto";
             this.panelPerfiFoto.Size = new System.Drawing.Size(200, 200);
             this.panelPerfiFoto.TabIndex = 0;
@@ -196,7 +196,7 @@
             this.btnDesconectar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDesconectar.IconSize = 20;
             this.btnDesconectar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDesconectar.Location = new System.Drawing.Point(691, 44);
+            this.btnDesconectar.Location = new System.Drawing.Point(674, 44);
             this.btnDesconectar.Name = "btnDesconectar";
             this.btnDesconectar.Size = new System.Drawing.Size(127, 26);
             this.btnDesconectar.TabIndex = 8;
@@ -229,7 +229,7 @@
             this.panel1.Controls.Add(this.lblDeletar);
             this.panel1.Controls.Add(this.lblColab);
             this.panel1.Controls.Add(this.lblSeguranca);
-            this.panel1.Location = new System.Drawing.Point(52, 329);
+            this.panel1.Location = new System.Drawing.Point(43, 329);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(696, 881);
             this.panel1.TabIndex = 9;
@@ -705,7 +705,7 @@
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.lblNome);
             this.panel4.Controls.Add(this.lblEmail);
-            this.panel4.Location = new System.Drawing.Point(147, 233);
+            this.panel4.Location = new System.Drawing.Point(138, 233);
             this.panel4.MaximumSize = new System.Drawing.Size(550, 87);
             this.panel4.MinimumSize = new System.Drawing.Size(550, 87);
             this.panel4.Name = "panel4";
