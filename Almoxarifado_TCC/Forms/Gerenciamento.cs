@@ -15,10 +15,16 @@ namespace Almoxarifado_TCC.Forms
 {
     public partial class Gerenciamento : Form
     {
+
+        private Form activeForm = null;
+
         public Gerenciamento()
         {
             InitializeComponent();
+            CurrentInstance = this;
         }
+
+        public static Gerenciamento CurrentInstance;
 
         public void reset()
         {
@@ -55,6 +61,14 @@ namespace Almoxarifado_TCC.Forms
 
         private Form ActivePopup = null; // usado para verificar se existe algum popup ativo
 
+        public void Fechar()
+        {
+            if (ActivePopup != null)
+                ActivePopup.Close();
+            BackPopUp.Visible = false;
+            apagar_icons();
+            pnlPesquisar.Visible = false;
+        }
 
         private void OpenPopup(Form ChildPopup)
         {
@@ -102,6 +116,19 @@ namespace Almoxarifado_TCC.Forms
 
         #region Interações visuais
 
+        public void Panel_PopUp()
+        {
+            BackPopUp.Size = new System.Drawing.Size(219, 346);
+            BackPopUp.Location = new System.Drawing.Point(641, 172);
+        }
+
+        public void Panel_Pesquisar()
+        {
+            pnlPesquisar.Size = new System.Drawing.Size(165, 124);
+            pnlPesquisar.Location = new System.Drawing.Point(641, 216);
+        }
+
+
         public static class CoresGlobais
         {
 
@@ -115,7 +142,7 @@ namespace Almoxarifado_TCC.Forms
         public void apagar_icons()
         {
             btnPesquisar.IconColor = CoresGlobais.Normal;
-            btnVisualizar.IconColor = CoresGlobais.Normal;
+            btnAdicionar.IconColor = CoresGlobais.Normal;
             btnEditar.IconColor = CoresGlobais.Normal;
             btnExcluir.IconColor = CoresGlobais.Normal;
         }
@@ -134,19 +161,19 @@ namespace Almoxarifado_TCC.Forms
             lblPesquisar.Visible = false;
         }
 
-        private void btnVisualizar_MouseEnter(object sender, EventArgs e)
+        private void btnAdicionar_MouseEnter(object sender, EventArgs e)
         {
-            if (btnVisualizar.IconColor != CoresGlobais.Selecionado)
-                btnVisualizar.IconColor = CoresGlobais.Sobre;
-            lblVisualizar.Visible = true;
+            if (btnAdicionar.IconColor != CoresGlobais.Selecionado)
+                btnAdicionar.IconColor = CoresGlobais.Sobre;
+            lblCriarUsu.Visible = true;
 
         }
 
-        private void btnVisualizar_MouseLeave(object sender, EventArgs e)
+        private void btnAdicionar_MouseLeave(object sender, EventArgs e)
         {
-            if (btnVisualizar.IconColor != CoresGlobais.Selecionado)
-                btnVisualizar.IconColor = CoresGlobais.Normal;
-            lblVisualizar.Visible = false;
+            if (btnAdicionar.IconColor != CoresGlobais.Selecionado)
+                btnAdicionar.IconColor = CoresGlobais.Normal;
+            lblCriarUsu.Visible = false;
         }
 
         private void btnEditar_MouseEnter(object sender, EventArgs e)
@@ -184,12 +211,14 @@ namespace Almoxarifado_TCC.Forms
         {
             if (btnPesquisar.IconColor == CoresGlobais.Selecionado)
             {
+                Fechar();
                 apagar_icons();
-                pnlPesquisar.Visible= false;
                 txtPesquisar.Text = "Pesquisar";
             }
             else
             {
+                Panel_Pesquisar();
+                Fechar();
                 apagar_icons();
                 pnlPesquisar.Visible = true;
                 btnPesquisar.IconColor = CoresGlobais.Selecionado;
@@ -208,9 +237,43 @@ namespace Almoxarifado_TCC.Forms
                 txtPesquisar.Text = "Pesquisar";
         }
 
-        private void btnVisualizar_Click(object sender, EventArgs e)
+        private void btnAdicionar_Click(object sender, EventArgs e)
         {
+            if (btnAdicionar.IconColor == CoresGlobais.Selecionado)
+            {
+                apagar_icons();
+                Fechar();
+            }
+            else
+            {
+                apagar_icons();
+                Fechar();
+                btnAdicionar.IconColor = CoresGlobais.Selecionado;
+                Popup.CriarUsuario go = new Popup.CriarUsuario();
+                go.ShowDialog();
+            }
+        }
 
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (btnEditar.IconColor == CoresGlobais.Selecionado)
+            {
+                apagar_icons();
+                Fechar();
+            }
+            else
+            {
+                Panel_PopUp();
+                apagar_icons();
+                BackPopUp.Visible = true;
+                btnEditar.IconColor = CoresGlobais.Selecionado;
+                OpenPopup(new Popup.EditarUsuario());
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            Fechar();
         }
     }
 }

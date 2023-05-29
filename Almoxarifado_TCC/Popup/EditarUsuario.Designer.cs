@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.LinhaTel = new System.Windows.Forms.Panel();
@@ -41,17 +40,7 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Location = new System.Drawing.Point(57, 176);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(98, 24);
-            this.panel4.TabIndex = 25;
             // 
             // label2
             // 
@@ -59,7 +48,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.label2.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(2, 6);
+            this.label2.Location = new System.Drawing.Point(58, 184);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 13);
             this.label2.TabIndex = 0;
@@ -71,8 +60,9 @@
             this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbTipo.Font = new System.Drawing.Font("Candara", 9F);
+            this.cmbTipo.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.cmbTipo.FormattingEnabled = true;
-            this.cmbTipo.Location = new System.Drawing.Point(20, 203);
+            this.cmbTipo.Location = new System.Drawing.Point(20, 201);
             this.cmbTipo.Margin = new System.Windows.Forms.Padding(1);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(170, 22);
@@ -80,13 +70,12 @@
             // 
             // LinhaTel
             // 
-            this.LinhaTel.BackColor = System.Drawing.Color.DimGray;
+            this.LinhaTel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.LinhaTel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.LinhaTel.Location = new System.Drawing.Point(13, 271);
             this.LinhaTel.Name = "LinhaTel";
-            this.LinhaTel.Size = new System.Drawing.Size(189, 2);
+            this.LinhaTel.Size = new System.Drawing.Size(189, 1);
             this.LinhaTel.TabIndex = 20;
-            this.LinhaTel.Visible = false;
             // 
             // txtTelefone
             // 
@@ -99,15 +88,14 @@
             this.txtTelefone.Size = new System.Drawing.Size(189, 17);
             this.txtTelefone.TabIndex = 23;
             this.txtTelefone.Text = "TELEFONE";
-            this.txtTelefone.Visible = false;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.DimGray;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.panel3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel3.Location = new System.Drawing.Point(12, 161);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(189, 2);
+            this.panel3.Size = new System.Drawing.Size(189, 1);
             this.panel3.TabIndex = 15;
             // 
             // txtEmail
@@ -124,11 +112,11 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.DimGray;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.panel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel2.Location = new System.Drawing.Point(13, 106);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(189, 2);
+            this.panel2.Size = new System.Drawing.Size(189, 1);
             this.panel2.TabIndex = 16;
             // 
             // txtCPF
@@ -145,11 +133,11 @@
             // 
             // lineCPF
             // 
-            this.lineCPF.BackColor = System.Drawing.Color.DimGray;
+            this.lineCPF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.lineCPF.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lineCPF.Location = new System.Drawing.Point(13, 51);
             this.lineCPF.Name = "lineCPF";
-            this.lineCPF.Size = new System.Drawing.Size(189, 2);
+            this.lineCPF.Size = new System.Drawing.Size(189, 1);
             this.lineCPF.TabIndex = 17;
             // 
             // txtNome
@@ -180,13 +168,12 @@
             this.btnCancelar.TabIndex = 49;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnCadastrar
             // 
             this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.btnCadastrar.FlatAppearance.BorderSize = 0;
-            this.btnCadastrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(112)))));
-            this.btnCadastrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(151)))));
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Candara", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -204,10 +191,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.ClientSize = new System.Drawing.Size(213, 340);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.cmbTipo);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.LinhaTel);
             this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.panel3);
@@ -221,16 +208,12 @@
             this.MinimumSize = new System.Drawing.Size(213, 340);
             this.Name = "EditarUsuario";
             this.Text = "EditarUsuario";
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbTipo;
         private System.Windows.Forms.Panel LinhaTel;
