@@ -28,19 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelAdm = new System.Windows.Forms.Panel();
             this.lblAdm = new System.Windows.Forms.Label();
-            this.iconSetaAdm = new FontAwesome.Sharp.IconPictureBox();
             this.iconAdm = new FontAwesome.Sharp.IconPictureBox();
             this.panelUsuario = new System.Windows.Forms.Panel();
             this.lblUsuario = new System.Windows.Forms.Label();
-            this.iconSetaUsuario = new FontAwesome.Sharp.IconPictureBox();
             this.iconUsuario = new FontAwesome.Sharp.IconPictureBox();
             this.txtCriarAdm = new System.Windows.Forms.RichTextBox();
             this.txtCriarUsu = new System.Windows.Forms.RichTextBox();
@@ -77,11 +75,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtvAdmin = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
+            this.lblSelecionadoU = new System.Windows.Forms.Label();
+            this.lblNomeU = new System.Windows.Forms.Label();
+            this.lblNomeA = new System.Windows.Forms.Label();
+            this.lblSelecionadoA = new System.Windows.Forms.Label();
             this.panelAdm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconSetaAdm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconAdm)).BeginInit();
             this.panelUsuario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconSetaUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconColab)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtvUsuario)).BeginInit();
@@ -102,7 +102,6 @@
             // 
             this.panelAdm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelAdm.Controls.Add(this.lblAdm);
-            this.panelAdm.Controls.Add(this.iconSetaAdm);
             this.panelAdm.Controls.Add(this.iconAdm);
             this.panelAdm.Location = new System.Drawing.Point(51, 572);
             this.panelAdm.Name = "panelAdm";
@@ -119,19 +118,6 @@
             this.lblAdm.Size = new System.Drawing.Size(149, 14);
             this.lblAdm.TabIndex = 55;
             this.lblAdm.Text = "Perfil de administrador";
-            // 
-            // iconSetaAdm
-            // 
-            this.iconSetaAdm.BackColor = System.Drawing.Color.Transparent;
-            this.iconSetaAdm.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconSetaAdm.IconChar = FontAwesome.Sharp.IconChar.CircleArrowRight;
-            this.iconSetaAdm.IconColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconSetaAdm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconSetaAdm.Location = new System.Drawing.Point(465, 3);
-            this.iconSetaAdm.Name = "iconSetaAdm";
-            this.iconSetaAdm.Size = new System.Drawing.Size(32, 32);
-            this.iconSetaAdm.TabIndex = 1;
-            this.iconSetaAdm.TabStop = false;
             // 
             // iconAdm
             // 
@@ -150,7 +136,6 @@
             // 
             this.panelUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelUsuario.Controls.Add(this.lblUsuario);
-            this.panelUsuario.Controls.Add(this.iconSetaUsuario);
             this.panelUsuario.Controls.Add(this.iconUsuario);
             this.panelUsuario.Location = new System.Drawing.Point(46, 103);
             this.panelUsuario.Name = "panelUsuario";
@@ -167,19 +152,6 @@
             this.lblUsuario.Size = new System.Drawing.Size(110, 14);
             this.lblUsuario.TabIndex = 55;
             this.lblUsuario.Text = "Perfil de usuário";
-            // 
-            // iconSetaUsuario
-            // 
-            this.iconSetaUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.iconSetaUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconSetaUsuario.IconChar = FontAwesome.Sharp.IconChar.CircleArrowRight;
-            this.iconSetaUsuario.IconColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconSetaUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconSetaUsuario.Location = new System.Drawing.Point(465, 3);
-            this.iconSetaUsuario.Name = "iconSetaUsuario";
-            this.iconSetaUsuario.Size = new System.Drawing.Size(32, 32);
-            this.iconSetaUsuario.TabIndex = 1;
-            this.iconSetaUsuario.TabStop = false;
             // 
             // iconUsuario
             // 
@@ -257,33 +229,34 @@
             this.dtvUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtvUsuario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtvUsuario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtvUsuario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtvUsuario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtvUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(78)))), ((int)(((byte)(92)))));
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtvUsuario.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(78)))), ((int)(((byte)(92)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtvUsuario.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtvUsuario.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.dtvUsuario.Location = new System.Drawing.Point(46, 216);
             this.dtvUsuario.Name = "dtvUsuario";
             this.dtvUsuario.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtvUsuario.RowHeadersDefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtvUsuario.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dtvUsuario.Size = new System.Drawing.Size(499, 259);
             this.dtvUsuario.TabIndex = 73;
+            this.dtvUsuario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvUsuario_CellClick);
             // 
             // btnAdicionar
             // 
@@ -484,7 +457,7 @@
             this.pnlPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlPesquisar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.pnlPesquisar.Controls.Add(this.panel4);
-            this.pnlPesquisar.Location = new System.Drawing.Point(314, 294);
+            this.pnlPesquisar.Location = new System.Drawing.Point(406, 296);
             this.pnlPesquisar.MaximumSize = new System.Drawing.Size(165, 124);
             this.pnlPesquisar.MinimumSize = new System.Drawing.Size(165, 124);
             this.pnlPesquisar.Name = "pnlPesquisar";
@@ -520,6 +493,10 @@
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.AutoScroll = true;
+            this.panel3.Controls.Add(this.lblNomeA);
+            this.panel3.Controls.Add(this.lblSelecionadoA);
+            this.panel3.Controls.Add(this.lblNomeU);
+            this.panel3.Controls.Add(this.lblSelecionadoU);
             this.panel3.Controls.Add(this.BackPopUp);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.panel8);
@@ -539,7 +516,7 @@
             this.panel3.Controls.Add(this.txtCriarAdm);
             this.panel3.Controls.Add(this.iconColab);
             this.panel3.Controls.Add(this.txtCriarUsu);
-            this.panel3.Location = new System.Drawing.Point(-7, 3);
+            this.panel3.Location = new System.Drawing.Point(-15, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(885, 995);
             this.panel3.TabIndex = 88;
@@ -549,7 +526,7 @@
             this.BackPopUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BackPopUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.BackPopUp.Controls.Add(this.PopUp);
-            this.BackPopUp.Location = new System.Drawing.Point(64, 188);
+            this.BackPopUp.Location = new System.Drawing.Point(181, 192);
             this.BackPopUp.MinimumSize = new System.Drawing.Size(57, 265);
             this.BackPopUp.Name = "BackPopUp";
             this.BackPopUp.Size = new System.Drawing.Size(219, 346);
@@ -707,31 +684,31 @@
             this.dtvAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtvAdmin.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtvAdmin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtvAdmin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtvAdmin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dtvAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(78)))), ((int)(((byte)(92)))));
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtvAdmin.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(78)))), ((int)(((byte)(92)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtvAdmin.DefaultCellStyle = dataGridViewCellStyle5;
             this.dtvAdmin.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.dtvAdmin.Location = new System.Drawing.Point(49, 683);
             this.dtvAdmin.Name = "dtvAdmin";
             this.dtvAdmin.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtvAdmin.RowHeadersDefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtvAdmin.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dtvAdmin.Size = new System.Drawing.Size(499, 259);
             this.dtvAdmin.TabIndex = 88;
             // 
@@ -748,6 +725,54 @@
             this.label4.Text = "Pesquisar";
             this.label4.Visible = false;
             // 
+            // lblSelecionadoU
+            // 
+            this.lblSelecionadoU.AutoSize = true;
+            this.lblSelecionadoU.BackColor = System.Drawing.Color.Transparent;
+            this.lblSelecionadoU.Font = new System.Drawing.Font("Bahnschrift Light", 8F, System.Drawing.FontStyle.Bold);
+            this.lblSelecionadoU.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblSelecionadoU.Location = new System.Drawing.Point(48, 491);
+            this.lblSelecionadoU.Name = "lblSelecionadoU";
+            this.lblSelecionadoU.Size = new System.Drawing.Size(81, 13);
+            this.lblSelecionadoU.TabIndex = 96;
+            this.lblSelecionadoU.Text = "Selecionado:";
+            // 
+            // lblNomeU
+            // 
+            this.lblNomeU.AutoSize = true;
+            this.lblNomeU.BackColor = System.Drawing.Color.Transparent;
+            this.lblNomeU.Font = new System.Drawing.Font("Bahnschrift Light", 8F, System.Drawing.FontStyle.Bold);
+            this.lblNomeU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
+            this.lblNomeU.Location = new System.Drawing.Point(129, 491);
+            this.lblNomeU.Name = "lblNomeU";
+            this.lblNomeU.Size = new System.Drawing.Size(25, 13);
+            this.lblNomeU.TabIndex = 97;
+            this.lblNomeU.Text = "***";
+            // 
+            // lblNomeA
+            // 
+            this.lblNomeA.AutoSize = true;
+            this.lblNomeA.BackColor = System.Drawing.Color.Transparent;
+            this.lblNomeA.Font = new System.Drawing.Font("Bahnschrift Light", 8F, System.Drawing.FontStyle.Bold);
+            this.lblNomeA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
+            this.lblNomeA.Location = new System.Drawing.Point(129, 959);
+            this.lblNomeA.Name = "lblNomeA";
+            this.lblNomeA.Size = new System.Drawing.Size(25, 13);
+            this.lblNomeA.TabIndex = 99;
+            this.lblNomeA.Text = "***";
+            // 
+            // lblSelecionadoA
+            // 
+            this.lblSelecionadoA.AutoSize = true;
+            this.lblSelecionadoA.BackColor = System.Drawing.Color.Transparent;
+            this.lblSelecionadoA.Font = new System.Drawing.Font("Bahnschrift Light", 8F, System.Drawing.FontStyle.Bold);
+            this.lblSelecionadoA.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblSelecionadoA.Location = new System.Drawing.Point(48, 959);
+            this.lblSelecionadoA.Name = "lblSelecionadoA";
+            this.lblSelecionadoA.Size = new System.Drawing.Size(81, 13);
+            this.lblSelecionadoA.TabIndex = 98;
+            this.lblSelecionadoA.Text = "Selecionado:";
+            // 
             // Gerenciamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -762,11 +787,9 @@
             this.Load += new System.EventHandler(this.Gerenciamento_Load);
             this.panelAdm.ResumeLayout(false);
             this.panelAdm.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconSetaAdm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconAdm)).EndInit();
             this.panelUsuario.ResumeLayout(false);
             this.panelUsuario.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconSetaUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconColab)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtvUsuario)).EndInit();
@@ -792,11 +815,9 @@
 
         private System.Windows.Forms.Panel panelAdm;
         private System.Windows.Forms.Label lblAdm;
-        private FontAwesome.Sharp.IconPictureBox iconSetaAdm;
         private FontAwesome.Sharp.IconPictureBox iconAdm;
         private System.Windows.Forms.Panel panelUsuario;
         private System.Windows.Forms.Label lblUsuario;
-        private FontAwesome.Sharp.IconPictureBox iconSetaUsuario;
         private FontAwesome.Sharp.IconPictureBox iconUsuario;
         private System.Windows.Forms.RichTextBox txtCriarAdm;
         private System.Windows.Forms.RichTextBox txtCriarUsu;
@@ -833,5 +854,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel BackPopUp;
         private System.Windows.Forms.Panel PopUp;
+        private System.Windows.Forms.Label lblNomeA;
+        private System.Windows.Forms.Label lblSelecionadoA;
+        private System.Windows.Forms.Label lblNomeU;
+        private System.Windows.Forms.Label lblSelecionadoU;
     }
 }

@@ -10,6 +10,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Forms;
 using Almoxarifado_TCC.Popup;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Crypto.Tls;
 
 namespace Almoxarifado_TCC.Forms
 {
@@ -17,6 +18,7 @@ namespace Almoxarifado_TCC.Forms
     {
 
         private Form activeForm = null;
+        public string nome_usu;
 
         public Gerenciamento()
         {
@@ -42,6 +44,8 @@ namespace Almoxarifado_TCC.Forms
             dados.Fill(dtUsuario);//manipulação dos dados
             dtvUsuario.DataSource = dtUsuario;//chamo o caminho dos dados
             conexao.Close();
+
+            lblNomeU.Text = "-----";
 
             ClassConexao con1 = new ClassConexao();
             //obtive a conexao
@@ -274,6 +278,35 @@ namespace Almoxarifado_TCC.Forms
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             Fechar();
+        }
+
+        private void dtvUsuario_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int contador = dtvUsuario.RowCount - 1;
+            string usuario, tipo;
+
+            if (e.RowIndex < contador && e.RowIndex >= 0)
+            {
+                //aguarda o codigo da linha selecionada
+                nome_usu = Convert.ToString(dtvUsuario.Rows[e.RowIndex].Cells[0].Value);
+
+                ClassConexao con = new ClassConexao();
+                MySqlConnection conexao = con.getConexao();
+                String consulta = "";
+                consulta = "SELECT u.id_usuario, tu.tipo_usu from tb_usuario u inner join tb_tipo_usuario tu on u.id_tipo_usu=tu.id_tipo_usu where nome_usuario='" + nome_usu + "'";
+                MySqlCommand commando = new MySqlCommand(consulta, conexao);
+                conexao.Open();
+                MySqlDataReader registro = commando.ExecuteReader();
+                registro.Read();
+                tipo = Convert.ToString(registro["tipo_usu"]);
+                conexao.Close();
+
+                lblNomeU.Text = nome_usu + ", " + tipo;
+            }
+            else
+            {
+                lblNomeU.Text = "Campo vazio";
+            }
         }
     }
 }

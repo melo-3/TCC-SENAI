@@ -48,7 +48,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.label2.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(58, 184);
+            this.label2.Location = new System.Drawing.Point(60, 217);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 13);
             this.label2.TabIndex = 0;
@@ -62,7 +62,7 @@
             this.cmbTipo.Font = new System.Drawing.Font("Candara", 9F);
             this.cmbTipo.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.cmbTipo.FormattingEnabled = true;
-            this.cmbTipo.Location = new System.Drawing.Point(20, 201);
+            this.cmbTipo.Location = new System.Drawing.Point(22, 234);
             this.cmbTipo.Margin = new System.Windows.Forms.Padding(1);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(170, 22);
@@ -72,7 +72,7 @@
             // 
             this.LinhaTel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.LinhaTel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LinhaTel.Location = new System.Drawing.Point(13, 271);
+            this.LinhaTel.Location = new System.Drawing.Point(13, 186);
             this.LinhaTel.Name = "LinhaTel";
             this.LinhaTel.Size = new System.Drawing.Size(189, 1);
             this.LinhaTel.TabIndex = 20;
@@ -81,11 +81,11 @@
             // 
             this.txtTelefone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTelefone.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.txtTelefone.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
             this.txtTelefone.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtTelefone.Location = new System.Drawing.Point(11, 253);
+            this.txtTelefone.Location = new System.Drawing.Point(11, 170);
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(189, 17);
+            this.txtTelefone.Size = new System.Drawing.Size(189, 13);
             this.txtTelefone.TabIndex = 23;
             this.txtTelefone.Text = "TELEFONE";
             // 
@@ -93,7 +93,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.panel3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel3.Location = new System.Drawing.Point(12, 161);
+            this.panel3.Location = new System.Drawing.Point(12, 141);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(189, 1);
             this.panel3.TabIndex = 15;
@@ -102,11 +102,11 @@
             // 
             this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmail.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.txtEmail.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
             this.txtEmail.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtEmail.Location = new System.Drawing.Point(11, 142);
+            this.txtEmail.Location = new System.Drawing.Point(11, 125);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(189, 17);
+            this.txtEmail.Size = new System.Drawing.Size(189, 13);
             this.txtEmail.TabIndex = 21;
             this.txtEmail.Text = "EMAIL";
             // 
@@ -114,7 +114,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.panel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel2.Location = new System.Drawing.Point(13, 106);
+            this.panel2.Location = new System.Drawing.Point(13, 96);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(189, 1);
             this.panel2.TabIndex = 16;
@@ -123,11 +123,11 @@
             // 
             this.txtCPF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.txtCPF.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCPF.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.txtCPF.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
             this.txtCPF.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtCPF.Location = new System.Drawing.Point(12, 87);
+            this.txtCPF.Location = new System.Drawing.Point(12, 80);
             this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(189, 17);
+            this.txtCPF.Size = new System.Drawing.Size(189, 13);
             this.txtCPF.TabIndex = 19;
             this.txtCPF.Text = "CPF";
             // 
@@ -144,11 +144,11 @@
             // 
             this.txtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNome.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.txtNome.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
             this.txtNome.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtNome.Location = new System.Drawing.Point(12, 32);
+            this.txtNome.Location = new System.Drawing.Point(12, 35);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(189, 17);
+            this.txtNome.Size = new System.Drawing.Size(189, 13);
             this.txtNome.TabIndex = 18;
             this.txtNome.Text = "NOME";
             // 
@@ -181,7 +181,7 @@
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(83, 29);
             this.btnCadastrar.TabIndex = 48;
-            this.btnCadastrar.Text = "CADASTRAR";
+            this.btnCadastrar.Text = "EDITAR";
             this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
