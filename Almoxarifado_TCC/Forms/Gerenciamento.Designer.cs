@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelAdm = new System.Windows.Forms.Panel();
             this.lblAdm = new System.Windows.Forms.Label();
             this.iconAdm = new FontAwesome.Sharp.IconPictureBox();
@@ -61,6 +61,10 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblNomeA = new System.Windows.Forms.Label();
+            this.lblSelecionadoA = new System.Windows.Forms.Label();
+            this.lblNomeU = new System.Windows.Forms.Label();
+            this.lblSelecionadoU = new System.Windows.Forms.Label();
             this.BackPopUp = new System.Windows.Forms.Panel();
             this.PopUp = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -75,10 +79,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtvAdmin = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
-            this.lblSelecionadoU = new System.Windows.Forms.Label();
-            this.lblNomeU = new System.Windows.Forms.Label();
-            this.lblNomeA = new System.Windows.Forms.Label();
-            this.lblSelecionadoA = new System.Windows.Forms.Label();
             this.panelAdm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconAdm)).BeginInit();
             this.panelUsuario.SuspendLayout();
@@ -229,31 +229,31 @@
             this.dtvUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtvUsuario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtvUsuario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtvUsuario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtvUsuario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
             this.dtvUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(78)))), ((int)(((byte)(92)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtvUsuario.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(78)))), ((int)(((byte)(92)))));
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtvUsuario.DefaultCellStyle = dataGridViewCellStyle26;
             this.dtvUsuario.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.dtvUsuario.Location = new System.Drawing.Point(46, 216);
             this.dtvUsuario.Name = "dtvUsuario";
             this.dtvUsuario.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtvUsuario.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtvUsuario.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
             this.dtvUsuario.Size = new System.Drawing.Size(499, 259);
             this.dtvUsuario.TabIndex = 73;
             this.dtvUsuario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvUsuario_CellClick);
@@ -416,13 +416,15 @@
             this.cbxFiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.cbxFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxFiltro.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F);
+            this.cbxFiltro.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.cbxFiltro.FormattingEnabled = true;
             this.cbxFiltro.Items.AddRange(new object[] {
             "Todos",
-            "Número",
-            "Sala/lab",
-            "Disponível",
-            "Indisponível"});
+            "Nome",
+            "CPF",
+            "Tipo",
+            "Telefone",
+            "Email"});
             this.cbxFiltro.Location = new System.Drawing.Point(22, 70);
             this.cbxFiltro.Name = "cbxFiltro";
             this.cbxFiltro.Size = new System.Drawing.Size(116, 21);
@@ -450,6 +452,7 @@
             this.txtPesquisar.Text = "Pesquisar";
             this.txtPesquisar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPesquisar.Enter += new System.EventHandler(this.txtPesquisar_Enter);
+            this.txtPesquisar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPesquisar_KeyDown);
             this.txtPesquisar.Leave += new System.EventHandler(this.txtPesquisar_Leave);
             // 
             // pnlPesquisar
@@ -516,10 +519,58 @@
             this.panel3.Controls.Add(this.txtCriarAdm);
             this.panel3.Controls.Add(this.iconColab);
             this.panel3.Controls.Add(this.txtCriarUsu);
-            this.panel3.Location = new System.Drawing.Point(-15, 3);
+            this.panel3.Location = new System.Drawing.Point(-31, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(885, 995);
             this.panel3.TabIndex = 88;
+            // 
+            // lblNomeA
+            // 
+            this.lblNomeA.AutoSize = true;
+            this.lblNomeA.BackColor = System.Drawing.Color.Transparent;
+            this.lblNomeA.Font = new System.Drawing.Font("Bahnschrift Light", 8F, System.Drawing.FontStyle.Bold);
+            this.lblNomeA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
+            this.lblNomeA.Location = new System.Drawing.Point(129, 959);
+            this.lblNomeA.Name = "lblNomeA";
+            this.lblNomeA.Size = new System.Drawing.Size(25, 13);
+            this.lblNomeA.TabIndex = 99;
+            this.lblNomeA.Text = "***";
+            // 
+            // lblSelecionadoA
+            // 
+            this.lblSelecionadoA.AutoSize = true;
+            this.lblSelecionadoA.BackColor = System.Drawing.Color.Transparent;
+            this.lblSelecionadoA.Font = new System.Drawing.Font("Bahnschrift Light", 8F, System.Drawing.FontStyle.Bold);
+            this.lblSelecionadoA.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblSelecionadoA.Location = new System.Drawing.Point(48, 959);
+            this.lblSelecionadoA.Name = "lblSelecionadoA";
+            this.lblSelecionadoA.Size = new System.Drawing.Size(81, 13);
+            this.lblSelecionadoA.TabIndex = 98;
+            this.lblSelecionadoA.Text = "Selecionado:";
+            // 
+            // lblNomeU
+            // 
+            this.lblNomeU.AutoSize = true;
+            this.lblNomeU.BackColor = System.Drawing.Color.Transparent;
+            this.lblNomeU.Font = new System.Drawing.Font("Bahnschrift Light", 8F, System.Drawing.FontStyle.Bold);
+            this.lblNomeU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
+            this.lblNomeU.Location = new System.Drawing.Point(129, 491);
+            this.lblNomeU.Name = "lblNomeU";
+            this.lblNomeU.Size = new System.Drawing.Size(25, 13);
+            this.lblNomeU.TabIndex = 97;
+            this.lblNomeU.Text = "***";
+            // 
+            // lblSelecionadoU
+            // 
+            this.lblSelecionadoU.AutoSize = true;
+            this.lblSelecionadoU.BackColor = System.Drawing.Color.Transparent;
+            this.lblSelecionadoU.Font = new System.Drawing.Font("Bahnschrift Light", 8F, System.Drawing.FontStyle.Bold);
+            this.lblSelecionadoU.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblSelecionadoU.Location = new System.Drawing.Point(48, 491);
+            this.lblSelecionadoU.Name = "lblSelecionadoU";
+            this.lblSelecionadoU.Size = new System.Drawing.Size(81, 13);
+            this.lblSelecionadoU.TabIndex = 96;
+            this.lblSelecionadoU.Text = "Selecionado:";
             // 
             // BackPopUp
             // 
@@ -684,31 +735,31 @@
             this.dtvAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtvAdmin.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtvAdmin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtvAdmin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtvAdmin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
             this.dtvAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(78)))), ((int)(((byte)(92)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtvAdmin.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(78)))), ((int)(((byte)(92)))));
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtvAdmin.DefaultCellStyle = dataGridViewCellStyle29;
             this.dtvAdmin.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.dtvAdmin.Location = new System.Drawing.Point(49, 683);
             this.dtvAdmin.Name = "dtvAdmin";
             this.dtvAdmin.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtvAdmin.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtvAdmin.RowHeadersDefaultCellStyle = dataGridViewCellStyle30;
             this.dtvAdmin.Size = new System.Drawing.Size(499, 259);
             this.dtvAdmin.TabIndex = 88;
             // 
@@ -724,54 +775,6 @@
             this.label4.TabIndex = 94;
             this.label4.Text = "Pesquisar";
             this.label4.Visible = false;
-            // 
-            // lblSelecionadoU
-            // 
-            this.lblSelecionadoU.AutoSize = true;
-            this.lblSelecionadoU.BackColor = System.Drawing.Color.Transparent;
-            this.lblSelecionadoU.Font = new System.Drawing.Font("Bahnschrift Light", 8F, System.Drawing.FontStyle.Bold);
-            this.lblSelecionadoU.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblSelecionadoU.Location = new System.Drawing.Point(48, 491);
-            this.lblSelecionadoU.Name = "lblSelecionadoU";
-            this.lblSelecionadoU.Size = new System.Drawing.Size(81, 13);
-            this.lblSelecionadoU.TabIndex = 96;
-            this.lblSelecionadoU.Text = "Selecionado:";
-            // 
-            // lblNomeU
-            // 
-            this.lblNomeU.AutoSize = true;
-            this.lblNomeU.BackColor = System.Drawing.Color.Transparent;
-            this.lblNomeU.Font = new System.Drawing.Font("Bahnschrift Light", 8F, System.Drawing.FontStyle.Bold);
-            this.lblNomeU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
-            this.lblNomeU.Location = new System.Drawing.Point(129, 491);
-            this.lblNomeU.Name = "lblNomeU";
-            this.lblNomeU.Size = new System.Drawing.Size(25, 13);
-            this.lblNomeU.TabIndex = 97;
-            this.lblNomeU.Text = "***";
-            // 
-            // lblNomeA
-            // 
-            this.lblNomeA.AutoSize = true;
-            this.lblNomeA.BackColor = System.Drawing.Color.Transparent;
-            this.lblNomeA.Font = new System.Drawing.Font("Bahnschrift Light", 8F, System.Drawing.FontStyle.Bold);
-            this.lblNomeA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
-            this.lblNomeA.Location = new System.Drawing.Point(129, 959);
-            this.lblNomeA.Name = "lblNomeA";
-            this.lblNomeA.Size = new System.Drawing.Size(25, 13);
-            this.lblNomeA.TabIndex = 99;
-            this.lblNomeA.Text = "***";
-            // 
-            // lblSelecionadoA
-            // 
-            this.lblSelecionadoA.AutoSize = true;
-            this.lblSelecionadoA.BackColor = System.Drawing.Color.Transparent;
-            this.lblSelecionadoA.Font = new System.Drawing.Font("Bahnschrift Light", 8F, System.Drawing.FontStyle.Bold);
-            this.lblSelecionadoA.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblSelecionadoA.Location = new System.Drawing.Point(48, 959);
-            this.lblSelecionadoA.Name = "lblSelecionadoA";
-            this.lblSelecionadoA.Size = new System.Drawing.Size(81, 13);
-            this.lblSelecionadoA.TabIndex = 98;
-            this.lblSelecionadoA.Text = "Selecionado:";
             // 
             // Gerenciamento
             // 

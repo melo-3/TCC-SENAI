@@ -113,27 +113,26 @@ namespace Almoxarifado_TCC.Popup
             ClassUsuario usu = new ClassUsuario();//chamo classe usuario
             ClassConexao con = new ClassConexao();//chamo a classe conexao
             MySqlConnection connection = con.getConexao();
-            
 
-                    // Comando SQL para deletar a conta
-                    string sql = "DELETE FROM tb_admin WHERE cpf = @cpf AND senha = @senha";
+            // Comando SQL para deletar a conta
+            string sql = "DELETE FROM tb_admin WHERE cpf = @cpf AND senha = @senha";
             MySqlCommand command = new MySqlCommand(sql, connection);
             connection.Open();
             command.Parameters.AddWithValue("@cpf", cpf);
             command.Parameters.AddWithValue("@senha", senha);
 
-                        int rowsAffected = command.ExecuteNonQuery();
+            int rowsAffected = command.ExecuteNonQuery();
 
-                        if (rowsAffected > 0)
-                        {
-                            return true; // Conta deletada com sucesso
-                        }
-                        else
-                        {
-                             return false; // Falha ao deletar a conta
-                        }
-                                connection.Close();
-            
+            if (rowsAffected > 0)
+            {
+                return true; // Conta deletada com sucesso
+            }
+            else
+            {
+                return false; // Falha ao deletar a conta
+            }
+            connection.Close();
+
         }
 
         private void novoform()// define o programa que vai ser aberto

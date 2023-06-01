@@ -232,6 +232,12 @@
     <Compile Include="Popup\DeletarConta.Designer.cs">
       <DependentUpon>DeletarConta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Popup\DeletarUsu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\DeletarUsu.Designer.cs">
+      <DependentUpon>DeletarUsu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Popup\Descitem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -365,6 +371,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Popup\DeletarConta.resx">
       <DependentUpon>DeletarConta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\DeletarUsu.resx">
+      <DependentUpon>DeletarUsu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Popup\Descitem.resx">
       <DependentUpon>Descitem.cs</DependentUpon>

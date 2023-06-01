@@ -19,6 +19,7 @@ namespace Almoxarifado_TCC.Forms
 
         private Form activeForm = null;
         public string nome_usu;
+        public int id_usu;
 
         public Gerenciamento()
         {
@@ -184,7 +185,9 @@ namespace Almoxarifado_TCC.Forms
         {
             if (btnEditar.IconColor != CoresGlobais.Selecionado)
                 btnEditar.IconColor = CoresGlobais.Sobre;
+
             lblEditar.Visible = true;
+            
         }
 
         private void btnEditar_MouseLeave(object sender, EventArgs e)
@@ -260,30 +263,66 @@ namespace Almoxarifado_TCC.Forms
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (btnEditar.IconColor == CoresGlobais.Selecionado)
+            string txt = "Selecione um usuário para editar";
+            if (lblNomeU.Text == "Campo vazio" || lblNomeU.Text == "-----" || lblNomeU.Text == txt)
             {
                 apagar_icons();
                 Fechar();
+                lblNomeU.Text = txt;
             }
             else
             {
+
+                if (btnEditar.IconColor == CoresGlobais.Selecionado)
+                {
+                apagar_icons();
+                Fechar();
+                }
+                else
+                {
                 Panel_PopUp();
                 apagar_icons();
                 BackPopUp.Visible = true;
                 btnEditar.IconColor = CoresGlobais.Selecionado;
-                OpenPopup(new Popup.EditarUsuario());
+                OpenPopup(new Popup.EditarUsuario(id_usu));
+                }   
+
             }
+            
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            Fechar();
+            string txt = "Selecione um usuário para excluir";
+            if (lblNomeU.Text == "Campo vazio" || lblNomeU.Text == "-----" || lblNomeU.Text == txt)
+            {
+                apagar_icons();
+                Fechar();
+                lblNomeU.Text = txt;
+            }
+            else
+            {
+                if (btnExcluir.IconColor == CoresGlobais.Selecionado)
+                {
+                    apagar_icons();
+                    Fechar();
+                }
+                else
+                {
+                    Panel_PopUp();
+                    apagar_icons();
+                    BackPopUp.Visible = true;
+                    btnExcluir.IconColor = CoresGlobais.Selecionado;
+                    OpenPopup(new Popup.DeletarUsu(id_usu));
+                }
+            }
+            
         }
 
         private void dtvUsuario_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int contador = dtvUsuario.RowCount - 1;
-            string usuario, tipo;
+            string tipo;
 
             if (e.RowIndex < contador && e.RowIndex >= 0)
             {
@@ -299,6 +338,7 @@ namespace Almoxarifado_TCC.Forms
                 MySqlDataReader registro = commando.ExecuteReader();
                 registro.Read();
                 tipo = Convert.ToString(registro["tipo_usu"]);
+                id_usu = Convert.ToInt32(registro["id_usuario"]);
                 conexao.Close();
 
                 lblNomeU.Text = nome_usu + ", " + tipo;
@@ -306,6 +346,53 @@ namespace Almoxarifado_TCC.Forms
             else
             {
                 lblNomeU.Text = "Campo vazio";
+            }
+        }
+
+        private void txtPesquisar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && txtPesquisar.Text != "PESQUISAR" && txtPesquisar.Text != "")
+            {
+
+                //instancia de conexão
+                ClassConexao con = new ClassConexao();
+                //obtive a conexao
+                MySqlConnection conexao = con.getConexao();
+                String consulta = "";
+                if (cbxFiltro.Text == "Todos" || cbxFiltro.Text == "") //Campo vazio lista tudo
+                {
+                    reset();
+                }
+                else if (cbxFiltro.Text == "Nome")//Se tiver informação lista
+                {
+                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.nome_usuario='"+ txtPesquisar.Text +"'";
+                }
+                else if (cbxFiltro.Text == "Tipo")
+                {
+                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where t.tipo_usu='" + txtPesquisar.Text + "'";
+                }
+                else if (cbxFiltro.Text == "CPF")
+                {
+                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.cpf='" + txtPesquisar.Text + "'";
+                }
+                else if (cbxFiltro.Text == "Email")
+                {
+                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.email='" + txtPesquisar.Text + "'";
+                }
+                else if (cbxFiltro.Text == "Telefone")
+                {
+                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.Telefone='" + txtPesquisar.Text + "'";
+                }
+                //Monta meu comando sql
+                MySqlCommand commando = new MySqlCommand(consulta, conexao);
+                conexao.Open();//Abro minha conexao
+                               //monto a tabela de dados
+                MySqlDataAdapter dados = new MySqlDataAdapter(commando);
+                //Crio uma nova tabela de dados
+                DataTable dtUsuario = new DataTable();
+                dados.Fill(dtUsuario);//manipulação dos dados
+                dtvUsuario.DataSource = dtUsuario;//chamo o caminho dos dados
+
             }
         }
     }

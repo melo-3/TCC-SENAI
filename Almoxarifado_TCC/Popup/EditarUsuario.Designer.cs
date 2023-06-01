@@ -60,13 +60,14 @@
             this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbTipo.Font = new System.Drawing.Font("Candara", 9F);
-            this.cmbTipo.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.cmbTipo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cmbTipo.FormattingEnabled = true;
             this.cmbTipo.Location = new System.Drawing.Point(22, 234);
             this.cmbTipo.Margin = new System.Windows.Forms.Padding(1);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(170, 22);
             this.cmbTipo.TabIndex = 5;
+            this.cmbTipo.SelectedIndexChanged += new System.EventHandler(this.cmbTipo_SelectedIndexChanged);
             // 
             // LinhaTel
             // 
@@ -88,6 +89,8 @@
             this.txtTelefone.Size = new System.Drawing.Size(189, 13);
             this.txtTelefone.TabIndex = 23;
             this.txtTelefone.Text = "TELEFONE";
+            this.txtTelefone.Enter += new System.EventHandler(this.txtTelefone_Enter);
+            this.txtTelefone.Leave += new System.EventHandler(this.txtTelefone_Leave);
             // 
             // panel3
             // 
@@ -109,6 +112,8 @@
             this.txtEmail.Size = new System.Drawing.Size(189, 13);
             this.txtEmail.TabIndex = 21;
             this.txtEmail.Text = "EMAIL";
+            this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
+            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // panel2
             // 
@@ -130,6 +135,10 @@
             this.txtCPF.Size = new System.Drawing.Size(189, 13);
             this.txtCPF.TabIndex = 19;
             this.txtCPF.Text = "CPF";
+            this.txtCPF.TextChanged += new System.EventHandler(this.txtCPF_TextChanged);
+            this.txtCPF.Enter += new System.EventHandler(this.txtCPF_Enter);
+            this.txtCPF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCPF_KeyPress);
+            this.txtCPF.Leave += new System.EventHandler(this.txtCPF_Leave);
             // 
             // lineCPF
             // 
@@ -151,6 +160,8 @@
             this.txtNome.Size = new System.Drawing.Size(189, 13);
             this.txtNome.TabIndex = 18;
             this.txtNome.Text = "NOME";
+            this.txtNome.Enter += new System.EventHandler(this.txtNome_Enter);
+            this.txtNome.Leave += new System.EventHandler(this.txtNome_Leave);
             // 
             // btnCancelar
             // 
@@ -208,6 +219,7 @@
             this.MinimumSize = new System.Drawing.Size(213, 340);
             this.Name = "EditarUsuario";
             this.Text = "EditarUsuario";
+            this.Load += new System.EventHandler(this.EditarUsuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
