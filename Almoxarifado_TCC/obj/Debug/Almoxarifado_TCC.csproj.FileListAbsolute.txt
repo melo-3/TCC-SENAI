@@ -686,3 +686,4 @@ C:\Users\Aluno\Documents\GitHub\TCC-SENAI\Almoxarifado_TCC\obj\Debug\Almoxarifad
 C:\Users\Aluno\Documents\GitHub\TCC-SENAI\Almoxarifado_TCC\obj\Debug\Almoxarifado_TCC.Forms.Gerenciamento.resources
 C:\Users\Aluno\Documents\GitHub\TCC-SENAI\Almoxarifado_TCC\obj\Debug\Almoxarifado_TCC.Popup.EditarUsuario.resources
 C:\Users\Aluno\Documents\GitHub\TCC-SENAI\Almoxarifado_TCC\obj\Debug\Almoxarifado_TCC.Popup.DeletarUsu.resources
+C:\Users\Aluno\Documents\GitHub\TCC-SENAI\Almoxarifado_TCC\obj\Debug\Almoxarifado_TCC.Popup.VisualizarADM.resources

@@ -267,8 +267,8 @@ namespace Almoxarifado_TCC.Popup
 
             try
             {
-                ClassConexao con = new ClassConexao();         //instancia de conexão
-                MySqlConnection conexao = con.getConexao();      //obtive a conexao
+                ClassConexao con = new ClassConexao();//instancia de conexão
+                MySqlConnection conexao = con.getConexao();//obtive a conexao
 
                 string selectQuery = "SELECT foto FROM tb_admin WHERE id_admin = @id";
                 MySqlCommand command = new MySqlCommand(selectQuery, conexao);
@@ -286,12 +286,12 @@ namespace Almoxarifado_TCC.Popup
 
                             using (MemoryStream ms = new MemoryStream(imageData))
                             {
-                                picPerfil.Image = Image.FromStream(ms);
+                                panelPerfiFoto.BackgroundImage = Image.FromStream(ms);
                             }
                         }
                         else
                         {
-                            picPerfil.Image = null; // Se a imagem for nula, limpa o controle PictureBox
+                            panelPerfiFoto.BackgroundImage = null; // Se a imagem for nula, limpa o controle PictureBox
                         }
                     }
                 }

@@ -18,8 +18,8 @@ namespace Almoxarifado_TCC.Forms
     {
 
         private Form activeForm = null;
-        public string nome_usu;
-        public int id_usu;
+        public string nome_usu, nome_admin;
+        public int id_usu, id_adm;
 
         public Gerenciamento()
         {
@@ -62,6 +62,8 @@ namespace Almoxarifado_TCC.Forms
             dados1.Fill(dtAdmin);//manipulação dos dados
             dtvAdmin.DataSource = dtAdmin;//chamo o caminho dos dados
             conexao1.Close();
+
+            lblNomeA.Text = "-----";
         }
 
         private Form ActivePopup = null; // usado para verificar se existe algum popup ativo
@@ -73,6 +75,7 @@ namespace Almoxarifado_TCC.Forms
             BackPopUp.Visible = false;
             apagar_icons();
             pnlPesquisar.Visible = false;
+            pnlPesquisarA.Visible = false;
         }
 
         private void OpenPopup(Form ChildPopup)
@@ -117,8 +120,6 @@ namespace Almoxarifado_TCC.Forms
             dtvAdmin.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
 
-
-
         #region Interações visuais
 
         public void Panel_PopUp()
@@ -150,6 +151,9 @@ namespace Almoxarifado_TCC.Forms
             btnAdicionar.IconColor = CoresGlobais.Normal;
             btnEditar.IconColor = CoresGlobais.Normal;
             btnExcluir.IconColor = CoresGlobais.Normal;
+            btnPesquisarA.IconColor = CoresGlobais.Normal;
+            btnVisualizarA.IconColor = CoresGlobais.Normal;
+            btnCriarAdm.IconColor = CoresGlobais.Normal;
         }
 
         private void btnPesquisar_MouseEnter(object sender, EventArgs e)
@@ -211,6 +215,71 @@ namespace Almoxarifado_TCC.Forms
             lblExcluir.Visible = false;
         }
 
+        private void btnPesquisarA_MouseEnter(object sender, EventArgs e)
+        {
+            if (btnPesquisarA.IconColor != CoresGlobais.Selecionado)
+                btnPesquisarA.IconColor = CoresGlobais.Sobre;
+            lblPesquisarA.Visible = true;
+        }
+
+        private void btnPesquisarA_MouseLeave(object sender, EventArgs e)
+        {
+            if (btnPesquisarA.IconColor != CoresGlobais.Selecionado)
+                btnPesquisarA.IconColor = CoresGlobais.Normal;
+            lblPesquisarA.Visible = false;
+        }
+
+        private void btnVisualizarA_MouseEnter(object sender, EventArgs e)
+        {
+            if (btnVisualizarA.IconColor != CoresGlobais.Selecionado)
+                btnVisualizarA.IconColor = CoresGlobais.Sobre;
+            lblVisualizarA.Visible = true;
+        }
+
+        private void btnVisualizarA_MouseLeave(object sender, EventArgs e)
+        {
+            if (btnVisualizarA.IconColor != CoresGlobais.Selecionado)
+                btnVisualizarA.IconColor = CoresGlobais.Normal;
+            lblVisualizarA.Visible = false;
+        }
+
+        private void btnCriarAdm_MouseEnter(object sender, EventArgs e)
+        {
+            if (btnCriarAdm.IconColor != CoresGlobais.Selecionado)
+                btnCriarAdm.IconColor = CoresGlobais.Sobre;
+            lblCriarAdm.Visible = true;
+        }
+
+        private void btnCriarAdm_MouseLeave(object sender, EventArgs e)
+        {
+            if (btnCriarAdm.IconColor != CoresGlobais.Selecionado)
+                btnCriarAdm.IconColor = CoresGlobais.Normal;
+            lblCriarAdm.Visible = false;
+        }
+
+        private void txtPesquisar_Enter(object sender, EventArgs e)
+        {
+            if (txtPesquisar.Text == "Pesquisar")
+                txtPesquisar.Text = "";
+        }
+
+        private void txtPesquisar_Leave(object sender, EventArgs e)
+        {
+            if (txtPesquisar.Text == "")
+                txtPesquisar.Text = "Pesquisar";
+        }
+
+        private void txtPesquisarA_Enter(object sender, EventArgs e)
+        {
+            if (txtPesquisarA.Text == "Pesquisar")
+                txtPesquisarA.Text = "";
+        }
+
+        private void txtPesquisarA_Leave(object sender, EventArgs e)
+        {
+            if (txtPesquisarA.Text == "")
+                txtPesquisarA.Text = "Pesquisar";
+        }
 
         #endregion
 
@@ -230,19 +299,7 @@ namespace Almoxarifado_TCC.Forms
                 pnlPesquisar.Visible = true;
                 btnPesquisar.IconColor = CoresGlobais.Selecionado;
             }
-        }
-
-        private void txtPesquisar_Enter(object sender, EventArgs e)
-        {
-            if (txtPesquisar.Text == "Pesquisar")
-                txtPesquisar.Text = "";
-        }
-
-        private void txtPesquisar_Leave(object sender, EventArgs e)
-        {
-            if (txtPesquisar.Text == "")
-                txtPesquisar.Text = "Pesquisar";
-        }
+        }  
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
@@ -351,7 +408,7 @@ namespace Almoxarifado_TCC.Forms
 
         private void txtPesquisar_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && txtPesquisar.Text != "PESQUISAR" && txtPesquisar.Text != "")
+            if (e.KeyCode == Keys.Enter && txtPesquisar.Text != "Pesquisar" && txtPesquisar.Text != "")
             {
 
                 //instancia de conexão
@@ -361,7 +418,7 @@ namespace Almoxarifado_TCC.Forms
                 String consulta = "";
                 if (cbxFiltro.Text == "Todos" || cbxFiltro.Text == "") //Campo vazio lista tudo
                 {
-                    reset();
+                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu";
                 }
                 else if (cbxFiltro.Text == "Nome")//Se tiver informação lista
                 {
@@ -395,5 +452,134 @@ namespace Almoxarifado_TCC.Forms
 
             }
         }
+
+        private void btnPesquisarA_Click(object sender, EventArgs e)
+        {
+            if (btnPesquisarA.IconColor == CoresGlobais.Selecionado)
+            {
+                Fechar();
+                apagar_icons();
+                txtPesquisarA.Text = "Pesquisar";
+            }
+            else
+            {
+                Fechar();
+                apagar_icons();
+                pnlPesquisarA.Location = new System.Drawing.Point(643, 677);
+                pnlPesquisarA.Visible = true;
+                btnPesquisarA.IconColor = CoresGlobais.Selecionado;
+            }
+        }
+
+        private void txtPesquisarA_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && txtPesquisarA.Text != "Pesquisar" && txtPesquisarA.Text != "")
+            {
+                //instancia de conexão
+                ClassConexao con = new ClassConexao();
+                //obtive a conexao
+                MySqlConnection conexao = con.getConexao();
+                String consulta = "";
+                if (cbxFiltroA.Text == "Todos" || txtPesquisarA.Text == "") //Campo vazio lista tudo
+                {
+                    consulta = "SELECT nome_admin, email, telefone from tb_admin"; 
+                }
+                else if (cbxFiltroA.Text == "Nome")//Se tiver informação lista
+                {
+                    consulta = "SELECT nome_admin, email, telefone from tb_admin where nome_admin='" + txtPesquisarA.Text + "'";
+                }
+                else if (cbxFiltroA.Text == "Email")
+                {
+                    consulta = "SELECT nome_admin, email, telefone from tb_admin where email='" + txtPesquisarA.Text + "'";
+                }
+                else if (cbxFiltroA.Text == "Telefone")
+                {
+                    consulta = "SELECT nome_admin, email, telefone from tb_admin where telefone='" + txtPesquisarA.Text + "'";
+                }
+                //Monta meu comando sql
+                MySqlCommand commando = new MySqlCommand(consulta, conexao);
+                conexao.Open();//Abro minha conexao
+                               //monto a tabela de dados
+                MySqlDataAdapter dados = new MySqlDataAdapter(commando);
+                //Crio uma nova tabela de dados
+                DataTable dtAdmin = new DataTable();
+                dados.Fill(dtAdmin);//manipulação dos dados
+                dtvAdmin.DataSource = dtAdmin;//chamo o caminho dos dados
+            }
+        }
+
+        private void btnCriarAdm_Click(object sender, EventArgs e)
+        {
+            if (btnCriarAdm.IconColor == CoresGlobais.Selecionado)
+            {
+                apagar_icons();
+                Fechar();
+            }
+            else
+            {
+                apagar_icons();
+                Fechar();
+                btnCriarAdm.IconColor = CoresGlobais.Selecionado;
+                Popup.CriarAdmin go = new Popup.CriarAdmin();
+                go.ShowDialog();
+            }
+        }
+
+        private void dtvAdmin_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int contador = dtvUsuario.RowCount - 1;
+
+            if (e.RowIndex < contador && e.RowIndex >= 0)
+            {
+                //aguarda o codigo da linha selecionada
+                nome_admin = Convert.ToString(dtvAdmin.Rows[e.RowIndex].Cells[0].Value);
+
+                ClassConexao con = new ClassConexao();
+                MySqlConnection conexao = con.getConexao();
+                String consulta = "";
+                consulta = "SELECT id_admin from tb_admin where nome_admin ='" + nome_admin + "'";
+                MySqlCommand commando = new MySqlCommand(consulta, conexao);
+                conexao.Open();
+                MySqlDataReader registro = commando.ExecuteReader();
+                registro.Read();
+                id_adm = Convert.ToInt32(registro["id_admin"]);
+                conexao.Close();
+
+                lblNomeA.Text = nome_admin;
+            }
+            else
+            {
+                lblNomeA.Text = "Campo vazio";
+            }
+        }
+
+        private void btnVisualizarA_Click(object sender, EventArgs e)
+        {
+            string txt = "Selecione um administrador para visualizar";
+            if (lblNomeA.Text == "Campo vazio" || lblNomeA.Text == "-----" || lblNomeA.Text == txt)
+            {
+                apagar_icons();
+                Fechar();
+                lblNomeA.Text = txt;
+            }
+            else
+            {
+                if (btnVisualizarA.IconColor == CoresGlobais.Selecionado)
+                {
+                    apagar_icons();
+                    Fechar();
+                }
+                else
+                {
+                    BackPopUp.Location = new System.Drawing.Point(641, 684);
+                    apagar_icons();
+                    BackPopUp.Visible = true;
+                    btnVisualizarA.IconColor = CoresGlobais.Selecionado;
+                    OpenPopup(new Popup.VisualizarADM(id_adm));
+                }
+            }
+        }
+
+      
     }
 }
