@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Almoxarifado_TCC.Forms;
 using MySql.Data.MySqlClient;
 
 namespace Almoxarifado_TCC.Popup
@@ -37,13 +39,17 @@ namespace Almoxarifado_TCC.Popup
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void label7_MouseDown(object sender, MouseEventArgs e)
         {
-            this.Close();
+            ReliaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-
-
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            Gerenciamento.CurrentInstance.apagar_icons();
+            this.Close();
+        }
 
         private void txtNome_Enter(object sender, EventArgs e)
         {
@@ -201,7 +207,7 @@ namespace Almoxarifado_TCC.Popup
                     {
                         txtTelefone.Text = "";
                     }
-                    string sql = "insert into tb_admin(nome_admin,cpf,email,senha,telefone) values" + "('" + txtNome.Text + "','" + txtCPF.Text + "','" + txtEmail.Text + "','" + txtSenha.Text + "','" + txtTelefone.Text + "')";
+                    string sql = "insert into tb_admin(nome_admin,cpf,email,senha,telefone,foto) values" + "('" + txtNome.Text + "','" + txtCPF.Text + "','" + txtEmail.Text + "','" + txtSenha.Text + "','" + txtTelefone.Text + "','" + image + "')";
                     MySqlCommand comando = new MySqlCommand(sql, conexao);
                     conexao.Open();
                     comando.ExecuteReader();
@@ -215,8 +221,32 @@ namespace Almoxarifado_TCC.Popup
                 finally
                 {
                     con.desconectar();
+                    Gerenciamento.CurrentInstance.apagar_icons();
                 }
             }
+        }
+        byte[] image;
+        public static class ImageDataHolder
+        {
+            public static byte[] imagem { get; set; }
+        }
+
+        private void iconFoto_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog foto = new OpenFileDialog(); // Cria uma instância de OpenFileDialog para permitir que o usuário selecione uma imagem.
+            foto.Filter = "Image Files(*.jpg;*.png)|*.jpg;*.png"; // Define um filtro para exibir apenas arquivos de imagem com extensões .jpg e .png.
+
+            if (foto.ShowDialog() == DialogResult.OK) // Exibe a caixa de diálogo para selecionar a imagem e verifica se o usuário selecionou um arquivo e pressionou "OK".
+            {
+                string filePath = foto.FileName; // Obtém o caminho completo do arquivo selecionado.
+                byte[] imageData = File.ReadAllBytes(filePath); // Lê os dados da imagem selecionada e os armazena em um array de bytes.
+                image= imageData;
+            } // Define a imagem de fundo do controle PictureBox (pnlFoto) com base nos dados da imagem.
+            
+            /*using (MemoryStream ms = new MemoryStream(imageData))
+            {
+                pnlFoto.BackgroundImage = Image.FromStream(ms);
+            }*/
         }
     }
 }

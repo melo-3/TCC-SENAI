@@ -137,12 +137,10 @@ namespace Almoxarifado_TCC.Forms
 
         public static class CoresGlobais
         {
-
             public static Color Sobre { get; } = Color.FromArgb(118, 131, 143);
             public static Color Normal { get; } = SystemColors.ButtonFace;
             public static Color Selecionado { get; } = Color.CornflowerBlue;
             public static Color Danger { get; } = Color.FromArgb(168, 2, 2);
-
         }
 
         public void apagar_icons()

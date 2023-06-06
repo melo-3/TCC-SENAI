@@ -61,6 +61,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblCriarAdm = new System.Windows.Forms.Label();
             this.lblNomeA = new System.Windows.Forms.Label();
             this.lblSelecionadoA = new System.Windows.Forms.Label();
             this.lblNomeU = new System.Windows.Forms.Label();
@@ -74,13 +75,12 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.btnCriarAdm = new FontAwesome.Sharp.IconButton();
             this.btnPesquisarA = new FontAwesome.Sharp.IconButton();
             this.btnVisualizarA = new FontAwesome.Sharp.IconButton();
             this.lblVisualizarA = new System.Windows.Forms.Label();
             this.dtvAdmin = new System.Windows.Forms.DataGridView();
             this.lblPesquisarA = new System.Windows.Forms.Label();
-            this.btnCriarAdm = new FontAwesome.Sharp.IconButton();
-            this.lblCriarAdm = new System.Windows.Forms.Label();
             this.panelAdm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconAdm)).BeginInit();
             this.panelUsuario.SuspendLayout();
@@ -525,10 +525,23 @@
             this.panel3.Controls.Add(this.txtCriarAdm);
             this.panel3.Controls.Add(this.iconColab);
             this.panel3.Controls.Add(this.txtCriarUsu);
-            this.panel3.Location = new System.Drawing.Point(9, 3);
+            this.panel3.Location = new System.Drawing.Point(0, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(885, 1091);
             this.panel3.TabIndex = 88;
+            // 
+            // lblCriarAdm
+            // 
+            this.lblCriarAdm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCriarAdm.AutoSize = true;
+            this.lblCriarAdm.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblCriarAdm.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblCriarAdm.Location = new System.Drawing.Point(638, 842);
+            this.lblCriarAdm.Name = "lblCriarAdm";
+            this.lblCriarAdm.Size = new System.Drawing.Size(127, 13);
+            this.lblCriarAdm.TabIndex = 100;
+            this.lblCriarAdm.Text = "Criar Administrador";
+            this.lblCriarAdm.Visible = false;
             // 
             // lblNomeA
             // 
@@ -688,6 +701,28 @@
             this.panel9.Size = new System.Drawing.Size(51, 191);
             this.panel9.TabIndex = 80;
             // 
+            // btnCriarAdm
+            // 
+            this.btnCriarAdm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            this.btnCriarAdm.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.btnCriarAdm.FlatAppearance.BorderSize = 0;
+            this.btnCriarAdm.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            this.btnCriarAdm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            this.btnCriarAdm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            this.btnCriarAdm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCriarAdm.IconChar = FontAwesome.Sharp.IconChar.PersonCirclePlus;
+            this.btnCriarAdm.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCriarAdm.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnCriarAdm.IconSize = 30;
+            this.btnCriarAdm.Location = new System.Drawing.Point(9, 146);
+            this.btnCriarAdm.Name = "btnCriarAdm";
+            this.btnCriarAdm.Size = new System.Drawing.Size(33, 33);
+            this.btnCriarAdm.TabIndex = 78;
+            this.btnCriarAdm.UseVisualStyleBackColor = false;
+            this.btnCriarAdm.Click += new System.EventHandler(this.btnCriarAdm_Click);
+            this.btnCriarAdm.MouseEnter += new System.EventHandler(this.btnCriarAdm_MouseEnter);
+            this.btnCriarAdm.MouseLeave += new System.EventHandler(this.btnCriarAdm_MouseLeave);
+            // 
             // btnPesquisarA
             // 
             this.btnPesquisarA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
@@ -794,41 +829,6 @@
             this.lblPesquisarA.TabIndex = 94;
             this.lblPesquisarA.Text = "Pesquisar";
             this.lblPesquisarA.Visible = false;
-            // 
-            // btnCriarAdm
-            // 
-            this.btnCriarAdm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            this.btnCriarAdm.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
-            this.btnCriarAdm.FlatAppearance.BorderSize = 0;
-            this.btnCriarAdm.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            this.btnCriarAdm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            this.btnCriarAdm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            this.btnCriarAdm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCriarAdm.IconChar = FontAwesome.Sharp.IconChar.PersonCirclePlus;
-            this.btnCriarAdm.IconColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCriarAdm.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnCriarAdm.IconSize = 30;
-            this.btnCriarAdm.Location = new System.Drawing.Point(9, 146);
-            this.btnCriarAdm.Name = "btnCriarAdm";
-            this.btnCriarAdm.Size = new System.Drawing.Size(33, 33);
-            this.btnCriarAdm.TabIndex = 78;
-            this.btnCriarAdm.UseVisualStyleBackColor = false;
-            this.btnCriarAdm.Click += new System.EventHandler(this.btnCriarAdm_Click);
-            this.btnCriarAdm.MouseEnter += new System.EventHandler(this.btnCriarAdm_MouseEnter);
-            this.btnCriarAdm.MouseLeave += new System.EventHandler(this.btnCriarAdm_MouseLeave);
-            // 
-            // lblCriarAdm
-            // 
-            this.lblCriarAdm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCriarAdm.AutoSize = true;
-            this.lblCriarAdm.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblCriarAdm.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblCriarAdm.Location = new System.Drawing.Point(638, 842);
-            this.lblCriarAdm.Name = "lblCriarAdm";
-            this.lblCriarAdm.Size = new System.Drawing.Size(127, 13);
-            this.lblCriarAdm.TabIndex = 100;
-            this.lblCriarAdm.Text = "Criar Administrador";
-            this.lblCriarAdm.Visible = false;
             // 
             // Gerenciamento
             // 
