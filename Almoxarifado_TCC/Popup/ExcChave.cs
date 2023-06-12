@@ -56,13 +56,8 @@ namespace Almoxarifado_TCC.Popup
             }
         }
 
-       
-
         private void btnSim_Click(object sender, EventArgs e)
         {
-
-
-            
             ClassConexao con = new ClassConexao();//instancia de conexão
             MySqlConnection conexao = con.getConexao(); //obtive a conexao
             String consulta = "SELECT sala_lab from tb_chave where num_chave = " + this.cod_chave + "";
@@ -90,7 +85,6 @@ namespace Almoxarifado_TCC.Popup
                 this.Close();
                 //MessageBox.Show("Nome: " + this.cod_chave);
                 Popup.Chave.CurrentInstance.reset();
-
             }
             else
             {
@@ -101,11 +95,6 @@ namespace Almoxarifado_TCC.Popup
         private void btnNao_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void txtConfirm_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

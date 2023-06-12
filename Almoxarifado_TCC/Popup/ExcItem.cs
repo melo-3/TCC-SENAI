@@ -45,7 +45,6 @@ namespace Almoxarifado_TCC.Popup
             if (txtConfirm.Text == "Insira o nome do item")
             {
                 txtConfirm.Text = "";
-                txtConfirm.ForeColor = Color.Black;
             }
         }
 
@@ -54,7 +53,6 @@ namespace Almoxarifado_TCC.Popup
             if (txtConfirm.Text == "")
             {
                 txtConfirm.Text = "Insira o nome do item";
-                txtConfirm.ForeColor = Color.Black;
             }
         }
 
@@ -65,7 +63,6 @@ namespace Almoxarifado_TCC.Popup
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             ClassConexao con = new ClassConexao();//instancia de conexão
             MySqlConnection conexao = con.getConexao(); //obtive a conexao
             String consulta = "SELECT nome_item from tb_item where id_item = " + this.cod_item + "";
@@ -99,12 +96,6 @@ namespace Almoxarifado_TCC.Popup
             {
                 MessageBox.Show("Voce escreveu o item errada");
             }
-
-        }
-
-        private void iconExc_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

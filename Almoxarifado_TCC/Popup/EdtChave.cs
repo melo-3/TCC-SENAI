@@ -146,6 +146,7 @@ namespace Almoxarifado_TCC.Popup
             finally
             {
                 // Fecha a conexão com o banco de dados
+                TelaPrincipal.CurrentInstance.Popups_Fechar();
                 conexao2.Close();
             }
 

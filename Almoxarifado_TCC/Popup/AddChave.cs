@@ -110,8 +110,6 @@ namespace Almoxarifado_TCC.Popup
                 {
                     MessageBox.Show("Campo Status está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                
-
 
             else
             {
@@ -126,7 +124,7 @@ namespace Almoxarifado_TCC.Popup
                     MySqlConnection conexao = con.getConexao();
                     //para a segurança dos dados
                     
-                    string sql = "insert into tb_chave(num_chave,sala_lab,stats,obs) values" + "('" + txtNumero.Text + "','" + txtSala.Text + "','" + cbxStatus.Text + "','Obs: " + txtObs.Text + "')";
+                    string sql = "insert into tb_chave(num_chave,sala_lab,stats,obs) values" + "('" + txtNumero.Text + "','" + txtSala.Text + "','" + cbxStatus.Text + "','" + txtObs.Text + "')";
                     MySqlCommand comando = new MySqlCommand(sql, conexao);
                     conexao.Open();
                     
@@ -141,6 +139,7 @@ namespace Almoxarifado_TCC.Popup
                 finally
                 {
                     con.desconectar();
+                    TelaPrincipal.CurrentInstance.Popups_Fechar();
                     this.Close();
                 }
             }

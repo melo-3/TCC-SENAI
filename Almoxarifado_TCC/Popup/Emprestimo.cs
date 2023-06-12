@@ -29,7 +29,7 @@ namespace Almoxarifado_TCC.Popup
             ClassConexao con = new ClassConexao();
             //obtive a conexao
             MySqlConnection conexao = con.getConexao();
-            string consulta = "SELECT cpf as CPF from tb_usuario";
+            string consulta = "SELECT nome_usuario as Nome from tb_usuario";
             //Monta meu comando sql
             MySqlCommand commando = new MySqlCommand(consulta, conexao);
             conexao.Open();//Abro minha conexao
@@ -114,7 +114,6 @@ namespace Almoxarifado_TCC.Popup
 
         private void txtCpf_KeyDown(object sender, KeyEventArgs e)
         {
-
             if (e.KeyCode == Keys.Enter && txtCpf.Text != "CPF" && txtCpf.Text != "")
             {
                 ClassConexao con = new ClassConexao();
@@ -122,7 +121,7 @@ namespace Almoxarifado_TCC.Popup
                 MySqlConnection conexao = con.getConexao();
                 String consulta = "";
 
-                consulta = "SELECT cpf as CPF from tb_usuario where cpf ='" + txtCpf.Text + "'";
+                consulta = "SELECT nome_usuario as Nome from tb_usuario where cpf ='" + txtCpf.Text + "'";
 
                 //Monta meu comando sql
                 MySqlCommand commando = new MySqlCommand(consulta, conexao);
@@ -145,13 +144,11 @@ namespace Almoxarifado_TCC.Popup
         public int codigo_usu;
         private void button1_Click(object sender, EventArgs e)
         {
-
             ClassConexao con = new ClassConexao();
             MySqlConnection conexao = con.getConexao();
             //para a segurança dos dados
 
             int idchave;
-
 
             MySqlConnection conexao3 = con.getConexao();
             string sql3 = "SELECT id_chave from tb_chave where num_chave =" + this.cod_chave + "";
@@ -161,9 +158,6 @@ namespace Almoxarifado_TCC.Popup
             registro.Read();
             idchave = Convert.ToInt32(registro["id_chave"]);
             conexao3.Close();
-
-
-
 
             string sql = "insert into tb_emp_chave(id_usuario,id_chave,horario_emp,data_emp) values" + "('" + codigo_usu + "','" + idchave + "','" + txtEmprestimo.Text + "','" + data + "')";
             MySqlCommand comando = new MySqlCommand(sql, conexao);
@@ -179,15 +173,11 @@ namespace Almoxarifado_TCC.Popup
             comando2.ExecuteReader();
             conexao2.Close();
 
-
-
-            MessageBox.Show("Chave emprestada!");
-
+            TelaPrincipal.CurrentInstance.Popups_Fechar();
             Popup.Chave.CurrentInstance.reset();
-
         }
 
-        public string cpf;
+        public string nome_usu;
 
         private void dgvUsuario_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -196,7 +186,7 @@ namespace Almoxarifado_TCC.Popup
             if (e.RowIndex < contador && e.RowIndex >= 0)
             {
                 //aguarda o codigo da linha selecionada
-                this.cpf = Convert.ToString(dgvUsuario.Rows[e.RowIndex].Cells[0].Value);
+                this.nome_usu = Convert.ToString(dgvUsuario.Rows[e.RowIndex].Cells[0].Value);
 
                 ClassUsuario usu = new ClassUsuario();//chamo classe usuario
                 ClassConexao con = new ClassConexao();//chamo a classe conexao
@@ -204,10 +194,10 @@ namespace Almoxarifado_TCC.Popup
                 MySqlConnection conexao = con.getConexao();
                 conexao.Open();
 
-                string consulta_id = "select id_usuario from tb_usuario where cpf=@cpf";
+                string consulta_id = "select id_usuario from tb_usuario where nome_usuario=@nome";
 
                 MySqlCommand comando = new MySqlCommand(consulta_id, conexao);
-                comando.Parameters.AddWithValue("@cpf", cpf);
+                comando.Parameters.AddWithValue("@nome", nome_usu);
                 MySqlDataReader registro = comando.ExecuteReader();//executa a consulta
                 registro.Read();
                 this.codigo_usu = Convert.ToInt32(registro["id_usuario"]);

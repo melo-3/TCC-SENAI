@@ -162,43 +162,6 @@ namespace Almoxarifado_TCC.Popup
 
         //-----------------------------------------------------------------
 
-        // Animação de cores do botão Usuario, opção de Criar Perfil
-
-        private void iconSetaUsuario_MouseMove(object sender, MouseEventArgs e)
-        {
-            panelUsuario.BackColor = CoresGlobais.Sobre;
-        }
-
-        private void iconSetaUsuario_MouseLeave(object sender, EventArgs e)
-        {
-            panelUsuario.BackColor = CoresGlobais.Normal;
-        }
-
-        private void iconSetaUsuario_MouseDown(object sender, MouseEventArgs e)
-        {
-            Popup.CriarUsuario go = new Popup.CriarUsuario();
-            go.ShowDialog();
-        }
-
-        //-----------------------------------------------------------------
-
-        // Animação de cores do botão Administrador, opção de Criar Perfil
-
-        private void iconSetaAdm_MouseMove(object sender, MouseEventArgs e)
-        {
-            panelAdm.BackColor = CoresGlobais.Sobre;
-        }
-
-        private void iconSetaAdm_MouseLeave(object sender, EventArgs e)
-        {
-            panelAdm.BackColor = CoresGlobais.Normal;
-        }
-
-        private void iconSetaAdm_MouseDown(object sender, MouseEventArgs e)
-        {
-            Popup.CriarAdmin go = new Popup.CriarAdmin();
-            go.ShowDialog();
-        }
 
         private void btnDeletar_Click(object sender, EventArgs e)
         {

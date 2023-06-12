@@ -37,14 +37,6 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.btnDesconectar = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelAdm = new System.Windows.Forms.Panel();
-            this.lblAdm = new System.Windows.Forms.Label();
-            this.iconSetaAdm = new FontAwesome.Sharp.IconPictureBox();
-            this.iconAdm = new FontAwesome.Sharp.IconPictureBox();
-            this.panelUsuario = new System.Windows.Forms.Panel();
-            this.lblUsuario = new System.Windows.Forms.Label();
-            this.iconSetaUsuario = new FontAwesome.Sharp.IconPictureBox();
-            this.iconUsuario = new FontAwesome.Sharp.IconPictureBox();
             this.panelTelefone = new System.Windows.Forms.Panel();
             this.lblInformTele = new System.Windows.Forms.Label();
             this.lblTelefone = new System.Windows.Forms.Label();
@@ -62,30 +54,19 @@
             this.iconChave = new FontAwesome.Sharp.IconPictureBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.txtCriarAdm = new System.Windows.Forms.RichTextBox();
-            this.txtCriarUsu = new System.Windows.Forms.RichTextBox();
-            this.txtCriarPerfil = new System.Windows.Forms.RichTextBox();
             this.lineSeguraca2 = new System.Windows.Forms.Panel();
             this.lineSeguraca1 = new System.Windows.Forms.Panel();
             this.txtSeguranca = new System.Windows.Forms.RichTextBox();
-            this.iconColab = new FontAwesome.Sharp.IconPictureBox();
             this.iconSeguranca = new FontAwesome.Sharp.IconPictureBox();
             this.btnDeletar = new System.Windows.Forms.Button();
             this.txtDeletar = new System.Windows.Forms.RichTextBox();
             this.lblDeletar = new System.Windows.Forms.Label();
-            this.lblColab = new System.Windows.Forms.Label();
             this.lblSeguranca = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelPerfiFoto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panelAdm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconSetaAdm)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconAdm)).BeginInit();
-            this.panelUsuario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconSetaUsuario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconUsuario)).BeginInit();
             this.panelTelefone.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconSetaTele)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconTelefone)).BeginInit();
@@ -95,7 +76,6 @@
             this.panelSenha.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconSetaSenha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconChave)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconColab)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconSeguranca)).BeginInit();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -107,7 +87,7 @@
             this.panelPerfiFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panelPerfiFoto.Controls.Add(this.iconFoto);
             this.panelPerfiFoto.Controls.Add(this.picPerfil);
-            this.panelPerfiFoto.Location = new System.Drawing.Point(248, 27);
+            this.panelPerfiFoto.Location = new System.Drawing.Point(286, 27);
             this.panelPerfiFoto.Name = "panelPerfiFoto";
             this.panelPerfiFoto.Size = new System.Drawing.Size(200, 200);
             this.panelPerfiFoto.TabIndex = 0;
@@ -196,7 +176,7 @@
             this.btnDesconectar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDesconectar.IconSize = 20;
             this.btnDesconectar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDesconectar.Location = new System.Drawing.Point(555, 44);
+            this.btnDesconectar.Location = new System.Drawing.Point(715, 26);
             this.btnDesconectar.Name = "btnDesconectar";
             this.btnDesconectar.Size = new System.Drawing.Size(127, 26);
             this.btnDesconectar.TabIndex = 8;
@@ -209,130 +189,23 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel1.Controls.Add(this.panelAdm);
-            this.panel1.Controls.Add(this.panelUsuario);
             this.panel1.Controls.Add(this.panelTelefone);
             this.panel1.Controls.Add(this.panelEmail);
             this.panel1.Controls.Add(this.panelSenha);
             this.panel1.Controls.Add(this.panel10);
             this.panel1.Controls.Add(this.panel9);
-            this.panel1.Controls.Add(this.txtCriarAdm);
-            this.panel1.Controls.Add(this.txtCriarUsu);
-            this.panel1.Controls.Add(this.txtCriarPerfil);
             this.panel1.Controls.Add(this.lineSeguraca2);
             this.panel1.Controls.Add(this.lineSeguraca1);
             this.panel1.Controls.Add(this.txtSeguranca);
-            this.panel1.Controls.Add(this.iconColab);
             this.panel1.Controls.Add(this.iconSeguranca);
             this.panel1.Controls.Add(this.btnDeletar);
             this.panel1.Controls.Add(this.txtDeletar);
             this.panel1.Controls.Add(this.lblDeletar);
-            this.panel1.Controls.Add(this.lblColab);
             this.panel1.Controls.Add(this.lblSeguranca);
-            this.panel1.Location = new System.Drawing.Point(-18, 329);
+            this.panel1.Location = new System.Drawing.Point(59, 329);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(696, 881);
+            this.panel1.Size = new System.Drawing.Size(696, 555);
             this.panel1.TabIndex = 9;
-            // 
-            // panelAdm
-            // 
-            this.panelAdm.Controls.Add(this.lblAdm);
-            this.panelAdm.Controls.Add(this.iconSetaAdm);
-            this.panelAdm.Controls.Add(this.iconAdm);
-            this.panelAdm.Location = new System.Drawing.Point(122, 530);
-            this.panelAdm.Name = "panelAdm";
-            this.panelAdm.Size = new System.Drawing.Size(499, 37);
-            this.panelAdm.TabIndex = 58;
-            // 
-            // lblAdm
-            // 
-            this.lblAdm.AutoSize = true;
-            this.lblAdm.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Bold);
-            this.lblAdm.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblAdm.Location = new System.Drawing.Point(42, 12);
-            this.lblAdm.Name = "lblAdm";
-            this.lblAdm.Size = new System.Drawing.Size(129, 14);
-            this.lblAdm.TabIndex = 55;
-            this.lblAdm.Text = "Perfil de administrador";
-            // 
-            // iconSetaAdm
-            // 
-            this.iconSetaAdm.BackColor = System.Drawing.Color.Transparent;
-            this.iconSetaAdm.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconSetaAdm.IconChar = FontAwesome.Sharp.IconChar.CircleArrowRight;
-            this.iconSetaAdm.IconColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconSetaAdm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconSetaAdm.Location = new System.Drawing.Point(465, 3);
-            this.iconSetaAdm.Name = "iconSetaAdm";
-            this.iconSetaAdm.Size = new System.Drawing.Size(32, 32);
-            this.iconSetaAdm.TabIndex = 1;
-            this.iconSetaAdm.TabStop = false;
-            this.iconSetaAdm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.iconSetaAdm_MouseDown);
-            this.iconSetaAdm.MouseLeave += new System.EventHandler(this.iconSetaAdm_MouseLeave);
-            this.iconSetaAdm.MouseMove += new System.Windows.Forms.MouseEventHandler(this.iconSetaAdm_MouseMove);
-            // 
-            // iconAdm
-            // 
-            this.iconAdm.BackColor = System.Drawing.Color.Transparent;
-            this.iconAdm.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconAdm.IconChar = FontAwesome.Sharp.IconChar.PersonMilitaryRifle;
-            this.iconAdm.IconColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconAdm.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.iconAdm.Location = new System.Drawing.Point(5, 3);
-            this.iconAdm.Name = "iconAdm";
-            this.iconAdm.Size = new System.Drawing.Size(32, 32);
-            this.iconAdm.TabIndex = 0;
-            this.iconAdm.TabStop = false;
-            // 
-            // panelUsuario
-            // 
-            this.panelUsuario.Controls.Add(this.lblUsuario);
-            this.panelUsuario.Controls.Add(this.iconSetaUsuario);
-            this.panelUsuario.Controls.Add(this.iconUsuario);
-            this.panelUsuario.Location = new System.Drawing.Point(122, 411);
-            this.panelUsuario.Name = "panelUsuario";
-            this.panelUsuario.Size = new System.Drawing.Size(499, 37);
-            this.panelUsuario.TabIndex = 57;
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Bold);
-            this.lblUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblUsuario.Location = new System.Drawing.Point(42, 12);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(92, 14);
-            this.lblUsuario.TabIndex = 55;
-            this.lblUsuario.Text = "Perfil de usuário";
-            // 
-            // iconSetaUsuario
-            // 
-            this.iconSetaUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.iconSetaUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconSetaUsuario.IconChar = FontAwesome.Sharp.IconChar.CircleArrowRight;
-            this.iconSetaUsuario.IconColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconSetaUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconSetaUsuario.Location = new System.Drawing.Point(465, 3);
-            this.iconSetaUsuario.Name = "iconSetaUsuario";
-            this.iconSetaUsuario.Size = new System.Drawing.Size(32, 32);
-            this.iconSetaUsuario.TabIndex = 1;
-            this.iconSetaUsuario.TabStop = false;
-            this.iconSetaUsuario.MouseDown += new System.Windows.Forms.MouseEventHandler(this.iconSetaUsuario_MouseDown);
-            this.iconSetaUsuario.MouseLeave += new System.EventHandler(this.iconSetaUsuario_MouseLeave);
-            this.iconSetaUsuario.MouseMove += new System.Windows.Forms.MouseEventHandler(this.iconSetaUsuario_MouseMove);
-            // 
-            // iconUsuario
-            // 
-            this.iconUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.iconUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconUsuario.IconChar = FontAwesome.Sharp.IconChar.PersonCirclePlus;
-            this.iconUsuario.IconColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconUsuario.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.iconUsuario.Location = new System.Drawing.Point(5, 3);
-            this.iconUsuario.Name = "iconUsuario";
-            this.iconUsuario.Size = new System.Drawing.Size(32, 32);
-            this.iconUsuario.TabIndex = 0;
-            this.iconUsuario.TabStop = false;
             // 
             // panelTelefone
             // 
@@ -524,7 +397,7 @@
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.panel10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel10.Location = new System.Drawing.Point(123, 858);
+            this.panel10.Location = new System.Drawing.Point(119, 543);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(520, 2);
             this.panel10.TabIndex = 13;
@@ -533,51 +406,10 @@
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.panel9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel9.Location = new System.Drawing.Point(122, 707);
+            this.panel9.Location = new System.Drawing.Point(118, 392);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(520, 2);
             this.panel9.TabIndex = 12;
-            // 
-            // txtCriarAdm
-            // 
-            this.txtCriarAdm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            this.txtCriarAdm.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCriarAdm.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCriarAdm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
-            this.txtCriarAdm.Location = new System.Drawing.Point(122, 569);
-            this.txtCriarAdm.Name = "txtCriarAdm";
-            this.txtCriarAdm.ReadOnly = true;
-            this.txtCriarAdm.Size = new System.Drawing.Size(499, 50);
-            this.txtCriarAdm.TabIndex = 45;
-            this.txtCriarAdm.Text = "Será permitido que mais uma pessoa opere neste sistema, dando a ela todos os priv" +
-    "ilégios possíveis. Somente funcionários autorizados deverão possuir perfis de ad" +
-    "ministrador.";
-            // 
-            // txtCriarUsu
-            // 
-            this.txtCriarUsu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            this.txtCriarUsu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCriarUsu.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCriarUsu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
-            this.txtCriarUsu.Location = new System.Drawing.Point(122, 450);
-            this.txtCriarUsu.Name = "txtCriarUsu";
-            this.txtCriarUsu.ReadOnly = true;
-            this.txtCriarUsu.Size = new System.Drawing.Size(499, 62);
-            this.txtCriarUsu.TabIndex = 43;
-            this.txtCriarUsu.Text = resources.GetString("txtCriarUsu.Text");
-            // 
-            // txtCriarPerfil
-            // 
-            this.txtCriarPerfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            this.txtCriarPerfil.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCriarPerfil.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtCriarPerfil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
-            this.txtCriarPerfil.Location = new System.Drawing.Point(122, 355);
-            this.txtCriarPerfil.Name = "txtCriarPerfil";
-            this.txtCriarPerfil.ReadOnly = true;
-            this.txtCriarPerfil.Size = new System.Drawing.Size(520, 43);
-            this.txtCriarPerfil.TabIndex = 41;
-            this.txtCriarPerfil.Text = "Opções para criação de perfis, usuário e admin.";
             // 
             // lineSeguraca2
             // 
@@ -610,19 +442,6 @@
             this.txtSeguranca.TabIndex = 25;
             this.txtSeguranca.Text = "Configurações para ajudar você a manter sua conta segura.";
             // 
-            // iconColab
-            // 
-            this.iconColab.BackColor = System.Drawing.Color.Transparent;
-            this.iconColab.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconColab.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
-            this.iconColab.IconColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconColab.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconColab.Location = new System.Drawing.Point(122, 319);
-            this.iconColab.Name = "iconColab";
-            this.iconColab.Size = new System.Drawing.Size(32, 32);
-            this.iconColab.TabIndex = 23;
-            this.iconColab.TabStop = false;
-            // 
             // iconSeguranca
             // 
             this.iconSeguranca.BackColor = System.Drawing.Color.Transparent;
@@ -643,7 +462,7 @@
             this.btnDeletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeletar.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnDeletar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDeletar.Location = new System.Drawing.Point(122, 811);
+            this.btnDeletar.Location = new System.Drawing.Point(118, 496);
             this.btnDeletar.Name = "btnDeletar";
             this.btnDeletar.Size = new System.Drawing.Size(127, 26);
             this.btnDeletar.TabIndex = 18;
@@ -657,7 +476,7 @@
             this.txtDeletar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDeletar.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold);
             this.txtDeletar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
-            this.txtDeletar.Location = new System.Drawing.Point(121, 759);
+            this.txtDeletar.Location = new System.Drawing.Point(117, 444);
             this.txtDeletar.Name = "txtDeletar";
             this.txtDeletar.ReadOnly = true;
             this.txtDeletar.Size = new System.Drawing.Size(532, 43);
@@ -671,22 +490,11 @@
             this.lblDeletar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.lblDeletar.Font = new System.Drawing.Font("Candara", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDeletar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblDeletar.Location = new System.Drawing.Point(117, 716);
+            this.lblDeletar.Location = new System.Drawing.Point(113, 401);
             this.lblDeletar.Name = "lblDeletar";
             this.lblDeletar.Size = new System.Drawing.Size(174, 33);
             this.lblDeletar.TabIndex = 15;
             this.lblDeletar.Text = "Deletar Conta";
-            // 
-            // lblColab
-            // 
-            this.lblColab.AutoSize = true;
-            this.lblColab.Font = new System.Drawing.Font("Candara", 20.25F, System.Drawing.FontStyle.Bold);
-            this.lblColab.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblColab.Location = new System.Drawing.Point(160, 318);
-            this.lblColab.Name = "lblColab";
-            this.lblColab.Size = new System.Drawing.Size(138, 33);
-            this.lblColab.TabIndex = 13;
-            this.lblColab.Text = "Criar Perfil";
             // 
             // lblSeguranca
             // 
@@ -705,7 +513,7 @@
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.lblNome);
             this.panel4.Controls.Add(this.lblEmail);
-            this.panel4.Location = new System.Drawing.Point(77, 233);
+            this.panel4.Location = new System.Drawing.Point(115, 233);
             this.panel4.MaximumSize = new System.Drawing.Size(550, 87);
             this.panel4.MinimumSize = new System.Drawing.Size(550, 87);
             this.panel4.Name = "panel4";
@@ -715,7 +523,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(625, 214);
+            this.label1.Location = new System.Drawing.Point(668, 307);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 12;
@@ -743,14 +551,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panelAdm.ResumeLayout(false);
-            this.panelAdm.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconSetaAdm)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconAdm)).EndInit();
-            this.panelUsuario.ResumeLayout(false);
-            this.panelUsuario.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconSetaUsuario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconUsuario)).EndInit();
             this.panelTelefone.ResumeLayout(false);
             this.panelTelefone.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconSetaTele)).EndInit();
@@ -763,7 +563,6 @@
             this.panelSenha.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconSetaSenha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconChave)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconColab)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconSeguranca)).EndInit();
             this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -782,21 +581,16 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RichTextBox txtDeletar;
         private System.Windows.Forms.Label lblDeletar;
-        private System.Windows.Forms.Label lblColab;
         private System.Windows.Forms.Label lblSeguranca;
         private FontAwesome.Sharp.IconButton iconFoto;
-        private FontAwesome.Sharp.IconPictureBox iconColab;
         private FontAwesome.Sharp.IconPictureBox iconSeguranca;
         private System.Windows.Forms.Button btnDeletar;
         private System.Windows.Forms.RichTextBox txtSeguranca;
         private System.Windows.Forms.Panel lineSeguraca2;
         private System.Windows.Forms.Panel lineSeguraca1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.RichTextBox txtCriarPerfil;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.RichTextBox txtCriarAdm;
-        private System.Windows.Forms.RichTextBox txtCriarUsu;
         private System.Windows.Forms.Panel panelTelefone;
         private System.Windows.Forms.Label lblTelefone;
         private FontAwesome.Sharp.IconPictureBox iconSetaTele;
@@ -812,14 +606,6 @@
         private System.Windows.Forms.Label lblInformTele;
         private System.Windows.Forms.Label lblInformEmail;
         private System.Windows.Forms.Label lblInformSenha;
-        private System.Windows.Forms.Panel panelAdm;
-        private System.Windows.Forms.Label lblAdm;
-        private FontAwesome.Sharp.IconPictureBox iconSetaAdm;
-        private FontAwesome.Sharp.IconPictureBox iconAdm;
-        private System.Windows.Forms.Panel panelUsuario;
-        private System.Windows.Forms.Label lblUsuario;
-        private FontAwesome.Sharp.IconPictureBox iconSetaUsuario;
-        private FontAwesome.Sharp.IconPictureBox iconUsuario;
         private System.Windows.Forms.Label label1;
     }
 }

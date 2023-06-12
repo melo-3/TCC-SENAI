@@ -42,7 +42,7 @@
             // 
             // btnSim
             // 
-            this.btnSim.BackColor = System.Drawing.Color.Maroon;
+            this.btnSim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.btnSim.FlatAppearance.BorderSize = 0;
             this.btnSim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSim.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Bold);
@@ -57,7 +57,7 @@
             // 
             // btnNao
             // 
-            this.btnNao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(112)))));
+            this.btnNao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.btnNao.FlatAppearance.BorderSize = 0;
             this.btnNao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNao.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Bold);
@@ -76,7 +76,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.label1.Font = new System.Drawing.Font("Bahnschrift Light", 9.25F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(34, 55);
+            this.label1.Location = new System.Drawing.Point(36, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(197, 16);
             this.label1.TabIndex = 2;
@@ -144,7 +144,6 @@
             this.txtConfirm.TabIndex = 10;
             this.txtConfirm.Text = "Insira o nome da sala";
             this.txtConfirm.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtConfirm.TextChanged += new System.EventHandler(this.txtConfirm_TextChanged);
             this.txtConfirm.Enter += new System.EventHandler(this.txtConfirm_Enter);
             this.txtConfirm.Leave += new System.EventHandler(this.txtConfirm_Leave);
             // 
