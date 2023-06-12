@@ -56,14 +56,14 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.lineSeguraca2 = new System.Windows.Forms.Panel();
             this.lineSeguraca1 = new System.Windows.Forms.Panel();
-            this.txtSeguranca = new System.Windows.Forms.RichTextBox();
             this.iconSeguranca = new FontAwesome.Sharp.IconPictureBox();
             this.btnDeletar = new System.Windows.Forms.Button();
-            this.txtDeletar = new System.Windows.Forms.RichTextBox();
             this.lblDeletar = new System.Windows.Forms.Label();
             this.lblSeguranca = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtSeguranca = new System.Windows.Forms.Label();
+            this.txtDeletar = new System.Windows.Forms.Label();
             this.panelPerfiFoto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).BeginInit();
             this.panel1.SuspendLayout();
@@ -87,7 +87,7 @@
             this.panelPerfiFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panelPerfiFoto.Controls.Add(this.iconFoto);
             this.panelPerfiFoto.Controls.Add(this.picPerfil);
-            this.panelPerfiFoto.Location = new System.Drawing.Point(286, 27);
+            this.panelPerfiFoto.Location = new System.Drawing.Point(316, 27);
             this.panelPerfiFoto.Name = "panelPerfiFoto";
             this.panelPerfiFoto.Size = new System.Drawing.Size(200, 200);
             this.panelPerfiFoto.TabIndex = 0;
@@ -176,7 +176,7 @@
             this.btnDesconectar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDesconectar.IconSize = 20;
             this.btnDesconectar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDesconectar.Location = new System.Drawing.Point(715, 26);
+            this.btnDesconectar.Location = new System.Drawing.Point(698, 26);
             this.btnDesconectar.Name = "btnDesconectar";
             this.btnDesconectar.Size = new System.Drawing.Size(127, 26);
             this.btnDesconectar.TabIndex = 8;
@@ -189,6 +189,8 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.Controls.Add(this.txtDeletar);
+            this.panel1.Controls.Add(this.txtSeguranca);
             this.panel1.Controls.Add(this.panelTelefone);
             this.panel1.Controls.Add(this.panelEmail);
             this.panel1.Controls.Add(this.panelSenha);
@@ -196,15 +198,13 @@
             this.panel1.Controls.Add(this.panel9);
             this.panel1.Controls.Add(this.lineSeguraca2);
             this.panel1.Controls.Add(this.lineSeguraca1);
-            this.panel1.Controls.Add(this.txtSeguranca);
             this.panel1.Controls.Add(this.iconSeguranca);
             this.panel1.Controls.Add(this.btnDeletar);
-            this.panel1.Controls.Add(this.txtDeletar);
             this.panel1.Controls.Add(this.lblDeletar);
             this.panel1.Controls.Add(this.lblSeguranca);
-            this.panel1.Location = new System.Drawing.Point(59, 329);
+            this.panel1.Location = new System.Drawing.Point(50, 329);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(696, 555);
+            this.panel1.Size = new System.Drawing.Size(696, 655);
             this.panel1.TabIndex = 9;
             // 
             // panelTelefone
@@ -397,7 +397,7 @@
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.panel10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel10.Location = new System.Drawing.Point(119, 543);
+            this.panel10.Location = new System.Drawing.Point(119, 636);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(520, 2);
             this.panel10.TabIndex = 13;
@@ -406,7 +406,7 @@
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.panel9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel9.Location = new System.Drawing.Point(118, 392);
+            this.panel9.Location = new System.Drawing.Point(118, 485);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(520, 2);
             this.panel9.TabIndex = 12;
@@ -429,19 +429,6 @@
             this.lineSeguraca1.Size = new System.Drawing.Size(520, 2);
             this.lineSeguraca1.TabIndex = 10;
             // 
-            // txtSeguranca
-            // 
-            this.txtSeguranca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            this.txtSeguranca.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSeguranca.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtSeguranca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
-            this.txtSeguranca.Location = new System.Drawing.Point(122, 77);
-            this.txtSeguranca.Name = "txtSeguranca";
-            this.txtSeguranca.ReadOnly = true;
-            this.txtSeguranca.Size = new System.Drawing.Size(520, 43);
-            this.txtSeguranca.TabIndex = 25;
-            this.txtSeguranca.Text = "Configurações para ajudar você a manter sua conta segura.";
-            // 
             // iconSeguranca
             // 
             this.iconSeguranca.BackColor = System.Drawing.Color.Transparent;
@@ -462,7 +449,7 @@
             this.btnDeletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeletar.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnDeletar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDeletar.Location = new System.Drawing.Point(118, 496);
+            this.btnDeletar.Location = new System.Drawing.Point(118, 589);
             this.btnDeletar.Name = "btnDeletar";
             this.btnDeletar.Size = new System.Drawing.Size(127, 26);
             this.btnDeletar.TabIndex = 18;
@@ -470,27 +457,13 @@
             this.btnDeletar.UseVisualStyleBackColor = false;
             this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
-            // txtDeletar
-            // 
-            this.txtDeletar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            this.txtDeletar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDeletar.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtDeletar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
-            this.txtDeletar.Location = new System.Drawing.Point(117, 444);
-            this.txtDeletar.Name = "txtDeletar";
-            this.txtDeletar.ReadOnly = true;
-            this.txtDeletar.Size = new System.Drawing.Size(532, 43);
-            this.txtDeletar.TabIndex = 17;
-            this.txtDeletar.Text = "Cuidado! Se você deletar sua conta, não podera voltar atrás. Pense bem no que est" +
-    "á fazendo.";
-            // 
             // lblDeletar
             // 
             this.lblDeletar.AutoSize = true;
             this.lblDeletar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.lblDeletar.Font = new System.Drawing.Font("Candara", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDeletar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblDeletar.Location = new System.Drawing.Point(113, 401);
+            this.lblDeletar.Location = new System.Drawing.Point(113, 494);
             this.lblDeletar.Name = "lblDeletar";
             this.lblDeletar.Size = new System.Drawing.Size(174, 33);
             this.lblDeletar.TabIndex = 15;
@@ -513,7 +486,7 @@
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.lblNome);
             this.panel4.Controls.Add(this.lblEmail);
-            this.panel4.Location = new System.Drawing.Point(115, 233);
+            this.panel4.Location = new System.Drawing.Point(145, 233);
             this.panel4.MaximumSize = new System.Drawing.Size(550, 87);
             this.panel4.MinimumSize = new System.Drawing.Size(550, 87);
             this.panel4.Name = "panel4";
@@ -523,12 +496,35 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(668, 307);
+            this.label1.Location = new System.Drawing.Point(707, 307);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 12;
             this.label1.Text = "label1";
             this.label1.Visible = false;
+            // 
+            // txtSeguranca
+            // 
+            this.txtSeguranca.AutoSize = true;
+            this.txtSeguranca.Font = new System.Drawing.Font("Candara", 10F, System.Drawing.FontStyle.Bold);
+            this.txtSeguranca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
+            this.txtSeguranca.Location = new System.Drawing.Point(122, 77);
+            this.txtSeguranca.Name = "txtSeguranca";
+            this.txtSeguranca.Size = new System.Drawing.Size(363, 17);
+            this.txtSeguranca.TabIndex = 13;
+            this.txtSeguranca.Text = "Configurações para ajudar você a manter sua conta segura.";
+            // 
+            // txtDeletar
+            // 
+            this.txtDeletar.AutoSize = true;
+            this.txtDeletar.Font = new System.Drawing.Font("Candara", 10F, System.Drawing.FontStyle.Bold);
+            this.txtDeletar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
+            this.txtDeletar.Location = new System.Drawing.Point(117, 537);
+            this.txtDeletar.Name = "txtDeletar";
+            this.txtDeletar.Size = new System.Drawing.Size(511, 34);
+            this.txtDeletar.TabIndex = 52;
+            this.txtDeletar.Text = "Cuidado! Se você deletar sua conta, não podera voltar atrás. Pense bem no que est" +
+    "á\r\nfazendo.";
             // 
             // Perfil
             // 
@@ -579,13 +575,11 @@
         private System.Windows.Forms.Label lblNome;
         private FontAwesome.Sharp.IconButton btnDesconectar;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RichTextBox txtDeletar;
         private System.Windows.Forms.Label lblDeletar;
         private System.Windows.Forms.Label lblSeguranca;
         private FontAwesome.Sharp.IconButton iconFoto;
         private FontAwesome.Sharp.IconPictureBox iconSeguranca;
         private System.Windows.Forms.Button btnDeletar;
-        private System.Windows.Forms.RichTextBox txtSeguranca;
         private System.Windows.Forms.Panel lineSeguraca2;
         private System.Windows.Forms.Panel lineSeguraca1;
         private System.Windows.Forms.Panel panel4;
@@ -607,5 +601,7 @@
         private System.Windows.Forms.Label lblInformEmail;
         private System.Windows.Forms.Label lblInformSenha;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label txtDeletar;
+        private System.Windows.Forms.Label txtSeguranca;
     }
 }

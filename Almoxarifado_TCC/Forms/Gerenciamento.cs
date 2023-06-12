@@ -406,7 +406,7 @@ namespace Almoxarifado_TCC.Forms
 
         private void txtPesquisar_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && txtPesquisar.Text != "Pesquisar" && txtPesquisar.Text != "")
+            if (e.KeyCode == Keys.Enter && txtPesquisar.Text != "Pesquisar")
             {
 
                 //instancia de conexão
@@ -420,23 +420,23 @@ namespace Almoxarifado_TCC.Forms
                 }
                 else if (cbxFiltro.Text == "Nome")//Se tiver informação lista
                 {
-                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.nome_usuario='"+ txtPesquisar.Text +"'";
+                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.nome_usuario like '%"+ txtPesquisar.Text +"%'";
                 }
                 else if (cbxFiltro.Text == "Tipo")
                 {
-                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where t.tipo_usu='" + txtPesquisar.Text + "'";
+                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where t.tipo_usu like '%" + txtPesquisar.Text + "%'";
                 }
                 else if (cbxFiltro.Text == "CPF")
                 {
-                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.cpf='" + txtPesquisar.Text + "'";
+                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.cpf like '%" + txtPesquisar.Text + "%'";
                 }
                 else if (cbxFiltro.Text == "Email")
                 {
-                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.email='" + txtPesquisar.Text + "'";
+                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.email like '%" + txtPesquisar.Text + "%'";
                 }
                 else if (cbxFiltro.Text == "Telefone")
                 {
-                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.Telefone='" + txtPesquisar.Text + "'";
+                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.Telefone like '%" + txtPesquisar.Text + "%'";
                 }
                 //Monta meu comando sql
                 MySqlCommand commando = new MySqlCommand(consulta, conexao);
@@ -471,7 +471,7 @@ namespace Almoxarifado_TCC.Forms
 
         private void txtPesquisarA_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && txtPesquisarA.Text != "Pesquisar" && txtPesquisarA.Text != "")
+            if (e.KeyCode == Keys.Enter && txtPesquisarA.Text != "Pesquisar")
             {
                 //instancia de conexão
                 ClassConexao con = new ClassConexao();
@@ -484,15 +484,15 @@ namespace Almoxarifado_TCC.Forms
                 }
                 else if (cbxFiltroA.Text == "Nome")//Se tiver informação lista
                 {
-                    consulta = "SELECT nome_admin, email, telefone from tb_admin where nome_admin='" + txtPesquisarA.Text + "'";
+                    consulta = "SELECT nome_admin, email, telefone from tb_admin where nome_admin like '%" + txtPesquisarA.Text + "%'";
                 }
                 else if (cbxFiltroA.Text == "Email")
                 {
-                    consulta = "SELECT nome_admin, email, telefone from tb_admin where email='" + txtPesquisarA.Text + "'";
+                    consulta = "SELECT nome_admin, email, telefone from tb_admin where email like '%" + txtPesquisarA.Text + "%'";
                 }
                 else if (cbxFiltroA.Text == "Telefone")
                 {
-                    consulta = "SELECT nome_admin, email, telefone from tb_admin where telefone='" + txtPesquisarA.Text + "'";
+                    consulta = "SELECT nome_admin, email, telefone from tb_admin where telefone like '%" + txtPesquisarA.Text + "%'";
                 }
                 //Monta meu comando sql
                 MySqlCommand commando = new MySqlCommand(consulta, conexao);

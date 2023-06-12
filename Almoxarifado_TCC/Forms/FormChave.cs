@@ -22,7 +22,7 @@ namespace Almoxarifado_TCC.Popup
 
         public static Popup.Chave CurrentInstance;
 
-        public int codigo_chave = 0;
+        public int codigo_chave = 0, num_chave;
         
 
         public void reset()
@@ -52,23 +52,23 @@ namespace Almoxarifado_TCC.Popup
             String consulta = "";
             if (cbxFiltro.Text == "Todos" || cbxFiltro.Text == "") //Campo vazio lista tudo
             {
-                consulta = "SELECT num_chave,sala_lab,stats,obs from tb_chave";
+                consulta = "SELECT num_chave, sala_lab, stats, obs from tb_chave";
             }
             else if (cbxFiltro.Text == "Número")//Se tiver informação lista
             {
-                consulta = "SELECT num_chave,sala_lab,stats,obs from tb_chave where num_chave ='" + txtPesquisar.Text + "'";
+                consulta = "SELECT num_chave, sala_lab, stats, obs FROM tb_chave WHERE num_chave LIKE '%" + txtPesquisar.Text + "%'";
             }
             else if (cbxFiltro.Text == "Sala/lab")
             {
-                consulta = "SELECT num_chave,sala_lab,stats,obs from tb_chave where sala_lab ='" + txtPesquisar.Text + "'";
+                consulta = "SELECT num_chave, sala_lab, stats, obs FROM tb_chave WHERE sala_lab LIKE '%" + txtPesquisar.Text + "%'";
             }
             else if (cbxFiltro.Text == "Disponível")
             {
-                consulta = "SELECT num_chave,sala_lab,stats,obs from tb_chave where stats ='Disponível'";
+                consulta = "SELECT num_chave, sala_lab, stats, obs FROM tb_chave WHERE stats ='Disponível'";
             }
             else if (cbxFiltro.Text == "Indisponível")
             {
-                consulta = "SELECT num_chave,sala_lab,stats,obs from tb_chave where stats ='Indisponível'";
+                consulta = "SELECT num_chave, sala_lab, stats, obs FROM tb_chave WHERE stats ='Indisponível'";
             }
             //Monta meu comando sql
             MySqlCommand commando = new MySqlCommand(consulta, conexao);
@@ -177,19 +177,20 @@ namespace Almoxarifado_TCC.Popup
             if (e.RowIndex < contador && e.RowIndex >= 0)
             {
                 //aguarda o codigo da linha selecionada
-                this.codigo_chave = Convert.ToInt32(dtvChave.Rows[e.RowIndex].Cells[0].Value);
+                this.num_chave = Convert.ToInt32(dtvChave.Rows[e.RowIndex].Cells[0].Value);
 
                 string sala;
 
                 ClassConexao con = new ClassConexao();
                 MySqlConnection conexao = con.getConexao();
                 String consulta = "";
-                consulta = "SELECT sala_lab from tb_chave where id_chave=" + codigo_chave + "";
+                consulta = "SELECT sala_lab, id_chave from tb_chave where num_chave=" + num_chave + "";
                 MySqlCommand commando = new MySqlCommand(consulta, conexao);
                 conexao.Open();
                 MySqlDataReader registro = commando.ExecuteReader();
                 registro.Read();
                 sala = Convert.ToString(registro["sala_lab"]);
+                codigo_chave = Convert.ToInt32(registro["id_chave"]);
                 conexao.Close();
 
                 lblSelecionado.Text = sala;

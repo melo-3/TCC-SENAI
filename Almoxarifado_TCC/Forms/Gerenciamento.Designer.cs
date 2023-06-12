@@ -525,7 +525,7 @@
             this.panel3.Controls.Add(this.txtCriarAdm);
             this.panel3.Controls.Add(this.iconColab);
             this.panel3.Controls.Add(this.txtCriarUsu);
-            this.panel3.Location = new System.Drawing.Point(0, 3);
+            this.panel3.Location = new System.Drawing.Point(-18, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(885, 1091);
             this.panel3.TabIndex = 88;
@@ -658,6 +658,7 @@
             this.cbxFiltroA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.cbxFiltroA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxFiltroA.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F);
+            this.cbxFiltroA.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.cbxFiltroA.FormattingEnabled = true;
             this.cbxFiltroA.Items.AddRange(new object[] {
             "Todos",

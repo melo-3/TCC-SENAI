@@ -121,7 +121,7 @@ namespace Almoxarifado_TCC.Popup
                 MySqlConnection conexao = con.getConexao();
                 String consulta = "";
 
-                consulta = "SELECT nome_usuario as Nome from tb_usuario where cpf ='" + txtCpf.Text + "'";
+                consulta = "SELECT nome_usuario AS Nome FROM tb_usuario WHERE cpf LIKE '%" + txtCpf.Text + "%'";
 
                 //Monta meu comando sql
                 MySqlCommand commando = new MySqlCommand(consulta, conexao);
@@ -148,18 +148,7 @@ namespace Almoxarifado_TCC.Popup
             MySqlConnection conexao = con.getConexao();
             //para a segurança dos dados
 
-            int idchave;
-
-            MySqlConnection conexao3 = con.getConexao();
-            string sql3 = "SELECT id_chave from tb_chave where num_chave =" + this.cod_chave + "";
-            conexao3.Open();
-            MySqlCommand comando3 = new MySqlCommand(sql3, conexao3);
-            MySqlDataReader registro = comando3.ExecuteReader();
-            registro.Read();
-            idchave = Convert.ToInt32(registro["id_chave"]);
-            conexao3.Close();
-
-            string sql = "insert into tb_emp_chave(id_usuario,id_chave,horario_emp,data_emp) values" + "('" + codigo_usu + "','" + idchave + "','" + txtEmprestimo.Text + "','" + data + "')";
+            string sql = "insert into tb_emp_chave(id_usuario,id_chave,horario_emp,data_emp) values" + "('" + codigo_usu + "','" + cod_chave + "','" + txtEmprestimo.Text + "','" + data + "')";
             MySqlCommand comando = new MySqlCommand(sql, conexao);
             conexao.Open();
             comando.ExecuteReader();
@@ -168,7 +157,7 @@ namespace Almoxarifado_TCC.Popup
             MySqlConnection conexao2 = con.getConexao();
             string sql2 = "update tb_chave set stats = 'Indisponível' where id_chave = @id_chave";
             MySqlCommand comando2 = new MySqlCommand(sql2, conexao2);
-            comando2.Parameters.AddWithValue("@id_chave", idchave);
+            comando2.Parameters.AddWithValue("@id_chave", cod_chave);
             conexao2.Open();
             comando2.ExecuteReader();
             conexao2.Close();
