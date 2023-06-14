@@ -44,14 +44,26 @@ namespace Almoxarifado_TCC.Popup
             ClassConexao con = new ClassConexao();
             //obtive a conexao
             MySqlConnection conexao = con.getConexao();
-            String consulta;
-            if (txtPesquisar.Text == "") //Campo vazio lista tudo
+            String consulta = "";
+            if (cbxFiltro.Text == "") //Campo vazio lista tudo
             {
-                consulta = "SELECT * from tb_item";
+                consulta = "SELECT id_item as Codigo, nome_item as Item, descricao as Descricao, quant as Quantidade from tb_item";
             }
-            else //Se tiver informação lista
+            else if (cbxFiltro.Text == "Código")//Se tiver informação lista
             {
-                consulta = "SELECT * from tb_item where nome_item ='" + txtPesquisar.Text + "'";
+                consulta = "SELECT id_item as Codigo, nome_item as Item, descricao as Descricao, quant as Quantidade from tb_item WHERE id_item LIKE '%" + txtPesquisar.Text + "%'";
+            }
+            else if (cbxFiltro.Text == "Item")
+            {
+                consulta = "SELECT id_item as Codigo, nome_item as Item, descricao as Descricao, quant as Quantidade from tb_item WHERE nome_item LIKE '%" + txtPesquisar.Text + "%'";
+            }
+            else if (cbxFiltro.Text == "Descrição")
+            {
+                consulta = "SELECT id_item as Codigo, nome_item as Item, descricao as Descricao, quant as Quantidade from tb_item WHERE descricao LIKE '%" + txtPesquisar.Text + "%'";
+            }
+            else if (cbxFiltro.Text == "Quantidade")
+            {
+                consulta = "SELECT id_item as Codigo, nome_item as Item, descricao as Descricao, quant as Quantidade from tb_item WHERE quant LIKE '%" + txtPesquisar.Text + "%'";
             }
             //Monta meu comando sql
             MySqlCommand commando = new MySqlCommand(consulta, conexao);
@@ -60,15 +72,8 @@ namespace Almoxarifado_TCC.Popup
             MySqlDataAdapter dados = new MySqlDataAdapter(commando);
             //Crio uma nova tabela de dados
             DataTable dtEstoque = new DataTable();
-
             dados.Fill(dtEstoque);//manipulação dos dados
             dtvEstoque.DataSource = dtEstoque;//chamo o caminho dos dados
-            conexao.Close();
-        }
-
-        private void dtvEstoque_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
         }
 
         private void Estoque_Load(object sender, EventArgs e)
@@ -160,7 +165,5 @@ namespace Almoxarifado_TCC.Popup
                 btnDescartar.Enabled = false;
             }
         }
-
-        
     }
 }

@@ -123,5 +123,63 @@ namespace Almoxarifado_TCC.Forms
             }
             
         }
+
+        private void btnProcurar_Click(object sender, EventArgs e)
+        {
+            //instancia de conexão
+            ClassConexao con = new ClassConexao();
+            //obtive a conexao
+            MySqlConnection conexao = con.getConexao();
+            String consulta = "";
+            if (cbxFiltro.Text == "") //Campo vazio lista tudo
+            {
+                consulta = "SELECT e.id_emp_item as Codigo, u.nome_usuario as Usuario, i.nome_item as Item, e.quant as Quantidade, e.hora_emp as Hora_emprestimo, e.data_emp as Data_empretimo, e.hora_dev as Hora_devolucao, e.data_dev as Data_devolucao, e.obs as Observacao From tb_emp_item e inner join tb_usuario u on e.id_usuario=u.id_usuario inner join tb_item i on e.id_item=i.id_item;";
+            }
+            else if (cbxFiltro.Text == "Código")//Se tiver informação lista
+            {
+                consulta = "SELECT e.id_emp_item as Codigo, u.nome_usuario as Usuario, i.nome_item as Item, e.quant as Quantidade, e.hora_emp as Hora_emprestimo, e.data_emp as Data_empretimo, e.hora_dev as Hora_devolucao, e.data_dev as Data_devolucao, e.obs as Observacao From tb_emp_item e inner join tb_usuario u on e.id_usuario=u.id_usuario inner join tb_item i on e.id_item=i.id_item WHERE e.id_emp_item LIKE '%" + txtPesquisar.Text + "%'";
+            }
+            else if (cbxFiltro.Text == "Usuário")
+            {
+                consulta = "SELECT e.id_emp_item as Codigo, u.nome_usuario as Usuario, i.nome_item as Item, e.quant as Quantidade, e.hora_emp as Hora_emprestimo, e.data_emp as Data_empretimo, e.hora_dev as Hora_devolucao, e.data_dev as Data_devolucao, e.obs as Observacao From tb_emp_item e inner join tb_usuario u on e.id_usuario=u.id_usuario inner join tb_item i on e.id_item=i.id_item WHERE u.nome_usuario LIKE '%" + txtPesquisar.Text + "%'";
+            }
+            else if (cbxFiltro.Text == "Item")
+            {
+                consulta = "SELECT e.id_emp_item as Codigo, u.nome_usuario as Usuario, i.nome_item as Item, e.quant as Quantidade, e.hora_emp as Hora_emprestimo, e.data_emp as Data_empretimo, e.hora_dev as Hora_devolucao, e.data_dev as Data_devolucao, e.obs as Observacao From tb_emp_item e inner join tb_usuario u on e.id_usuario=u.id_usuario inner join tb_item i on e.id_item=i.id_item WHERE i.nome_item LIKE '%" + txtPesquisar.Text + "%'";
+            }
+            else if (cbxFiltro.Text == "Quantidade")
+            {
+                consulta = "SELECT e.id_emp_item as Codigo, u.nome_usuario as Usuario, i.nome_item as Item, e.quant as Quantidade, e.hora_emp as Hora_emprestimo, e.data_emp as Data_empretimo, e.hora_dev as Hora_devolucao, e.data_dev as Data_devolucao, e.obs as Observacao From tb_emp_item e inner join tb_usuario u on e.id_usuario=u.id_usuario inner join tb_item i on e.id_item=i.id_item WHERE e.quant LIKE '%" + txtPesquisar.Text + "%'";
+            }
+            else if (cbxFiltro.Text == "H.Empestimo")
+            {
+                consulta = "SELECT e.id_emp_item as Codigo, u.nome_usuario as Usuario, i.nome_item as Item, e.quant as Quantidade, e.hora_emp as Hora_emprestimo, e.data_emp as Data_empretimo, e.hora_dev as Hora_devolucao, e.data_dev as Data_devolucao, e.obs as Observacao From tb_emp_item e inner join tb_usuario u on e.id_usuario=u.id_usuario inner join tb_item i on e.id_item=i.id_item WHERE e.hora_emp LIKE '%" + txtPesquisar.Text + "%'";
+            }
+            else if (cbxFiltro.Text == "D.Empestimo")
+            {
+                consulta = "SELECT e.id_emp_item as Codigo, u.nome_usuario as Usuario, i.nome_item as Item, e.quant as Quantidade, e.hora_emp as Hora_emprestimo, e.data_emp as Data_empretimo, e.hora_dev as Hora_devolucao, e.data_dev as Data_devolucao, e.obs as Observacao From tb_emp_item e inner join tb_usuario u on e.id_usuario=u.id_usuario inner join tb_item i on e.id_item=i.id_item WHERE e.data_emp LIKE '%" + txtPesquisar.Text + "%'";
+            }
+            else if (cbxFiltro.Text == "H.Devolução")
+            {
+                consulta = "SELECT e.id_emp_item as Codigo, u.nome_usuario as Usuario, i.nome_item as Item, e.quant as Quantidade, e.hora_emp as Hora_emprestimo, e.data_emp as Data_empretimo, e.hora_dev as Hora_devolucao, e.data_dev as Data_devolucao, e.obs as Observacao From tb_emp_item e inner join tb_usuario u on e.id_usuario=u.id_usuario inner join tb_item i on e.id_item=i.id_item WHERE e.hora_dev LIKE '%" + txtPesquisar.Text + "%'";
+            }
+            else if (cbxFiltro.Text == "D.Devolução")
+            {
+                consulta = "SELECT e.id_emp_item as Codigo, u.nome_usuario as Usuario, i.nome_item as Item, e.quant as Quantidade, e.hora_emp as Hora_emprestimo, e.data_emp as Data_empretimo, e.hora_dev as Hora_devolucao, e.data_dev as Data_devolucao, e.obs as Observacao From tb_emp_item e inner join tb_usuario u on e.id_usuario=u.id_usuario inner join tb_item i on e.id_item=i.id_item WHERE e.data_dev LIKE '%" + txtPesquisar.Text + "%'";
+            }
+            else if (cbxFiltro.Text == "Observação")
+            {
+                consulta = "SELECT e.id_emp_item as Codigo, u.nome_usuario as Usuario, i.nome_item as Item, e.quant as Quantidade, e.hora_emp as Hora_emprestimo, e.data_emp as Data_empretimo, e.hora_dev as Hora_devolucao, e.data_dev as Data_devolucao, e.obs as Observacao From tb_emp_item e inner join tb_usuario u on e.id_usuario=u.id_usuario inner join tb_item i on e.id_item=i.id_item WHERE e.obs LIKE '%" + txtPesquisar.Text + "%'";
+            }
+            //Monta meu comando sql
+            MySqlCommand commando = new MySqlCommand(consulta, conexao);
+            conexao.Open();//Abro minha conexao
+            //monto a tabela de dados
+            MySqlDataAdapter dados = new MySqlDataAdapter(commando);
+            //Crio uma nova tabela de dados
+            DataTable dtEmpItem = new DataTable();
+            dados.Fill(dtEmpItem);//manipulação dos dados
+            dtvEmpItem.DataSource = dtEmpItem;//chamo o caminho dos dados
+        }
     }
 }

@@ -32,7 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtvEmpItem = new System.Windows.Forms.DataGridView();
-            this.cbxFiltrar = new System.Windows.Forms.ComboBox();
+            this.cbxFiltro = new System.Windows.Forms.ComboBox();
             this.panelLine1 = new System.Windows.Forms.Panel();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.btnProcurar = new System.Windows.Forms.Button();
@@ -50,11 +50,7 @@
             this.dtvEmpItem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtvEmpItem.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Empty;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Empty;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Empty;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Empty;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtvEmpItem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtvEmpItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -82,15 +78,25 @@
             this.dtvEmpItem.TabIndex = 0;
             this.dtvEmpItem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvEmpItem_CellClick);
             // 
-            // cbxFiltrar
+            // cbxFiltro
             // 
-            this.cbxFiltrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxFiltrar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxFiltrar.FormattingEnabled = true;
-            this.cbxFiltrar.Location = new System.Drawing.Point(496, 61);
-            this.cbxFiltrar.Name = "cbxFiltrar";
-            this.cbxFiltrar.Size = new System.Drawing.Size(121, 21);
-            this.cbxFiltrar.TabIndex = 24;
+            this.cbxFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxFiltro.FormattingEnabled = true;
+            this.cbxFiltro.Items.AddRange(new object[] {
+            "Código",
+            "Usuário",
+            "Item",
+            "Quantidade",
+            "H.Empestimo",
+            "D.Empestimo",
+            "H.Devolução",
+            "D.Devolução",
+            "Observação"});
+            this.cbxFiltro.Location = new System.Drawing.Point(496, 61);
+            this.cbxFiltro.Name = "cbxFiltro";
+            this.cbxFiltro.Size = new System.Drawing.Size(121, 21);
+            this.cbxFiltro.TabIndex = 24;
             // 
             // panelLine1
             // 
@@ -128,6 +134,7 @@
             this.btnProcurar.TabIndex = 21;
             this.btnProcurar.Text = "Procurar";
             this.btnProcurar.UseVisualStyleBackColor = false;
+            this.btnProcurar.Click += new System.EventHandler(this.btnProcurar_Click);
             // 
             // btnDevolver
             // 
@@ -178,7 +185,7 @@
             this.Controls.Add(this.lblSelecionado);
             this.Controls.Add(this.lblItem);
             this.Controls.Add(this.btnDevolver);
-            this.Controls.Add(this.cbxFiltrar);
+            this.Controls.Add(this.cbxFiltro);
             this.Controls.Add(this.panelLine1);
             this.Controls.Add(this.txtPesquisar);
             this.Controls.Add(this.btnProcurar);
@@ -196,7 +203,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dtvEmpItem;
-        private System.Windows.Forms.ComboBox cbxFiltrar;
+        private System.Windows.Forms.ComboBox cbxFiltro;
         private System.Windows.Forms.Panel panelLine1;
         private System.Windows.Forms.TextBox txtPesquisar;
         private System.Windows.Forms.Button btnProcurar;

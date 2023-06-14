@@ -25,6 +25,7 @@ namespace Almoxarifado_TCC.Forms
         {
             InitializeComponent();
             CurrentInstance = this;
+            pnlTela.Location = new Point(10, 3);
         }
 
         public static Gerenciamento CurrentInstance;

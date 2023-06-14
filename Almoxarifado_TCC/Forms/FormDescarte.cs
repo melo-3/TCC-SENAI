@@ -124,5 +124,55 @@ namespace Almoxarifado_TCC.Popup
                 btnDescarte.Enabled = false;
             }
         }
+
+        private void btnProcurar_Click(object sender, EventArgs e)
+        {
+            //instancia de conexão
+            ClassConexao con = new ClassConexao();
+            //obtive a conexao
+            MySqlConnection conexao = con.getConexao();
+            String consulta = "";
+            if (cbxFiltro.Text == "") //Campo vazio lista tudo
+            {
+                consulta = "SELECT d.id_descarte as Codigo, i.nome_item as Item, d.quant as Quantidade, d.hora_desc as Hora_Descarte, d.data_desc as Data_Descarte, d.obs as Observacao, d.stats as Status from tb_descarte d inner join tb_item i on d.id_item=i.id_item";
+            }
+            else if (cbxFiltro.Text == "Código")//Se tiver informação lista
+            {
+                consulta = "SELECT d.id_descarte as Codigo, i.nome_item as Item, d.quant as Quantidade, d.hora_desc as Hora_Descarte, d.data_desc as Data_Descarte, d.obs as Observacao, d.stats as Status from tb_descarte d inner join tb_item i on d.id_item=i.id_item WHERE d.id_descarte LIKE'%" + txtPesquisar.Text + "%'";
+            }
+            else if (cbxFiltro.Text == "Item")
+            {
+                consulta = "SELECT d.id_descarte as Codigo, i.nome_item as Item, d.quant as Quantidade, d.hora_desc as Hora_Descarte, d.data_desc as Data_Descarte, d.obs as Observacao, d.stats as Status from tb_descarte d inner join tb_item i on d.id_item=i.id_item WHERE i.nome_item LIKE'%" + txtPesquisar.Text + "%'";
+            }
+            else if (cbxFiltro.Text == "Quantidade")
+            {
+                consulta = "SELECT d.id_descarte as Codigo, i.nome_item as Item, d.quant as Quantidade, d.hora_desc as Hora_Descarte, d.data_desc as Data_Descarte, d.obs as Observacao, d.stats as Status from tb_descarte d inner join tb_item i on d.id_item=i.id_item WHERE d.quant LIKE'%" + txtPesquisar.Text + "%'";
+            }
+            else if (cbxFiltro.Text == "H.Descarte")
+            {
+                consulta = "SELECT d.id_descarte as Codigo, i.nome_item as Item, d.quant as Quantidade, d.hora_desc as Hora_Descarte, d.data_desc as Data_Descarte, d.obs as Observacao, d.stats as Status from tb_descarte d inner join tb_item i on d.id_item=i.id_item WHERE d.hora_desc LIKE'%" + txtPesquisar.Text + "%'";
+            }
+            else if (cbxFiltro.Text == "D.Descarte")
+            {
+                consulta = "SELECT d.id_descarte as Codigo, i.nome_item as Item, d.quant as Quantidade, d.hora_desc as Hora_Descarte, d.data_desc as Data_Descarte, d.obs as Observacao, d.stats as Status from tb_descarte d inner join tb_item i on d.id_item=i.id_item WHERE d.data_desc LIKE'%" + txtPesquisar.Text + "%'";
+            }
+            else if (cbxFiltro.Text == "Observação")
+            {
+                consulta = "SELECT d.id_descarte as Codigo, i.nome_item as Item, d.quant as Quantidade, d.hora_desc as Hora_Descarte, d.data_desc as Data_Descarte, d.obs as Observacao, d.stats as Status from tb_descarte d inner join tb_item i on d.id_item=i.id_item WHERE d.obs LIKE'%" + txtPesquisar.Text + "%'";
+            }
+            else if (cbxFiltro.Text == "Status")
+            {
+                consulta = "SELECT d.id_descarte as Codigo, i.nome_item as Item, d.quant as Quantidade, d.hora_desc as Hora_Descarte, d.data_desc as Data_Descarte, d.obs as Observacao, d.stats as Status from tb_descarte d inner join tb_item i on d.id_item=i.id_item WHERE d.stats LIKE'%" + txtPesquisar.Text + "%'";
+            }
+            //Monta meu comando sql
+            MySqlCommand commando = new MySqlCommand(consulta, conexao);
+            conexao.Open();//Abro minha conexao
+            //monto a tabela de dados
+            MySqlDataAdapter dados = new MySqlDataAdapter(commando);
+            //Crio uma nova tabela de dados
+            DataTable dtDescarte = new DataTable();
+            dados.Fill(dtDescarte);//manipulação dos dados
+            dtvDescarte.DataSource = dtDescarte;//chamo o caminho dos dados
+        }
     }
 }

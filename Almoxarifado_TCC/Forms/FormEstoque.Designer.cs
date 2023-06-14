@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtvEstoque = new System.Windows.Forms.DataGridView();
             this.panelLine1 = new System.Windows.Forms.Panel();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
@@ -41,6 +41,7 @@
             this.btnDescartar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblSelecionado = new System.Windows.Forms.Label();
+            this.cbxFiltro = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtvEstoque)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,32 +57,31 @@
             this.dtvEstoque.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.dtvEstoque.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtvEstoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(78)))), ((int)(((byte)(92)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtvEstoque.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(78)))), ((int)(((byte)(92)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtvEstoque.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtvEstoque.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.dtvEstoque.Location = new System.Drawing.Point(36, 106);
             this.dtvEstoque.Name = "dtvEstoque";
             this.dtvEstoque.ReadOnly = true;
             this.dtvEstoque.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtvEstoque.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtvEstoque.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dtvEstoque.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dtvEstoque.Size = new System.Drawing.Size(581, 370);
             this.dtvEstoque.TabIndex = 0;
             this.dtvEstoque.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvEstoque_CellClick);
-            this.dtvEstoque.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvEstoque_CellContentClick);
             // 
             // panelLine1
             // 
@@ -91,7 +91,7 @@
             this.panelLine1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panelLine1.Location = new System.Drawing.Point(117, 79);
             this.panelLine1.Name = "panelLine1";
-            this.panelLine1.Size = new System.Drawing.Size(500, 2);
+            this.panelLine1.Size = new System.Drawing.Size(373, 2);
             this.panelLine1.TabIndex = 9;
             // 
             // txtPesquisar
@@ -104,7 +104,7 @@
             this.txtPesquisar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.txtPesquisar.Location = new System.Drawing.Point(117, 60);
             this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(500, 20);
+            this.txtPesquisar.Size = new System.Drawing.Size(373, 20);
             this.txtPesquisar.TabIndex = 8;
             // 
             // button2
@@ -230,12 +230,29 @@
             this.lblSelecionado.TabIndex = 18;
             this.lblSelecionado.Text = "Nenhum";
             // 
+            // cbxFiltro
+            // 
+            this.cbxFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxFiltro.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F);
+            this.cbxFiltro.FormattingEnabled = true;
+            this.cbxFiltro.Items.AddRange(new object[] {
+            "Código",
+            "Item",
+            "Descrição",
+            "Quantidade"});
+            this.cbxFiltro.Location = new System.Drawing.Point(496, 61);
+            this.cbxFiltro.Name = "cbxFiltro";
+            this.cbxFiltro.Size = new System.Drawing.Size(121, 21);
+            this.cbxFiltro.TabIndex = 19;
+            // 
             // Estoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.ClientSize = new System.Drawing.Size(788, 529);
+            this.Controls.Add(this.cbxFiltro);
             this.Controls.Add(this.lblSelecionado);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDescartar);
@@ -270,5 +287,6 @@
         private System.Windows.Forms.Button btnDescartar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblSelecionado;
+        private System.Windows.Forms.ComboBox cbxFiltro;
     }
 }

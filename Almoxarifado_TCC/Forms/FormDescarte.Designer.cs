@@ -28,30 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.cbxFiltro = new System.Windows.Forms.ComboBox();
             this.btnDescarte = new System.Windows.Forms.Button();
             this.panelLine1 = new System.Windows.Forms.Panel();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnProcurar = new System.Windows.Forms.Button();
             this.dtvDescarte = new System.Windows.Forms.DataGridView();
             this.lblSelecionado = new System.Windows.Forms.Label();
             this.lblItem = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtvDescarte)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cbxFiltro
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(496, 61);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 24;
+            this.cbxFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxFiltro.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F);
+            this.cbxFiltro.FormattingEnabled = true;
+            this.cbxFiltro.Items.AddRange(new object[] {
+            "Código",
+            "Item",
+            "Quantidade",
+            "H.Descarte",
+            "D.Descarte",
+            "Observação",
+            "Status"});
+            this.cbxFiltro.Location = new System.Drawing.Point(496, 61);
+            this.cbxFiltro.Name = "cbxFiltro";
+            this.cbxFiltro.Size = new System.Drawing.Size(121, 21);
+            this.cbxFiltro.TabIndex = 24;
             // 
             // btnDescarte
             // 
@@ -93,19 +101,20 @@
             this.txtPesquisar.Size = new System.Drawing.Size(373, 20);
             this.txtPesquisar.TabIndex = 18;
             // 
-            // button2
+            // btnProcurar
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(36, 57);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Procurar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnProcurar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.btnProcurar.FlatAppearance.BorderSize = 0;
+            this.btnProcurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProcurar.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F);
+            this.btnProcurar.ForeColor = System.Drawing.Color.White;
+            this.btnProcurar.Location = new System.Drawing.Point(36, 57);
+            this.btnProcurar.Name = "btnProcurar";
+            this.btnProcurar.Size = new System.Drawing.Size(75, 23);
+            this.btnProcurar.TabIndex = 17;
+            this.btnProcurar.Text = "Procurar";
+            this.btnProcurar.UseVisualStyleBackColor = false;
+            this.btnProcurar.Click += new System.EventHandler(this.btnProcurar_Click);
             // 
             // dtvDescarte
             // 
@@ -115,31 +124,31 @@
             this.dtvDescarte.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtvDescarte.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.dtvDescarte.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtvDescarte.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtvDescarte.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dtvDescarte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(78)))), ((int)(((byte)(92)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtvDescarte.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(78)))), ((int)(((byte)(92)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtvDescarte.DefaultCellStyle = dataGridViewCellStyle5;
             this.dtvDescarte.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.dtvDescarte.Location = new System.Drawing.Point(36, 106);
             this.dtvDescarte.Name = "dtvDescarte";
             this.dtvDescarte.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtvDescarte.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtvDescarte.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dtvDescarte.Size = new System.Drawing.Size(581, 370);
             this.dtvDescarte.TabIndex = 16;
             this.dtvDescarte.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvDescarte_CellClick);
@@ -177,11 +186,11 @@
             this.ClientSize = new System.Drawing.Size(788, 529);
             this.Controls.Add(this.lblSelecionado);
             this.Controls.Add(this.lblItem);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbxFiltro);
             this.Controls.Add(this.btnDescarte);
             this.Controls.Add(this.panelLine1);
             this.Controls.Add(this.txtPesquisar);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnProcurar);
             this.Controls.Add(this.dtvDescarte);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Descarte";
@@ -195,11 +204,11 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxFiltro;
         private System.Windows.Forms.Button btnDescarte;
         private System.Windows.Forms.Panel panelLine1;
         private System.Windows.Forms.TextBox txtPesquisar;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnProcurar;
         private System.Windows.Forms.DataGridView dtvDescarte;
         private System.Windows.Forms.Label lblSelecionado;
         private System.Windows.Forms.Label lblItem;

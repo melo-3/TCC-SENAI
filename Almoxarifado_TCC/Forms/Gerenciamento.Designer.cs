@@ -60,7 +60,7 @@
             this.pnlPesquisar = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblPesquisar = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlTela = new System.Windows.Forms.Panel();
             this.lblCriarAdm = new System.Windows.Forms.Label();
             this.lblNomeA = new System.Windows.Forms.Label();
             this.lblSelecionadoA = new System.Windows.Forms.Label();
@@ -91,7 +91,7 @@
             this.panel2.SuspendLayout();
             this.pnlPesquisar.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.pnlTela.SuspendLayout();
             this.BackPopUp.SuspendLayout();
             this.pnlPesquisarA.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -497,38 +497,38 @@
             this.lblPesquisar.Text = "Pesquisar";
             this.lblPesquisar.Visible = false;
             // 
-            // panel3
+            // pnlTela
             // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel3.AutoScroll = true;
-            this.panel3.Controls.Add(this.lblCriarAdm);
-            this.panel3.Controls.Add(this.lblNomeA);
-            this.panel3.Controls.Add(this.lblSelecionadoA);
-            this.panel3.Controls.Add(this.lblNomeU);
-            this.panel3.Controls.Add(this.lblSelecionadoU);
-            this.panel3.Controls.Add(this.BackPopUp);
-            this.panel3.Controls.Add(this.pnlPesquisarA);
-            this.panel3.Controls.Add(this.panel8);
-            this.panel3.Controls.Add(this.lblVisualizarA);
-            this.panel3.Controls.Add(this.dtvAdmin);
-            this.panel3.Controls.Add(this.lblPesquisarA);
-            this.panel3.Controls.Add(this.pnlPesquisar);
-            this.panel3.Controls.Add(this.lblColab);
-            this.panel3.Controls.Add(this.panel2);
-            this.panel3.Controls.Add(this.lblCriarUsu);
-            this.panel3.Controls.Add(this.dtvUsuario);
-            this.panel3.Controls.Add(this.lblEditar);
-            this.panel3.Controls.Add(this.panelAdm);
-            this.panel3.Controls.Add(this.lblExcluir);
-            this.panel3.Controls.Add(this.panelUsuario);
-            this.panel3.Controls.Add(this.lblPesquisar);
-            this.panel3.Controls.Add(this.txtCriarAdm);
-            this.panel3.Controls.Add(this.iconColab);
-            this.panel3.Controls.Add(this.txtCriarUsu);
-            this.panel3.Location = new System.Drawing.Point(-18, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(885, 1091);
-            this.panel3.TabIndex = 88;
+            this.pnlTela.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pnlTela.AutoScroll = true;
+            this.pnlTela.Controls.Add(this.lblCriarAdm);
+            this.pnlTela.Controls.Add(this.lblNomeA);
+            this.pnlTela.Controls.Add(this.lblSelecionadoA);
+            this.pnlTela.Controls.Add(this.lblNomeU);
+            this.pnlTela.Controls.Add(this.lblSelecionadoU);
+            this.pnlTela.Controls.Add(this.BackPopUp);
+            this.pnlTela.Controls.Add(this.pnlPesquisarA);
+            this.pnlTela.Controls.Add(this.panel8);
+            this.pnlTela.Controls.Add(this.lblVisualizarA);
+            this.pnlTela.Controls.Add(this.dtvAdmin);
+            this.pnlTela.Controls.Add(this.lblPesquisarA);
+            this.pnlTela.Controls.Add(this.pnlPesquisar);
+            this.pnlTela.Controls.Add(this.lblColab);
+            this.pnlTela.Controls.Add(this.panel2);
+            this.pnlTela.Controls.Add(this.lblCriarUsu);
+            this.pnlTela.Controls.Add(this.dtvUsuario);
+            this.pnlTela.Controls.Add(this.lblEditar);
+            this.pnlTela.Controls.Add(this.panelAdm);
+            this.pnlTela.Controls.Add(this.lblExcluir);
+            this.pnlTela.Controls.Add(this.panelUsuario);
+            this.pnlTela.Controls.Add(this.lblPesquisar);
+            this.pnlTela.Controls.Add(this.txtCriarAdm);
+            this.pnlTela.Controls.Add(this.iconColab);
+            this.pnlTela.Controls.Add(this.txtCriarUsu);
+            this.pnlTela.Location = new System.Drawing.Point(10, 3);
+            this.pnlTela.Name = "pnlTela";
+            this.pnlTela.Size = new System.Drawing.Size(885, 1091);
+            this.pnlTela.TabIndex = 88;
             // 
             // lblCriarAdm
             // 
@@ -838,7 +838,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.ClientSize = new System.Drawing.Size(924, 482);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.pnlTela);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Gerenciamento";
             this.Text = "Gerenciamento";
@@ -856,8 +856,8 @@
             this.pnlPesquisar.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.pnlTela.ResumeLayout(false);
+            this.pnlTela.PerformLayout();
             this.BackPopUp.ResumeLayout(false);
             this.pnlPesquisarA.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
@@ -897,7 +897,7 @@
         private System.Windows.Forms.Panel pnlPesquisar;
         private System.Windows.Forms.Label lblPesquisar;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnlTela;
         private System.Windows.Forms.Panel pnlPesquisarA;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox txtPesquisarA;
