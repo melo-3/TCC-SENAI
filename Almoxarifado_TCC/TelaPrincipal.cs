@@ -57,8 +57,6 @@ namespace Almoxarifado_TCC
             nome = Convert.ToString(registro["nome_admin"]);
 
             lblNome.Text = nome;
-            if(button1.Enabled == false)
-                button1.ForeColor= Color.Red;
         }
 
 
