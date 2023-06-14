@@ -24,7 +24,6 @@ namespace Almoxarifado_TCC.Popup
 
         public int codigo_chave = 0, num_chave;
         
-
         public void reset()
         {
             //instancia de conexão
@@ -81,11 +80,6 @@ namespace Almoxarifado_TCC.Popup
             dtvChave.DataSource = dtChave;//chamo o caminho dos dados
         }
 
-        private void btnCadastrar_Click(object sender, EventArgs e)
-        {
-            //vai pra outro form
-        }
-
         private void Chave_Load(object sender, EventArgs e)
         {
             ClassConexao con = new ClassConexao();
@@ -114,8 +108,6 @@ namespace Almoxarifado_TCC.Popup
             dtvChave.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dtvChave.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(56, 60, 71);
             dtvChave.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-
-
         }
 
         private void btnEmprestimo_Click(object sender, EventArgs e)
@@ -141,24 +133,42 @@ namespace Almoxarifado_TCC.Popup
             else
             {
                 string tela = "Key_Emp";
-                int cod = this.codigo_chave;
-                TelaPrincipal.CurrentInstance.Popups_Tela(tela, cod);
+                TelaPrincipal.CurrentInstance.Popups_Tela(tela, codigo_chave);
             }
-            
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             string tela = "Key_Add";
-            int cod = this.codigo_chave;
-            TelaPrincipal.CurrentInstance.Popups_Tela(tela, cod);
+            TelaPrincipal.CurrentInstance.Popups_Tela(tela, codigo_chave);
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            int cod = this.codigo_chave;
-            string tela = "Key_Edt";
-            TelaPrincipal.CurrentInstance.Popups_Tela(tela, cod);
+            string Verificacao;
+
+            ClassConexao con = new ClassConexao();
+            MySqlConnection conexao = con.getConexao();
+            String consulta = "";
+            consulta = "SELECT stats from tb_chave where id_chave=" + codigo_chave + "";
+            MySqlCommand commando = new MySqlCommand(consulta, conexao);
+            conexao.Open();
+            MySqlDataReader registro = commando.ExecuteReader();
+            registro.Read();
+            Verificacao = Convert.ToString(registro["stats"]);
+            conexao.Close();
+
+            if (Verificacao == "Indisponível")
+            {
+                lblSelecionado.Text = "Esta chave está indisponível, necessário devolução!";
+                lblSelecionado.ForeColor = Color.Red;
+            }
+            else
+            {
+                string tela = "Key_Edt";
+                TelaPrincipal.CurrentInstance.Popups_Tela(tela, codigo_chave);
+            }
+            
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -171,8 +181,8 @@ namespace Almoxarifado_TCC.Popup
         private void dtvChave_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int contador = dtvChave.RowCount - 1;
-
             lblSelecionado.ForeColor = Color.DimGray;
+            TelaPrincipal.CurrentInstance.Popups_Fechar();
 
             if (e.RowIndex < contador && e.RowIndex >= 0)
             {
@@ -180,6 +190,8 @@ namespace Almoxarifado_TCC.Popup
                 this.num_chave = Convert.ToInt32(dtvChave.Rows[e.RowIndex].Cells[0].Value);
 
                 string sala;
+
+                TelaPrincipal.CurrentInstance.Popups_Fechar();
 
                 ClassConexao con = new ClassConexao();
                 MySqlConnection conexao = con.getConexao();

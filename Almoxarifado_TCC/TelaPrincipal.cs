@@ -57,6 +57,8 @@ namespace Almoxarifado_TCC
             nome = Convert.ToString(registro["nome_admin"]);
 
             lblNome.Text = nome;
+            if(button1.Enabled == false)
+                button1.ForeColor= Color.Red;
         }
 
 
@@ -111,7 +113,7 @@ namespace Almoxarifado_TCC
 
         #endregion
 
-        #region Controlador de telas
+        #region Controladores de telas
 
         public static TelaPrincipal CurrentInstance; // Usado para transferir informações entre forms usando voids
 

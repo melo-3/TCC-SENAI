@@ -214,7 +214,7 @@
             this.lblSelecionado.AutoSize = true;
             this.lblSelecionado.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
             this.lblSelecionado.ForeColor = System.Drawing.Color.DimGray;
-            this.lblSelecionado.Location = new System.Drawing.Point(155, 494);
+            this.lblSelecionado.Location = new System.Drawing.Point(155, 493);
             this.lblSelecionado.Name = "lblSelecionado";
             this.lblSelecionado.Size = new System.Drawing.Size(65, 14);
             this.lblSelecionado.TabIndex = 20;

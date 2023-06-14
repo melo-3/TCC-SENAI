@@ -24,7 +24,7 @@ namespace Almoxarifado_TCC.Popup
             ClassConexao con = new ClassConexao();
             MySqlConnection conexao = con.getConexao();
             conexao.Open();
-            string chavesql = "SELECT * FROM tb_chave WHERE num_chave = " + this.cod_chave; //cria a variavel consulta usuario passando o atributo id
+            string chavesql = "SELECT * FROM tb_chave WHERE id_chave = " + this.cod_chave; //cria a variavel consulta usuario passando o atributo id
             MySqlCommand comando = new MySqlCommand(chavesql, conexao);
             MySqlDataReader registro = comando.ExecuteReader();
             registro.Read();
@@ -57,6 +57,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtNumero.Text == "Número")
             {
                 txtNumero.Text = "";
+                lblNumero.Visible = true;
             }
         }
 
@@ -65,6 +66,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtNumero.Text == "")
             {
                 txtNumero.Text = "Número";
+                lblNumero.Visible = false;
             }
         }
 
@@ -73,6 +75,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtSala.Text == "Sala / Lab")
             {
                 txtSala.Text = "";
+                lblSala.Visible = true;
             }
         }
 
@@ -81,6 +84,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtSala.Text == "")
             {
                 txtSala.Text = "Sala / Lab";
+                lblSala.Visible = false;
             }
         }
 
@@ -89,6 +93,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtObs.Text == "Obs")
             {
                 txtObs.Text = "";
+                lblObs.Visible = true;
             }
         }
 
@@ -97,6 +102,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtObs.Text == "")
             {
                 txtObs.Text = "Obs";
+                lblObs.Visible = false;
             }
         }
 

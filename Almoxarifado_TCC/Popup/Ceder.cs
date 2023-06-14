@@ -15,9 +15,8 @@ namespace Almoxarifado_TCC.Popup
 {
     public partial class Ceder : Form
     {
-
-        public int cod_item;
-        public int cod_usu;
+        string nome_usu, cpf, hora, data;
+        int cod_item, cod_usu, quantAt, quantTt, quant;
 
         public Ceder(int cod)
         {
@@ -141,7 +140,6 @@ namespace Almoxarifado_TCC.Popup
             {
                 txtQuant.Text = valoradd.ToString();
             }
-
         }
 
         private void btnMinus_Click(object sender, EventArgs e)
@@ -182,9 +180,6 @@ namespace Almoxarifado_TCC.Popup
                 reset();
             }
         }
-
-        public int quantAt, quantTt, quant;
-        public string hora, data;
 
         private void Hora_Ceder_Tick(object sender, EventArgs e)
         {
@@ -227,15 +222,8 @@ namespace Almoxarifado_TCC.Popup
             }
         }
 
-        string nome_usu, cpf;
-
         private void dgvUsuario_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int contador = dgvUsuario.RowCount - 1;
-            
-
-            if (e.RowIndex < contador && e.RowIndex >= 0)
-            {
                 //aguarda o codigo da linha selecionada
                 nome_usu = Convert.ToString(dgvUsuario.Rows[e.RowIndex].Cells[0].Value);
 
@@ -251,12 +239,6 @@ namespace Almoxarifado_TCC.Popup
                 cpf = Convert.ToString(registro["cpf"]);
                 conexao.Close();
                 txtCpf.Text = cpf;
-                ///MessageBox.Show("Código usu: " + cod_usu);
-            }
-            else
-            {
-
-            }
         }
     }
 }

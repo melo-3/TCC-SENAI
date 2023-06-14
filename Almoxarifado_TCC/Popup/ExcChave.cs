@@ -60,7 +60,7 @@ namespace Almoxarifado_TCC.Popup
         {
             ClassConexao con = new ClassConexao();//instancia de conexão
             MySqlConnection conexao = con.getConexao(); //obtive a conexao
-            String consulta = "SELECT sala_lab from tb_chave where num_chave = " + this.cod_chave + "";
+            String consulta = "SELECT sala_lab from tb_chave where id_chave = " + this.cod_chave + "";
             conexao.Open();//Abro minha conexao
             MySqlCommand comando = new MySqlCommand(consulta, conexao);
             MySqlDataReader registro = comando.ExecuteReader();
@@ -73,7 +73,7 @@ namespace Almoxarifado_TCC.Popup
             {
                 int resultado;
                 MySqlConnection conexao2 = con.getConexao();
-                string excluir = "delete from tb_chave where num_chave =" + this.cod_chave + "";
+                string excluir = "delete from tb_chave where id_chave =" + this.cod_chave + "";
                 MySqlCommand comando2 = new MySqlCommand(excluir, conexao2);
                 conexao2.Open();//Abro minha conexao
                 resultado = comando2.ExecuteNonQuery();

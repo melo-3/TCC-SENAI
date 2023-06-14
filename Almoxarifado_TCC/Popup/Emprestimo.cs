@@ -170,10 +170,6 @@ namespace Almoxarifado_TCC.Popup
 
         private void dgvUsuario_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            int contador = dgvUsuario.RowCount - 1;
-            if (e.RowIndex < contador && e.RowIndex >= 0)
-            {
                 //aguarda o codigo da linha selecionada
                 this.nome_usu = Convert.ToString(dgvUsuario.Rows[e.RowIndex].Cells[0].Value);
 
@@ -183,19 +179,15 @@ namespace Almoxarifado_TCC.Popup
                 MySqlConnection conexao = con.getConexao();
                 conexao.Open();
 
-                string consulta_id = "select id_usuario from tb_usuario where nome_usuario=@nome";
+                string consulta_id = "select id_usuario, cpf from tb_usuario where nome_usuario=@nome";
 
                 MySqlCommand comando = new MySqlCommand(consulta_id, conexao);
                 comando.Parameters.AddWithValue("@nome", nome_usu);
                 MySqlDataReader registro = comando.ExecuteReader();//executa a consulta
                 registro.Read();
                 this.codigo_usu = Convert.ToInt32(registro["id_usuario"]);
+                txtCpf.Text = Convert.ToString(registro["cpf"]);
                 conexao.Close();
-
-                //MessageBox.Show("id usu: " + this.codigo_usu);
-            }
-
-
         }
     }
 }

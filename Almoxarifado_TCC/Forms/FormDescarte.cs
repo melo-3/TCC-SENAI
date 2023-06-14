@@ -98,6 +98,7 @@ namespace Almoxarifado_TCC.Popup
             int contador = dtvDescarte.RowCount - 1;
             string item;
             lblSelecionado.ForeColor = Color.DimGray;
+            TelaPrincipal.CurrentInstance.Popups_Fechar();
 
             if (e.RowIndex < contador && e.RowIndex >= 0)
             {

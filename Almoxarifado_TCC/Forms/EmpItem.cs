@@ -64,6 +64,7 @@ namespace Almoxarifado_TCC.Forms
         {
             int contador = dtvEmpItem.RowCount - 1;
             string usuario, item;
+            TelaPrincipal.CurrentInstance.Popups_Fechar();
 
             if (e.RowIndex < contador && e.RowIndex >= 0)
             {

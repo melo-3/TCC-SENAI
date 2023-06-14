@@ -144,6 +144,7 @@ namespace Almoxarifado_TCC.Popup
         private void dtvEstoque_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int contador = dtvEstoque.RowCount -1;
+            TelaPrincipal.CurrentInstance.Popups_Fechar();
 
             if (e.RowIndex < contador && e.RowIndex >= 0)
             {

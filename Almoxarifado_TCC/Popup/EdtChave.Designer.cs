@@ -38,6 +38,9 @@
             this.txtSala = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblNumero = new System.Windows.Forms.Label();
+            this.lblSala = new System.Windows.Forms.Label();
+            this.lblObs = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.iconChave)).BeginInit();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +63,9 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.panel4.Controls.Add(this.lblObs);
+            this.panel4.Controls.Add(this.lblSala);
+            this.panel4.Controls.Add(this.lblNumero);
             this.panel4.Controls.Add(this.txtObs);
             this.panel4.Controls.Add(this.panel3);
             this.panel4.Controls.Add(this.lklCancelar);
@@ -169,6 +175,39 @@
             this.panel1.Size = new System.Drawing.Size(133, 2);
             this.panel1.TabIndex = 7;
             // 
+            // lblNumero
+            // 
+            this.lblNumero.AutoSize = true;
+            this.lblNumero.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumero.ForeColor = System.Drawing.Color.DimGray;
+            this.lblNumero.Location = new System.Drawing.Point(24, 40);
+            this.lblNumero.Name = "lblNumero";
+            this.lblNumero.Size = new System.Drawing.Size(47, 13);
+            this.lblNumero.TabIndex = 9;
+            this.lblNumero.Text = "Número";
+            // 
+            // lblSala
+            // 
+            this.lblSala.AutoSize = true;
+            this.lblSala.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSala.ForeColor = System.Drawing.Color.DimGray;
+            this.lblSala.Location = new System.Drawing.Point(24, 99);
+            this.lblSala.Name = "lblSala";
+            this.lblSala.Size = new System.Drawing.Size(57, 13);
+            this.lblSala.TabIndex = 10;
+            this.lblSala.Text = "Sala / Lab";
+            // 
+            // lblObs
+            // 
+            this.lblObs.AutoSize = true;
+            this.lblObs.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblObs.ForeColor = System.Drawing.Color.DimGray;
+            this.lblObs.Location = new System.Drawing.Point(24, 154);
+            this.lblObs.Name = "lblObs";
+            this.lblObs.Size = new System.Drawing.Size(66, 13);
+            this.lblObs.TabIndex = 11;
+            this.lblObs.Text = "Observação";
+            // 
             // EdtChave
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,5 +242,8 @@
         private System.Windows.Forms.TextBox txtSala;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblNumero;
+        private System.Windows.Forms.Label lblObs;
+        private System.Windows.Forms.Label lblSala;
     }
 }
