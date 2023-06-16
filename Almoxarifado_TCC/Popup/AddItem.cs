@@ -45,6 +45,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtNome.Text == "Nome")
             {
                 txtNome.Text = "";
+                lblNome.Visible = true;
             }
         }
 
@@ -53,6 +54,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtNome.Text == "")
             {
                 txtNome.Text = "Nome";
+                lblNome.Visible = false;
             }
         }
 
@@ -61,6 +63,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtDescricao.Text == "Descrição")
             {
                 txtDescricao.Text = "";
+                lblDescricao.Visible = true;
             }
         }
 
@@ -69,6 +72,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtDescricao.Text == "")
             {
                 txtDescricao.Text = "Descrição";
+                lblDescricao.Visible = true;
             }
         }
 
@@ -131,10 +135,6 @@ namespace Almoxarifado_TCC.Popup
             txtQuant.Text = valoradd.ToString();
         }
 
-        private void txtQuant_TextChanged(object sender, EventArgs e)
-        {
-        }
-
         private void btnMinus_Click(object sender, EventArgs e)
         {
             int valoradd = Convert.ToInt32(txtQuant.Text) - 1;
@@ -144,36 +144,6 @@ namespace Almoxarifado_TCC.Popup
             if(Convert.ToInt32(txtQuant.Text) <= 0) {
              txtQuant.Text = "0";
             }
-        }
-
-        private void AddItem_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNome_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDescricao_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbCedivel_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PanelItem_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

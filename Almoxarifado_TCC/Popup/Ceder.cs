@@ -56,6 +56,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtCpf.Text == "CPF")
             {
                 txtCpf.Text = "";
+                lblCPF.Visible = true;
             }
         }
 
@@ -64,6 +65,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtCpf.Text == "")
             {
                 txtCpf.Text = "CPF";
+                lblCPF.Visible = false;
             }
         }
 

@@ -75,12 +75,12 @@
             // 
             this.txtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNome.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold);
+            this.txtNome.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.txtNome.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtNome.Location = new System.Drawing.Point(27, 79);
+            this.txtNome.Location = new System.Drawing.Point(28, 78);
             this.txtNome.Name = "txtNome";
             this.txtNome.ReadOnly = true;
-            this.txtNome.Size = new System.Drawing.Size(133, 19);
+            this.txtNome.Size = new System.Drawing.Size(133, 17);
             this.txtNome.TabIndex = 20;
             this.txtNome.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -88,11 +88,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
-            this.label3.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
-            this.label3.Location = new System.Drawing.Point(56, 50);
+            this.label3.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.25F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.Location = new System.Drawing.Point(60, 50);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 18);
+            this.label3.Size = new System.Drawing.Size(68, 16);
             this.label3.TabIndex = 19;
             this.label3.Text = "Devolução";
             // 
@@ -118,11 +118,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
-            this.label2.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.25F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(101, 170);
+            this.label2.Location = new System.Drawing.Point(105, 170);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 18);
+            this.label2.Size = new System.Drawing.Size(68, 16);
             this.label2.TabIndex = 18;
             this.label2.Text = "Devolução";
             // 
@@ -130,11 +130,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
-            this.label1.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.25F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(5, 168);
+            this.label1.Location = new System.Drawing.Point(8, 168);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 18);
+            this.label1.Size = new System.Drawing.Size(78, 16);
             this.label1.TabIndex = 17;
             this.label1.Text = "Emprestimo";
             // 
@@ -142,11 +142,11 @@
             // 
             this.lblHorario.AutoSize = true;
             this.lblHorario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
-            this.lblHorario.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblHorario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
-            this.lblHorario.Location = new System.Drawing.Point(57, 139);
+            this.lblHorario.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.25F, System.Drawing.FontStyle.Bold);
+            this.lblHorario.ForeColor = System.Drawing.Color.DimGray;
+            this.lblHorario.Location = new System.Drawing.Point(63, 140);
             this.lblHorario.Name = "lblHorario";
-            this.lblHorario.Size = new System.Drawing.Size(63, 18);
+            this.lblHorario.Size = new System.Drawing.Size(59, 16);
             this.lblHorario.TabIndex = 16;
             this.lblHorario.Text = "Horários";
             // 
@@ -154,11 +154,11 @@
             // 
             this.txtDevolucao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.txtDevolucao.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDevolucao.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtDevolucao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
+            this.txtDevolucao.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.txtDevolucao.ForeColor = System.Drawing.Color.DimGray;
             this.txtDevolucao.Location = new System.Drawing.Point(102, 191);
             this.txtDevolucao.Name = "txtDevolucao";
-            this.txtDevolucao.Size = new System.Drawing.Size(72, 19);
+            this.txtDevolucao.Size = new System.Drawing.Size(72, 17);
             this.txtDevolucao.TabIndex = 15;
             this.txtDevolucao.Text = "hh:mm";
             this.txtDevolucao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -167,11 +167,11 @@
             // 
             this.txtEmprestimo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.txtEmprestimo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmprestimo.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtEmprestimo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
+            this.txtEmprestimo.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.txtEmprestimo.ForeColor = System.Drawing.Color.DimGray;
             this.txtEmprestimo.Location = new System.Drawing.Point(10, 191);
             this.txtEmprestimo.Name = "txtEmprestimo";
-            this.txtEmprestimo.Size = new System.Drawing.Size(71, 19);
+            this.txtEmprestimo.Size = new System.Drawing.Size(71, 17);
             this.txtEmprestimo.TabIndex = 14;
             this.txtEmprestimo.Text = "--:--";
             this.txtEmprestimo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

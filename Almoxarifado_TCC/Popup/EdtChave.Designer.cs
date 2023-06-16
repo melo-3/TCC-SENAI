@@ -30,6 +30,9 @@
         {
             this.iconChave = new FontAwesome.Sharp.IconPictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lblObs = new System.Windows.Forms.Label();
+            this.lblSala = new System.Windows.Forms.Label();
+            this.lblNumero = new System.Windows.Forms.Label();
             this.txtObs = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lklCancelar = new System.Windows.Forms.LinkLabel();
@@ -38,9 +41,6 @@
             this.txtSala = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblNumero = new System.Windows.Forms.Label();
-            this.lblSala = new System.Windows.Forms.Label();
-            this.lblObs = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.iconChave)).BeginInit();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -78,6 +78,39 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(189, 334);
             this.panel4.TabIndex = 11;
+            // 
+            // lblObs
+            // 
+            this.lblObs.AutoSize = true;
+            this.lblObs.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblObs.ForeColor = System.Drawing.Color.DimGray;
+            this.lblObs.Location = new System.Drawing.Point(24, 154);
+            this.lblObs.Name = "lblObs";
+            this.lblObs.Size = new System.Drawing.Size(66, 13);
+            this.lblObs.TabIndex = 11;
+            this.lblObs.Text = "Observação";
+            // 
+            // lblSala
+            // 
+            this.lblSala.AutoSize = true;
+            this.lblSala.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSala.ForeColor = System.Drawing.Color.DimGray;
+            this.lblSala.Location = new System.Drawing.Point(24, 98);
+            this.lblSala.Name = "lblSala";
+            this.lblSala.Size = new System.Drawing.Size(57, 13);
+            this.lblSala.TabIndex = 10;
+            this.lblSala.Text = "Sala / Lab";
+            // 
+            // lblNumero
+            // 
+            this.lblNumero.AutoSize = true;
+            this.lblNumero.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumero.ForeColor = System.Drawing.Color.DimGray;
+            this.lblNumero.Location = new System.Drawing.Point(24, 40);
+            this.lblNumero.Name = "lblNumero";
+            this.lblNumero.Size = new System.Drawing.Size(47, 13);
+            this.lblNumero.TabIndex = 9;
+            this.lblNumero.Text = "Número";
             // 
             // txtObs
             // 
@@ -149,7 +182,7 @@
             this.txtSala.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSala.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.txtSala.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtSala.Location = new System.Drawing.Point(27, 115);
+            this.txtSala.Location = new System.Drawing.Point(27, 114);
             this.txtSala.Name = "txtSala";
             this.txtSala.Size = new System.Drawing.Size(133, 17);
             this.txtSala.TabIndex = 3;
@@ -161,7 +194,7 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel2.Location = new System.Drawing.Point(27, 134);
+            this.panel2.Location = new System.Drawing.Point(27, 133);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(133, 2);
             this.panel2.TabIndex = 8;
@@ -174,39 +207,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(133, 2);
             this.panel1.TabIndex = 7;
-            // 
-            // lblNumero
-            // 
-            this.lblNumero.AutoSize = true;
-            this.lblNumero.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumero.ForeColor = System.Drawing.Color.DimGray;
-            this.lblNumero.Location = new System.Drawing.Point(24, 40);
-            this.lblNumero.Name = "lblNumero";
-            this.lblNumero.Size = new System.Drawing.Size(47, 13);
-            this.lblNumero.TabIndex = 9;
-            this.lblNumero.Text = "Número";
-            // 
-            // lblSala
-            // 
-            this.lblSala.AutoSize = true;
-            this.lblSala.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSala.ForeColor = System.Drawing.Color.DimGray;
-            this.lblSala.Location = new System.Drawing.Point(24, 99);
-            this.lblSala.Name = "lblSala";
-            this.lblSala.Size = new System.Drawing.Size(57, 13);
-            this.lblSala.TabIndex = 10;
-            this.lblSala.Text = "Sala / Lab";
-            // 
-            // lblObs
-            // 
-            this.lblObs.AutoSize = true;
-            this.lblObs.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblObs.ForeColor = System.Drawing.Color.DimGray;
-            this.lblObs.Location = new System.Drawing.Point(24, 154);
-            this.lblObs.Name = "lblObs";
-            this.lblObs.Size = new System.Drawing.Size(66, 13);
-            this.lblObs.TabIndex = 11;
-            this.lblObs.Text = "Observação";
             // 
             // EdtChave
             // 

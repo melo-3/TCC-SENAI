@@ -30,6 +30,8 @@
         {
             this.iconCaixa = new FontAwesome.Sharp.IconPictureBox();
             this.PanelItem = new System.Windows.Forms.Panel();
+            this.lblDescricao = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
             this.btnMax = new FontAwesome.Sharp.IconButton();
             this.btnMinus = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -63,6 +65,8 @@
             // PanelItem
             // 
             this.PanelItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.PanelItem.Controls.Add(this.lblDescricao);
+            this.PanelItem.Controls.Add(this.lblNome);
             this.PanelItem.Controls.Add(this.btnMax);
             this.PanelItem.Controls.Add(this.btnMinus);
             this.PanelItem.Controls.Add(this.label1);
@@ -79,7 +83,30 @@
             this.PanelItem.Name = "PanelItem";
             this.PanelItem.Size = new System.Drawing.Size(189, 334);
             this.PanelItem.TabIndex = 11;
-            this.PanelItem.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelItem_Paint);
+            // 
+            // lblDescricao
+            // 
+            this.lblDescricao.AutoSize = true;
+            this.lblDescricao.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescricao.ForeColor = System.Drawing.Color.DimGray;
+            this.lblDescricao.Location = new System.Drawing.Point(25, 85);
+            this.lblDescricao.Name = "lblDescricao";
+            this.lblDescricao.Size = new System.Drawing.Size(56, 13);
+            this.lblDescricao.TabIndex = 33;
+            this.lblDescricao.Text = "Descrição";
+            this.lblDescricao.Visible = false;
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.ForeColor = System.Drawing.Color.DimGray;
+            this.lblNome.Location = new System.Drawing.Point(25, 31);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(36, 13);
+            this.lblNome.TabIndex = 32;
+            this.lblNome.Text = "Nome";
+            this.lblNome.Visible = false;
             // 
             // btnMax
             // 
@@ -124,7 +151,6 @@
             this.label1.Size = new System.Drawing.Size(80, 17);
             this.label1.TabIndex = 29;
             this.label1.Text = "Quantidade";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel5
             // 
@@ -148,7 +174,6 @@
             this.txtQuant.TabIndex = 3;
             this.txtQuant.Text = "0";
             this.txtQuant.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtQuant.TextChanged += new System.EventHandler(this.txtQuant_TextChanged);
             // 
             // txtDescricao
             // 
@@ -161,7 +186,6 @@
             this.txtDescricao.Size = new System.Drawing.Size(133, 17);
             this.txtDescricao.TabIndex = 2;
             this.txtDescricao.Text = "Descrição";
-            this.txtDescricao.TextChanged += new System.EventHandler(this.txtDescricao_TextChanged);
             this.txtDescricao.Enter += new System.EventHandler(this.txtDescricao_Enter);
             this.txtDescricao.Leave += new System.EventHandler(this.txtDescricao_Leave);
             // 
@@ -198,7 +222,6 @@
             this.txtNome.Size = new System.Drawing.Size(133, 17);
             this.txtNome.TabIndex = 1;
             this.txtNome.Text = "Nome";
-            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             this.txtNome.Enter += new System.EventHandler(this.txtNome_Enter);
             this.txtNome.Leave += new System.EventHandler(this.txtNome_Leave);
             // 
@@ -237,7 +260,6 @@
             this.Name = "AddItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddItem";
-            this.Load += new System.EventHandler(this.AddItem_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AddItem_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.iconCaixa)).EndInit();
             this.PanelItem.ResumeLayout(false);
@@ -261,5 +283,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox txtQuant;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDescricao;
+        private System.Windows.Forms.Label lblNome;
     }
 }

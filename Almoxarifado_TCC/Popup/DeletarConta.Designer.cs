@@ -41,6 +41,8 @@
             this.iconExc = new FontAwesome.Sharp.IconPictureBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.btnClose = new FontAwesome.Sharp.IconButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconAviso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconExc)).BeginInit();
@@ -49,6 +51,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.iconOlho);
             this.panel1.Controls.Add(this.btnDeletar);
             this.panel1.Controls.Add(this.iconAviso);
@@ -113,9 +117,9 @@
             this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSenha.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.txtSenha.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtSenha.Location = new System.Drawing.Point(60, 101);
+            this.txtSenha.Location = new System.Drawing.Point(79, 101);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(388, 17);
+            this.txtSenha.Size = new System.Drawing.Size(369, 17);
             this.txtSenha.TabIndex = 17;
             this.txtSenha.Text = "SENHA";
             this.txtSenha.Enter += new System.EventHandler(this.txtSenha_Enter);
@@ -125,9 +129,9 @@
             // 
             this.lineCPF.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.lineCPF.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lineCPF.Location = new System.Drawing.Point(60, 61);
+            this.lineCPF.Location = new System.Drawing.Point(79, 61);
             this.lineCPF.Name = "lineCPF";
-            this.lineCPF.Size = new System.Drawing.Size(408, 2);
+            this.lineCPF.Size = new System.Drawing.Size(389, 2);
             this.lineCPF.TabIndex = 15;
             // 
             // txtCPF
@@ -136,9 +140,9 @@
             this.txtCPF.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCPF.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.txtCPF.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtCPF.Location = new System.Drawing.Point(59, 42);
+            this.txtCPF.Location = new System.Drawing.Point(78, 42);
             this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(408, 17);
+            this.txtCPF.Size = new System.Drawing.Size(389, 17);
             this.txtCPF.TabIndex = 16;
             this.txtCPF.Text = "CPF";
             this.txtCPF.Enter += new System.EventHandler(this.txtUsuario_Enter);
@@ -161,9 +165,9 @@
             // 
             this.lineSenha.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.lineSenha.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lineSenha.Location = new System.Drawing.Point(60, 120);
+            this.lineSenha.Location = new System.Drawing.Point(79, 120);
             this.lineSenha.Name = "lineSenha";
-            this.lineSenha.Size = new System.Drawing.Size(408, 2);
+            this.lineSenha.Size = new System.Drawing.Size(389, 2);
             this.lineSenha.TabIndex = 19;
             // 
             // iconExc
@@ -214,6 +218,30 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.label4.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.label4.ForeColor = System.Drawing.Color.Gray;
+            this.label4.Location = new System.Drawing.Point(19, 100);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 17);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "SENHA";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.label2.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.label2.ForeColor = System.Drawing.Color.Gray;
+            this.label2.Location = new System.Drawing.Point(38, 42);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 17);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "CPF";
+            // 
             // DeletarConta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -251,5 +279,7 @@
         private System.Windows.Forms.Panel lineSenha;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private FontAwesome.Sharp.IconButton btnClose;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
     }
 }

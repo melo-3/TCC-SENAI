@@ -50,6 +50,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtNumero.Text == "Número")
             {
                 txtNumero.Text = "";
+                lblNumero.Visible = true;
             }
         }
 
@@ -58,6 +59,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtNumero.Text == "")
             {
                 txtNumero.Text = "Número";
+                lblNumero.Visible = false;
             }
         }
 
@@ -66,6 +68,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtSala.Text == "Sala / Lab")
             {
                 txtSala.Text = "";
+                lblSala.Visible = true;
             }
         }
 
@@ -74,6 +77,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtSala.Text == "")
             {
                 txtSala.Text = "Sala / Lab";
+                lblSala.Visible = false;
             }
         }
 
@@ -82,6 +86,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtObs.Text == "Obs")
             {
                 txtObs.Text = "";
+                lblObs.Visible = true;
             }
         }
 
@@ -90,6 +95,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtObs.Text == "")
             {
                 txtObs.Text = "Obs";
+                lblObs.Visible = false;
             }
         }
 

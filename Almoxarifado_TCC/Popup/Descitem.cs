@@ -35,15 +35,20 @@ namespace Almoxarifado_TCC.Popup
             conexao.Open();
             MySqlDataReader registro = commando.ExecuteReader();
             registro.Read();
-            nome = Convert.ToString(registro["nome_item"]);
-            desc = Convert.ToString(registro["descricao"]);
-            quant = Convert.ToString(registro["quant"]);
+            txtNome.Text = Convert.ToString(registro["nome_item"]);
+            txtDescricao.Text = Convert.ToString(registro["descricao"]);
+            lblQuantTotal.Text = Convert.ToString(registro["quant"]);
             quantTt = Convert.ToInt32(registro["quant"]);
             conexao.Close();
 
-            txtNome.Text = nome;
-            txtDescricao.Text = desc;
-            lblQuantTotal.Text = quant;
+            if (txtDescricao.Text == "")
+            {
+                txtDescricao.Text = "Obs";
+                lblDescricao.Visible = false;
+            }
+            else {
+                lblDescricao.Visible = true;
+            }
         }
 
 
@@ -128,6 +133,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtObs.Text == "Obs")
             {
                 txtObs.Text = "";
+                lblDescricao.Visible = true;
             }
         }
 
@@ -136,6 +142,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtObs.Text == "")
             {
                 txtObs.Text = "Obs";
+                lblDescricao.Visible = false;
             }
         }
 

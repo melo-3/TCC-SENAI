@@ -47,6 +47,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.iconBox = new FontAwesome.Sharp.IconPictureBox();
             this.Hora_Ceder = new System.Windows.Forms.Timer(this.components);
+            this.lblCPF = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.iconCeder)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
@@ -71,6 +72,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.panel4.Controls.Add(this.lblCPF);
             this.panel4.Controls.Add(this.lblQuantTotal);
             this.panel4.Controls.Add(this.dgvUsuario);
             this.panel4.Controls.Add(this.btnMax);
@@ -272,6 +274,18 @@
             // 
             this.Hora_Ceder.Tick += new System.EventHandler(this.Hora_Ceder_Tick);
             // 
+            // lblCPF
+            // 
+            this.lblCPF.AutoSize = true;
+            this.lblCPF.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCPF.ForeColor = System.Drawing.Color.DimGray;
+            this.lblCPF.Location = new System.Drawing.Point(24, 21);
+            this.lblCPF.Name = "lblCPF";
+            this.lblCPF.Size = new System.Drawing.Size(27, 13);
+            this.lblCPF.TabIndex = 27;
+            this.lblCPF.Text = "CPF";
+            this.lblCPF.Visible = false;
+            // 
             // Ceder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -313,5 +327,6 @@
         private System.Windows.Forms.TextBox txtQuant;
         private FontAwesome.Sharp.IconPictureBox iconBox;
         private System.Windows.Forms.Timer Hora_Ceder;
+        private System.Windows.Forms.Label lblCPF;
     }
 }

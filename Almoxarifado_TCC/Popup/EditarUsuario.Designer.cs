@@ -40,6 +40,10 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnCadastrar = new System.Windows.Forms.Button();
+            this.lblNome = new System.Windows.Forms.Label();
+            this.lblCPF = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblTelefone = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label2
@@ -196,12 +200,60 @@
             this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.ForeColor = System.Drawing.Color.DimGray;
+            this.lblNome.Location = new System.Drawing.Point(9, 19);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(36, 13);
+            this.lblNome.TabIndex = 50;
+            this.lblNome.Text = "Nome";
+            // 
+            // lblCPF
+            // 
+            this.lblCPF.AutoSize = true;
+            this.lblCPF.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCPF.ForeColor = System.Drawing.Color.DimGray;
+            this.lblCPF.Location = new System.Drawing.Point(9, 64);
+            this.lblCPF.Name = "lblCPF";
+            this.lblCPF.Size = new System.Drawing.Size(27, 13);
+            this.lblCPF.TabIndex = 51;
+            this.lblCPF.Text = "CPF";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.ForeColor = System.Drawing.Color.DimGray;
+            this.lblEmail.Location = new System.Drawing.Point(8, 109);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(35, 13);
+            this.lblEmail.TabIndex = 52;
+            this.lblEmail.Text = "Email";
+            // 
+            // lblTelefone
+            // 
+            this.lblTelefone.AutoSize = true;
+            this.lblTelefone.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefone.ForeColor = System.Drawing.Color.DimGray;
+            this.lblTelefone.Location = new System.Drawing.Point(9, 154);
+            this.lblTelefone.Name = "lblTelefone";
+            this.lblTelefone.Size = new System.Drawing.Size(47, 13);
+            this.lblTelefone.TabIndex = 53;
+            this.lblTelefone.Text = "Telefone";
+            // 
             // EditarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.ClientSize = new System.Drawing.Size(213, 340);
+            this.Controls.Add(this.lblTelefone);
+            this.Controls.Add(this.lblEmail);
+            this.Controls.Add(this.lblCPF);
+            this.Controls.Add(this.lblNome);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnCadastrar);
@@ -218,7 +270,7 @@
             this.MaximumSize = new System.Drawing.Size(213, 340);
             this.MinimumSize = new System.Drawing.Size(213, 340);
             this.Name = "EditarUsuario";
-            this.Text = "EditarUsuario";
+            this.Text = "v";
             this.Load += new System.EventHandler(this.EditarUsuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -238,5 +290,9 @@
         private System.Windows.Forms.TextBox txtNome;
         private FontAwesome.Sharp.IconButton btnCancelar;
         private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.Label lblCPF;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblTelefone;
     }
 }

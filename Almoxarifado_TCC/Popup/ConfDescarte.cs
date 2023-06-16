@@ -41,6 +41,12 @@ namespace Almoxarifado_TCC.Popup
             txtObs.Text = Convert.ToString(registro["obs"]);
             
             conexao.Close();
+
+            if (txtObs.Text == "")
+            {
+                txtObs.Text = "Obs";
+                lblObservacao.Visible = true;
+            }
         }
 
         private void btnDescartar_Click(object sender, EventArgs e)
@@ -65,6 +71,24 @@ namespace Almoxarifado_TCC.Popup
         {
             TelaPrincipal.CurrentInstance.Popups_Fechar();
             this.Close();
+        }
+
+        private void txtObs_Enter(object sender, EventArgs e)
+        {
+            if (txtObs.Text == "Obs")
+            {
+                txtObs.Text = "";
+                lblObservacao.Visible = true;
+            }
+        }
+
+        private void txtObs_Leave(object sender, EventArgs e)
+        {
+            if (txtObs.Text == "")
+            {
+                txtObs.Text = "Obs";
+                lblObservacao.Visible = false;
+            }
         }
     }
 }
