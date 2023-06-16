@@ -52,7 +52,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.label2.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(60, 217);
+            this.label2.Location = new System.Drawing.Point(60, 212);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 13);
             this.label2.TabIndex = 0;
@@ -66,7 +66,7 @@
             this.cmbTipo.Font = new System.Drawing.Font("Candara", 9F);
             this.cmbTipo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cmbTipo.FormattingEnabled = true;
-            this.cmbTipo.Location = new System.Drawing.Point(22, 234);
+            this.cmbTipo.Location = new System.Drawing.Point(22, 229);
             this.cmbTipo.Margin = new System.Windows.Forms.Padding(1);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(170, 22);

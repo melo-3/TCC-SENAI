@@ -36,6 +36,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtConfirm = new System.Windows.Forms.TextBox();
+            this.lblSala = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.iconExc)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -112,6 +113,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.panel1.Controls.Add(this.lblSala);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnSim);
@@ -147,6 +149,18 @@
             this.txtConfirm.Enter += new System.EventHandler(this.txtConfirm_Enter);
             this.txtConfirm.Leave += new System.EventHandler(this.txtConfirm_Leave);
             // 
+            // lblSala
+            // 
+            this.lblSala.AutoSize = true;
+            this.lblSala.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSala.ForeColor = System.Drawing.Color.DimGray;
+            this.lblSala.Location = new System.Drawing.Point(93, 97);
+            this.lblSala.Name = "lblSala";
+            this.lblSala.Size = new System.Drawing.Size(75, 13);
+            this.lblSala.TabIndex = 20;
+            this.lblSala.Text = "Nome da sala";
+            this.lblSala.Visible = false;
+            // 
             // ExcChave
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,5 +194,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtConfirm;
+        private System.Windows.Forms.Label lblSala;
     }
 }

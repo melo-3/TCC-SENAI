@@ -30,6 +30,8 @@
         {
             this.iconEditar = new FontAwesome.Sharp.IconPictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lblDescricao = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -60,12 +62,13 @@
             this.iconEditar.Size = new System.Drawing.Size(80, 80);
             this.iconEditar.TabIndex = 12;
             this.iconEditar.TabStop = false;
-            this.iconEditar.Click += new System.EventHandler(this.iconEditar_Click);
             this.iconEditar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.iconEditar_MouseDown);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.panel4.Controls.Add(this.lblDescricao);
+            this.panel4.Controls.Add(this.lblNome);
             this.panel4.Controls.Add(this.checkBox1);
             this.panel4.Controls.Add(this.txtDescricao);
             this.panel4.Controls.Add(this.panel3);
@@ -83,6 +86,28 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(189, 334);
             this.panel4.TabIndex = 13;
+            // 
+            // lblDescricao
+            // 
+            this.lblDescricao.AutoSize = true;
+            this.lblDescricao.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescricao.ForeColor = System.Drawing.Color.DimGray;
+            this.lblDescricao.Location = new System.Drawing.Point(25, 70);
+            this.lblDescricao.Name = "lblDescricao";
+            this.lblDescricao.Size = new System.Drawing.Size(56, 13);
+            this.lblDescricao.TabIndex = 25;
+            this.lblDescricao.Text = "Descrição";
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.ForeColor = System.Drawing.Color.DimGray;
+            this.lblNome.Location = new System.Drawing.Point(25, 19);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(36, 13);
+            this.lblNome.TabIndex = 24;
+            this.lblNome.Text = "Nome";
             // 
             // checkBox1
             // 
@@ -102,7 +127,7 @@
             this.txtDescricao.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescricao.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.txtDescricao.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtDescricao.Location = new System.Drawing.Point(28, 81);
+            this.txtDescricao.Location = new System.Drawing.Point(28, 86);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(133, 17);
             this.txtDescricao.TabIndex = 21;
@@ -114,7 +139,7 @@
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel3.Location = new System.Drawing.Point(28, 100);
+            this.panel3.Location = new System.Drawing.Point(28, 105);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(133, 2);
             this.panel3.TabIndex = 22;
@@ -287,5 +312,7 @@
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label lblDescricao;
+        private System.Windows.Forms.Label lblNome;
     }
 }

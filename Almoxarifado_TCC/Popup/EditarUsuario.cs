@@ -54,6 +54,16 @@ namespace Almoxarifado_TCC.Popup
             txtEmail.Text = Convert.ToString(registro["email"]);
             txtTelefone.Text = Convert.ToString(registro["telefone"]);
             conexao.Close();
+
+            if (txtTelefone.Text == "")
+            {
+                txtTelefone.Text = "TELEFONE";
+                lblTelefone.Visible = false;
+            }
+            else
+            {
+                lblTelefone.Visible = true;
+            }
         }
 
         private void cmbTipo_SelectedIndexChanged(object sender, EventArgs e)
@@ -146,13 +156,18 @@ namespace Almoxarifado_TCC.Popup
             {
                 txtNome.Text = "";
                 txtNome.ForeColor = CoresGlobais.Normal;
+                lblNome.Visible = true;
             }
         }
 
         private void txtNome_Leave(object sender, EventArgs e)
         {
             if (txtNome.Text == "")
+            {
                 txtNome.Text = "NOME";
+                lblNome.Visible = false;
+            }
+                
         }
 
         private void txtCPF_Enter(object sender, EventArgs e)
@@ -161,13 +176,18 @@ namespace Almoxarifado_TCC.Popup
             {
                 txtCPF.Text = "";
                 txtCPF.ForeColor = CoresGlobais.Normal;
+                lblCPF.Visible = true;
             }
         }
 
         private void txtCPF_Leave(object sender, EventArgs e)
         {
             if (txtCPF.Text == "")
+            {
                 txtCPF.Text = "CPF";
+                lblCPF.Visible = true;
+            }
+                
         }
 
         private void txtEmail_Enter(object sender, EventArgs e)
@@ -176,6 +196,7 @@ namespace Almoxarifado_TCC.Popup
             {
                 txtEmail.Text = "";
                 txtEmail.ForeColor = CoresGlobais.Normal;
+                lblEmail.Visible = true;
             }
                 
         }
@@ -183,13 +204,21 @@ namespace Almoxarifado_TCC.Popup
         private void txtEmail_Leave(object sender, EventArgs e)
         {
             if (txtEmail.Text == "")
+            {
                 txtEmail.Text = "EMAIL";
+                lblEmail.Visible = false;
+            }
+                
         }
 
         private void txtTelefone_Enter(object sender, EventArgs e)
         {
             if (txtTelefone.Text == "TELEFONE")
+            {
                 txtTelefone.Text = "";
+                lblTelefone.Visible = true;
+            }
+
         }
 
         
@@ -197,7 +226,10 @@ namespace Almoxarifado_TCC.Popup
         private void txtTelefone_Leave(object sender, EventArgs e)
         {
             if (txtTelefone.Text == "")
+            {
                 txtTelefone.Text = "TELEFONE";
+                lblTelefone.Visible = false;
+            }
         }
 
         #endregion

@@ -60,7 +60,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtNome.Text == "Nome")
             {
                 txtNome.Text = "";
-                txtNome.ForeColor = Color.Black;
+                lblNome.Visible = true;
             }
         }
 
@@ -69,7 +69,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtNome.Text == "")
             {
                 txtNome.Text = "Nome";
-                txtNome.ForeColor = Color.Black;
+                lblNome.Visible = false;
             }
         }
 
@@ -78,7 +78,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtDescricao.Text == "Descrição")
             {
                 txtDescricao.Text = "";
-                txtDescricao.ForeColor = Color.Black;
+                lblDescricao.Visible = true;
             }
         }
 
@@ -87,7 +87,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtDescricao.Text == "")
             {
                 txtDescricao.Text = "Descrição";
-                txtDescricao.ForeColor = Color.Black;
+                lblDescricao.Visible = false;
             }
         }
 
@@ -166,11 +166,6 @@ namespace Almoxarifado_TCC.Popup
             {
                 txtQuant.Text = "0";
             }
-        }
-
-        private void iconEditar_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

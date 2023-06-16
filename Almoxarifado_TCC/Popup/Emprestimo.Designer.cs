@@ -48,6 +48,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.Temp_Emprestimo = new System.Windows.Forms.Timer(this.components);
             this.iconCeder = new FontAwesome.Sharp.IconPictureBox();
+            this.lblCPF = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.iconChave)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
@@ -72,6 +73,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.panel4.Controls.Add(this.lblCPF);
             this.panel4.Controls.Add(this.panel3);
             this.panel4.Controls.Add(this.panel1);
             this.panel4.Controls.Add(this.label2);
@@ -275,6 +277,18 @@
             this.iconCeder.TabStop = false;
             this.iconCeder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.iconCeder_MouseDown);
             // 
+            // lblCPF
+            // 
+            this.lblCPF.AutoSize = true;
+            this.lblCPF.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCPF.ForeColor = System.Drawing.Color.DimGray;
+            this.lblCPF.Location = new System.Drawing.Point(25, 16);
+            this.lblCPF.Name = "lblCPF";
+            this.lblCPF.Size = new System.Drawing.Size(27, 13);
+            this.lblCPF.TabIndex = 19;
+            this.lblCPF.Text = "CPF";
+            this.lblCPF.Visible = false;
+            // 
             // Emprestimo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,5 +331,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconPictureBox iconCeder;
+        private System.Windows.Forms.Label lblCPF;
     }
 }

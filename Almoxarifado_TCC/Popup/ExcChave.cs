@@ -45,6 +45,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtConfirm.Text == "Insira o nome da sala")
             {
                 txtConfirm.Text = "";
+                lblSala.Visible = true;
             }
         }
 
@@ -53,6 +54,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtConfirm.Text == "")
             {
                 txtConfirm.Text = "Insira o nome da sala";
+                lblSala.Visible = false;
             }
         }
 

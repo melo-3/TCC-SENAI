@@ -36,6 +36,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblItem = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.iconExc)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -58,6 +59,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.panel1.Controls.Add(this.lblItem);
             this.panel1.Controls.Add(this.txtConfirm);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label2);
@@ -147,6 +149,18 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Você tem certeza que deseja";
             // 
+            // lblItem
+            // 
+            this.lblItem.AutoSize = true;
+            this.lblItem.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblItem.ForeColor = System.Drawing.Color.DimGray;
+            this.lblItem.Location = new System.Drawing.Point(93, 97);
+            this.lblItem.Name = "lblItem";
+            this.lblItem.Size = new System.Drawing.Size(76, 13);
+            this.lblItem.TabIndex = 21;
+            this.lblItem.Text = "Nome da item";
+            this.lblItem.Visible = false;
+            // 
             // ExcItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -177,5 +191,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtConfirm;
+        private System.Windows.Forms.Label lblItem;
     }
 }
