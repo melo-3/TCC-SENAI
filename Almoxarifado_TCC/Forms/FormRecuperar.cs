@@ -8,6 +8,13 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//bibliotecas email
+using System.Net.Mail;
+using System.Net.Mime;
+using System.Net;
+using System.Web;
+using System.Net.Configuration;
+using System.Data.SqlClient;
 
 namespace Almoxarifado_TCC.Popup
 {
@@ -92,6 +99,10 @@ namespace Almoxarifado_TCC.Popup
         {
             if (identificador == 1)
             {
+                ClassUsuario usu = new ClassUsuario();
+                string cpf = txtCPF.Text;
+                MessageBox.Show(usu.recuperarEmail(cpf));
+
                 if (iconAviso.Visible == false)
                 {
                     iconAviso.Visible = true;
@@ -107,7 +118,15 @@ namespace Almoxarifado_TCC.Popup
 
             else if (identificador == 0)
             {
-                Login.CurrentInstance.TimerNovaS();
+                if (txtCodigo.Text == "1234")
+                {
+                    Login.CurrentInstance.TimerNovaS();
+                }
+                else
+                {
+                    MessageBox.Show("Código de recuperação inválido");
+                }
+                
             }
         }
 

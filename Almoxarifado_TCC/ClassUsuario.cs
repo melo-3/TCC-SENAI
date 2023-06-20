@@ -77,19 +77,23 @@ namespace Almoxarifado_TCC
                     msg = "Usuário não localizado";
                     return msg;
                 }
+
+                int cod_rec = 1234;
+
+                MessageBox.Show("email: "+email);
                 // começar o acesso ao email
                 SmtpClient client = new SmtpClient();
                 client.Host = "smtp.office365.com";
                 //client.Host = "smtp.gmail.com";
                 client.Port = 587;
                 client.EnableSsl = true;
-                client.Credentials = new System.Net.NetworkCredential("grupinhodoti@outlook.com", "124900TI");
+                client.Credentials = new System.Net.NetworkCredential("grupinhodoti@gmail.com", "124900TI");
                 MailMessage mail = new MailMessage();
-                mail.Sender = new System.Net.Mail.MailAddress("grupinhodoti@outlook.com", "sistema uuuuuuuu");
-                mail.From = new MailAddress("grupinhodoti@outlook.com", "Sistema Grupinho do TI");
+                mail.Sender = new System.Net.Mail.MailAddress("grupinhodoti@gmail.com", "sistema uuuuuuuu");
+                mail.From = new MailAddress("grupinhodoti@gmail.com", "Sistema Grupinho do TI");
                 mail.To.Add(new MailAddress(email, nome));
-                mail.Subject = "Senha esquecida";
-                mail.Body = "Boa tarde, aqui é a secretaria do SENAI Campus da indústria. Esse " + nome + " de cpf " + cpf + " é um clochard e a senha dele é " + senha;
+                mail.Subject = "Almoxarifado: Senha esquecida";
+                mail.Body = "Esse email foi enviado com um código de verificação para recuperar sua senha. O código é: " + cod_rec + " Favor não responder esse email.";
                 mail.IsBodyHtml = true;
                 mail.Priority = MailPriority.High;
                 try
