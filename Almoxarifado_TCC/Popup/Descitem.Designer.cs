@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.iconDesc = new FontAwesome.Sharp.IconPictureBox();
             this.PanelItem = new System.Windows.Forms.Panel();
+            this.lblObs = new System.Windows.Forms.Label();
+            this.lblDescricao = new System.Windows.Forms.Label();
+            this.lblNumero = new System.Windows.Forms.Label();
             this.txtObs = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblQuantTotal = new System.Windows.Forms.Label();
@@ -46,9 +49,6 @@
             this.btnDescartar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.hora_desc = new System.Windows.Forms.Timer(this.components);
-            this.lblNumero = new System.Windows.Forms.Label();
-            this.lblDescricao = new System.Windows.Forms.Label();
-            this.lblObs = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.iconDesc)).BeginInit();
             this.PanelItem.SuspendLayout();
             this.SuspendLayout();
@@ -92,6 +92,40 @@
             this.PanelItem.Name = "PanelItem";
             this.PanelItem.Size = new System.Drawing.Size(189, 334);
             this.PanelItem.TabIndex = 13;
+            // 
+            // lblObs
+            // 
+            this.lblObs.AutoSize = true;
+            this.lblObs.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblObs.ForeColor = System.Drawing.Color.DimGray;
+            this.lblObs.Location = new System.Drawing.Point(25, 202);
+            this.lblObs.Name = "lblObs";
+            this.lblObs.Size = new System.Drawing.Size(66, 13);
+            this.lblObs.TabIndex = 37;
+            this.lblObs.Text = "Observação";
+            this.lblObs.Visible = false;
+            // 
+            // lblDescricao
+            // 
+            this.lblDescricao.AutoSize = true;
+            this.lblDescricao.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescricao.ForeColor = System.Drawing.Color.DimGray;
+            this.lblDescricao.Location = new System.Drawing.Point(25, 70);
+            this.lblDescricao.Name = "lblDescricao";
+            this.lblDescricao.Size = new System.Drawing.Size(56, 13);
+            this.lblDescricao.TabIndex = 36;
+            this.lblDescricao.Text = "Descrição";
+            // 
+            // lblNumero
+            // 
+            this.lblNumero.AutoSize = true;
+            this.lblNumero.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumero.ForeColor = System.Drawing.Color.DimGray;
+            this.lblNumero.Location = new System.Drawing.Point(25, 18);
+            this.lblNumero.Name = "lblNumero";
+            this.lblNumero.Size = new System.Drawing.Size(36, 13);
+            this.lblNumero.TabIndex = 35;
+            this.lblNumero.Text = "Nome";
             // 
             // txtObs
             // 
@@ -268,42 +302,6 @@
             // hora_desc
             // 
             this.hora_desc.Tick += new System.EventHandler(this.hora_desc_Tick);
-            // 
-            // lblNumero
-            // 
-            this.lblNumero.AutoSize = true;
-            this.lblNumero.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumero.ForeColor = System.Drawing.Color.DimGray;
-            this.lblNumero.Location = new System.Drawing.Point(25, 18);
-            this.lblNumero.Name = "lblNumero";
-            this.lblNumero.Size = new System.Drawing.Size(36, 13);
-            this.lblNumero.TabIndex = 35;
-            this.lblNumero.Text = "Nome";
-            this.lblNumero.Visible = false;
-            // 
-            // lblDescricao
-            // 
-            this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescricao.ForeColor = System.Drawing.Color.DimGray;
-            this.lblDescricao.Location = new System.Drawing.Point(25, 70);
-            this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(56, 13);
-            this.lblDescricao.TabIndex = 36;
-            this.lblDescricao.Text = "Descrição";
-            this.lblDescricao.Visible = false;
-            // 
-            // lblObs
-            // 
-            this.lblObs.AutoSize = true;
-            this.lblObs.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblObs.ForeColor = System.Drawing.Color.DimGray;
-            this.lblObs.Location = new System.Drawing.Point(25, 202);
-            this.lblObs.Name = "lblObs";
-            this.lblObs.Size = new System.Drawing.Size(66, 13);
-            this.lblObs.TabIndex = 37;
-            this.lblObs.Text = "Observação";
-            this.lblObs.Visible = false;
             // 
             // Descitem
             // 

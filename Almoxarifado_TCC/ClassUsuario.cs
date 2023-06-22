@@ -33,6 +33,7 @@ namespace Almoxarifado_TCC
         public bool logado;
         public string perfil;
         public string fotousu;
+        public int cod_rec;
 
         public void usuario()
         {
@@ -78,9 +79,10 @@ namespace Almoxarifado_TCC
                     return msg;
                 }
 
-                int cod_rec = 1234;
-
-                MessageBox.Show("email: "+email);
+                Random numAletorio = new Random();
+                cod_rec = numAletorio.Next(1000, 10000);
+                
+                ///MessageBox.Show("email: "+email);
                 // começar o acesso ao email
                 SmtpClient client = new SmtpClient();
                 client.Host = "smtp.office365.com";
@@ -99,11 +101,14 @@ namespace Almoxarifado_TCC
                 try
                 {
                     client.Send(mail);
-                    msg = "email enviado";
+                    //msg = "email enviado";
+                    return null;
                 }
                 catch (Exception erro)
                 {
                     msg = "erro:" + erro.Message;
+                    return msg;
+
                 }
                 finally
                 {
@@ -113,13 +118,14 @@ namespace Almoxarifado_TCC
             catch (SqlException erro)
             {
                 msg = "erro no banco" + erro.Message;
+                return msg;
+
             }
             finally
             {
                 con.Close();
             }
-            return msg;
-
+            //return msg;
         }
 
         public string foto

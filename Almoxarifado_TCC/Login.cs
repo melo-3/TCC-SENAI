@@ -72,6 +72,7 @@ namespace Almoxarifado_TCC
         {
             if(txtUsuario.Text == "CPF"){
                 txtUsuario.Text = "";
+                lblCPF.Visible = true;
             }
         }
 
@@ -80,6 +81,7 @@ namespace Almoxarifado_TCC
             if (txtUsuario.Text == "")
             {
                 txtUsuario.Text = "CPF";
+                lblCPF.Visible = false;
             }
         }
 
@@ -89,6 +91,7 @@ namespace Almoxarifado_TCC
             {
                 txtSenha.Text = "";
                 txtSenha.UseSystemPasswordChar = true;
+                lblSenha1.Visible = true;
             }
         }
 
@@ -98,6 +101,7 @@ namespace Almoxarifado_TCC
             {
                 txtSenha.Text = "SENHA";
                 txtSenha.UseSystemPasswordChar = false;
+                lblSenha1.Visible = false;
             }
         }
 
@@ -206,11 +210,7 @@ namespace Almoxarifado_TCC
                    lblSenha.Visible = true;
                    tmESenha.Start();
                 }
-               
-                
-                
             }
-
         }
 
         private void novoform()// define o programa que vai ser aberto
@@ -286,7 +286,6 @@ namespace Almoxarifado_TCC
 
                 // Dsabilita o botão, para impedir que o usuario clique mais de uma vez nele seguida.
                 lblSenha.Enabled = true;
-
             }
         }
 
@@ -362,13 +361,15 @@ namespace Almoxarifado_TCC
             tmTelaE.Start();
             identificador = 0;
             lblSenha.Visible = false;
-            lblSenha.Text = "";
+            //lblSenha.Text = "";
             await Task.Delay(500);
             OpenChildForm(new Popup.FormRecuperar());
             iconVoltar.Visible = true;
             txtSenha.UseSystemPasswordChar = false;
             txtSenha.Text = "SENHA";
             txtUsuario.Text = "CPF";
+            lblCPF.Visible = false;
+            lblSenha1.Visible = false;
             lblAviso.Visible = false;
             iconAviso.Visible = false;
         }
@@ -427,8 +428,9 @@ namespace Almoxarifado_TCC
 
         public static Login CurrentInstance;
 
-        public async void TimerNovaS()
+        public async void TimerNovaS(string cpf)
         {
+
             tmNovaSE.Start();
             iconVoltar.Enabled = false;
             await Task.Delay(570);
@@ -438,7 +440,7 @@ namespace Almoxarifado_TCC
                 iconVoltar.Enabled = true;
             }
                 
-            OpenChildForm(new Popup.FormNovaSenha());
+            OpenChildForm(new Popup.FormNovaSenha(cpf));
         }
 
         public async void TimerLogo()
@@ -450,8 +452,7 @@ namespace Almoxarifado_TCC
             if (activeForm != null)
             {
                 activeForm.Close();
-            }
-                
+            } 
         }
 
         private void tmNovaSE_Tick(object sender, EventArgs e)

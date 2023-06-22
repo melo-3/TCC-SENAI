@@ -133,7 +133,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtObs.Text == "Obs")
             {
                 txtObs.Text = "";
-                lblDescricao.Visible = true;
+                lblObs.Visible = true;
             }
         }
 
@@ -142,7 +142,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtObs.Text == "")
             {
                 txtObs.Text = "Obs";
-                lblDescricao.Visible = false;
+                lblObs.Visible = false;
             }
         }
 

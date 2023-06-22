@@ -46,6 +46,8 @@
             this.iconAviso = new FontAwesome.Sharp.IconPictureBox();
             this.iconOlho = new FontAwesome.Sharp.IconButton();
             this.panelTela = new System.Windows.Forms.Panel();
+            this.lblSenha1 = new System.Windows.Forms.Label();
+            this.lblCPF = new System.Windows.Forms.Label();
             this.tmLogoExpandir = new System.Windows.Forms.Timer(this.components);
             this.tmLogoRetrair = new System.Windows.Forms.Timer(this.components);
             this.tmTelaE = new System.Windows.Forms.Timer(this.components);
@@ -278,6 +280,8 @@
             // panelTela
             // 
             this.panelTela.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            this.panelTela.Controls.Add(this.lblSenha1);
+            this.panelTela.Controls.Add(this.lblCPF);
             this.panelTela.Controls.Add(this.lblLogin);
             this.panelTela.Controls.Add(this.iconOlho);
             this.panelTela.Controls.Add(this.btnLogin);
@@ -291,6 +295,30 @@
             this.panelTela.Name = "panelTela";
             this.panelTela.Size = new System.Drawing.Size(530, 330);
             this.panelTela.TabIndex = 15;
+            // 
+            // lblSenha1
+            // 
+            this.lblSenha1.AutoSize = true;
+            this.lblSenha1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 10F, System.Drawing.FontStyle.Bold);
+            this.lblSenha1.ForeColor = System.Drawing.Color.DimGray;
+            this.lblSenha1.Location = new System.Drawing.Point(54, 120);
+            this.lblSenha1.Name = "lblSenha1";
+            this.lblSenha1.Size = new System.Drawing.Size(54, 17);
+            this.lblSenha1.TabIndex = 26;
+            this.lblSenha1.Text = "SENHA";
+            this.lblSenha1.Visible = false;
+            // 
+            // lblCPF
+            // 
+            this.lblCPF.AutoSize = true;
+            this.lblCPF.Font = new System.Drawing.Font("Bahnschrift SemiBold", 10F, System.Drawing.FontStyle.Bold);
+            this.lblCPF.ForeColor = System.Drawing.Color.DimGray;
+            this.lblCPF.Location = new System.Drawing.Point(53, 61);
+            this.lblCPF.Name = "lblCPF";
+            this.lblCPF.Size = new System.Drawing.Size(34, 17);
+            this.lblCPF.TabIndex = 25;
+            this.lblCPF.Text = "CPF";
+            this.lblCPF.Visible = false;
             // 
             // tmLogoExpandir
             // 
@@ -343,9 +371,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.ClientSize = new System.Drawing.Size(780, 330);
+            this.Controls.Add(this.panelLogo);
             this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.panelLogo);
             this.Controls.Add(this.panelTela);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -389,6 +417,8 @@
         private System.Windows.Forms.Timer tmESenha;
         private System.Windows.Forms.Timer tmNovaSE;
         private System.Windows.Forms.Timer tmNovaSD;
+        private System.Windows.Forms.Label lblSenha1;
+        private System.Windows.Forms.Label lblCPF;
     }
 }
 

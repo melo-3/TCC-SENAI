@@ -7,18 +7,50 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Almoxarifado_TCC.Popup
 {
     public partial class FormNovaSenha : Form
     {
-        public FormNovaSenha()
+
+        public string cpf;
+        public FormNovaSenha(string cpf)
         {
             InitializeComponent();
+            this.cpf = cpf;
+            MessageBox.Show("cpf:" + cpf);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            ClassUsuario usu = new ClassUsuario(); // Chama a classe Usuario
+            ClassConexao con = new ClassConexao(); // Chama a classe Conexao
+            string novaSenha = txtNVSenha.Text;
+            string confirmarSenha = txtRNVSenha.Text;
+
+            // Verifica se as senhas informadas são iguais
+            if (novaSenha == confirmarSenha)
+            {
+                MySqlConnection conexao = con.getConexao();
+                string SQL = "UPDATE tb_admin SET senha=@senha WHERE cpf=@cpf"; // Atualiza a senha na tabela do banco de dados
+                MySqlCommand comando = new MySqlCommand(SQL, conexao);
+                conexao.Open();
+                comando.Parameters.AddWithValue("@senha", novaSenha);
+                comando.Parameters.AddWithValue("@cpf", cpf);
+                comando.ExecuteNonQuery(); // Executa a atualização
+                conexao.Close();
+
+                MessageBox.Show("Senha alterada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+                // Limpa os campos de senha
+                txtNVSenha.Text = "";
+                txtRNVSenha.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("As senhas não coincidem, por favor, verifique e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             Login.CurrentInstance.TimerLogo();
         }
 
@@ -45,7 +77,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtRNVSenha.Text == "NOVA SENHA")
             {
                 txtRNVSenha.Text = "";
-                txtNVSenha.UseSystemPasswordChar = true;
+                txtRNVSenha.UseSystemPasswordChar = true;
             }
         }
 

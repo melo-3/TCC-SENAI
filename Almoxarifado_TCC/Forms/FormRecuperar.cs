@@ -90,17 +90,18 @@ namespace Almoxarifado_TCC.Popup
             if (currentLength2 == fullText2.Length)
             {
                 tmCPF.Stop();
-
             }
         }
 
         public int identificador = 1;
+        public string cpf;
+
         private async void btnLogin_Click(object sender, EventArgs e)
         {
             if (identificador == 1)
             {
                 ClassUsuario usu = new ClassUsuario();
-                string cpf = txtCPF.Text;
+                cpf = txtCPF.Text;
                 MessageBox.Show(usu.recuperarEmail(cpf));
 
                 if (iconAviso.Visible == false)
@@ -118,9 +119,12 @@ namespace Almoxarifado_TCC.Popup
 
             else if (identificador == 0)
             {
-                if (txtCodigo.Text == "1234")
+                ClassUsuario usu = new ClassUsuario();
+                int oi = Convert.ToInt32 (txtCodigo.Text);
+                int cod_rec=0; // Ela arruma dps
+                if (oi == cod_rec)
                 {
-                    Login.CurrentInstance.TimerNovaS();
+                    Login.CurrentInstance.TimerNovaS(cpf);
                 }
                 else
                 {

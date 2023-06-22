@@ -185,7 +185,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtCPF.Text == "")
             {
                 txtCPF.Text = "CPF";
-                lblCPF.Visible = true;
+                lblCPF.Visible = false;
             }
                 
         }

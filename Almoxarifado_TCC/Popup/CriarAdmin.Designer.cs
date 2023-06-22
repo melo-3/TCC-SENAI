@@ -53,10 +53,10 @@
             this.lineCPF = new System.Windows.Forms.Panel();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.pnlFoto = new System.Windows.Forms.Panel();
+            this.iconFoto = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.iconFoto = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconAviso)).BeginInit();
             this.pnlFoto.SuspendLayout();
@@ -288,7 +288,7 @@
             this.txtTelefone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTelefone.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefone.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtTelefone.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.txtTelefone.Location = new System.Drawing.Point(128, 360);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(265, 20);
@@ -377,6 +377,23 @@
             this.pnlFoto.Size = new System.Drawing.Size(200, 195);
             this.pnlFoto.TabIndex = 2;
             // 
+            // iconFoto
+            // 
+            this.iconFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
+            this.iconFoto.FlatAppearance.BorderSize = 0;
+            this.iconFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconFoto.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconFoto.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
+            this.iconFoto.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconFoto.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconFoto.IconSize = 25;
+            this.iconFoto.Location = new System.Drawing.Point(152, 14);
+            this.iconFoto.Name = "iconFoto";
+            this.iconFoto.Size = new System.Drawing.Size(21, 21);
+            this.iconFoto.TabIndex = 22;
+            this.iconFoto.UseVisualStyleBackColor = false;
+            this.iconFoto.Click += new System.EventHandler(this.iconFoto_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
@@ -412,23 +429,6 @@
             this.label7.Text = "    Será permitido que mais uma\r\n pessoa opere neste sistema, dando\r\n  a ela todo" +
     "s os privilégios possíveis\r\n\r\n";
             this.label7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label7_MouseDown);
-            // 
-            // iconFoto
-            // 
-            this.iconFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
-            this.iconFoto.FlatAppearance.BorderSize = 0;
-            this.iconFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconFoto.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconFoto.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
-            this.iconFoto.IconColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconFoto.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconFoto.IconSize = 25;
-            this.iconFoto.Location = new System.Drawing.Point(152, 14);
-            this.iconFoto.Name = "iconFoto";
-            this.iconFoto.Size = new System.Drawing.Size(21, 21);
-            this.iconFoto.TabIndex = 22;
-            this.iconFoto.UseVisualStyleBackColor = false;
-            this.iconFoto.Click += new System.EventHandler(this.iconFoto_Click);
             // 
             // CriarAdmin
             // 
