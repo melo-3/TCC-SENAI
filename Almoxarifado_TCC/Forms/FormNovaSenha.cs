@@ -19,7 +19,6 @@ namespace Almoxarifado_TCC.Popup
         {
             InitializeComponent();
             this.cpf = cpf;
-            MessageBox.Show("cpf:" + cpf);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -41,7 +40,7 @@ namespace Almoxarifado_TCC.Popup
                 comando.ExecuteNonQuery(); // Executa a atualização
                 conexao.Close();
 
-                MessageBox.Show("Senha alterada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("Senha alterada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
                 // Limpa os campos de senha
                 txtNVSenha.Text = "";
@@ -49,7 +48,7 @@ namespace Almoxarifado_TCC.Popup
             }
             else
             {
-                MessageBox.Show("As senhas não coincidem, por favor, verifique e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("As senhas não coincidem, por favor, verifique e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             Login.CurrentInstance.TimerLogo();
         }

@@ -371,9 +371,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.ClientSize = new System.Drawing.Size(780, 330);
-            this.Controls.Add(this.panelLogo);
             this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.panelLogo);
             this.Controls.Add(this.panelTela);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

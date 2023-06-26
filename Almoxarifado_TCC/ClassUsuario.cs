@@ -79,8 +79,10 @@ namespace Almoxarifado_TCC
                     return msg;
                 }
 
+                //gera código aleatório
                 Random numAletorio = new Random();
                 cod_rec = numAletorio.Next(1000, 10000);
+
                 
                 ///MessageBox.Show("email: "+email);
                 // começar o acesso ao email
@@ -101,8 +103,11 @@ namespace Almoxarifado_TCC
                 try
                 {
                     client.Send(mail);
-                    //msg = "email enviado";
-                    return null;
+                    msg = "email enviado";
+                    //return msg;
+                    string cod_rec2 = Convert.ToString(cod_rec);
+                    return cod_rec2;
+
                 }
                 catch (Exception erro)
                 {

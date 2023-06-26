@@ -15,6 +15,7 @@ using System.Net;
 using System.Web;
 using System.Net.Configuration;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace Almoxarifado_TCC.Popup
 {
@@ -93,45 +94,56 @@ namespace Almoxarifado_TCC.Popup
             }
         }
 
-        public int identificador = 1;
+        public int identificador = 1, result = 0;
         public string cpf;
 
         private async void btnLogin_Click(object sender, EventArgs e)
         {
-            if (identificador == 1)
+            if (txtCPF.Text == "" || txtCPF.Text == "INSIRA SEU CPF")
             {
-                ClassUsuario usu = new ClassUsuario();
-                cpf = txtCPF.Text;
-                MessageBox.Show(usu.recuperarEmail(cpf));
-
-                if (iconAviso.Visible == false)
+                iconAviso.Visible = true;
+                lblAviso.Text = "Campo CPF invalido ou vazio";
+            }
+            else
+            {
+                if (identificador == 1)
                 {
-                    iconAviso.Visible = true;
-                    iconAviso.IconChar = FontAwesome.Sharp.IconChar.Envelope;
-                    lblAviso.Visible = true;
-                    lblAviso.Text = "E-mail enviado!";
-                    await Task.Delay(1000);
-                    tmLabel.Start();
+                    ClassUsuario usu = new ClassUsuario();
+                    cpf = txtCPF.Text;
+                    string resultado = usu.recuperarEmail(cpf);
+
+                    result = Convert.ToInt32(resultado);
+                    //MessageBox.Show(resultado);
+
+
+                    if (iconAviso.Visible == false)
+                    {
+                        iconAviso.Visible = true;
+                        iconAviso.IconChar = FontAwesome.Sharp.IconChar.Envelope;
+                        lblAviso.Visible = true;
+                        lblAviso.Text = "E-mail enviado!";
+                        await Task.Delay(1000);
+                        tmLabel.Start();
+                    }
+                    identificador = 0;
                 }
-                identificador = 0;
+
+                else if (identificador == 0)
+                {
+                    ClassUsuario usu = new ClassUsuario();
+                    int confirm = Convert.ToInt32(txtCodigo.Text);
+
+                    if (confirm == result)
+                    {
+                        Login.CurrentInstance.TimerNovaS(cpf);
+                    }
+                    else
+                    {
+                        //MessageBox.Show("Código de recuperação inválido");
+                    }
+                }
             }
             
-
-            else if (identificador == 0)
-            {
-                ClassUsuario usu = new ClassUsuario();
-                int oi = Convert.ToInt32 (txtCodigo.Text);
-                int cod_rec=0; // Ela arruma dps
-                if (oi == cod_rec)
-                {
-                    Login.CurrentInstance.TimerNovaS(cpf);
-                }
-                else
-                {
-                    MessageBox.Show("Código de recuperação inválido");
-                }
-                
-            }
         }
 
         private void txtCodigo_Enter(object sender, EventArgs e)

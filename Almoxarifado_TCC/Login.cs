@@ -208,6 +208,8 @@ namespace Almoxarifado_TCC
                 if (lblSenha.Visible == false)
                 {
                    lblSenha.Visible = true;
+                   lblSenha.Text = "";
+                   currentLength = 0;
                    tmESenha.Start();
                 }
             }
@@ -295,10 +297,10 @@ namespace Almoxarifado_TCC
             lblSenha.Enabled = false;
 
             // Aumenta a largura do painel em 5 pixels a cada intervalo de tempo
-            panelLogo.Width += 15;
+            panelLogo.Width += 17;
 
             // Move o painel para a esquerda em 5 pixels a cada intervalo de tempo
-            panelLogo.Left -= 15;
+            panelLogo.Left -= 17;
 
             // Verifica se o painel chegou ao lado esquerdo da tela
             if (panelLogo.Left <= 0)
@@ -430,7 +432,6 @@ namespace Almoxarifado_TCC
 
         public async void TimerNovaS(string cpf)
         {
-
             tmNovaSE.Start();
             iconVoltar.Enabled = false;
             await Task.Delay(570);
@@ -443,17 +444,19 @@ namespace Almoxarifado_TCC
             OpenChildForm(new Popup.FormNovaSenha(cpf));
         }
 
-        public async void TimerLogo()
+        public async Task TimerLogo()
         {
             tmLogoExpandir2.Start();
             iconVoltar.Visible = false;
-            
-            await Task.Delay(570);
+
+            await Task.Delay(3000);
+
             if (activeForm != null)
             {
                 activeForm.Close();
-            } 
+            }
         }
+
 
         private void tmNovaSE_Tick(object sender, EventArgs e)
         {
