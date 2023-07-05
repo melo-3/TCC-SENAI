@@ -35,7 +35,7 @@ namespace Almoxarifado_TCC.Popup
                 string SQL = "UPDATE tb_admin SET senha=@senha WHERE cpf=@cpf"; // Atualiza a senha na tabela do banco de dados
                 MySqlCommand comando = new MySqlCommand(SQL, conexao);
                 conexao.Open();
-                comando.Parameters.AddWithValue("@senha", novaSenha);
+                comando.Parameters.AddWithValue("@senha", usu.getMD5hash(novaSenha));
                 comando.Parameters.AddWithValue("@cpf", cpf);
                 comando.ExecuteNonQuery(); // Executa a atualização
                 conexao.Close();
@@ -45,12 +45,13 @@ namespace Almoxarifado_TCC.Popup
                 // Limpa os campos de senha
                 txtNVSenha.Text = "";
                 txtRNVSenha.Text = "";
+                Login.CurrentInstance.TimerLogo();
             }
             else
             {
                 //MessageBox.Show("As senhas não coincidem, por favor, verifique e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            Login.CurrentInstance.TimerLogo();
+            
         }
 
         private void txtNVSenha_Enter(object sender, EventArgs e)

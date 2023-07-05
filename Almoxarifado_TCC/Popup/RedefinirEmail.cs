@@ -88,16 +88,16 @@ namespace Almoxarifado_TCC.Popup
         {
             this.Close();
         }
-
+        public string senha;
         private void verificacao() // Verifica se as informações inseridas no login estão corretas ou não
         {
             ClassUsuario usu = new ClassUsuario();//chamo classe usuario
             ClassConexao con = new ClassConexao();//chamo a classe conexao
-            string SQL = "select * from tb_admin where email=@email";
+            string SQL = "select * from tb_admin where id_admin=@id_admin";
             MySqlConnection conexao = con.getConexao();
             MySqlCommand comando = new MySqlCommand(SQL, conexao);
             conexao.Open();
-            comando.Parameters.AddWithValue("@email", txtEmailAtual.Text);
+            comando.Parameters.AddWithValue("@id_admin", codigoid);
             MySqlDataReader registro = comando.ExecuteReader();//executa a consulta
 
             iconAviso.Visible = false;
@@ -108,7 +108,7 @@ namespace Almoxarifado_TCC.Popup
             {
                 registro.Read();
                 usu.login = Convert.ToString(registro["cpf"]);
-                usu.senha = Convert.ToString(registro["senha"]);
+                senha = Convert.ToString(registro["senha"]);
                 usu.logado = true;
 
             }
@@ -139,28 +139,37 @@ namespace Almoxarifado_TCC.Popup
             string novoEmail = txtEmail.Text;
 
             // Verifica se as senhas informadas são iguais
-            if (novoEmail != AtualEmail)
+            //MessageBox.Show(senha);
+            if(usu.getMD5hash(txtSenha.Text) == senha)
             {
-                MySqlConnection conexao = con.getConexao();
-                string SQL = "UPDATE tb_admin SET email=@email WHERE id_admin=@id_admin"; // Atualiza a senha na tabela do banco de dados
-                MySqlCommand comando = new MySqlCommand(SQL, conexao);
-                conexao.Open();
-                comando.Parameters.AddWithValue("@email", novoEmail);
-                comando.Parameters.AddWithValue("@id_admin", codigoid);
-                comando.ExecuteNonQuery(); // Executa a atualização
-                conexao.Close();
+                if (novoEmail != AtualEmail)
+                {
+                    MySqlConnection conexao = con.getConexao();
+                    string SQL = "UPDATE tb_admin SET email=@email WHERE id_admin=@id_admin"; // Atualiza a senha na tabela do banco de dados
+                    MySqlCommand comando = new MySqlCommand(SQL, conexao);
+                    conexao.Open();
+                    comando.Parameters.AddWithValue("@email", novoEmail);
+                    comando.Parameters.AddWithValue("@id_admin", codigoid);
+                    comando.ExecuteNonQuery(); // Executa a atualização
+                    conexao.Close();
 
-                MessageBox.Show("Email alterada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-                // Limpa os campos de senha
-                txtSenha.Text = "";
-                txtEmailAtual.Text = ""; 
-                txtEmail.Text = "";
+                    MessageBox.Show("Email alterado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                    // Limpa os campos de senha
+                    txtSenha.Text = "";
+                    txtEmailAtual.Text = "";
+                    txtEmail.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Os emails não coincidem, por favor, verifique e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("As senhas não coincidem, por favor, verifique e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("A senha não coincide, por favor, verifique e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
     }
 }

@@ -98,16 +98,16 @@ namespace Almoxarifado_TCC.Popup
         {
             this.Close();
         }
-
+        public string senha;
         private void verificacao() // Verifica se as informações inseridas no login estão corretas ou não
         {
             ClassUsuario usu = new ClassUsuario();//chamo classe usuario
             ClassConexao con = new ClassConexao();//chamo a classe conexao
-            string SQL = "select * from tb_admin where senha=@senha";
+            string SQL = "select * from tb_admin where id_admin=@id_admin";
             MySqlConnection conexao = con.getConexao();
             MySqlCommand comando = new MySqlCommand(SQL, conexao);
             conexao.Open();
-            comando.Parameters.AddWithValue("@senha", txtSenhaAtual.Text);
+            comando.Parameters.AddWithValue("@id_admin", codigoid);
             MySqlDataReader registro = comando.ExecuteReader();//executa a consulta
 
             iconAviso.Visible = false;
@@ -118,7 +118,7 @@ namespace Almoxarifado_TCC.Popup
             {
                 registro.Read();
                 usu.login = Convert.ToString(registro["cpf"]);
-                usu.senha = Convert.ToString(registro["senha"]);
+                senha = Convert.ToString(registro["senha"]);
                 usu.logado = true;
 
             }
@@ -148,31 +148,39 @@ namespace Almoxarifado_TCC.Popup
             verificacao();
             ClassUsuario usu = new ClassUsuario(); // Chama a classe Usuario
             ClassConexao con = new ClassConexao(); // Chama a classe Conexao
-            string novaSenha = txtSenha.Text;
-            string confirmarSenha = txtRSenha.Text;
+            string novaSenha = usu.getMD5hash(txtSenha.Text);
+            string confirmarSenha = usu.getMD5hash(txtRSenha.Text);
 
             // Verifica se as senhas informadas são iguais
-            if (novaSenha == confirmarSenha)
+            if (usu.getMD5hash(txtSenhaAtual.Text) == senha)
             {
-                MySqlConnection conexao = con.getConexao();
-                string SQL = "UPDATE tb_admin SET senha=@senha WHERE id_admin=@id_admin"; // Atualiza a senha na tabela do banco de dados
-                MySqlCommand comando = new MySqlCommand(SQL, conexao);
-                conexao.Open();
-                comando.Parameters.AddWithValue("@senha", novaSenha);
-                comando.Parameters.AddWithValue("@id_admin", codigoid);
-                comando.ExecuteNonQuery(); // Executa a atualização
-                conexao.Close();
+                if (novaSenha == confirmarSenha && novaSenha != usu.getMD5hash(txtSenhaAtual.Text))
+                {
+                    MySqlConnection conexao = con.getConexao();
+                    string SQL = "UPDATE tb_admin SET senha=@senha WHERE id_admin=@id_admin"; // Atualiza a senha na tabela do banco de dados
+                    MySqlCommand comando = new MySqlCommand(SQL, conexao);
+                    conexao.Open();
+                    comando.Parameters.AddWithValue("@senha", novaSenha);
+                    comando.Parameters.AddWithValue("@id_admin", codigoid);
+                    comando.ExecuteNonQuery(); // Executa a atualização
+                    conexao.Close();
 
-                MessageBox.Show("Senha alterada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-                // Limpa os campos de senha
-                txtSenhaAtual.Text = "";
-                txtSenha.Text = "";
-                txtRSenha.Text = "";
+                    MessageBox.Show("Senha alterada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                    // Limpa os campos de senha
+                    txtSenhaAtual.Text = "";
+                    txtSenha.Text = "";
+                    txtRSenha.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("As senhas não coincidem, por favor, verifique e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+            
             else
             {
-                MessageBox.Show("As senhas não coincidem, por favor, verifique e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("A senha atual não está correta, por favor, verifique e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

@@ -79,9 +79,10 @@ namespace Almoxarifado_TCC
                     return msg;
                 }
 
-                
+                //gera código aleatório
+                Random numAletorio = new Random();
+                cod_rec = numAletorio.Next(1000, 10000);
 
-                
                 ///MessageBox.Show("email: "+email);
                 // começar o acesso ao email
                 SmtpClient client = new SmtpClient();
@@ -136,11 +137,9 @@ namespace Almoxarifado_TCC
             get { return fotousu; }
             set { fotousu = value; }
         }
-    }
 
-    
 
-   /* public string getMD5hash(string senha) //criptografia da senha
+        public string getMD5hash(string senha) //criptografia da senha
         {
             System.Security.Cryptography.MD5 mds = System.Security.Cryptography.MD5.Create();
             byte[] imputBytes = System.Text.Encoding.ASCII.GetBytes(senha);
@@ -151,7 +150,7 @@ namespace Almoxarifado_TCC
                 sb.Append(hash[i].ToString("x2"));
             }
             return sb.ToString();
-        }*/
-       
-        
+        }
+
+    }
     }

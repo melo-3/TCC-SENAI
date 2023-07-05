@@ -89,16 +89,16 @@ namespace Almoxarifado_TCC.Popup
         {
             this.Close();
         }
-
+        public string senha;
         private void verificacao() // Verifica se as informações inseridas no login estão corretas ou não
         {
             ClassUsuario usu = new ClassUsuario();//chamo classe usuario
             ClassConexao con = new ClassConexao();//chamo a classe conexao
-            string SQL = "select * from tb_admin where telefone=@telefone";
+            string SQL = "select * from tb_admin where id_admin=@id_admin";
             MySqlConnection conexao = con.getConexao();
             MySqlCommand comando = new MySqlCommand(SQL, conexao);
             conexao.Open();
-            comando.Parameters.AddWithValue("@telefone", txtTelefoneAtual.Text);
+            comando.Parameters.AddWithValue("@id_admin", codigoid);
             MySqlDataReader registro = comando.ExecuteReader();//executa a consulta
 
             iconAviso.Visible = false;
@@ -109,7 +109,7 @@ namespace Almoxarifado_TCC.Popup
             {
                 registro.Read();
                 usu.login = Convert.ToString(registro["cpf"]);
-                usu.senha = Convert.ToString(registro["senha"]);
+                senha = Convert.ToString(registro["senha"]);
                 usu.logado = true;
             }
                 if (txtSenha.Text == "SENHA")
@@ -135,27 +135,35 @@ namespace Almoxarifado_TCC.Popup
             string TelefoneAtual = txtTelefoneAtual.Text;
 
             // Verifica se as senhas informadas são iguais
-            if (TelefoneAtual != TelefoneNovo)
+            if (usu.getMD5hash(txtSenha.Text) == senha)
             {
-                MySqlConnection conexao = con.getConexao();
-                string SQL = "UPDATE tb_admin SET telefone=@telefone WHERE id_admin=@id_admin"; // Atualiza a senha na tabela do banco de dados
-                MySqlCommand comando = new MySqlCommand(SQL, conexao);
-                conexao.Open();
-                comando.Parameters.AddWithValue("@telefone", TelefoneNovo);
-                comando.Parameters.AddWithValue("@id_admin", codigoid);
-                comando.ExecuteNonQuery(); // Executa a atualização
-                conexao.Close();
+                if (TelefoneAtual != TelefoneNovo)
+                {
+                    MySqlConnection conexao = con.getConexao();
+                    string SQL = "UPDATE tb_admin SET telefone=@telefone WHERE id_admin=@id_admin"; // Atualiza a senha na tabela do banco de dados
+                    MySqlCommand comando = new MySqlCommand(SQL, conexao);
+                    conexao.Open();
+                    comando.Parameters.AddWithValue("@telefone", TelefoneNovo);
+                    comando.Parameters.AddWithValue("@id_admin", codigoid);
+                    comando.ExecuteNonQuery(); // Executa a atualização
+                    conexao.Close();
 
-                MessageBox.Show("Telefone Alterado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-                // Limpa os campos de senha
-                txtSenha.Text = "";
-                txtTelefone.Text = "";
-                txtTelefoneAtual.Text = "";
+                    MessageBox.Show("Telefone Alterado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                    // Limpa os campos de senha
+                    txtSenha.Text = "";
+                    txtTelefone.Text = "";
+                    txtTelefoneAtual.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("O telefone novo é igual ao atual", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+            
             else
             {
-                MessageBox.Show("Por favor, verifique e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("A senha não está correta, por favor, verifique e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

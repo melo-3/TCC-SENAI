@@ -164,7 +164,7 @@ namespace Almoxarifado_TCC
             MySqlCommand comando = new MySqlCommand(logar, conexao);
             conexao.Open();
             comando.Parameters.AddWithValue("@cpf", txtUsuario.Text);
-            comando.Parameters.AddWithValue("@senha", txtSenha.Text);
+            comando.Parameters.AddWithValue("@senha", usu.getMD5hash(txtSenha.Text));
 
             MySqlDataReader registro = comando.ExecuteReader();//executa a consulta
 
