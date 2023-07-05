@@ -75,13 +75,11 @@ namespace Almoxarifado_TCC
                 }
                 else
                 {
-                    msg = "Usuário não localizado";
+                    msg = "1";
                     return msg;
                 }
 
-                //gera código aleatório
-                Random numAletorio = new Random();
-                cod_rec = numAletorio.Next(1000, 10000);
+                
 
                 
                 ///MessageBox.Show("email: "+email);

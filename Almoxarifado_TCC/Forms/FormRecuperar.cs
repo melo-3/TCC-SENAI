@@ -99,6 +99,9 @@ namespace Almoxarifado_TCC.Popup
 
         private async void btnLogin_Click(object sender, EventArgs e)
         {
+            iconAviso.Visible = false;
+            lblAviso.Visible = false;
+
             if (txtCPF.Text == "" || txtCPF.Text == "INSIRA SEU CPF")
             {
                 iconAviso.Visible = true;
@@ -114,9 +117,7 @@ namespace Almoxarifado_TCC.Popup
 
                     result = Convert.ToInt32(resultado);
                     //MessageBox.Show(resultado);
-
-
-                    if (iconAviso.Visible == false)
+                    if (result != 1)
                     {
                         iconAviso.Visible = true;
                         iconAviso.IconChar = FontAwesome.Sharp.IconChar.Envelope;
@@ -124,8 +125,17 @@ namespace Almoxarifado_TCC.Popup
                         lblAviso.Text = "E-mail enviado!";
                         await Task.Delay(1000);
                         tmLabel.Start();
+
+                        identificador = 0;
                     }
-                    identificador = 0;
+                    else
+                    {
+                        iconAviso.Visible = true;
+                        iconAviso.IconChar = FontAwesome.Sharp.IconChar.Warning;
+                        lblAviso.Visible = true;
+                        lblAviso.Text = "CPF não encontrado";
+                    }
+                        
                 }
 
                 else if (identificador == 0)

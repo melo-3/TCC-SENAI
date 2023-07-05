@@ -190,11 +190,15 @@ namespace Almoxarifado_TCC
                 iconAviso.Visible = true;
                 lblAviso.Visible = true;
 
-                if (txtUsuario.Text == "CPF")
+                if (txtUsuario.Text == "CPF" && txtSenha.Text == "SENHA")
+                {
+                    lblAviso.Text = "Insira seus dados antes de continuar";
+                }
+                else if (txtUsuario.Text == "CPF")
                 {
                     lblAviso.Text = "O campo CPF está em branco";
                 }
-                if (txtSenha.Text == "SENHA")
+                else if (txtSenha.Text == "SENHA")
                 {
                     lblAviso.Text = "O campo SENHA está em branco";
                 }
