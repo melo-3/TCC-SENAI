@@ -33,11 +33,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtUsuário = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.iconExc = new FontAwesome.Sharp.IconPictureBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnDeletar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblCPF = new System.Windows.Forms.Label();
+            this.lblSenha = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconExc)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +63,8 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(189, 13);
             this.txtSenha.TabIndex = 22;
-            this.txtSenha.Text = "SENHA";
+            this.txtSenha.Text = "SENHA DO ADMINISTRADOR";
+            this.txtSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSenha.Enter += new System.EventHandler(this.txtSenha_Enter);
             this.txtSenha.Leave += new System.EventHandler(this.txtSenha_Leave);
             // 
@@ -84,34 +87,22 @@
             this.txtUsuário.Name = "txtUsuário";
             this.txtUsuário.Size = new System.Drawing.Size(189, 13);
             this.txtUsuário.TabIndex = 24;
-            this.txtUsuário.Text = "USUÁRIO";
+            this.txtUsuário.Text = "CPF DO USUÁRIO";
+            this.txtUsuário.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtUsuário.Enter += new System.EventHandler(this.txtUsuário_Enter);
+            this.txtUsuário.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuário_KeyPress);
             this.txtUsuário.Leave += new System.EventHandler(this.txtUsuário_Leave);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
-            this.panel2.Controls.Add(this.richTextBox1);
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.iconExc);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(213, 136);
             this.panel2.TabIndex = 25;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Font = new System.Drawing.Font("Bahnschrift Light", 9F);
-            this.richTextBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.richTextBox1.Location = new System.Drawing.Point(21, 101);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox1.Size = new System.Drawing.Size(169, 33);
-            this.richTextBox1.TabIndex = 26;
-            this.richTextBox1.Text = "Deletar um usuário do sistema \n       é uma ação irreversível\n\n\n\n";
             // 
             // iconExc
             // 
@@ -126,20 +117,6 @@
             this.iconExc.Size = new System.Drawing.Size(75, 70);
             this.iconExc.TabIndex = 8;
             this.iconExc.TabStop = false;
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox2.Font = new System.Drawing.Font("Bahnschrift Light", 9F);
-            this.richTextBox2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.richTextBox2.Location = new System.Drawing.Point(32, 145);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox2.Size = new System.Drawing.Size(169, 33);
-            this.richTextBox2.TabIndex = 27;
-            this.richTextBox2.Text = "Preencha as informações \nabaixo se deseja continuar";
             // 
             // btnCancelar
             // 
@@ -174,15 +151,64 @@
             this.btnDeletar.UseVisualStyleBackColor = false;
             this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.label1.Font = new System.Drawing.Font("Bahnschrift Light", 9F);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(21, 101);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(172, 28);
+            this.label1.TabIndex = 52;
+            this.label1.Text = "Deletar um usuário do sistema \r\n       é uma ação irreversível";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift Light", 9F);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(32, 145);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(148, 28);
+            this.label2.TabIndex = 52;
+            this.label2.Text = "Preencha as informações \r\nabaixo se deseja continuar";
+            // 
+            // lblCPF
+            // 
+            this.lblCPF.AutoSize = true;
+            this.lblCPF.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCPF.ForeColor = System.Drawing.Color.DimGray;
+            this.lblCPF.Location = new System.Drawing.Point(61, 180);
+            this.lblCPF.Name = "lblCPF";
+            this.lblCPF.Size = new System.Drawing.Size(92, 13);
+            this.lblCPF.TabIndex = 53;
+            this.lblCPF.Text = "CPF DO USUÁRIO";
+            this.lblCPF.Visible = false;
+            // 
+            // lblSenha
+            // 
+            this.lblSenha.AutoSize = true;
+            this.lblSenha.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSenha.ForeColor = System.Drawing.Color.DimGray;
+            this.lblSenha.Location = new System.Drawing.Point(33, 220);
+            this.lblSenha.Name = "lblSenha";
+            this.lblSenha.Size = new System.Drawing.Size(147, 13);
+            this.lblSenha.TabIndex = 54;
+            this.lblSenha.Text = "SENHA DO ADMINISTRADOR";
+            this.lblSenha.Visible = false;
+            // 
             // DeletarUsu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.ClientSize = new System.Drawing.Size(213, 340);
+            this.Controls.Add(this.lblSenha);
+            this.Controls.Add(this.lblCPF);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnDeletar);
-            this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtUsuário);
@@ -192,6 +218,7 @@
             this.Name = "DeletarUsu";
             this.Text = "DeletarUsu";
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconExc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -206,9 +233,11 @@
         private System.Windows.Forms.TextBox txtUsuário;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconPictureBox iconExc;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
         private FontAwesome.Sharp.IconButton btnCancelar;
         private System.Windows.Forms.Button btnDeletar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblCPF;
+        private System.Windows.Forms.Label lblSenha;
     }
 }

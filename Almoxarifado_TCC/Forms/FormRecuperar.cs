@@ -105,7 +105,8 @@ namespace Almoxarifado_TCC.Popup
             if (txtCPF.Text == "" || txtCPF.Text == "INSIRA SEU CPF")
             {
                 iconAviso.Visible = true;
-                lblAviso.Text = "Campo CPF invalido ou vazio";
+                lblAviso.Visible = true;
+                lblAviso.Text = "O campo CPF está em branco";
             }
             else
             {
@@ -140,17 +141,33 @@ namespace Almoxarifado_TCC.Popup
 
                 else if (identificador == 0)
                 {
-                    ClassUsuario usu = new ClassUsuario();
-                    int confirm = Convert.ToInt32(txtCodigo.Text);
-
-                    if (confirm == result)
+                    if (txtCodigo.Text == "" || txtCodigo.Text == "CÓDIGO")
                     {
-                        Login.CurrentInstance.TimerNovaS(cpf);
+                        iconAviso.Visible = true;
+                        lblAviso.Visible = true;
+                        iconAviso.IconChar = FontAwesome.Sharp.IconChar.Warning;
+                        lblAviso.Text = "O campo CÓDIGO está em branco";
                     }
                     else
                     {
-                        //MessageBox.Show("Código de recuperação inválido");
+                        ClassUsuario usu = new ClassUsuario();
+                        int confirm = Convert.ToInt32(txtCodigo.Text);
+
+                        if (confirm == result)
+                        {
+                            Login.CurrentInstance.TimerNovaS(cpf);
+                        }
+                        else
+                        {
+                            iconAviso.Visible = true;
+                            lblAviso.Visible = true;
+                            iconAviso.IconChar = FontAwesome.Sharp.IconChar.Warning;
+                            lblAviso.Text = "Código de recuperação inválido";
+                            //MessageBox.Show("Código de recuperação inválido");
+                        }
                     }
+
+                    
                 }
             }
             

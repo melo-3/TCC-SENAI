@@ -153,6 +153,7 @@ namespace Almoxarifado_TCC.Popup
             this.Close();
         }
 
+
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             ClassConexao con = new ClassConexao(); //instanciando a classe
@@ -172,6 +173,10 @@ namespace Almoxarifado_TCC.Popup
                 MessageBox.Show("Campo Email está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
+            if (CPFLenght != 11)
+            {
+                MessageBox.Show("Insira um CPF válido!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
             else
             {
@@ -199,6 +204,25 @@ namespace Almoxarifado_TCC.Popup
                     con.desconectar();
                 }
             }
+        }
+
+        private void txtCPF_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        int CPFLenght = 0;
+        private void txtCPF_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCPF.Text.Length > 11)
+            {
+                txtCPF.Text = txtCPF.Text.Remove(txtCPF.Text.Length - 1);
+                txtCPF.Select(11, 0); // Coloca o cursor no final do texto
+            }
+            CPFLenght = txtCPF.Text.Length;
         }
     }
 }

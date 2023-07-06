@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CriarAdmin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconAviso = new FontAwesome.Sharp.IconPictureBox();
@@ -52,15 +51,11 @@
             this.txtCPF = new System.Windows.Forms.TextBox();
             this.lineCPF = new System.Windows.Forms.Panel();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.pnlFoto = new System.Windows.Forms.Panel();
-            this.iconFoto = new FontAwesome.Sharp.IconButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.icon_Perfil = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconAviso)).BeginInit();
-            this.pnlFoto.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -295,6 +290,7 @@
             this.txtTelefone.TabIndex = 8;
             this.txtTelefone.Text = "TELEFONE";
             this.txtTelefone.Enter += new System.EventHandler(this.txtTelefone_Enter);
+            this.txtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefone_KeyPress);
             this.txtTelefone.Leave += new System.EventHandler(this.txtTelefone_Leave);
             // 
             // panel3
@@ -340,7 +336,9 @@
             this.txtCPF.Size = new System.Drawing.Size(295, 17);
             this.txtCPF.TabIndex = 3;
             this.txtCPF.Text = "CPF";
+            this.txtCPF.TextChanged += new System.EventHandler(this.txtCPF_TextChanged);
             this.txtCPF.Enter += new System.EventHandler(this.txtCPF_Enter);
+            this.txtCPF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCPF_KeyPress);
             this.txtCPF.Leave += new System.EventHandler(this.txtCPF_Leave);
             // 
             // lineCPF
@@ -366,51 +364,12 @@
             this.txtNome.Enter += new System.EventHandler(this.txtNome_Enter);
             this.txtNome.Leave += new System.EventHandler(this.txtNome_Leave);
             // 
-            // pnlFoto
-            // 
-            this.pnlFoto.BackColor = System.Drawing.Color.Transparent;
-            this.pnlFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnlFoto.Controls.Add(this.iconFoto);
-            this.pnlFoto.Controls.Add(this.pictureBox1);
-            this.pnlFoto.Location = new System.Drawing.Point(60, 131);
-            this.pnlFoto.Name = "pnlFoto";
-            this.pnlFoto.Size = new System.Drawing.Size(200, 195);
-            this.pnlFoto.TabIndex = 2;
-            // 
-            // iconFoto
-            // 
-            this.iconFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
-            this.iconFoto.FlatAppearance.BorderSize = 0;
-            this.iconFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconFoto.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconFoto.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
-            this.iconFoto.IconColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconFoto.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconFoto.IconSize = 25;
-            this.iconFoto.Location = new System.Drawing.Point(152, 14);
-            this.iconFoto.Name = "iconFoto";
-            this.iconFoto.Size = new System.Drawing.Size(21, 21);
-            this.iconFoto.TabIndex = 22;
-            this.iconFoto.UseVisualStyleBackColor = false;
-            this.iconFoto.Click += new System.EventHandler(this.iconFoto_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(-3, -5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(206, 208);
-            this.pictureBox1.TabIndex = 45;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Candara", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(107, 334);
+            this.label6.Location = new System.Drawing.Point(107, 315);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(104, 36);
             this.label6.TabIndex = 1;
@@ -422,7 +381,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.Silver;
-            this.label7.Location = new System.Drawing.Point(60, 390);
+            this.label7.Location = new System.Drawing.Point(60, 371);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(202, 60);
             this.label7.TabIndex = 21;
@@ -430,15 +389,34 @@
     "s os privilégios possíveis\r\n\r\n";
             this.label7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label7_MouseDown);
             // 
+            // icon_Perfil
+            // 
+            this.icon_Perfil.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
+            this.icon_Perfil.FlatAppearance.BorderSize = 0;
+            this.icon_Perfil.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.icon_Perfil.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
+            this.icon_Perfil.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
+            this.icon_Perfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.icon_Perfil.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.icon_Perfil.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.icon_Perfil.IconColor = System.Drawing.Color.Silver;
+            this.icon_Perfil.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icon_Perfil.IconSize = 210;
+            this.icon_Perfil.Location = new System.Drawing.Point(63, 126);
+            this.icon_Perfil.Name = "icon_Perfil";
+            this.icon_Perfil.Size = new System.Drawing.Size(199, 196);
+            this.icon_Perfil.TabIndex = 22;
+            this.icon_Perfil.UseVisualStyleBackColor = true;
+            // 
             // CriarAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
             this.ClientSize = new System.Drawing.Size(822, 576);
+            this.Controls.Add(this.icon_Perfil);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.pnlFoto);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CriarAdmin";
@@ -448,8 +426,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconAviso)).EndInit();
-            this.pnlFoto.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -477,13 +453,11 @@
         private System.Windows.Forms.TextBox txtCPF;
         private System.Windows.Forms.Panel lineCPF;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.Panel pnlFoto;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private FontAwesome.Sharp.IconPictureBox iconAviso;
         private System.Windows.Forms.Label lblAviso;
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.Label label7;
-        private FontAwesome.Sharp.IconButton iconFoto;
+        private FontAwesome.Sharp.IconButton icon_Perfil;
     }
 }

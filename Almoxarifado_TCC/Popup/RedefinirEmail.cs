@@ -41,6 +41,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtSenha.Text == "SENHA")
             {
                 txtSenha.Text = "";
+                txtSenha.UseSystemPasswordChar = true;
             }
         }
 
@@ -49,6 +50,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtSenha.Text == "")
             {
                 txtSenha.Text = "SENHA";
+                txtSenha.UseSystemPasswordChar = false;
             }
         }
 

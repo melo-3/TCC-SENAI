@@ -49,6 +49,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtSenhaAtual.Text == "SENHA ATUAL")
             {
                 txtSenhaAtual.Text = "";
+                txtSenhaAtual.UseSystemPasswordChar = true;
             }
         }
 
@@ -57,6 +58,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtSenhaAtual.Text == "")
             {
                 txtSenhaAtual.Text = "SENHA ATUAL";
+                txtSenhaAtual.UseSystemPasswordChar = false;
             }
         }
 
@@ -65,6 +67,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtSenha.Text == "NOVA SENHA")
             {
                 txtSenha.Text = "";
+                txtSenha.UseSystemPasswordChar = true;
             }
         }
 
@@ -73,6 +76,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtSenha.Text == "")
             {
                 txtSenha.Text = "NOVA SENHA";
+                txtSenha.UseSystemPasswordChar = false;
             }
         }
 
@@ -81,6 +85,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtRSenha.Text == "REPETIR SENHA")
             {
                 txtRSenha.Text = "";
+                txtRSenha.UseSystemPasswordChar = true;
             }
         }
 
@@ -89,6 +94,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtRSenha.Text == "")
             {
                 txtRSenha.Text = "REPETIR SENHA";
+                txtRSenha.UseSystemPasswordChar = false;
             }
         }// --------------------------------------------------------
 

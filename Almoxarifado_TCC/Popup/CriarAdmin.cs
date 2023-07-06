@@ -104,6 +104,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtSenha.Text == "SENHA")
             {
                 txtSenha.Text = "";
+                txtSenha.UseSystemPasswordChar = true;
             }
         }
 
@@ -112,6 +113,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtSenha.Text == "")
             {
                 txtSenha.Text = "SENHA";
+                txtSenha.UseSystemPasswordChar = false;
             }
         }
 
@@ -120,6 +122,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtRSenha.Text == "REPETIR SENHA")
             {
                 txtRSenha.Text = "";
+                txtRSenha.UseSystemPasswordChar = true;
             }
         }
 
@@ -128,6 +131,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtRSenha.Text == "")
             {
                 txtRSenha.Text = "REPETIR SENHA";
+                txtRSenha.UseSystemPasswordChar = false;
             }
         }
 
@@ -174,18 +178,22 @@ namespace Almoxarifado_TCC.Popup
             {
                 MessageBox.Show("Campo NOME está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
             if (cpf == "")
             {
                 MessageBox.Show("Campo CPF está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
             if (email == "")
             {
                 MessageBox.Show("Campo Email está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
             if (senha == "")
             {
                 MessageBox.Show("Campo SENHA está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
             if (senhaR == "")
             {
                 MessageBox.Show("Campo REPETIR SENHA está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -194,6 +202,11 @@ namespace Almoxarifado_TCC.Popup
             if(senha != senhaR)
             {
                 MessageBox.Show("Confirmação de senha ERRADO, as senhas nao coincidem");
+            }
+
+            if (CPFLenght != 11)
+            {
+                MessageBox.Show("Insira um CPF válido!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
 
@@ -207,7 +220,7 @@ namespace Almoxarifado_TCC.Popup
                     {
                         txtTelefone.Text = "";
                     }
-                    string sql = "insert into tb_admin(nome_admin,cpf,email,senha,telefone,foto) values" + "('" + txtNome.Text + "','" + txtCPF.Text + "','" + txtEmail.Text + "','" + usu.getMD5hash(txtSenha.Text) + "','" + txtTelefone.Text + "','" + image + "')";
+                    string sql = "insert into tb_admin(nome_admin,cpf,email,senha,telefone) values" + "('" + txtNome.Text + "','" + txtCPF.Text + "','" + txtEmail.Text + "','" + usu.getMD5hash(txtSenha.Text) + "','" + txtTelefone.Text + "')";
                     MySqlCommand comando = new MySqlCommand(sql, conexao);
                     conexao.Open();
                     comando.ExecuteReader();
@@ -225,28 +238,32 @@ namespace Almoxarifado_TCC.Popup
                 }
             }
         }
-        byte[] image;
-        public static class ImageDataHolder
+
+        private void txtCPF_KeyPress(object sender, KeyPressEventArgs e)
         {
-            public static byte[] imagem { get; set; }
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
-        private void iconFoto_Click(object sender, EventArgs e)
+        private void txtTelefone_KeyPress(object sender, KeyPressEventArgs e)
         {
-            OpenFileDialog foto = new OpenFileDialog(); // Cria uma instância de OpenFileDialog para permitir que o usuário selecione uma imagem.
-            foto.Filter = "Image Files(*.jpg;*.png)|*.jpg;*.png"; // Define um filtro para exibir apenas arquivos de imagem com extensões .jpg e .png.
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
 
-            if (foto.ShowDialog() == DialogResult.OK) // Exibe a caixa de diálogo para selecionar a imagem e verifica se o usuário selecionou um arquivo e pressionou "OK".
+        int CPFLenght;
+        private void txtCPF_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCPF.Text.Length > 11)
             {
-                string filePath = foto.FileName; // Obtém o caminho completo do arquivo selecionado.
-                byte[] imageData = File.ReadAllBytes(filePath); // Lê os dados da imagem selecionada e os armazena em um array de bytes.
-                image= imageData;
-            } // Define a imagem de fundo do controle PictureBox (pnlFoto) com base nos dados da imagem.
-            
-            /*using (MemoryStream ms = new MemoryStream(imageData))
-            {
-                pnlFoto.BackgroundImage = Image.FromStream(ms);
-            }*/
+                txtCPF.Text = txtCPF.Text.Remove(txtCPF.Text.Length - 1);
+                txtCPF.Select(11, 0); // Coloca o cursor no final do texto
+            }
+            CPFLenght = txtCPF.Text.Length;
         }
     }
 }

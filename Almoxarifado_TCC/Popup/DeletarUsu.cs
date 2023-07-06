@@ -40,29 +40,50 @@ namespace Almoxarifado_TCC.Popup
 
         private void txtUsuário_Enter(object sender, EventArgs e)
         {
-            if (txtUsuário.Text == "USUÁRIO")
+            if (txtUsuário.Text == "CPF DO USUÁRIO")
+            {
                 txtUsuário.Text = "";
+                lblCPF.Visible = true;
+            }
         }
 
         private void txtUsuário_Leave(object sender, EventArgs e)
         {
             if (txtUsuário.Text == "")
-                txtUsuário.Text = "USUÁRIO";
+            {
+                txtUsuário.Text = "CPF DO USUÁRIO";
+                lblCPF.Visible = false;
+            }
         }
 
         private void txtSenha_Enter(object sender, EventArgs e)
         {
-            if (txtSenha.Text == "SENHA")
+            if (txtSenha.Text == "SENHA DO ADMINISTRADOR")  
+            {
                 txtSenha.Text = "";
+                lblSenha.Visible = true;
+                txtSenha.UseSystemPasswordChar = true;
+            }
         }
 
         private void txtSenha_Leave(object sender, EventArgs e)
         {
             if (txtSenha.Text == "")
-                txtSenha.Text = "SENHA";
+            {
+                txtSenha.Text = "SENHA DO ADMINISTRADOR";
+                lblSenha.Visible = false;
+                txtSenha.UseSystemPasswordChar = false;
+            }
         }
 
         #endregion
-        
+
+        private void txtUsuário_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
