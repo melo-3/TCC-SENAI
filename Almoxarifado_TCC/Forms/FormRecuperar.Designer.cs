@@ -109,7 +109,9 @@
             this.txtCPF.TabIndex = 18;
             this.txtCPF.Text = "INSIRA SEU CPF";
             this.txtCPF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCPF.TextChanged += new System.EventHandler(this.txtCPF_TextChanged);
             this.txtCPF.Enter += new System.EventHandler(this.txtSenha_Enter);
+            this.txtCPF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCPF_KeyPress);
             this.txtCPF.Leave += new System.EventHandler(this.txtSenha_Leave);
             // 
             // panelLine2
@@ -144,6 +146,7 @@
             this.txtCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCodigo.Visible = false;
             this.txtCodigo.Enter += new System.EventHandler(this.txtCodigo_Enter);
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             this.txtCodigo.Leave += new System.EventHandler(this.txtCodigo_Leave);
             // 
             // txtLabel

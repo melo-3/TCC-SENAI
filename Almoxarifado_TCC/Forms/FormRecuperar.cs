@@ -181,6 +181,31 @@ namespace Almoxarifado_TCC.Popup
             }
         }
 
+        private void txtCPF_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCPF_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCPF.Text.Length > 11)
+            {
+                txtCPF.Text = txtCPF.Text.Remove(txtCPF.Text.Length - 1);
+                txtCPF.Select(11, 0); // Coloca o cursor no final do texto
+            }
+        }
+
         private void txtCodigo_Leave(object sender, EventArgs e)
         {
             if (txtCodigo.Text == "")

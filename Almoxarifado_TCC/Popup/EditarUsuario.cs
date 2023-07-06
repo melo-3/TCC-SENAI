@@ -77,28 +77,28 @@ namespace Almoxarifado_TCC.Popup
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            int danger = 0;
-
             if (txtNome.Text == "NOME")
-            {
-                danger = 1; 
+            { 
                 txtNome.ForeColor = CoresGlobais.Danger;
             }
 
             if (txtCPF.Text == "CPF" || txtCPF.Text.Length <= 10)
             {
-                danger = 1;
                 txtCPF.ForeColor = CoresGlobais.Danger;
             }
 
             if (txtEmail.Text == "EMAIL")
             {
-                danger = 1;
                 txtNome.ForeColor = CoresGlobais.Danger;
             }
 
+            if (CPFlenght != 11)
+            {
+                txtCPF.ForeColor = CoresGlobais.Danger;
+            }
 
-            else if(danger == 0)
+
+            else
             {
                 if (txtTelefone.Text == "TELEFONE")
                     txtTelefone.Text = "";
@@ -131,6 +131,7 @@ namespace Almoxarifado_TCC.Popup
             }
         }
 
+        int CPFlenght;
         private void txtCPF_TextChanged(object sender, EventArgs e)
         {
             if (txtCPF.Text.Length > 11)
@@ -138,6 +139,7 @@ namespace Almoxarifado_TCC.Popup
                 txtCPF.Text = txtCPF.Text.Substring(0, 11);
                 txtCPF.SelectionStart = txtCPF.Text.Length;
             }
+            CPFlenght = txtCPF.Text.Length;
         }
 
         #endregion
