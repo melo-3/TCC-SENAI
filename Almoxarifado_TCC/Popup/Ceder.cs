@@ -191,36 +191,82 @@ namespace Almoxarifado_TCC.Popup
 
         private void btnCeder_Click(object sender, EventArgs e)
         {
-            if (txtQuant.Text == "0" || nome_usu == null)
-            {   
-
+            if (nome_usu == null)
+            {
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "CPF em branco";
+                iconAviso.Location = new Point(42, 126);
+                lblAviso.Location = new Point(67, 130);
             }
+
+            else if (txtQuant.Text == "0")
+            {
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "Defina uma quantidade";
+                iconAviso.Location = new Point(27, 126);
+                lblAviso.Location = new Point(52, 130);
+            }
+
             else
             {
-                quantAt = Convert.ToInt32(txtQuant.Text);
-                quant = quantTt - quantAt;
+                if (cbxNdevolver.Checked == false)
+                {
+                    quantAt = Convert.ToInt32(txtQuant.Text);
+                    quant = quantTt - quantAt;
 
-                ClassConexao con = new ClassConexao();
-                MySqlConnection conexao = con.getConexao();
-                string sql = "insert into tb_emp_item(id_item, id_usuario, quant, hora_emp, data_emp) values" + "('" + cod_item + "','" + cod_usu + "','" + quantAt + "','" + hora + "','" + data + "')";
-                conexao.Open();
-                MySqlCommand command = new MySqlCommand(sql, conexao);
-                MySqlDataReader registro = command.ExecuteReader();
-                registro.Read();
-                conexao.Close();
+                    ClassConexao con = new ClassConexao();
+                    MySqlConnection conexao = con.getConexao();
+                    string sql = "insert into tb_emp_item(id_item, id_usuario, quant, hora_emp, data_emp) values" + "('" + cod_item + "','" + cod_usu + "','" + quantAt + "','" + hora + "','" + data + "')";
+                    conexao.Open();
+                    MySqlCommand command = new MySqlCommand(sql, conexao);
+                    MySqlDataReader registro = command.ExecuteReader();
+                    registro.Read();
+                    conexao.Close();
 
-                ClassConexao con1 = new ClassConexao();
-                MySqlConnection conexao1 = con1.getConexao();
-                string sql1 = "UPDATE tb_item SET quant = @quant WHERE id_item = " + cod_item + ";";
-                MySqlCommand command1 = new MySqlCommand(sql1, conexao1);
-                command1.Parameters.AddWithValue("@quant", quant);
-                conexao1.Open();
-                command1.ExecuteNonQuery();
-                conexao1.Close();
+                    ClassConexao con1 = new ClassConexao();
+                    MySqlConnection conexao1 = con1.getConexao();
+                    string sql1 = "UPDATE tb_item SET quant = @quant WHERE id_item = " + cod_item + ";";
+                    MySqlCommand command1 = new MySqlCommand(sql1, conexao1);
+                    command1.Parameters.AddWithValue("@quant", quant);
+                    conexao1.Open();
+                    command1.ExecuteNonQuery();
+                    conexao1.Close();
 
-                TelaPrincipal.CurrentInstance.Popups_Fechar();
-                Popup.Estoque.CurrentInstance.reset();
-                this.Close();
+                    TelaPrincipal.CurrentInstance.Popups_Fechar();
+                    Popup.Estoque.CurrentInstance.reset();
+                    this.Close();
+                }
+
+                else if (cbxNdevolver.Checked == true)
+                {
+                    quantAt = Convert.ToInt32(txtQuant.Text);
+                    quant = quantTt - quantAt;
+
+                    ClassConexao con = new ClassConexao();
+                    MySqlConnection conexao = con.getConexao();
+                    string sql = "insert into tb_emp_item(id_item, id_usuario, quant, hora_emp, hora_dev, data_emp, data_dev, obs) values" + "('" + cod_item + "','" + cod_usu + "','" + quantAt + "','" + hora + "','" + "00:00:00" + "','" + data + "','" + "00/00/0000" + "','" + "Não necessita de devolução" + "')";
+                    conexao.Open();
+                    MySqlCommand command = new MySqlCommand(sql, conexao);
+                    MySqlDataReader registro = command.ExecuteReader();
+                    registro.Read();
+                    conexao.Close();
+
+                    ClassConexao con1 = new ClassConexao();
+                    MySqlConnection conexao1 = con1.getConexao();
+                    string sql1 = "UPDATE tb_item SET quant = @quant WHERE id_item = " + cod_item + ";";
+                    MySqlCommand command1 = new MySqlCommand(sql1, conexao1);
+                    command1.Parameters.AddWithValue("@quant", quant);
+                    conexao1.Open();
+                    command1.ExecuteNonQuery();
+                    conexao1.Close();
+
+                    TelaPrincipal.CurrentInstance.Popups_Fechar();
+                    Popup.Estoque.CurrentInstance.reset();
+                    this.Close();
+                }
+
             }
         }
 

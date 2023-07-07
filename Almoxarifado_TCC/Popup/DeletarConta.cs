@@ -86,9 +86,7 @@ namespace Almoxarifado_TCC.Popup
         }
 
         private void btnDeletar_Click(object sender, EventArgs e)
-
         {
-            
             string cpf = txtCPF.Text;
             string senha = txtSenha.Text;
             bool resultado = Deletar(cpf, senha);
@@ -96,16 +94,15 @@ namespace Almoxarifado_TCC.Popup
             if (resultado)
             {
                 MessageBox.Show("Conta deletada com sucesso!");
+                Application.Exit(); // Fecha o programa atual e abre um novo
+                nt = new Thread(novoform);
+                nt.SetApartmentState(ApartmentState.STA);
+                nt.Start();
             }
             else
             {
                 MessageBox.Show("Nome de usuário ou senha incorretos. Conta não encontrada.");
             }
-
-            Application.Exit(); // Fecha o programa atual e abre um novo
-                nt = new Thread(novoform);
-                nt.SetApartmentState(ApartmentState.STA);
-                nt.Start();
         }
 
         public bool Deletar(string cpf, string senha)
@@ -119,7 +116,7 @@ namespace Almoxarifado_TCC.Popup
             MySqlCommand command = new MySqlCommand(sql, connection);
             connection.Open();
             command.Parameters.AddWithValue("@cpf", cpf);
-            command.Parameters.AddWithValue("@senha", senha);
+            command.Parameters.AddWithValue("@senha", usu.getMD5hash(senha));
 
             int rowsAffected = command.ExecuteNonQuery();
 

@@ -174,39 +174,39 @@ namespace Almoxarifado_TCC.Popup
             ClassConexao con = new ClassConexao(); //instanciando a classe
             ClassUsuario usu = new ClassUsuario();
             string nome = txtNome.Text, cpf = txtCPF.Text, email = txtEmail.Text, senha = txtSenha.Text, senhaR = txtRSenha.Text;
-            if (nome == "")
+            if (nome == "NOME")
             {
                 MessageBox.Show("Campo NOME está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            if (cpf == "")
+            else if (cpf == "CPF")
             {
                 MessageBox.Show("Campo CPF está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            if (email == "")
+            else if (CPFLenght != 11)
+            {
+                MessageBox.Show("Insira um CPF válido!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            else if (email == "EMAIL")
             {
                 MessageBox.Show("Campo Email está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            if (senha == "")
+            else if (senha == "SENHA")
             {
                 MessageBox.Show("Campo SENHA está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            if (senhaR == "")
+            else if (senhaR == "REPETIR SENHA")
             {
                 MessageBox.Show("Campo REPETIR SENHA está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
            
-            if(senha != senhaR)
+            else if(senha != senhaR)
             {
                 MessageBox.Show("Confirmação de senha ERRADO, as senhas nao coincidem");
-            }
-
-            if (CPFLenght != 11)
-            {
-                MessageBox.Show("Insira um CPF válido!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
 

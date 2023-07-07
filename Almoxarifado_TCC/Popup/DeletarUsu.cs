@@ -76,8 +76,6 @@ namespace Almoxarifado_TCC.Popup
             }
         }
 
-        #endregion
-
         private void txtUsuário_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -85,5 +83,9 @@ namespace Almoxarifado_TCC.Popup
                 e.Handled = true;
             }
         }
+
+        #endregion
+
+
     }
 }

@@ -104,18 +104,20 @@ namespace Almoxarifado_TCC.Popup
             //botao adicionar
             string numero = txtNumero.Text, sala = txtSala.Text, status = cbxStatus.Text, obs = txtObs.Text;
 
-                if (numero == "" || numero == "Número")
-                {
-                    MessageBox.Show("Campo Número está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                if (sala == "" || sala == "Sala / Lab")
-                {
-                    MessageBox.Show("Campo Sala está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                if (status == "Status")
-                {
-                    MessageBox.Show("Campo Status está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+            if (numero == "" || numero == "Número")
+            {
+                MessageBox.Show("Campo Número está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            else if (sala == "" || sala == "Sala / Lab")
+            {
+                MessageBox.Show("Campo Sala está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            else if(status == "")
+            {
+                MessageBox.Show("Campo Status está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
             else
             {

@@ -158,24 +158,29 @@ namespace Almoxarifado_TCC.Popup
         {
             ClassConexao con = new ClassConexao(); //instanciando a classe
             ClassUsuario usu = new ClassUsuario();
-            string nome = txtNome.Text, cpf = txtCPF.Text, email = txtEmail.Text;
-            if (nome == "")
+            string nome = txtNome.Text, cpf = txtCPF.Text, email = txtEmail.Text, tipo = cmbTipo.Text;
+            if (nome == "NOME")
             {
                 MessageBox.Show("Campo NOME está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            if (cpf == "")
+            else if (cpf == "CPF")
             {
                 MessageBox.Show("Campo CPF está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            if (email == "")
+            else if (CPFLenght != 11)
+            {
+                MessageBox.Show("Insira um CPF válido!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            else if (email == "EMAIL")
             {
                 MessageBox.Show("Campo Email está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            if (CPFLenght != 11)
+            else if (tipo == "Nenhum")
             {
-                MessageBox.Show("Insira um CPF válido!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Campo Tipo está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             else

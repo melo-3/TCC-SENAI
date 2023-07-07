@@ -90,11 +90,11 @@ namespace Almoxarifado_TCC.Popup
             {
                 MessageBox.Show("Campo Nome está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            if (descricao == "" || descricao == "Descrição")
+            else if (descricao == "" || descricao == "Descrição")
             {
                 MessageBox.Show("Campo Descrição está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            if (quantidade == "")
+            else if (quantidade == "0")
             {
                 MessageBox.Show("Campo Quantidade está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -122,6 +122,7 @@ namespace Almoxarifado_TCC.Popup
                 finally
                 {
                     con.desconectar();
+                    TelaPrincipal.CurrentInstance.Popups_Fechar();
                     this.Close();
                 }
             }
