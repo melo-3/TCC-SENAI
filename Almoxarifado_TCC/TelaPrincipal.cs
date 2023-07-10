@@ -381,7 +381,7 @@ namespace Almoxarifado_TCC
                 Popups_Fechar();
                 apagar_icons();
                 icon_Config.IconColor = CoresGlobais.Selecionado;
-                OpenForm(new Forms.Gerenciamento());
+                OpenForm(new Forms.Gerenciamento(this.codigoid));
             }
         }
 

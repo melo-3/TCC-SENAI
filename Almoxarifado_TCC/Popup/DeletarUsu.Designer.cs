@@ -31,12 +31,12 @@
             this.lineCPF = new System.Windows.Forms.Panel();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtUsuário = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.iconExc = new FontAwesome.Sharp.IconPictureBox();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnDeletar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblCPF = new System.Windows.Forms.Label();
             this.lblSenha = new System.Windows.Forms.Label();
@@ -48,7 +48,7 @@
             // 
             this.lineCPF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.lineCPF.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lineCPF.Location = new System.Drawing.Point(13, 253);
+            this.lineCPF.Location = new System.Drawing.Point(13, 257);
             this.lineCPF.Name = "lineCPF";
             this.lineCPF.Size = new System.Drawing.Size(189, 1);
             this.lineCPF.TabIndex = 21;
@@ -59,7 +59,7 @@
             this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSenha.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
             this.txtSenha.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtSenha.Location = new System.Drawing.Point(12, 237);
+            this.txtSenha.Location = new System.Drawing.Point(12, 241);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(189, 13);
             this.txtSenha.TabIndex = 22;
@@ -72,26 +72,26 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(13, 212);
+            this.panel1.Location = new System.Drawing.Point(13, 216);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(189, 1);
             this.panel1.TabIndex = 23;
             // 
-            // txtUsuário
+            // txtUsuario
             // 
-            this.txtUsuário.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            this.txtUsuário.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUsuário.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
-            this.txtUsuário.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtUsuário.Location = new System.Drawing.Point(12, 196);
-            this.txtUsuário.Name = "txtUsuário";
-            this.txtUsuário.Size = new System.Drawing.Size(189, 13);
-            this.txtUsuário.TabIndex = 24;
-            this.txtUsuário.Text = "CPF DO USUÁRIO";
-            this.txtUsuário.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtUsuário.Enter += new System.EventHandler(this.txtUsuário_Enter);
-            this.txtUsuário.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuário_KeyPress);
-            this.txtUsuário.Leave += new System.EventHandler(this.txtUsuário_Leave);
+            this.txtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUsuario.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
+            this.txtUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtUsuario.Location = new System.Drawing.Point(12, 200);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(189, 13);
+            this.txtUsuario.TabIndex = 24;
+            this.txtUsuario.Text = "CPF DO USUÁRIO";
+            this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtUsuario.Enter += new System.EventHandler(this.txtUsuário_Enter);
+            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuário_KeyPress);
+            this.txtUsuario.Leave += new System.EventHandler(this.txtUsuário_Leave);
             // 
             // panel2
             // 
@@ -103,6 +103,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(213, 136);
             this.panel2.TabIndex = 25;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.label1.Font = new System.Drawing.Font("Bahnschrift Light", 9F);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(21, 101);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(172, 28);
+            this.label1.TabIndex = 52;
+            this.label1.Text = "Deletar um usuário do sistema \r\n       é uma ação irreversível";
             // 
             // iconExc
             // 
@@ -151,18 +163,6 @@
             this.btnDeletar.UseVisualStyleBackColor = false;
             this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
-            this.label1.Font = new System.Drawing.Font("Bahnschrift Light", 9F);
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(21, 101);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 28);
-            this.label1.TabIndex = 52;
-            this.label1.Text = "Deletar um usuário do sistema \r\n       é uma ação irreversível";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -179,7 +179,7 @@
             this.lblCPF.AutoSize = true;
             this.lblCPF.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCPF.ForeColor = System.Drawing.Color.DimGray;
-            this.lblCPF.Location = new System.Drawing.Point(61, 180);
+            this.lblCPF.Location = new System.Drawing.Point(61, 184);
             this.lblCPF.Name = "lblCPF";
             this.lblCPF.Size = new System.Drawing.Size(92, 13);
             this.lblCPF.TabIndex = 53;
@@ -191,7 +191,7 @@
             this.lblSenha.AutoSize = true;
             this.lblSenha.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSenha.ForeColor = System.Drawing.Color.DimGray;
-            this.lblSenha.Location = new System.Drawing.Point(33, 220);
+            this.lblSenha.Location = new System.Drawing.Point(33, 224);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(147, 13);
             this.lblSenha.TabIndex = 54;
@@ -211,12 +211,13 @@
             this.Controls.Add(this.btnDeletar);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.txtUsuário);
+            this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lineCPF);
             this.Controls.Add(this.txtSenha);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DeletarUsu";
             this.Text = "DeletarUsu";
+            this.Load += new System.EventHandler(this.DeletarUsu_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconExc)).EndInit();
@@ -230,7 +231,7 @@
         private System.Windows.Forms.Panel lineCPF;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtUsuário;
+        private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconPictureBox iconExc;
         private FontAwesome.Sharp.IconButton btnCancelar;

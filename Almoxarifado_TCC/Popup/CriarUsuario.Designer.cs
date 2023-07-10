@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,6 +50,7 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.iconUsuario = new FontAwesome.Sharp.IconPictureBox();
+            this.DataCriacao = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -328,6 +330,10 @@
             this.iconUsuario.TabStop = false;
             this.iconUsuario.MouseDown += new System.Windows.Forms.MouseEventHandler(this.iconUsuario_MouseDown);
             // 
+            // DataCriacao
+            // 
+            this.DataCriacao.Tick += new System.EventHandler(this.DataCriacao_Tick);
+            // 
             // CriarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,5 +383,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Timer DataCriacao;
     }
 }

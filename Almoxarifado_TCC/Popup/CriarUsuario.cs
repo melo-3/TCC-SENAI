@@ -15,11 +15,15 @@ namespace Almoxarifado_TCC.Popup
 {
     public partial class CriarUsuario : Form
     {
-        public CriarUsuario()
+        int id_adm;
+        private Form activeForm = null;
+        public CriarUsuario(int cod_adm)
         {
             InitializeComponent();
-            //this.TopMost = true;
+            CurrentInstance = this;
+            id_adm = cod_adm;
         }
+        public static CriarUsuario CurrentInstance;
 
         // Código que permite ao usuario mover o programa pela tela
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -141,6 +145,7 @@ namespace Almoxarifado_TCC.Popup
 
         private void CriarUsuario_Load(object sender, EventArgs e)
         {
+            DataCriacao.Start();
             ClassConexao con = new ClassConexao(); //instanciando a classe
 
             cmbTipo.DataSource = con.Getperfil(); //popula as info do perfil da tabela
@@ -197,7 +202,9 @@ namespace Almoxarifado_TCC.Popup
                     MySqlCommand comando = new MySqlCommand(sql, conexao);
                     conexao.Open();
                     comando.ExecuteReader();
+                    
                     MessageBox.Show("Cadastro realizado!");
+
                     this.Close();
                 }
                 catch (Exception ex)
@@ -206,9 +213,35 @@ namespace Almoxarifado_TCC.Popup
                 }
                 finally
                 {
+                    Hist_Cadastro(txtCPF.Text);
                     con.desconectar();
                 }
             }
+        }
+
+        private void Hist_Cadastro(string cpf_usuario)
+        {
+            int id_usuario;
+
+            ClassConexao con = new ClassConexao();
+            MySqlConnection conexao = con.getConexao();
+            conexao.Open();
+            string itemsql = "SELECT id_usuario FROM tb_usuario WHERE cpf= '" + cpf_usuario + "'"; //cria a variavel consulta usuario passando o atributo id
+            MySqlCommand comando = new MySqlCommand(itemsql, conexao);
+            MySqlDataReader registro = comando.ExecuteReader();
+            registro.Read();
+            id_usuario = Convert.ToInt32(registro["id_usuario"]);
+            conexao.Close();
+
+            ClassConexao con1 = new ClassConexao();
+            MySqlConnection conexao1 = con.getConexao();
+            string sql1 = "insert into tb_cadastro(id_admin, id_usuario, data_criacao) values" + "('" + id_adm + "','" + id_usuario + "','" + data + "')";
+            MySqlCommand comando1 = new MySqlCommand(sql1, conexao1);
+            conexao1.Open();
+            comando1.ExecuteReader();
+            con1.desconectar();
+
+            MessageBox.Show(" Foi essa merda! ");
         }
 
         private void txtCPF_KeyPress(object sender, KeyPressEventArgs e)
@@ -228,6 +261,12 @@ namespace Almoxarifado_TCC.Popup
                 txtCPF.Select(11, 0); // Coloca o cursor no final do texto
             }
             CPFLenght = txtCPF.Text.Length;
+        }
+
+        string data;
+        private void DataCriacao_Tick(object sender, EventArgs e)
+        {
+            data = DateTime.Now.ToString("dd MM yyyy");
         }
     }
 }

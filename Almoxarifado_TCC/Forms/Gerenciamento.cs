@@ -19,12 +19,13 @@ namespace Almoxarifado_TCC.Forms
 
         private Form activeForm = null;
         public string nome_usu, nome_admin;
-        public int id_usu, id_adm;
+        public int id_usu, id_adm, cod_adm;
 
-        public Gerenciamento()
+        public Gerenciamento(int codigo_id)
         {
             InitializeComponent();
             CurrentInstance = this;
+            cod_adm= codigo_id;
         }
 
         public static Gerenciamento CurrentInstance;
@@ -312,7 +313,7 @@ namespace Almoxarifado_TCC.Forms
                 apagar_icons();
                 Fechar();
                 btnAdicionar.IconColor = CoresGlobais.Selecionado;
-                Popup.CriarUsuario go = new Popup.CriarUsuario();
+                Popup.CriarUsuario go = new Popup.CriarUsuario(cod_adm);
                 go.ShowDialog();
             }
         }
@@ -369,7 +370,7 @@ namespace Almoxarifado_TCC.Forms
                     apagar_icons();
                     BackPopUp.Visible = true;
                     btnExcluir.IconColor = CoresGlobais.Selecionado;
-                    OpenPopup(new Popup.DeletarUsu(id_usu));
+                    OpenPopup(new Popup.DeletarUsu(id_usu, cod_adm));
                 }
             }
             

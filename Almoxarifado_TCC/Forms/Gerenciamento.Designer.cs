@@ -59,6 +59,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.pnlTela = new System.Windows.Forms.Panel();
+            this.lblAdm = new System.Windows.Forms.Label();
+            this.lblUsu = new System.Windows.Forms.Label();
             this.lblCriarAdm = new System.Windows.Forms.Label();
             this.lblNomeA = new System.Windows.Forms.Label();
             this.lblSelecionadoA = new System.Windows.Forms.Label();
@@ -79,8 +81,6 @@
             this.lblVisualizarA = new System.Windows.Forms.Label();
             this.dtvAdmin = new System.Windows.Forms.DataGridView();
             this.lblPesquisarA = new System.Windows.Forms.Label();
-            this.lblUsu = new System.Windows.Forms.Label();
-            this.lblAdm = new System.Windows.Forms.Label();
             this.panelAdm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconAdm)).BeginInit();
             this.panelUsuario.SuspendLayout();
@@ -493,10 +493,36 @@
             this.pnlTela.Controls.Add(this.panelUsuario);
             this.pnlTela.Controls.Add(this.lblPesquisar);
             this.pnlTela.Controls.Add(this.iconColab);
-            this.pnlTela.Location = new System.Drawing.Point(10, 0);
+            this.pnlTela.Location = new System.Drawing.Point(-17, 0);
             this.pnlTela.Name = "pnlTela";
             this.pnlTela.Size = new System.Drawing.Size(885, 1091);
             this.pnlTela.TabIndex = 88;
+            // 
+            // lblAdm
+            // 
+            this.lblAdm.AutoSize = true;
+            this.lblAdm.Font = new System.Drawing.Font("Bahnschrift Light", 8F, System.Drawing.FontStyle.Bold);
+            this.lblAdm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
+            this.lblAdm.Location = new System.Drawing.Point(51, 611);
+            this.lblAdm.Name = "lblAdm";
+            this.lblAdm.Size = new System.Drawing.Size(499, 39);
+            this.lblAdm.TabIndex = 102;
+            this.lblAdm.Text = "Será permitido que mais uma pessoa opere neste sistema, dando a ela todos os\r\npri" +
+    "vilégios possíveis. Somente funcionários autorizados deverão possuir perfis de\r\n" +
+    "administrador.";
+            // 
+            // lblUsu
+            // 
+            this.lblUsu.AutoSize = true;
+            this.lblUsu.Font = new System.Drawing.Font("Bahnschrift Light", 8F, System.Drawing.FontStyle.Bold);
+            this.lblUsu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
+            this.lblUsu.Location = new System.Drawing.Point(46, 142);
+            this.lblUsu.Name = "lblUsu";
+            this.lblUsu.Size = new System.Drawing.Size(489, 39);
+            this.lblUsu.TabIndex = 101;
+            this.lblUsu.Text = "Perfis de usuário servem para cadastrar pessoas que possuem autorização para\r\nemp" +
+    "restar qualquer item do almoxarifado. Estes perfis servem para monitorar\r\nquem e" +
+    "mpresta o que ou quanto foi emprestado.";
             // 
             // lblCriarAdm
             // 
@@ -798,32 +824,6 @@
             this.lblPesquisarA.TabIndex = 94;
             this.lblPesquisarA.Text = "Pesquisar";
             this.lblPesquisarA.Visible = false;
-            // 
-            // lblUsu
-            // 
-            this.lblUsu.AutoSize = true;
-            this.lblUsu.Font = new System.Drawing.Font("Bahnschrift Light", 8F, System.Drawing.FontStyle.Bold);
-            this.lblUsu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
-            this.lblUsu.Location = new System.Drawing.Point(46, 142);
-            this.lblUsu.Name = "lblUsu";
-            this.lblUsu.Size = new System.Drawing.Size(489, 39);
-            this.lblUsu.TabIndex = 101;
-            this.lblUsu.Text = "Perfis de usuário servem para cadastrar pessoas que possuem autorização para\r\nemp" +
-    "restar qualquer item do almoxarifado. Estes perfis servem para monitorar\r\nquem e" +
-    "mpresta o que ou quanto foi emprestado.";
-            // 
-            // lblAdm
-            // 
-            this.lblAdm.AutoSize = true;
-            this.lblAdm.Font = new System.Drawing.Font("Bahnschrift Light", 8F, System.Drawing.FontStyle.Bold);
-            this.lblAdm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
-            this.lblAdm.Location = new System.Drawing.Point(51, 611);
-            this.lblAdm.Name = "lblAdm";
-            this.lblAdm.Size = new System.Drawing.Size(499, 39);
-            this.lblAdm.TabIndex = 102;
-            this.lblAdm.Text = "Será permitido que mais uma pessoa opere neste sistema, dando a ela todos os\r\npri" +
-    "vilégios possíveis. Somente funcionários autorizados deverão possuir perfis de\r\n" +
-    "administrador.";
             // 
             // Gerenciamento
             // 
