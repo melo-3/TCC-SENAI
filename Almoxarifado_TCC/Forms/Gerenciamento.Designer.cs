@@ -35,13 +35,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelAdm = new System.Windows.Forms.Panel();
-            this.lblAdm = new System.Windows.Forms.Label();
+            this.lblAdministrador = new System.Windows.Forms.Label();
             this.iconAdm = new FontAwesome.Sharp.IconPictureBox();
             this.panelUsuario = new System.Windows.Forms.Panel();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.iconUsuario = new FontAwesome.Sharp.IconPictureBox();
-            this.txtCriarAdm = new System.Windows.Forms.RichTextBox();
-            this.txtCriarUsu = new System.Windows.Forms.RichTextBox();
             this.iconColab = new FontAwesome.Sharp.IconPictureBox();
             this.lblColab = new System.Windows.Forms.Label();
             this.dtvUsuario = new System.Windows.Forms.DataGridView();
@@ -81,6 +79,8 @@
             this.lblVisualizarA = new System.Windows.Forms.Label();
             this.dtvAdmin = new System.Windows.Forms.DataGridView();
             this.lblPesquisarA = new System.Windows.Forms.Label();
+            this.lblUsu = new System.Windows.Forms.Label();
+            this.lblAdm = new System.Windows.Forms.Label();
             this.panelAdm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconAdm)).BeginInit();
             this.panelUsuario.SuspendLayout();
@@ -103,23 +103,23 @@
             // panelAdm
             // 
             this.panelAdm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelAdm.Controls.Add(this.lblAdm);
+            this.panelAdm.Controls.Add(this.lblAdministrador);
             this.panelAdm.Controls.Add(this.iconAdm);
             this.panelAdm.Location = new System.Drawing.Point(51, 572);
             this.panelAdm.Name = "panelAdm";
             this.panelAdm.Size = new System.Drawing.Size(499, 37);
             this.panelAdm.TabIndex = 72;
             // 
-            // lblAdm
+            // lblAdministrador
             // 
-            this.lblAdm.AutoSize = true;
-            this.lblAdm.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
-            this.lblAdm.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblAdm.Location = new System.Drawing.Point(42, 12);
-            this.lblAdm.Name = "lblAdm";
-            this.lblAdm.Size = new System.Drawing.Size(149, 14);
-            this.lblAdm.TabIndex = 55;
-            this.lblAdm.Text = "Perfil de administrador";
+            this.lblAdministrador.AutoSize = true;
+            this.lblAdministrador.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
+            this.lblAdministrador.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblAdministrador.Location = new System.Drawing.Point(42, 12);
+            this.lblAdministrador.Name = "lblAdministrador";
+            this.lblAdministrador.Size = new System.Drawing.Size(149, 14);
+            this.lblAdministrador.TabIndex = 55;
+            this.lblAdministrador.Text = "Perfil de administrador";
             // 
             // iconAdm
             // 
@@ -167,38 +167,6 @@
             this.iconUsuario.Size = new System.Drawing.Size(32, 32);
             this.iconUsuario.TabIndex = 0;
             this.iconUsuario.TabStop = false;
-            // 
-            // txtCriarAdm
-            // 
-            this.txtCriarAdm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCriarAdm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            this.txtCriarAdm.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCriarAdm.Font = new System.Drawing.Font("Bahnschrift Light", 8F, System.Drawing.FontStyle.Bold);
-            this.txtCriarAdm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
-            this.txtCriarAdm.Location = new System.Drawing.Point(51, 611);
-            this.txtCriarAdm.Name = "txtCriarAdm";
-            this.txtCriarAdm.ReadOnly = true;
-            this.txtCriarAdm.Size = new System.Drawing.Size(499, 50);
-            this.txtCriarAdm.TabIndex = 70;
-            this.txtCriarAdm.Text = "Será permitido que mais uma pessoa opere neste sistema, dando a ela todos os priv" +
-    "ilégios possíveis. Somente funcionários autorizados deverão possuir perfis de ad" +
-    "ministrador.";
-            // 
-            // txtCriarUsu
-            // 
-            this.txtCriarUsu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCriarUsu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            this.txtCriarUsu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCriarUsu.Font = new System.Drawing.Font("Bahnschrift Light", 8F, System.Drawing.FontStyle.Bold);
-            this.txtCriarUsu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
-            this.txtCriarUsu.Location = new System.Drawing.Point(46, 142);
-            this.txtCriarUsu.Name = "txtCriarUsu";
-            this.txtCriarUsu.ReadOnly = true;
-            this.txtCriarUsu.Size = new System.Drawing.Size(499, 62);
-            this.txtCriarUsu.TabIndex = 69;
-            this.txtCriarUsu.Text = "Perfis de usuário servem para cadastrar pessoas que possuem autorização para empr" +
-    "estar qualquer item do almoxarifado. Estes perfis servem para monitorar quem emp" +
-    "resta o que ou quanto foi emprestado.\n";
             // 
             // iconColab
             // 
@@ -501,6 +469,8 @@
             // 
             this.pnlTela.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pnlTela.AutoScroll = true;
+            this.pnlTela.Controls.Add(this.lblAdm);
+            this.pnlTela.Controls.Add(this.lblUsu);
             this.pnlTela.Controls.Add(this.lblCriarAdm);
             this.pnlTela.Controls.Add(this.lblNomeA);
             this.pnlTela.Controls.Add(this.lblSelecionadoA);
@@ -522,10 +492,8 @@
             this.pnlTela.Controls.Add(this.lblExcluir);
             this.pnlTela.Controls.Add(this.panelUsuario);
             this.pnlTela.Controls.Add(this.lblPesquisar);
-            this.pnlTela.Controls.Add(this.txtCriarAdm);
             this.pnlTela.Controls.Add(this.iconColab);
-            this.pnlTela.Controls.Add(this.txtCriarUsu);
-            this.pnlTela.Location = new System.Drawing.Point(1, 3);
+            this.pnlTela.Location = new System.Drawing.Point(10, 0);
             this.pnlTela.Name = "pnlTela";
             this.pnlTela.Size = new System.Drawing.Size(885, 1091);
             this.pnlTela.TabIndex = 88;
@@ -831,6 +799,32 @@
             this.lblPesquisarA.Text = "Pesquisar";
             this.lblPesquisarA.Visible = false;
             // 
+            // lblUsu
+            // 
+            this.lblUsu.AutoSize = true;
+            this.lblUsu.Font = new System.Drawing.Font("Bahnschrift Light", 8F, System.Drawing.FontStyle.Bold);
+            this.lblUsu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
+            this.lblUsu.Location = new System.Drawing.Point(46, 142);
+            this.lblUsu.Name = "lblUsu";
+            this.lblUsu.Size = new System.Drawing.Size(489, 39);
+            this.lblUsu.TabIndex = 101;
+            this.lblUsu.Text = "Perfis de usuário servem para cadastrar pessoas que possuem autorização para\r\nemp" +
+    "restar qualquer item do almoxarifado. Estes perfis servem para monitorar\r\nquem e" +
+    "mpresta o que ou quanto foi emprestado.";
+            // 
+            // lblAdm
+            // 
+            this.lblAdm.AutoSize = true;
+            this.lblAdm.Font = new System.Drawing.Font("Bahnschrift Light", 8F, System.Drawing.FontStyle.Bold);
+            this.lblAdm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
+            this.lblAdm.Location = new System.Drawing.Point(51, 611);
+            this.lblAdm.Name = "lblAdm";
+            this.lblAdm.Size = new System.Drawing.Size(499, 39);
+            this.lblAdm.TabIndex = 102;
+            this.lblAdm.Text = "Será permitido que mais uma pessoa opere neste sistema, dando a ela todos os\r\npri" +
+    "vilégios possíveis. Somente funcionários autorizados deverão possuir perfis de\r\n" +
+    "administrador.";
+            // 
             // Gerenciamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -872,13 +866,11 @@
         #endregion
 
         private System.Windows.Forms.Panel panelAdm;
-        private System.Windows.Forms.Label lblAdm;
+        private System.Windows.Forms.Label lblAdministrador;
         private FontAwesome.Sharp.IconPictureBox iconAdm;
         private System.Windows.Forms.Panel panelUsuario;
         private System.Windows.Forms.Label lblUsuario;
         private FontAwesome.Sharp.IconPictureBox iconUsuario;
-        private System.Windows.Forms.RichTextBox txtCriarAdm;
-        private System.Windows.Forms.RichTextBox txtCriarUsu;
         private FontAwesome.Sharp.IconPictureBox iconColab;
         private System.Windows.Forms.Label lblColab;
         private System.Windows.Forms.DataGridView dtvUsuario;
@@ -918,5 +910,7 @@
         private System.Windows.Forms.Label lblSelecionadoU;
         private FontAwesome.Sharp.IconButton btnCriarAdm;
         private System.Windows.Forms.Label lblCriarAdm;
+        private System.Windows.Forms.Label lblUsu;
+        private System.Windows.Forms.Label lblAdm;
     }
 }

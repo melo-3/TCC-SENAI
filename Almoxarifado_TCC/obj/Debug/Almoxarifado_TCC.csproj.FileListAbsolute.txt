@@ -587,7 +587,6 @@ C:\Users\Aluno\Documents\GitHub\TCC-SENAI\Almoxarifado_TCC\obj\Debug\Almoxarifad
 C:\Users\Aluno\Documents\GitHub\TCC-SENAI\Almoxarifado_TCC\obj\Debug\Almoxarifado_TCC.Popup.Pedidos.resources
 C:\Users\Aluno\Documents\GitHub\TCC-SENAI\Almoxarifado_TCC\obj\Debug\Almoxarifado_TCC.Popup.Descarte.resources
 C:\Users\Aluno\Documents\GitHub\TCC-SENAI\Almoxarifado_TCC\obj\Debug\Almoxarifado_TCC.Popup.Estoque.resources
-C:\Users\Aluno\Documents\GitHub\TCC-SENAI\Almoxarifado_TCC\obj\Debug\Almoxarifado_TCC.Popup.Historico.resources
 C:\Users\Aluno\Documents\GitHub\TCC-SENAI\Almoxarifado_TCC\obj\Debug\Almoxarifado_TCC.Popup.FormNovaSenha.resources
 C:\Users\Aluno\Documents\GitHub\TCC-SENAI\Almoxarifado_TCC\obj\Debug\Almoxarifado_TCC.Popup.Perfil.resources
 C:\Users\Aluno\Documents\GitHub\TCC-SENAI\Almoxarifado_TCC\obj\Debug\Almoxarifado_TCC.Popup.FormRecuperar.resources

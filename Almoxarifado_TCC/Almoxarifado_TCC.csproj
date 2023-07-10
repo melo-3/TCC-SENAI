@@ -178,12 +178,6 @@
     <Compile Include="Forms\FormEstoque.Designer.cs">
       <DependentUpon>FormEstoque.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormEstoqueHist.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormEstoqueHist.Designer.cs">
-      <DependentUpon>FormEstoqueHist.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FormNovaSenha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -350,9 +344,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormEstoque.resx">
       <DependentUpon>FormEstoque.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormEstoqueHist.resx">
-      <DependentUpon>FormEstoqueHist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormNovaSenha.resx">
       <DependentUpon>FormNovaSenha.cs</DependentUpon>

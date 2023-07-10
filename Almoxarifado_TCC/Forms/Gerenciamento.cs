@@ -25,7 +25,6 @@ namespace Almoxarifado_TCC.Forms
         {
             InitializeComponent();
             CurrentInstance = this;
-            pnlTela.Location = new Point(10, 3);
         }
 
         public static Gerenciamento CurrentInstance;
@@ -94,6 +93,7 @@ namespace Almoxarifado_TCC.Forms
 
         private void Gerenciamento_Load(object sender, EventArgs e)
         {
+            //pnlTela.Location = new Point(21, 0);
             reset();
 
             dtvUsuario.BorderStyle = BorderStyle.None;
@@ -524,6 +524,8 @@ namespace Almoxarifado_TCC.Forms
             }
         }
 
+        int VerPerfil = 0;
+
         private void dtvAdmin_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int contador = dtvUsuario.RowCount - 1;
@@ -550,6 +552,15 @@ namespace Almoxarifado_TCC.Forms
             {
                 lblNomeA.Text = "Campo vazio";
             }
+
+            if (VerPerfil == 1)
+            {
+                Fechar();
+                BackPopUp.Location = new System.Drawing.Point(641, 684);
+                BackPopUp.Visible = true;
+                btnVisualizarA.IconColor = CoresGlobais.Selecionado;
+                OpenPopup(new Popup.VisualizarADM(id_adm));
+            }
         }
 
         private void btnVisualizarA_Click(object sender, EventArgs e)
@@ -567,6 +578,7 @@ namespace Almoxarifado_TCC.Forms
                 {
                     apagar_icons();
                     Fechar();
+                    VerPerfil = 0;
                 }
                 else
                 {
@@ -575,6 +587,7 @@ namespace Almoxarifado_TCC.Forms
                     BackPopUp.Visible = true;
                     btnVisualizarA.IconColor = CoresGlobais.Selecionado;
                     OpenPopup(new Popup.VisualizarADM(id_adm));
+                    VerPerfil = 1;
                 }
             }
         }

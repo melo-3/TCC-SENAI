@@ -41,8 +41,8 @@
             this.lblAviso = new System.Windows.Forms.Label();
             this.lineSenha = new System.Windows.Forms.Panel();
             this.iconExc = new FontAwesome.Sharp.IconPictureBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.btnClose = new FontAwesome.Sharp.IconButton();
+            this.lblDescricao = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconAviso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconExc)).BeginInit();
@@ -103,6 +103,7 @@
             this.iconOlho.Size = new System.Drawing.Size(25, 23);
             this.iconOlho.TabIndex = 22;
             this.iconOlho.UseVisualStyleBackColor = true;
+            this.iconOlho.Click += new System.EventHandler(this.iconOlho_Click);
             // 
             // btnDeletar
             // 
@@ -207,21 +208,6 @@
             this.iconExc.TabStop = false;
             this.iconExc.MouseDown += new System.Windows.Forms.MouseEventHandler(this.iconExc_MouseDown);
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Font = new System.Drawing.Font("Bahnschrift Light", 9F);
-            this.richTextBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.richTextBox1.Location = new System.Drawing.Point(70, 131);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox1.Size = new System.Drawing.Size(408, 48);
-            this.richTextBox1.TabIndex = 8;
-            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
-            this.richTextBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.richTextBox1_MouseDown);
-            // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -240,14 +226,26 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // lblDescricao
+            // 
+            this.lblDescricao.AutoSize = true;
+            this.lblDescricao.Font = new System.Drawing.Font("Bahnschrift Light", 9F);
+            this.lblDescricao.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblDescricao.Location = new System.Drawing.Point(70, 131);
+            this.lblDescricao.Name = "lblDescricao";
+            this.lblDescricao.Size = new System.Drawing.Size(402, 42);
+            this.lblDescricao.TabIndex = 11;
+            this.lblDescricao.Text = resources.GetString("lblDescricao.Text");
+            this.lblDescricao.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblDescricao_MouseDown);
+            // 
             // DeletarConta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
             this.ClientSize = new System.Drawing.Size(536, 452);
+            this.Controls.Add(this.lblDescricao);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.iconExc);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -260,6 +258,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconAviso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconExc)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -275,9 +274,9 @@
         private System.Windows.Forms.TextBox txtCPF;
         private System.Windows.Forms.Label lblAviso;
         private System.Windows.Forms.Panel lineSenha;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private FontAwesome.Sharp.IconButton btnClose;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblDescricao;
     }
 }

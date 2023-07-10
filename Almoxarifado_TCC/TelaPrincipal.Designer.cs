@@ -38,9 +38,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.icon_Config = new FontAwesome.Sharp.IconButton();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.icon_Hist = new FontAwesome.Sharp.IconButton();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -78,7 +75,6 @@
             this.Menu.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -100,7 +96,6 @@
             this.Menu.Controls.Add(this.panel4);
             this.Menu.Controls.Add(this.panel3);
             this.Menu.Controls.Add(this.panel11);
-            this.Menu.Controls.Add(this.panel6);
             this.Menu.Controls.Add(this.panel10);
             this.Menu.Controls.Add(this.panel7);
             this.Menu.Controls.Add(this.panel8);
@@ -206,47 +201,6 @@
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(169, 1);
             this.panel11.TabIndex = 8;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.label6);
-            this.panel6.Controls.Add(this.icon_Hist);
-            this.panel6.Location = new System.Drawing.Point(4, 303);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(185, 42);
-            this.panel6.TabIndex = 7;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Bahnschrift Light", 9F);
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(49, 14);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 14);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Repositório";
-            // 
-            // icon_Hist
-            // 
-            this.icon_Hist.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
-            this.icon_Hist.FlatAppearance.BorderSize = 0;
-            this.icon_Hist.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
-            this.icon_Hist.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
-            this.icon_Hist.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
-            this.icon_Hist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.icon_Hist.IconChar = FontAwesome.Sharp.IconChar.ClockFour;
-            this.icon_Hist.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
-            this.icon_Hist.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.icon_Hist.IconSize = 30;
-            this.icon_Hist.Location = new System.Drawing.Point(9, 4);
-            this.icon_Hist.Name = "icon_Hist";
-            this.icon_Hist.Size = new System.Drawing.Size(32, 34);
-            this.icon_Hist.TabIndex = 10;
-            this.icon_Hist.UseVisualStyleBackColor = true;
-            this.icon_Hist.Click += new System.EventHandler(this.icon_Hist_Click);
-            this.icon_Hist.MouseEnter += new System.EventHandler(this.icon_Hist_MouseEnter);
-            this.icon_Hist.MouseLeave += new System.EventHandler(this.icon_Hist_MouseLeave);
             // 
             // panel10
             // 
@@ -695,8 +649,6 @@
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
@@ -741,16 +693,13 @@
         private FontAwesome.Sharp.IconButton icon_Key;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label3;
-        private FontAwesome.Sharp.IconButton icon_Hist;
         private FontAwesome.Sharp.IconButton icon_Estoque;
         private FontAwesome.Sharp.IconButton icon_Emp;
         private FontAwesome.Sharp.IconButton icon_Descartes;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;

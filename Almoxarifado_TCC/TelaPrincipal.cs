@@ -359,24 +359,6 @@ namespace Almoxarifado_TCC
             }
         }
 
-        private void icon_Hist_Click(object sender, EventArgs e)
-        {
-            if (icon_Hist.IconColor == CoresGlobais.Selecionado)
-            {
-                Popups_Fechar();
-                if (ActiveForm != null)
-                    ActiveForm.Close();
-                apagar_icons();
-            }
-            else
-            {
-                Popups_Fechar();
-                apagar_icons();
-                icon_Hist.IconColor = CoresGlobais.Selecionado;
-                OpenForm(new Popup.Historico());
-            }
-        }
-
         private void label1_Click(object sender, EventArgs e)
         {
             if (ActiveForm != null)
@@ -456,7 +438,6 @@ namespace Almoxarifado_TCC
             icon_Key.IconColor = CoresGlobais.Normal;
             icon_Emp.IconColor = CoresGlobais.Normal;
             icon_Estoque.IconColor = CoresGlobais.Normal;
-            icon_Hist.IconColor = CoresGlobais.Normal;
             icon_Descartes.IconColor = CoresGlobais.Normal;
             icon_Perfil.IconColor = CoresGlobais.Normal;
             icon_Config.IconColor = CoresGlobais.Normal;
@@ -509,18 +490,6 @@ namespace Almoxarifado_TCC
         {
             if (icon_Estoque.IconColor != CoresGlobais.Selecionado)
                 icon_Estoque.IconColor = CoresGlobais.Normal;
-        }
-
-        private void icon_Hist_MouseEnter(object sender, EventArgs e)
-        {
-            if (icon_Hist.IconColor != CoresGlobais.Selecionado)
-                icon_Hist.IconColor = CoresGlobais.Sobre;
-        }
-
-        private void icon_Hist_MouseLeave(object sender, EventArgs e)
-        {
-            if (icon_Hist.IconColor != CoresGlobais.Selecionado)
-                icon_Hist.IconColor = CoresGlobais.Normal;
         }
 
         private void icon_Descartes_MouseEnter(object sender, EventArgs e)

@@ -117,12 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="richTextBox1.Text" xml:space="preserve">
+  <data name="lblDescricao.Text" xml:space="preserve">
     <value>           Cuidado! Se você deletar sua conta, não podera voltar atrás.
 Essa ação excluirá todo o seu acesso ao sistema, você nunca mais poderá 
-                                   entrar em sua conta novamente.
-
-
-</value>
+                                   entrar em sua conta novamente.</value>
   </data>
 </root>

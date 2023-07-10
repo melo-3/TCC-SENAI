@@ -35,6 +35,12 @@ namespace Almoxarifado_TCC.Popup
             this.Close();
         }
 
+        private void lblDescricao_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReliaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
         private void DeletarConta_MouseDown(object sender, MouseEventArgs e)
         {
             ReliaseCapture();
@@ -42,12 +48,6 @@ namespace Almoxarifado_TCC.Popup
         }
 
         private void iconExc_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReliaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-        private void richTextBox1_MouseDown(object sender, MouseEventArgs e)
         {
             ReliaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
@@ -74,6 +74,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtSenha.Text == "SENHA")
             {
                 txtSenha.Text = "";
+                txtSenha.UseSystemPasswordChar = true;
             }
         }
 
@@ -82,6 +83,7 @@ namespace Almoxarifado_TCC.Popup
             if (txtSenha.Text == "")
             {
                 txtSenha.Text = "SENHA";
+                txtSenha.UseSystemPasswordChar = false;
             }
         }
 
@@ -137,6 +139,19 @@ namespace Almoxarifado_TCC.Popup
             Application.Run(new Login());
         }
 
+        private void iconOlho_Click(object sender, EventArgs e)
+        {
+            if (txtSenha.UseSystemPasswordChar == true && txtSenha.Text != "SENHA") // Ocorre um bug caso a senha senha "SENHA"
+            {
+                txtSenha.UseSystemPasswordChar = false;
+            }
+            else if (txtSenha.UseSystemPasswordChar == false)
+            {
+                txtSenha.UseSystemPasswordChar = true;
+            }
+        }
+
+        
     }
   }
 
