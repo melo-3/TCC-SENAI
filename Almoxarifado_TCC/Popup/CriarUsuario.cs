@@ -156,6 +156,8 @@ namespace Almoxarifado_TCC.Popup
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            Gerenciamento.CurrentInstance.reset();
+            Gerenciamento.CurrentInstance.Fechar();
             this.Close();
         }
 
@@ -269,7 +271,7 @@ namespace Almoxarifado_TCC.Popup
         string data;
         private void DataCriacao_Tick(object sender, EventArgs e)
         {
-            data = DateTime.Now.ToString("dd MM yyyy");
+            data = DateTime.Now.ToString("yyyy/MM/dd");
         }
     }
 }

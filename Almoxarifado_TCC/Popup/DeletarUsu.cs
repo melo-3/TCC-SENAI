@@ -140,6 +140,16 @@ namespace Almoxarifado_TCC.Popup
 
         #endregion
         string cpf_usuario, senha_admin;
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text.Length > 11)
+            {
+                txtUsuario.Text = txtUsuario.Text.Remove(txtUsuario.Text.Length - 1);
+                txtUsuario.Select(11, 0); // Coloca o cursor no final do texto
+            }
+        }
+
         private void DeletarUsu_Load(object sender, EventArgs e)
         {
             ClassConexao con1 = new ClassConexao();

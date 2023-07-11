@@ -88,6 +88,7 @@
             this.txtUsuario.TabIndex = 24;
             this.txtUsuario.Text = "CPF DO USUÁRIO";
             this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             this.txtUsuario.Enter += new System.EventHandler(this.txtUsuário_Enter);
             this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuário_KeyPress);
             this.txtUsuario.Leave += new System.EventHandler(this.txtUsuário_Leave);

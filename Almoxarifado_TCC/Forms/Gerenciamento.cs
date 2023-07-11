@@ -443,19 +443,19 @@ namespace Almoxarifado_TCC.Forms
                 }
                 else if (cbxFiltro.Text == "Tipo")
                 {
-                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where t.tipo_usu like '%" + txtPesquisar.Text + "%' and u.stats = 'Ativo'";
+                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where t.tipo_usu like '%" + txtPesquisar.Text + "%'";
                 }
                 else if (cbxFiltro.Text == "CPF")
                 {
-                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.cpf like '%" + txtPesquisar.Text + "%' and u.stats = 'Ativo'";
+                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.cpf like '%" + txtPesquisar.Text + "%'";
                 }
                 else if (cbxFiltro.Text == "Email")
                 {
-                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.email like '%" + txtPesquisar.Text + "%' and u.stats = 'Ativo'";
+                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.email like '%" + txtPesquisar.Text + "%'";
                 }
                 else if (cbxFiltro.Text == "Telefone")
                 {
-                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.Telefone like '%" + txtPesquisar.Text + "%' and u.stats = 'Ativo'";
+                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.Telefone like '%" + txtPesquisar.Text + "%";
                 }
                 else if (cbxFiltro.Text == "Inativo")
                 {
@@ -543,6 +543,65 @@ namespace Almoxarifado_TCC.Forms
                 btnCriarAdm.IconColor = CoresGlobais.Selecionado;
                 Popup.CriarAdmin go = new Popup.CriarAdmin();
                 go.ShowDialog();
+            }
+        }
+
+        private void cbxFiltro_TextChanged(object sender, EventArgs e)
+        {
+            if (cbxFiltro.Text == "Todos")
+            {
+                //instancia de conexão
+                ClassConexao con1 = new ClassConexao();
+                //obtive a conexao
+                MySqlConnection conexao1 = con1.getConexao();
+                String consulta1 = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.stats = 'Ativo'";
+                //Monta meu comando sql
+                MySqlCommand commando1 = new MySqlCommand(consulta1, conexao1);
+                conexao1.Open();//Abro minha conexao
+                                //monto a tabela de dados
+                MySqlDataAdapter dados1 = new MySqlDataAdapter(commando1);
+                //Crio uma nova tabela de dados
+                DataTable dtUsuario = new DataTable();
+                dados1.Fill(dtUsuario);//manipulação dos dados
+                dtvUsuario.DataSource = dtUsuario;//chamo o caminho dos dados
+            }
+            else if (cbxFiltro.Text == "Inativo")
+            {
+                //instancia de conexão
+                ClassConexao con1 = new ClassConexao();
+                //obtive a conexao
+                MySqlConnection conexao1 = con1.getConexao();
+                String consulta1 = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.stats = '" + "Inativo" + "'";
+                //Monta meu comando sql
+                MySqlCommand commando1 = new MySqlCommand(consulta1, conexao1);
+                conexao1.Open();//Abro minha conexao
+                                //monto a tabela de dados
+                MySqlDataAdapter dados1 = new MySqlDataAdapter(commando1);
+                //Crio uma nova tabela de dados
+                DataTable dtUsuario = new DataTable();
+                dados1.Fill(dtUsuario);//manipulação dos dados
+                dtvUsuario.DataSource = dtUsuario;//chamo o caminho dos dados
+            }
+        }
+
+        private void cbxFiltroA_TextChanged(object sender, EventArgs e)
+        {
+            if (cbxFiltroA.Text == "Todos")
+            {
+                //instancia de conexão
+                ClassConexao con1 = new ClassConexao();
+                //obtive a conexao
+                MySqlConnection conexao1 = con1.getConexao();
+                String consulta1 = "SELECT nome_admin, email, telefone from tb_admin";
+                //Monta meu comando sql
+                MySqlCommand commando1 = new MySqlCommand(consulta1, conexao1);
+                conexao1.Open();//Abro minha conexao
+                                //monto a tabela de dados
+                MySqlDataAdapter dados1 = new MySqlDataAdapter(commando1);
+                //Crio uma nova tabela de dados
+                DataTable dtAdmin = new DataTable();
+                dados1.Fill(dtAdmin);//manipulação dos dados
+                dtvAdmin.DataSource = dtAdmin;//chamo o caminho dos dados
             }
         }
 
