@@ -37,57 +37,48 @@ namespace Almoxarifado_TCC.Popup
 
         private void btnDeletar_Click(object sender, EventArgs e)
         {
-            bool resultado = Deletar(txtUsuario.Text, txtSenha.Text);
-
-            if (resultado)
+            ClassUsuario usu = new ClassUsuario();
+            if (senha_admin == usu.getMD5hash(txtSenha.Text) && cpf_usuario == txtUsuario.Text)
             {
-                MessageBox.Show("Conta deletada com sucesso!");
-                Gerenciamento.CurrentInstance.reset();
-                Gerenciamento.CurrentInstance.Fechar();
-                this.Close();
+                bool resultado = Deletar(txtUsuario.Text, txtSenha.Text);
+                if (resultado)
+                {
+                    MessageBox.Show("Conta deletada com sucesso!");
+                    Gerenciamento.CurrentInstance.reset();
+                    Gerenciamento.CurrentInstance.Fechar();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Erro");
+                }
             }
+            
             else
             {
                 MessageBox.Show("CPF ou senha incorretos. Conta não encontrada.");
             }
 
-            Gerenciamento.CurrentInstance.Fechar();
-            this.Close();
         }
 
         public bool Deletar(string cpf, string senha)
         {
-
-            ClassUsuario usu1 = new ClassUsuario();
-            ClassConexao con1 = new ClassConexao();
-            MySqlConnection connection1 = con1.getConexao();
-
-            // Comando SQL para deletar o cadastro
-            string sql1 = "DELETE cad FROM tb_cadastro AS cad INNER JOIN tb_usuario AS usu ON cad.id_usuario = usu.id_usuario WHERE usu.cpf = @cpf";
-            MySqlCommand command1 = new MySqlCommand(sql1, connection1);
-            command1.Parameters.AddWithValue("@cpf", cpf);
-
-            connection1.Open();
-            int rowsAffected1 = command1.ExecuteNonQuery();
-            connection1.Close();
-
-            
 
             ClassUsuario usu = new ClassUsuario();
             ClassConexao con = new ClassConexao();
             MySqlConnection connection = con.getConexao();
 
             // Comando SQL para deletar o usuário
-            string sql = "DELETE usu FROM tb_usuario AS usu INNER JOIN tb_cadastro AS cad ON usu.id_usuario = cad.id_usuario INNER JOIN tb_admin AS adm ON cad.id_admin = adm.id_admin WHERE usu.cpf = @cpf AND adm.senha = @senha";
+            string sql = "UPDATE tb_usuario SET stats = @stats WHERE id_usuario = "+id_usu+" ";
             MySqlCommand command = new MySqlCommand(sql, connection);
-            command.Parameters.AddWithValue("@cpf", cpf);
-            command.Parameters.AddWithValue("@senha", usu.getMD5hash(senha));
+            command.Parameters.AddWithValue("@stats", "Inativo");
+
 
             connection.Open();
             int rowsAffected = command.ExecuteNonQuery();
             connection.Close();
 
-            if (rowsAffected > 0 && rowsAffected1 >0)
+            if (rowsAffected > 0 && rowsAffected >0)
             {
                 return true; // Conta deletada com sucesso
             }

@@ -378,7 +378,7 @@ namespace Almoxarifado_TCC.Forms
 
         private void dtvUsuario_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int contador = dtvUsuario.RowCount - 1;
+            int contador = dtvUsuario.RowCount;
             string tipo;
 
             if (e.RowIndex < contador && e.RowIndex >= 0)

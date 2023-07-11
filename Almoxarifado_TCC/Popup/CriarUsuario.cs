@@ -198,7 +198,7 @@ namespace Almoxarifado_TCC.Popup
                     {
                         txtTelefone.Text = "";
                     }
-                    string sql = "insert into tb_usuario(nome_usuario,cpf,email,telefone,id_tipo_usu) values" + "('" + txtNome.Text + "','" + txtCPF.Text + "','" + txtEmail.Text + "','" + txtTelefone.Text + "','" + codTipo + "')";
+                    string sql = "insert into tb_usuario(nome_usuario,cpf,email,telefone,id_tipo_usu, stats) values" + "('" + txtNome.Text + "','" + txtCPF.Text + "','" + txtEmail.Text + "','" + txtTelefone.Text + "','" + codTipo + "', 'Ativo')";
                     MySqlCommand comando = new MySqlCommand(sql, conexao);
                     conexao.Open();
                     comando.ExecuteReader();

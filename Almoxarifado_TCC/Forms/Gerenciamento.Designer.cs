@@ -493,7 +493,7 @@
             this.pnlTela.Controls.Add(this.panelUsuario);
             this.pnlTela.Controls.Add(this.lblPesquisar);
             this.pnlTela.Controls.Add(this.iconColab);
-            this.pnlTela.Location = new System.Drawing.Point(-17, 0);
+            this.pnlTela.Location = new System.Drawing.Point(-26, 0);
             this.pnlTela.Name = "pnlTela";
             this.pnlTela.Size = new System.Drawing.Size(885, 1091);
             this.pnlTela.TabIndex = 88;
