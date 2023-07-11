@@ -43,7 +43,7 @@ namespace Almoxarifado_TCC.Popup
                 bool resultado = Deletar(txtUsuario.Text, txtSenha.Text);
                 if (resultado)
                 {
-                    MessageBox.Show("Conta deletada com sucesso!");
+                    MessageBox.Show("Conta desativada com sucesso!");
                     Gerenciamento.CurrentInstance.reset();
                     Gerenciamento.CurrentInstance.Fechar();
                     this.Close();
@@ -68,7 +68,7 @@ namespace Almoxarifado_TCC.Popup
             ClassConexao con = new ClassConexao();
             MySqlConnection connection = con.getConexao();
 
-            // Comando SQL para deletar o usuário
+            // Comando SQL para desativar o usuário
             string sql = "UPDATE tb_usuario SET stats = @stats WHERE id_usuario = "+id_usu+" ";
             MySqlCommand command = new MySqlCommand(sql, connection);
             command.Parameters.AddWithValue("@stats", "Inativo");
@@ -80,11 +80,11 @@ namespace Almoxarifado_TCC.Popup
 
             if (rowsAffected > 0 && rowsAffected >0)
             {
-                return true; // Conta deletada com sucesso
+                return true; // Conta desativada com sucesso
             }
             else
             {
-                return false; // Falha ao deletar a conta
+                return false; // Falha ao desativar a conta
             }
 
         }

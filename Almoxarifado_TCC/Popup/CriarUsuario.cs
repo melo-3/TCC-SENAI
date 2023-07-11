@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Almoxarifado_TCC.Forms;
 using FontAwesome.Sharp;
 using MySql.Data.MySqlClient;
 
@@ -203,7 +204,7 @@ namespace Almoxarifado_TCC.Popup
                     conexao.Open();
                     comando.ExecuteReader();
                     
-                    MessageBox.Show("Cadastro realizado!");
+                    //MessageBox.Show("Cadastro realizado!");
 
                     this.Close();
                 }
@@ -214,6 +215,8 @@ namespace Almoxarifado_TCC.Popup
                 finally
                 {
                     Hist_Cadastro(txtCPF.Text);
+                    Gerenciamento.CurrentInstance.reset();
+                    Gerenciamento.CurrentInstance.Fechar();
                     con.desconectar();
                 }
             }
@@ -241,7 +244,7 @@ namespace Almoxarifado_TCC.Popup
             comando1.ExecuteReader();
             con1.desconectar();
 
-            MessageBox.Show(" Foi essa merda! ");
+            //MessageBox.Show(" Foi essa merda! ");
         }
 
         private void txtCPF_KeyPress(object sender, KeyPressEventArgs e)

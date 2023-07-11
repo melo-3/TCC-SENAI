@@ -50,6 +50,7 @@
             this.lblEditar = new System.Windows.Forms.Label();
             this.lblExcluir = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAtivar = new FontAwesome.Sharp.IconButton();
             this.btnPesquisar = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cbxFiltro = new System.Windows.Forms.ComboBox();
@@ -59,6 +60,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.pnlTela = new System.Windows.Forms.Panel();
+            this.lblAtivar = new System.Windows.Forms.Label();
             this.lblAdm = new System.Windows.Forms.Label();
             this.lblUsu = new System.Windows.Forms.Label();
             this.lblCriarAdm = new System.Windows.Forms.Label();
@@ -331,9 +333,9 @@
             this.lblExcluir.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblExcluir.Location = new System.Drawing.Point(638, 448);
             this.lblExcluir.Name = "lblExcluir";
-            this.lblExcluir.Size = new System.Drawing.Size(49, 13);
+            this.lblExcluir.Size = new System.Drawing.Size(65, 13);
             this.lblExcluir.TabIndex = 79;
-            this.lblExcluir.Text = "Excluir";
+            this.lblExcluir.Text = "Desativar";
             this.lblExcluir.Visible = false;
             // 
             // panel1
@@ -341,6 +343,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            this.panel1.Controls.Add(this.btnAtivar);
             this.panel1.Controls.Add(this.btnPesquisar);
             this.panel1.Controls.Add(this.btnAdicionar);
             this.panel1.Controls.Add(this.btnEditar);
@@ -349,6 +352,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(51, 259);
             this.panel1.TabIndex = 80;
+            // 
+            // btnAtivar
+            // 
+            this.btnAtivar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            this.btnAtivar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.btnAtivar.FlatAppearance.BorderSize = 0;
+            this.btnAtivar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            this.btnAtivar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            this.btnAtivar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            this.btnAtivar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtivar.IconChar = FontAwesome.Sharp.IconChar.FileMedical;
+            this.btnAtivar.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAtivar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAtivar.IconSize = 30;
+            this.btnAtivar.Location = new System.Drawing.Point(9, 180);
+            this.btnAtivar.Name = "btnAtivar";
+            this.btnAtivar.Size = new System.Drawing.Size(33, 33);
+            this.btnAtivar.TabIndex = 78;
+            this.btnAtivar.UseVisualStyleBackColor = false;
+            this.btnAtivar.Click += new System.EventHandler(this.btnAtivar_Click);
+            this.btnAtivar.MouseEnter += new System.EventHandler(this.iconAtivar_MouseEnter);
+            this.btnAtivar.MouseLeave += new System.EventHandler(this.iconAtivar_MouseLeave);
             // 
             // btnPesquisar
             // 
@@ -397,7 +422,8 @@
             "CPF",
             "Tipo",
             "Telefone",
-            "Email"});
+            "Email",
+            "Inativo"});
             this.cbxFiltro.Location = new System.Drawing.Point(22, 70);
             this.cbxFiltro.Name = "cbxFiltro";
             this.cbxFiltro.Size = new System.Drawing.Size(116, 21);
@@ -469,6 +495,7 @@
             // 
             this.pnlTela.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pnlTela.AutoScroll = true;
+            this.pnlTela.Controls.Add(this.lblAtivar);
             this.pnlTela.Controls.Add(this.lblAdm);
             this.pnlTela.Controls.Add(this.lblUsu);
             this.pnlTela.Controls.Add(this.lblCriarAdm);
@@ -493,10 +520,23 @@
             this.pnlTela.Controls.Add(this.panelUsuario);
             this.pnlTela.Controls.Add(this.lblPesquisar);
             this.pnlTela.Controls.Add(this.iconColab);
-            this.pnlTela.Location = new System.Drawing.Point(-26, 0);
+            this.pnlTela.Location = new System.Drawing.Point(1, 0);
             this.pnlTela.Name = "pnlTela";
             this.pnlTela.Size = new System.Drawing.Size(885, 1091);
             this.pnlTela.TabIndex = 88;
+            // 
+            // lblAtivar
+            // 
+            this.lblAtivar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAtivar.AutoSize = true;
+            this.lblAtivar.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblAtivar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblAtivar.Location = new System.Drawing.Point(638, 409);
+            this.lblAtivar.Name = "lblAtivar";
+            this.lblAtivar.Size = new System.Drawing.Size(44, 13);
+            this.lblAtivar.TabIndex = 103;
+            this.lblAtivar.Text = "Ativar";
+            this.lblAtivar.Visible = false;
             // 
             // lblAdm
             // 
@@ -831,7 +871,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
-            this.ClientSize = new System.Drawing.Size(924, 482);
+            this.ClientSize = new System.Drawing.Size(907, 529);
             this.Controls.Add(this.pnlTela);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Gerenciamento";
@@ -912,5 +952,7 @@
         private System.Windows.Forms.Label lblCriarAdm;
         private System.Windows.Forms.Label lblUsu;
         private System.Windows.Forms.Label lblAdm;
+        private FontAwesome.Sharp.IconButton btnAtivar;
+        private System.Windows.Forms.Label lblAtivar;
     }
 }

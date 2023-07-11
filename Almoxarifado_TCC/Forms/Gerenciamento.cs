@@ -18,7 +18,7 @@ namespace Almoxarifado_TCC.Forms
     {
 
         private Form activeForm = null;
-        public string nome_usu, nome_admin;
+        public string nome_usu, nome_admin, usu_stats;
         public int id_usu, id_adm, cod_adm;
 
         public Gerenciamento(int codigo_id)
@@ -36,7 +36,7 @@ namespace Almoxarifado_TCC.Forms
             //obtive a conexao
             MySqlConnection conexao = con.getConexao();
             String consulta;
-            consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu";
+            consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.stats = 'Ativo'";
             MySqlCommand commando = new MySqlCommand(consulta, conexao);
             conexao.Open();//Abro minha conexao
             MySqlDataAdapter dados = new MySqlDataAdapter(commando);
@@ -154,6 +154,7 @@ namespace Almoxarifado_TCC.Forms
             btnPesquisarA.IconColor = CoresGlobais.Normal;
             btnVisualizarA.IconColor = CoresGlobais.Normal;
             btnCriarAdm.IconColor = CoresGlobais.Normal;
+            btnAtivar.IconColor = CoresGlobais.Normal;
         }
 
         private void btnPesquisar_MouseEnter(object sender, EventArgs e)
@@ -281,6 +282,21 @@ namespace Almoxarifado_TCC.Forms
                 txtPesquisarA.Text = "Pesquisar";
         }
 
+        private void iconAtivar_MouseEnter(object sender, EventArgs e)
+        {
+            if (btnAtivar.IconColor != CoresGlobais.Selecionado)
+                btnAtivar.IconColor = CoresGlobais.Sobre;
+            lblAtivar.Visible = true;
+        }
+
+        private void iconAtivar_MouseLeave(object sender, EventArgs e)
+        {
+            if (btnAtivar.IconColor != CoresGlobais.Selecionado)
+                btnAtivar.IconColor = CoresGlobais.Normal;
+            lblAtivar.Visible = false;
+        }
+
+
         #endregion
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -389,13 +405,14 @@ namespace Almoxarifado_TCC.Forms
                 ClassConexao con = new ClassConexao();
                 MySqlConnection conexao = con.getConexao();
                 String consulta = "";
-                consulta = "SELECT u.id_usuario, tu.tipo_usu from tb_usuario u inner join tb_tipo_usuario tu on u.id_tipo_usu=tu.id_tipo_usu where nome_usuario='" + nome_usu + "'";
+                consulta = "SELECT u.id_usuario, tu.tipo_usu, u.stats from tb_usuario u inner join tb_tipo_usuario tu on u.id_tipo_usu=tu.id_tipo_usu where nome_usuario='" + nome_usu + "'";
                 MySqlCommand commando = new MySqlCommand(consulta, conexao);
                 conexao.Open();
                 MySqlDataReader registro = commando.ExecuteReader();
                 registro.Read();
                 tipo = Convert.ToString(registro["tipo_usu"]);
                 id_usu = Convert.ToInt32(registro["id_usuario"]);
+                usu_stats = Convert.ToString(registro["stats"]);
                 conexao.Close();
 
                 lblNomeU.Text = nome_usu + ", " + tipo;
@@ -418,27 +435,31 @@ namespace Almoxarifado_TCC.Forms
                 String consulta = "";
                 if (cbxFiltro.Text == "Todos" || cbxFiltro.Text == "") //Campo vazio lista tudo
                 {
-                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu";
+                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.stats = 'Ativo'";
                 }
                 else if (cbxFiltro.Text == "Nome")//Se tiver informação lista
                 {
-                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.nome_usuario like '%"+ txtPesquisar.Text +"%'";
+                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.nome_usuario like '%"+ txtPesquisar.Text +"%' and u.stats = 'Ativo'";
                 }
                 else if (cbxFiltro.Text == "Tipo")
                 {
-                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where t.tipo_usu like '%" + txtPesquisar.Text + "%'";
+                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where t.tipo_usu like '%" + txtPesquisar.Text + "%' and u.stats = 'Ativo'";
                 }
                 else if (cbxFiltro.Text == "CPF")
                 {
-                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.cpf like '%" + txtPesquisar.Text + "%'";
+                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.cpf like '%" + txtPesquisar.Text + "%' and u.stats = 'Ativo'";
                 }
                 else if (cbxFiltro.Text == "Email")
                 {
-                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.email like '%" + txtPesquisar.Text + "%'";
+                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.email like '%" + txtPesquisar.Text + "%' and u.stats = 'Ativo'";
                 }
                 else if (cbxFiltro.Text == "Telefone")
                 {
-                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.Telefone like '%" + txtPesquisar.Text + "%'";
+                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.Telefone like '%" + txtPesquisar.Text + "%' and u.stats = 'Ativo'";
+                }
+                else if (cbxFiltro.Text == "Inativo")
+                {
+                    consulta = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.stats = '" + "Inativo" + "'";
                 }
                 //Monta meu comando sql
                 MySqlCommand commando = new MySqlCommand(consulta, conexao);
@@ -523,6 +544,61 @@ namespace Almoxarifado_TCC.Forms
                 Popup.CriarAdmin go = new Popup.CriarAdmin();
                 go.ShowDialog();
             }
+        }
+
+        private void btnAtivar_Click(object sender, EventArgs e)
+        {
+            string txt = "Selecione um usuário para ativar";
+            if (lblNomeU.Text == "Campo vazio" || lblNomeU.Text == "-----" || lblNomeU.Text == txt)
+            {
+                apagar_icons();
+                Fechar();
+                lblNomeU.Text = txt;
+            }
+            else if (usu_stats == "Ativo")
+            {
+                apagar_icons();
+                Fechar();
+                lblNomeU.Text = "Este usuário já está ativo";
+            }
+            else
+            {
+                apagar_icons();
+                Fechar();
+
+                ClassUsuario usu = new ClassUsuario();
+                ClassConexao con = new ClassConexao();
+                MySqlConnection connection = con.getConexao();
+
+                // Comando SQL para ativar o usuário
+                string sql = "UPDATE tb_usuario SET stats = @stats WHERE id_usuario = " + id_usu + " ";
+                MySqlCommand command = new MySqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@stats", "Ativo");
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+
+                reset();
+
+                //instancia de conexão
+                ClassConexao con1 = new ClassConexao();
+                //obtive a conexao
+                MySqlConnection conexao1 = con1.getConexao();
+                String consulta1 = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.stats = '" + "Inativo" + "'";
+                //Monta meu comando sql
+                MySqlCommand commando1 = new MySqlCommand(consulta1, conexao1);
+                conexao1.Open();//Abro minha conexao
+                               //monto a tabela de dados
+                MySqlDataAdapter dados1 = new MySqlDataAdapter(commando1);
+                //Crio uma nova tabela de dados
+                DataTable dtUsuario = new DataTable();
+                dados1.Fill(dtUsuario);//manipulação dos dados
+                dtvUsuario.DataSource = dtUsuario;//chamo o caminho dos dados
+
+                MessageBox.Show("Usuário Ativado");
+
+            }
+            
         }
 
         int VerPerfil = 0;
