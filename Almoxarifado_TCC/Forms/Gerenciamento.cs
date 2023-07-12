@@ -571,7 +571,7 @@ namespace Almoxarifado_TCC.Forms
                 ClassConexao con1 = new ClassConexao();
                 //obtive a conexao
                 MySqlConnection conexao1 = con1.getConexao();
-                String consulta1 = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.stats = '" + "Inativo" + "'";
+                String consulta1 = "SELECT u.nome_usuario, t.tipo_usu, u.cpf, u.email from tb_usuario u inner join tb_tipo_usuario t on u.id_tipo_usu=t.id_tipo_usu where u.stats = 'Inativo'";
                 //Monta meu comando sql
                 MySqlCommand commando1 = new MySqlCommand(consulta1, conexao1);
                 conexao1.Open();//Abro minha conexao

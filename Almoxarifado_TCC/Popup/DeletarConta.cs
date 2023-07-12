@@ -103,7 +103,9 @@ namespace Almoxarifado_TCC.Popup
             }
             else
             {
-                MessageBox.Show("Nome de usuário ou senha incorretos. Conta não encontrada.");
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "Nome de usuário ou senha incorretos. Conta não encontrada.";
             }
         }
 

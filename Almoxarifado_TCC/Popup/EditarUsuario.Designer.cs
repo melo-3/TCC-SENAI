@@ -44,6 +44,9 @@
             this.lblCPF = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblTelefone = new System.Windows.Forms.Label();
+            this.iconAviso = new FontAwesome.Sharp.IconPictureBox();
+            this.lblAviso = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.iconAviso)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -52,7 +55,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.label2.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(60, 212);
+            this.label2.Location = new System.Drawing.Point(60, 209);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 13);
             this.label2.TabIndex = 0;
@@ -66,7 +69,7 @@
             this.cmbTipo.Font = new System.Drawing.Font("Candara", 9F);
             this.cmbTipo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cmbTipo.FormattingEnabled = true;
-            this.cmbTipo.Location = new System.Drawing.Point(22, 229);
+            this.cmbTipo.Location = new System.Drawing.Point(22, 226);
             this.cmbTipo.Margin = new System.Windows.Forms.Padding(1);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(170, 22);
@@ -93,7 +96,9 @@
             this.txtTelefone.Size = new System.Drawing.Size(189, 13);
             this.txtTelefone.TabIndex = 23;
             this.txtTelefone.Text = "TELEFONE";
+            this.txtTelefone.TextChanged += new System.EventHandler(this.txtTelefone_TextChanged);
             this.txtTelefone.Enter += new System.EventHandler(this.txtTelefone_Enter);
+            this.txtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefone_KeyPress);
             this.txtTelefone.Leave += new System.EventHandler(this.txtTelefone_Leave);
             // 
             // panel3
@@ -244,12 +249,42 @@
             this.lblTelefone.TabIndex = 53;
             this.lblTelefone.Text = "Telefone";
             // 
+            // iconAviso
+            // 
+            this.iconAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            this.iconAviso.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconAviso.IconChar = FontAwesome.Sharp.IconChar.Warning;
+            this.iconAviso.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconAviso.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconAviso.IconSize = 22;
+            this.iconAviso.Location = new System.Drawing.Point(80, 262);
+            this.iconAviso.Name = "iconAviso";
+            this.iconAviso.Size = new System.Drawing.Size(22, 25);
+            this.iconAviso.TabIndex = 55;
+            this.iconAviso.TabStop = false;
+            this.iconAviso.Visible = false;
+            // 
+            // lblAviso
+            // 
+            this.lblAviso.AutoSize = true;
+            this.lblAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            this.lblAviso.Font = new System.Drawing.Font("Candara", 8.25F);
+            this.lblAviso.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblAviso.Location = new System.Drawing.Point(105, 266);
+            this.lblAviso.Name = "lblAviso";
+            this.lblAviso.Size = new System.Drawing.Size(31, 13);
+            this.lblAviso.TabIndex = 54;
+            this.lblAviso.Text = "Error";
+            this.lblAviso.Visible = false;
+            // 
             // EditarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.ClientSize = new System.Drawing.Size(213, 340);
+            this.Controls.Add(this.iconAviso);
+            this.Controls.Add(this.lblAviso);
             this.Controls.Add(this.lblTelefone);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblCPF);
@@ -272,6 +307,7 @@
             this.Name = "EditarUsuario";
             this.Text = "v";
             this.Load += new System.EventHandler(this.EditarUsuario_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.iconAviso)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,5 +330,7 @@
         private System.Windows.Forms.Label lblCPF;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblTelefone;
+        private FontAwesome.Sharp.IconPictureBox iconAviso;
+        private System.Windows.Forms.Label lblAviso;
     }
 }

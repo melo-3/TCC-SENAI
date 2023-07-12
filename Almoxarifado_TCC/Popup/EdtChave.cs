@@ -109,53 +109,72 @@ namespace Almoxarifado_TCC.Popup
         private void btnEditar_Click(object sender, EventArgs e)// Botão de Editar
 
         {
-
-            ClassConexao con = new ClassConexao();
-            MySqlConnection conexao2 = con.getConexao();
-
-            string SQL = "UPDATE tb_chave SET num_chave = @num_chave, sala_lab = @sala_lab, obs = @obs WHERE num_chave = " + this.cod_chave + ";";
-            MySqlCommand comando = new MySqlCommand(SQL, conexao2);
-            comando.Parameters.AddWithValue("@num_chave", txtNumero.Text);
-            comando.Parameters.AddWithValue("@sala_lab", txtSala.Text);
-            comando.Parameters.AddWithValue("@obs", txtObs.Text);        
-          
-            try {
-                conexao2.Open();
-                comando.ExecuteNonQuery();
-                MessageBox.Show("Atualização realizada com sucesso!");
-                this.Close();
-                Popup.Chave.CurrentInstance.reset();
+            if (txtNumero.Text == "Número")
+            {
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "Número em branco";
+                iconAviso.Location = new Point(36, 126);
+                lblAviso.Location = new Point(61, 130);
             }
 
-
-            catch (MySqlException ex)
+            else if (txtSala.Text == "Sala / Lab")
             {
-                // Trata as exceções específicas do MySQL
-                switch (ex.Number)
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "Sala/Lab em branco";
+                iconAviso.Location = new Point(36, 126);
+                lblAviso.Location = new Point(61, 130);
+            }
+
+            else {
+                ClassConexao con = new ClassConexao();
+                MySqlConnection conexao2 = con.getConexao();
+
+                string SQL = "UPDATE tb_chave SET num_chave = @num_chave, sala_lab = @sala_lab, obs = @obs WHERE num_chave = " + this.cod_chave + ";";
+                MySqlCommand comando = new MySqlCommand(SQL, conexao2);
+                comando.Parameters.AddWithValue("@num_chave", txtNumero.Text);
+                comando.Parameters.AddWithValue("@sala_lab", txtSala.Text);
+                comando.Parameters.AddWithValue("@obs", txtObs.Text);
+
+                try
                 {
-                    case 1042:
-                        MessageBox.Show("Não foi possível conectar ao servidor.");
-                        break;
-                    case 1062:
-                        MessageBox.Show("Já existe uma chave com esse número.");
-                        break;
-                    default:
-                        MessageBox.Show("Erro: " + ex.Message);
-                        break;
+                    conexao2.Open();
+                    comando.ExecuteNonQuery();
+                    MessageBox.Show("Atualização realizada com sucesso!");
+                    this.Close();
+                    Popup.Chave.CurrentInstance.reset();
+                }
+
+
+                catch (MySqlException ex)
+                {
+                    // Trata as exceções específicas do MySQL
+                    switch (ex.Number)
+                    {
+                        case 1042:
+                            MessageBox.Show("Não foi possível conectar ao servidor.");
+                            break;
+                        case 1062:
+                            MessageBox.Show("Já existe uma chave com esse número.");
+                            break;
+                        default:
+                            MessageBox.Show("Erro: " + ex.Message);
+                            break;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Trata as demais exceções
+                    MessageBox.Show("Erro: " + ex.Message);
+                }
+                finally
+                {
+                    // Fecha a conexão com o banco de dados
+                    TelaPrincipal.CurrentInstance.Popups_Fechar();
+                    conexao2.Close();
                 }
             }
-            catch (Exception ex)
-            {
-                // Trata as demais exceções
-                MessageBox.Show("Erro: " + ex.Message);
-            }
-            finally
-            {
-                // Fecha a conexão com o banco de dados
-                TelaPrincipal.CurrentInstance.Popups_Fechar();
-                conexao2.Close();
-            }
-
         }
 
         private void lklCancelar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -164,5 +183,12 @@ namespace Almoxarifado_TCC.Popup
             this.Close();
         }
 
+        private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

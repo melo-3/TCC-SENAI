@@ -49,8 +49,11 @@
             this.btnDescartar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.hora_desc = new System.Windows.Forms.Timer(this.components);
+            this.iconAviso = new FontAwesome.Sharp.IconPictureBox();
+            this.lblAviso = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.iconDesc)).BeginInit();
             this.PanelItem.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconAviso)).BeginInit();
             this.SuspendLayout();
             // 
             // iconDesc
@@ -303,14 +306,44 @@
             // 
             this.hora_desc.Tick += new System.EventHandler(this.hora_desc_Tick);
             // 
+            // iconAviso
+            // 
+            this.iconAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
+            this.iconAviso.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconAviso.IconChar = FontAwesome.Sharp.IconChar.Warning;
+            this.iconAviso.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconAviso.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconAviso.IconSize = 22;
+            this.iconAviso.Location = new System.Drawing.Point(64, 126);
+            this.iconAviso.Name = "iconAviso";
+            this.iconAviso.Size = new System.Drawing.Size(22, 25);
+            this.iconAviso.TabIndex = 17;
+            this.iconAviso.TabStop = false;
+            this.iconAviso.Visible = false;
+            // 
+            // lblAviso
+            // 
+            this.lblAviso.AutoSize = true;
+            this.lblAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
+            this.lblAviso.Font = new System.Drawing.Font("Candara", 8.25F);
+            this.lblAviso.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblAviso.Location = new System.Drawing.Point(89, 130);
+            this.lblAviso.Name = "lblAviso";
+            this.lblAviso.Size = new System.Drawing.Size(31, 13);
+            this.lblAviso.TabIndex = 16;
+            this.lblAviso.Text = "Error";
+            this.lblAviso.Visible = false;
+            // 
             // Descitem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
             this.ClientSize = new System.Drawing.Size(193, 485);
-            this.Controls.Add(this.iconDesc);
             this.Controls.Add(this.PanelItem);
+            this.Controls.Add(this.iconAviso);
+            this.Controls.Add(this.lblAviso);
+            this.Controls.Add(this.iconDesc);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Descitem";
             this.Text = "Descitem";
@@ -318,7 +351,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconDesc)).EndInit();
             this.PanelItem.ResumeLayout(false);
             this.PanelItem.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconAviso)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -344,5 +379,7 @@
         private System.Windows.Forms.Label lblObs;
         private System.Windows.Forms.Label lblDescricao;
         private System.Windows.Forms.Label lblNumero;
+        private FontAwesome.Sharp.IconPictureBox iconAviso;
+        private System.Windows.Forms.Label lblAviso;
     }
 }

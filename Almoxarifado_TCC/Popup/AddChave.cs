@@ -102,21 +102,25 @@ namespace Almoxarifado_TCC.Popup
         private void button1_Click(object sender, EventArgs e)
         {
             //botao adicionar
-            string numero = txtNumero.Text, sala = txtSala.Text, status = cbxStatus.Text, obs = txtObs.Text;
+            string numero = txtNumero.Text, sala = txtSala.Text, obs = txtObs.Text;
 
             if (numero == "" || numero == "Número")
             {
-                MessageBox.Show("Campo Número está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "Campo Número está vazio";
+                iconAviso.Location = new Point(20, 126);
+                lblAviso.Location = new Point(45, 130);
+
             }
 
             else if (sala == "" || sala == "Sala / Lab")
             {
-                MessageBox.Show("Campo Sala está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
-            else if(status == "")
-            {
-                MessageBox.Show("Campo Status está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "Campo Sala está vazio";
+                iconAviso.Location = new Point(27, 126);
+                lblAviso.Location = new Point(52, 130);
             }
 
             else
@@ -132,12 +136,12 @@ namespace Almoxarifado_TCC.Popup
                     MySqlConnection conexao = con.getConexao();
                     //para a segurança dos dados
                     
-                    string sql = "insert into tb_chave(num_chave,sala_lab,stats,obs) values" + "('" + txtNumero.Text + "','" + txtSala.Text + "','" + cbxStatus.Text + "','" + txtObs.Text + "')";
+                    string sql = "insert into tb_chave(num_chave,sala_lab,stats,obs) values" + "('" + txtNumero.Text + "','" + txtSala.Text + "','Disponível','" + txtObs.Text + "')";
                     MySqlCommand comando = new MySqlCommand(sql, conexao);
                     conexao.Open();
                     
                     comando.ExecuteReader();
-                    MessageBox.Show("Chave adicionada!");
+                    //MessageBox.Show("Chave adicionada!");
                     Popup.Chave.CurrentInstance.reset();
                 }
                 catch (Exception ex)

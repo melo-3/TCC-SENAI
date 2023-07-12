@@ -115,6 +115,15 @@ namespace Almoxarifado_TCC.Popup
                 this.Close();
                 Popup.Estoque.CurrentInstance.reset();
             }
+            
+            else if (txtQuant.Text == "0")
+            {
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "Defina uma quantidade";
+                iconAviso.Location = new Point(27, 126);
+                lblAviso.Location = new Point(52, 130);
+            }
         }
 
         private void btnCancelar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

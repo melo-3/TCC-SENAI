@@ -41,8 +41,11 @@
             this.txtSala = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.iconAviso = new FontAwesome.Sharp.IconPictureBox();
+            this.lblAviso = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.iconChave)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconAviso)).BeginInit();
             this.SuspendLayout();
             // 
             // iconChave
@@ -160,6 +163,7 @@
             this.txtNumero.TabIndex = 1;
             this.txtNumero.Text = "Número";
             this.txtNumero.Enter += new System.EventHandler(this.txtNumero_Enter);
+            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
             this.txtNumero.Leave += new System.EventHandler(this.txtNumero_Leave);
             // 
             // btnEditar
@@ -208,14 +212,44 @@
             this.panel1.Size = new System.Drawing.Size(133, 2);
             this.panel1.TabIndex = 7;
             // 
+            // iconAviso
+            // 
+            this.iconAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
+            this.iconAviso.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconAviso.IconChar = FontAwesome.Sharp.IconChar.Warning;
+            this.iconAviso.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconAviso.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconAviso.IconSize = 22;
+            this.iconAviso.Location = new System.Drawing.Point(64, 126);
+            this.iconAviso.Name = "iconAviso";
+            this.iconAviso.Size = new System.Drawing.Size(22, 25);
+            this.iconAviso.TabIndex = 17;
+            this.iconAviso.TabStop = false;
+            this.iconAviso.Visible = false;
+            // 
+            // lblAviso
+            // 
+            this.lblAviso.AutoSize = true;
+            this.lblAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
+            this.lblAviso.Font = new System.Drawing.Font("Candara", 8.25F);
+            this.lblAviso.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblAviso.Location = new System.Drawing.Point(89, 130);
+            this.lblAviso.Name = "lblAviso";
+            this.lblAviso.Size = new System.Drawing.Size(31, 13);
+            this.lblAviso.TabIndex = 16;
+            this.lblAviso.Text = "Error";
+            this.lblAviso.Visible = false;
+            // 
             // EdtChave
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
             this.ClientSize = new System.Drawing.Size(193, 485);
-            this.Controls.Add(this.iconChave);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.iconAviso);
+            this.Controls.Add(this.lblAviso);
+            this.Controls.Add(this.iconChave);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EdtChave";
             this.ShowInTaskbar = false;
@@ -226,7 +260,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconChave)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconAviso)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -245,5 +281,7 @@
         private System.Windows.Forms.Label lblNumero;
         private System.Windows.Forms.Label lblObs;
         private System.Windows.Forms.Label lblSala;
+        private FontAwesome.Sharp.IconPictureBox iconAviso;
+        private System.Windows.Forms.Label lblAviso;
     }
 }

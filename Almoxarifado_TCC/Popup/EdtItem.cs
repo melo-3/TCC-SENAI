@@ -99,54 +99,75 @@ namespace Almoxarifado_TCC.Popup
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
-            ClassConexao con = new ClassConexao();
-            MySqlConnection conexao2 = con.getConexao();
-
-            string SQL = "UPDATE tb_item SET nome_item = @nome_item, descricao = @descricao, quant = @quant WHERE id_item = " + this.cod_item + ";";
-            MySqlCommand comando = new MySqlCommand(SQL, conexao2);
-            comando.Parameters.AddWithValue("@id_item", this.cod_item);
-            comando.Parameters.AddWithValue("@nome_item", txtNome.Text);
-            comando.Parameters.AddWithValue("@descricao", txtDescricao.Text);
-            comando.Parameters.AddWithValue("@quant", txtQuant.Text);
-
-            try
+            if (txtNome.Text == "Nome")
             {
-                conexao2.Open();
-                comando.ExecuteNonQuery();
-                MessageBox.Show("Atualização realizada com sucesso!");
-                this.Close();
-                Popup.Estoque.CurrentInstance.reset();
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "Nome em branco";
+                iconAviso.Location = new Point(38, 126);
+                lblAviso.Location = new Point(63, 130);
             }
 
-
-            catch (MySqlException ex)
+            else if (txtDescricao.Text == "Descrição")
             {
-                // Trata as exceções específicas do MySQL
-                switch (ex.Number)
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "Descrição em branco";
+                iconAviso.Location = new Point(30, 126);
+                lblAviso.Location = new Point(55, 130);
+            }
+
+            else
+            {
+                ClassConexao con = new ClassConexao();
+                MySqlConnection conexao2 = con.getConexao();
+
+                string SQL = "UPDATE tb_item SET nome_item = @nome_item, descricao = @descricao, quant = @quant WHERE id_item = " + this.cod_item + ";";
+                MySqlCommand comando = new MySqlCommand(SQL, conexao2);
+                comando.Parameters.AddWithValue("@id_item", this.cod_item);
+                comando.Parameters.AddWithValue("@nome_item", txtNome.Text);
+                comando.Parameters.AddWithValue("@descricao", txtDescricao.Text);
+                comando.Parameters.AddWithValue("@quant", txtQuant.Text);
+
+                try
                 {
-                    case 1042:
-                        MessageBox.Show("Não foi possível conectar ao servidor.");
-                        break;
-                    case 1062:
-                        MessageBox.Show("Já existe uma chave com esse número.");
-                        break;
-                    default:
-                        MessageBox.Show("Erro: " + ex.Message);
-                        break;
+                    conexao2.Open();
+                    comando.ExecuteNonQuery();
+                    MessageBox.Show("Atualização realizada com sucesso!");
+                    this.Close();
+                    Popup.Estoque.CurrentInstance.reset();
+                }
+
+
+                catch (MySqlException ex)
+                {
+                    // Trata as exceções específicas do MySQL
+                    switch (ex.Number)
+                    {
+                        case 1042:
+                            MessageBox.Show("Não foi possível conectar ao servidor.");
+                            break;
+                        case 1062:
+                            MessageBox.Show("Já existe uma chave com esse número.");
+                            break;
+                        default:
+                            MessageBox.Show("Erro: " + ex.Message);
+                            break;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Trata as demais exceções
+                    MessageBox.Show("Erro: " + ex.Message);
+                }
+                finally
+                {
+                    // Fecha a conexão com o banco de dados
+                    TelaPrincipal.CurrentInstance.Popups_Fechar();
+                    conexao2.Close();
                 }
             }
-            catch (Exception ex)
-            {
-                // Trata as demais exceções
-                MessageBox.Show("Erro: " + ex.Message);
-            }
-            finally
-            {
-                // Fecha a conexão com o banco de dados
-                TelaPrincipal.CurrentInstance.Popups_Fechar();
-                conexao2.Close();
-            }
+            
 
         }
 

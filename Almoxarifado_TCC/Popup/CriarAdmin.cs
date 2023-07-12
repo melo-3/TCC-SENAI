@@ -176,37 +176,51 @@ namespace Almoxarifado_TCC.Popup
             string nome = txtNome.Text, cpf = txtCPF.Text, email = txtEmail.Text, senha = txtSenha.Text, senhaR = txtRSenha.Text;
             if (nome == "NOME")
             {
-                MessageBox.Show("Campo NOME está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "Campo NOME está vazio";
             }
 
             else if (cpf == "CPF")
             {
-                MessageBox.Show("Campo CPF está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "Campo CPF está vazio";
             }
 
             else if (CPFLenght != 11)
             {
-                MessageBox.Show("Insira um CPF válido!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "Insira um CPF válido";
             }
 
             else if (email == "EMAIL")
             {
-                MessageBox.Show("Campo Email está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "Campo Email está vazio";
             }
 
             else if (senha == "SENHA")
             {
-                MessageBox.Show("Campo SENHA está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "Campo SENHA está vazio";
             }
 
             else if (senhaR == "REPETIR SENHA")
             {
-                MessageBox.Show("Campo REPETIR SENHA está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "Campo REPETIR SENHA está vazio";
             }
            
             else if(senha != senhaR)
             {
-                MessageBox.Show("Confirmação de senha ERRADO, as senhas nao coincidem");
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "As senhas nao coincidem";
             }
 
 
@@ -224,7 +238,7 @@ namespace Almoxarifado_TCC.Popup
                     MySqlCommand comando = new MySqlCommand(sql, conexao);
                     conexao.Open();
                     comando.ExecuteReader();
-                    MessageBox.Show("Cadastro realizado!");
+                    //MessageBox.Show("Cadastro realizado!");
                     this.Close();
                 }
                 catch (Exception ex)

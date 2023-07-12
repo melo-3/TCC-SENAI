@@ -51,15 +51,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.iconUsuario = new FontAwesome.Sharp.IconPictureBox();
             this.DataCriacao = new System.Windows.Forms.Timer(this.components);
+            this.iconAviso = new FontAwesome.Sharp.IconPictureBox();
+            this.lblAviso = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconUsuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconAviso)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.panel1.Controls.Add(this.iconAviso);
+            this.panel1.Controls.Add(this.lblAviso);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label5);
@@ -87,7 +92,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.label3.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(35, 163);
+            this.label3.Location = new System.Drawing.Point(35, 148);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 17);
             this.label3.TabIndex = 50;
@@ -99,7 +104,7 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.label4.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(35, 108);
+            this.label4.Location = new System.Drawing.Point(35, 93);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 17);
             this.label4.TabIndex = 49;
@@ -111,7 +116,7 @@
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.label5.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(35, 53);
+            this.label5.Location = new System.Drawing.Point(35, 38);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 17);
             this.label5.TabIndex = 48;
@@ -154,7 +159,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
             this.panel4.Controls.Add(this.label2);
-            this.panel4.Location = new System.Drawing.Point(96, 208);
+            this.panel4.Location = new System.Drawing.Point(96, 193);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(100, 24);
             this.panel4.TabIndex = 14;
@@ -174,7 +179,7 @@
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(112)))));
             this.flowLayoutPanel1.Controls.Add(this.cmbTipo);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(196, 208);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(196, 193);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(172, 24);
             this.flowLayoutPanel1.TabIndex = 13;
@@ -199,7 +204,7 @@
             this.checkBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.checkBox1.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.checkBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox1.Location = new System.Drawing.Point(98, 255);
+            this.checkBox1.Location = new System.Drawing.Point(98, 240);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(221, 21);
             this.checkBox1.TabIndex = 6;
@@ -211,7 +216,7 @@
             // 
             this.LinhaTel.BackColor = System.Drawing.Color.DimGray;
             this.LinhaTel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LinhaTel.Location = new System.Drawing.Point(128, 273);
+            this.LinhaTel.Location = new System.Drawing.Point(128, 258);
             this.LinhaTel.Name = "LinhaTel";
             this.LinhaTel.Size = new System.Drawing.Size(378, 2);
             this.LinhaTel.TabIndex = 4;
@@ -223,7 +228,7 @@
             this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTelefone.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.txtTelefone.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtTelefone.Location = new System.Drawing.Point(127, 255);
+            this.txtTelefone.Location = new System.Drawing.Point(127, 240);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(378, 17);
             this.txtTelefone.TabIndex = 7;
@@ -236,7 +241,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.DimGray;
             this.panel3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel3.Location = new System.Drawing.Point(97, 182);
+            this.panel3.Location = new System.Drawing.Point(97, 167);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(408, 2);
             this.panel3.TabIndex = 2;
@@ -247,7 +252,7 @@
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmail.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.txtEmail.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtEmail.Location = new System.Drawing.Point(96, 163);
+            this.txtEmail.Location = new System.Drawing.Point(96, 148);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(408, 17);
             this.txtEmail.TabIndex = 4;
@@ -259,7 +264,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.DimGray;
             this.panel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel2.Location = new System.Drawing.Point(98, 127);
+            this.panel2.Location = new System.Drawing.Point(98, 112);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(408, 2);
             this.panel2.TabIndex = 2;
@@ -270,7 +275,7 @@
             this.txtCPF.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCPF.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.txtCPF.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtCPF.Location = new System.Drawing.Point(97, 108);
+            this.txtCPF.Location = new System.Drawing.Point(97, 93);
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(408, 17);
             this.txtCPF.TabIndex = 3;
@@ -284,7 +289,7 @@
             // 
             this.lineCPF.BackColor = System.Drawing.Color.DimGray;
             this.lineCPF.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lineCPF.Location = new System.Drawing.Point(98, 72);
+            this.lineCPF.Location = new System.Drawing.Point(98, 57);
             this.lineCPF.Name = "lineCPF";
             this.lineCPF.Size = new System.Drawing.Size(408, 2);
             this.lineCPF.TabIndex = 2;
@@ -295,7 +300,7 @@
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNome.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.txtNome.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtNome.Location = new System.Drawing.Point(97, 53);
+            this.txtNome.Location = new System.Drawing.Point(97, 38);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(408, 17);
             this.txtNome.TabIndex = 2;
@@ -334,6 +339,33 @@
             // 
             this.DataCriacao.Tick += new System.EventHandler(this.DataCriacao_Tick);
             // 
+            // iconAviso
+            // 
+            this.iconAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.iconAviso.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconAviso.IconChar = FontAwesome.Sharp.IconChar.Warning;
+            this.iconAviso.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconAviso.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconAviso.Location = new System.Drawing.Point(96, 281);
+            this.iconAviso.Name = "iconAviso";
+            this.iconAviso.Size = new System.Drawing.Size(32, 33);
+            this.iconAviso.TabIndex = 52;
+            this.iconAviso.TabStop = false;
+            this.iconAviso.Visible = false;
+            // 
+            // lblAviso
+            // 
+            this.lblAviso.AutoSize = true;
+            this.lblAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.lblAviso.Font = new System.Drawing.Font("Candara", 8.25F);
+            this.lblAviso.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblAviso.Location = new System.Drawing.Point(126, 290);
+            this.lblAviso.Name = "lblAviso";
+            this.lblAviso.Size = new System.Drawing.Size(31, 13);
+            this.lblAviso.TabIndex = 51;
+            this.lblAviso.Text = "Error";
+            this.lblAviso.Visible = false;
+            // 
             // CriarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,6 +387,7 @@
             this.panel4.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconUsuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconAviso)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,5 +417,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Timer DataCriacao;
+        private FontAwesome.Sharp.IconPictureBox iconAviso;
+        private System.Windows.Forms.Label lblAviso;
     }
 }

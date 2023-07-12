@@ -30,7 +30,6 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.txtNumero = new System.Windows.Forms.TextBox();
-            this.cbxStatus = new System.Windows.Forms.ComboBox();
             this.txtSala = new System.Windows.Forms.TextBox();
             this.txtObs = new System.Windows.Forms.TextBox();
             this.iconChave = new FontAwesome.Sharp.IconPictureBox();
@@ -40,11 +39,13 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblObs = new System.Windows.Forms.Label();
-            this.lblStatus = new System.Windows.Forms.Label();
             this.lblSala = new System.Windows.Forms.Label();
             this.lblNumero = new System.Windows.Forms.Label();
+            this.iconAviso = new FontAwesome.Sharp.IconPictureBox();
+            this.lblAviso = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.iconChave)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconAviso)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -75,28 +76,13 @@
             this.txtNumero.Enter += new System.EventHandler(this.txtNumero_Enter);
             this.txtNumero.Leave += new System.EventHandler(this.txtNumero_Leave);
             // 
-            // cbxStatus
-            // 
-            this.cbxStatus.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.cbxStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxStatus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbxStatus.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxStatus.FormattingEnabled = true;
-            this.cbxStatus.Items.AddRange(new object[] {
-            "Disponível",
-            "Indisponível"});
-            this.cbxStatus.Location = new System.Drawing.Point(28, 150);
-            this.cbxStatus.Name = "cbxStatus";
-            this.cbxStatus.Size = new System.Drawing.Size(133, 26);
-            this.cbxStatus.TabIndex = 3;
-            // 
             // txtSala
             // 
             this.txtSala.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.txtSala.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSala.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.txtSala.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtSala.Location = new System.Drawing.Point(28, 99);
+            this.txtSala.Location = new System.Drawing.Point(28, 113);
             this.txtSala.Name = "txtSala";
             this.txtSala.Size = new System.Drawing.Size(133, 17);
             this.txtSala.TabIndex = 2;
@@ -110,7 +96,7 @@
             this.txtObs.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtObs.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.txtObs.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtObs.Location = new System.Drawing.Point(28, 205);
+            this.txtObs.Location = new System.Drawing.Point(28, 175);
             this.txtObs.Name = "txtObs";
             this.txtObs.Size = new System.Drawing.Size(133, 17);
             this.txtObs.TabIndex = 4;
@@ -160,7 +146,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(212)))), ((int)(((byte)(218)))));
             this.panel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel2.Location = new System.Drawing.Point(28, 118);
+            this.panel2.Location = new System.Drawing.Point(28, 132);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(133, 2);
             this.panel2.TabIndex = 8;
@@ -169,7 +155,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(212)))), ((int)(((byte)(218)))));
             this.panel3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel3.Location = new System.Drawing.Point(28, 224);
+            this.panel3.Location = new System.Drawing.Point(28, 194);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(133, 2);
             this.panel3.TabIndex = 8;
@@ -178,19 +164,17 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.panel4.Controls.Add(this.lblObs);
-            this.panel4.Controls.Add(this.lblStatus);
             this.panel4.Controls.Add(this.lblSala);
             this.panel4.Controls.Add(this.lblNumero);
             this.panel4.Controls.Add(this.txtObs);
             this.panel4.Controls.Add(this.panel3);
             this.panel4.Controls.Add(this.linkLabel1);
             this.panel4.Controls.Add(this.txtNumero);
-            this.panel4.Controls.Add(this.cbxStatus);
             this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.txtSala);
             this.panel4.Controls.Add(this.panel2);
             this.panel4.Controls.Add(this.panel1);
-            this.panel4.Location = new System.Drawing.Point(2, 147);
+            this.panel4.Location = new System.Drawing.Point(2, 149);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(189, 334);
@@ -201,30 +185,19 @@
             this.lblObs.AutoSize = true;
             this.lblObs.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblObs.ForeColor = System.Drawing.Color.DimGray;
-            this.lblObs.Location = new System.Drawing.Point(25, 189);
+            this.lblObs.Location = new System.Drawing.Point(25, 159);
             this.lblObs.Name = "lblObs";
             this.lblObs.Size = new System.Drawing.Size(66, 13);
             this.lblObs.TabIndex = 13;
             this.lblObs.Text = "Observação";
             this.lblObs.Visible = false;
             // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.ForeColor = System.Drawing.Color.DimGray;
-            this.lblStatus.Location = new System.Drawing.Point(25, 134);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(40, 13);
-            this.lblStatus.TabIndex = 12;
-            this.lblStatus.Text = "Status";
-            // 
             // lblSala
             // 
             this.lblSala.AutoSize = true;
             this.lblSala.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSala.ForeColor = System.Drawing.Color.DimGray;
-            this.lblSala.Location = new System.Drawing.Point(25, 83);
+            this.lblSala.Location = new System.Drawing.Point(25, 97);
             this.lblSala.Name = "lblSala";
             this.lblSala.Size = new System.Drawing.Size(57, 13);
             this.lblSala.TabIndex = 11;
@@ -243,14 +216,44 @@
             this.lblNumero.Text = "Número";
             this.lblNumero.Visible = false;
             // 
+            // iconAviso
+            // 
+            this.iconAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
+            this.iconAviso.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconAviso.IconChar = FontAwesome.Sharp.IconChar.Warning;
+            this.iconAviso.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconAviso.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconAviso.IconSize = 22;
+            this.iconAviso.Location = new System.Drawing.Point(65, 126);
+            this.iconAviso.Name = "iconAviso";
+            this.iconAviso.Size = new System.Drawing.Size(22, 25);
+            this.iconAviso.TabIndex = 17;
+            this.iconAviso.TabStop = false;
+            this.iconAviso.Visible = false;
+            // 
+            // lblAviso
+            // 
+            this.lblAviso.AutoSize = true;
+            this.lblAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
+            this.lblAviso.Font = new System.Drawing.Font("Candara", 8.25F);
+            this.lblAviso.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblAviso.Location = new System.Drawing.Point(90, 130);
+            this.lblAviso.Name = "lblAviso";
+            this.lblAviso.Size = new System.Drawing.Size(31, 13);
+            this.lblAviso.TabIndex = 16;
+            this.lblAviso.Text = "Error";
+            this.lblAviso.Visible = false;
+            // 
             // AddChave
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
             this.ClientSize = new System.Drawing.Size(193, 485);
-            this.Controls.Add(this.iconChave);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.iconChave);
+            this.Controls.Add(this.iconAviso);
+            this.Controls.Add(this.lblAviso);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddChave";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -260,7 +263,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconChave)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconAviso)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -268,7 +273,6 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtNumero;
-        private System.Windows.Forms.ComboBox cbxStatus;
         private System.Windows.Forms.TextBox txtSala;
         private System.Windows.Forms.TextBox txtObs;
         private FontAwesome.Sharp.IconPictureBox iconChave;
@@ -278,8 +282,9 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblObs;
-        private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label lblSala;
         private System.Windows.Forms.Label lblNumero;
+        private FontAwesome.Sharp.IconPictureBox iconAviso;
+        private System.Windows.Forms.Label lblAviso;
     }
 }

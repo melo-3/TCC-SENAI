@@ -29,7 +29,7 @@ namespace Almoxarifado_TCC.Popup
             ClassConexao con = new ClassConexao();
             //obtive a conexao
             MySqlConnection conexao = con.getConexao();
-            string consulta = "SELECT nome_usuario as Nome from tb_usuario";
+            string consulta = "SELECT nome_usuario as Nome from tb_usuario where stats = 'Ativo'";
             //Monta meu comando sql
             MySqlCommand commando = new MySqlCommand(consulta, conexao);
             conexao.Open();//Abro minha conexao

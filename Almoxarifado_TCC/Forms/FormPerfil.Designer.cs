@@ -40,17 +40,14 @@
             this.txtDeletar = new System.Windows.Forms.Label();
             this.txtSeguranca = new System.Windows.Forms.Label();
             this.panelTelefone = new System.Windows.Forms.Panel();
-            this.lblInformTele = new System.Windows.Forms.Label();
             this.lblTelefone = new System.Windows.Forms.Label();
             this.iconSetaTele = new FontAwesome.Sharp.IconPictureBox();
             this.iconTelefone = new FontAwesome.Sharp.IconPictureBox();
             this.panelEmail = new System.Windows.Forms.Panel();
-            this.lblInformEmail = new System.Windows.Forms.Label();
             this.lblEmailR = new System.Windows.Forms.Label();
             this.iconSetaEmail = new FontAwesome.Sharp.IconPictureBox();
             this.iconEmail = new FontAwesome.Sharp.IconPictureBox();
             this.panelSenha = new System.Windows.Forms.Panel();
-            this.lblInformSenha = new System.Windows.Forms.Label();
             this.lblSenha = new System.Windows.Forms.Label();
             this.iconSetaSenha = new FontAwesome.Sharp.IconPictureBox();
             this.iconChave = new FontAwesome.Sharp.IconPictureBox();
@@ -87,7 +84,7 @@
             this.panelPerfiFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panelPerfiFoto.Controls.Add(this.iconFoto);
             this.panelPerfiFoto.Controls.Add(this.picPerfil);
-            this.panelPerfiFoto.Location = new System.Drawing.Point(295, 27);
+            this.panelPerfiFoto.Location = new System.Drawing.Point(339, 27);
             this.panelPerfiFoto.Name = "panelPerfiFoto";
             this.panelPerfiFoto.Size = new System.Drawing.Size(200, 200);
             this.panelPerfiFoto.TabIndex = 0;
@@ -176,7 +173,7 @@
             this.btnDesconectar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDesconectar.IconSize = 20;
             this.btnDesconectar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDesconectar.Location = new System.Drawing.Point(669, 26);
+            this.btnDesconectar.Location = new System.Drawing.Point(705, 26);
             this.btnDesconectar.Name = "btnDesconectar";
             this.btnDesconectar.Size = new System.Drawing.Size(123, 26);
             this.btnDesconectar.TabIndex = 8;
@@ -202,13 +199,14 @@
             this.panel1.Controls.Add(this.btnDeletar);
             this.panel1.Controls.Add(this.lblDeletar);
             this.panel1.Controls.Add(this.lblSeguranca);
-            this.panel1.Location = new System.Drawing.Point(24, 329);
+            this.panel1.Location = new System.Drawing.Point(68, 329);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(696, 655);
             this.panel1.TabIndex = 9;
             // 
             // txtDeletar
             // 
+            this.txtDeletar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtDeletar.AutoSize = true;
             this.txtDeletar.Font = new System.Drawing.Font("Candara", 10F, System.Drawing.FontStyle.Bold);
             this.txtDeletar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(131)))), ((int)(((byte)(143)))));
@@ -232,7 +230,6 @@
             // 
             // panelTelefone
             // 
-            this.panelTelefone.Controls.Add(this.lblInformTele);
             this.panelTelefone.Controls.Add(this.lblTelefone);
             this.panelTelefone.Controls.Add(this.iconSetaTele);
             this.panelTelefone.Controls.Add(this.iconTelefone);
@@ -240,17 +237,6 @@
             this.panelTelefone.Name = "panelTelefone";
             this.panelTelefone.Size = new System.Drawing.Size(520, 37);
             this.panelTelefone.TabIndex = 51;
-            // 
-            // lblInformTele
-            // 
-            this.lblInformTele.AutoSize = true;
-            this.lblInformTele.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblInformTele.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblInformTele.Location = new System.Drawing.Point(301, 10);
-            this.lblInformTele.Name = "lblInformTele";
-            this.lblInformTele.Size = new System.Drawing.Size(104, 18);
-            this.lblInformTele.TabIndex = 55;
-            this.lblInformTele.Text = "Informação***";
             // 
             // lblTelefone
             // 
@@ -294,7 +280,6 @@
             // 
             // panelEmail
             // 
-            this.panelEmail.Controls.Add(this.lblInformEmail);
             this.panelEmail.Controls.Add(this.lblEmailR);
             this.panelEmail.Controls.Add(this.iconSetaEmail);
             this.panelEmail.Controls.Add(this.iconEmail);
@@ -302,17 +287,6 @@
             this.panelEmail.Name = "panelEmail";
             this.panelEmail.Size = new System.Drawing.Size(520, 37);
             this.panelEmail.TabIndex = 50;
-            // 
-            // lblInformEmail
-            // 
-            this.lblInformEmail.AutoSize = true;
-            this.lblInformEmail.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblInformEmail.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblInformEmail.Location = new System.Drawing.Point(301, 10);
-            this.lblInformEmail.Name = "lblInformEmail";
-            this.lblInformEmail.Size = new System.Drawing.Size(104, 18);
-            this.lblInformEmail.TabIndex = 56;
-            this.lblInformEmail.Text = "Informação***";
             // 
             // lblEmailR
             // 
@@ -356,7 +330,6 @@
             // 
             // panelSenha
             // 
-            this.panelSenha.Controls.Add(this.lblInformSenha);
             this.panelSenha.Controls.Add(this.lblSenha);
             this.panelSenha.Controls.Add(this.iconSetaSenha);
             this.panelSenha.Controls.Add(this.iconChave);
@@ -364,17 +337,6 @@
             this.panelSenha.Name = "panelSenha";
             this.panelSenha.Size = new System.Drawing.Size(520, 37);
             this.panelSenha.TabIndex = 49;
-            // 
-            // lblInformSenha
-            // 
-            this.lblInformSenha.AutoSize = true;
-            this.lblInformSenha.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblInformSenha.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblInformSenha.Location = new System.Drawing.Point(301, 10);
-            this.lblInformSenha.Name = "lblInformSenha";
-            this.lblInformSenha.Size = new System.Drawing.Size(104, 18);
-            this.lblInformSenha.TabIndex = 54;
-            this.lblInformSenha.Text = "Informação***";
             // 
             // lblSenha
             // 
@@ -418,6 +380,7 @@
             // 
             // panel10
             // 
+            this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.panel10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel10.Location = new System.Drawing.Point(119, 636);
@@ -427,6 +390,7 @@
             // 
             // panel9
             // 
+            this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.panel9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel9.Location = new System.Drawing.Point(118, 485);
@@ -467,6 +431,7 @@
             // 
             // btnDeletar
             // 
+            this.btnDeletar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnDeletar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.btnDeletar.FlatAppearance.BorderSize = 0;
             this.btnDeletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -482,6 +447,7 @@
             // 
             // lblDeletar
             // 
+            this.lblDeletar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblDeletar.AutoSize = true;
             this.lblDeletar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.lblDeletar.Font = new System.Drawing.Font("Candara", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -509,7 +475,7 @@
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.lblNome);
             this.panel4.Controls.Add(this.lblEmail);
-            this.panel4.Location = new System.Drawing.Point(119, 233);
+            this.panel4.Location = new System.Drawing.Point(163, 233);
             this.panel4.MaximumSize = new System.Drawing.Size(550, 87);
             this.panel4.MinimumSize = new System.Drawing.Size(550, 87);
             this.panel4.Name = "panel4";
@@ -519,7 +485,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(717, 307);
+            this.label1.Location = new System.Drawing.Point(770, 307);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 12;
@@ -597,9 +563,6 @@
         private System.Windows.Forms.Label lblSenha;
         private FontAwesome.Sharp.IconPictureBox iconSetaSenha;
         private FontAwesome.Sharp.IconPictureBox iconChave;
-        private System.Windows.Forms.Label lblInformTele;
-        private System.Windows.Forms.Label lblInformEmail;
-        private System.Windows.Forms.Label lblInformSenha;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label txtDeletar;
         private System.Windows.Forms.Label txtSeguranca;

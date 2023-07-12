@@ -79,24 +79,57 @@ namespace Almoxarifado_TCC.Popup
         {
             if (txtNome.Text == "NOME")
             { 
-                txtNome.ForeColor = CoresGlobais.Danger;
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "Nome está vazio";
+                iconAviso.Location = new Point(50, 262);
+                lblAviso.Location = new Point(75, 266);
             }
 
-            if (txtCPF.Text == "CPF" || txtCPF.Text.Length <= 10)
+            else if (txtCPF.Text == "CPF")
             {
-                txtCPF.ForeColor = CoresGlobais.Danger;
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "CPF está vazio";
+                iconAviso.Location = new Point(52, 262);
+                lblAviso.Location = new Point(77, 266);
             }
 
-            if (txtEmail.Text == "EMAIL")
+            else if (txtCPF.Text.Length != 14)
             {
-                txtNome.ForeColor = CoresGlobais.Danger;
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "CPF inválido";
+                iconAviso.Location = new Point(58, 262);
+                lblAviso.Location = new Point(83, 266);
             }
 
-            if (CPFlenght != 11)
+            else if (txtEmail.Text == "EMAIL")
             {
-                txtCPF.ForeColor = CoresGlobais.Danger;
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "E-mail está vazio";
+                iconAviso.Location = new Point(51, 262);
+                lblAviso.Location = new Point(76, 266);
             }
 
+            else if (txtTelefone.Text != "TELEFONE" && txtTelefone.Text.Length !=15)
+            {
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "Telefone inválido";
+                iconAviso.Location = new Point(51, 262);
+                lblAviso.Location = new Point(76, 266);
+            }
+
+            else if (cmbTipo.Text == "Nenhum")
+            {
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "Selecione um tipo de usuário";
+                iconAviso.Location = new Point(24, 262);
+                lblAviso.Location = new Point(49, 266);
+            }
 
             else
             {
@@ -134,11 +167,27 @@ namespace Almoxarifado_TCC.Popup
         int CPFlenght;
         private void txtCPF_TextChanged(object sender, EventArgs e)
         {
-            if (txtCPF.Text.Length > 11)
+            // Remover qualquer formatação existente no CPF
+            string cpf = txtCPF.Text.Replace(".", "").Replace("-", "");
+
+            // Verificar se o CPF possui 11 dígitos
+            if (cpf.Length == 11)
             {
-                txtCPF.Text = txtCPF.Text.Substring(0, 11);
+                // Formatar o CPF com os pontos e o traço
+                cpf = $"{cpf.Substring(0, 3)}.{cpf.Substring(3, 3)}.{cpf.Substring(6, 3)}-{cpf.Substring(9)}";
+
+                // Atualizar o texto da TextBox com o CPF formatado
+                txtCPF.Text = cpf;
+
                 txtCPF.SelectionStart = txtCPF.Text.Length;
             }
+
+            if (txtCPF.Text.Length > 14)
+            {
+                txtCPF.Text = txtCPF.Text.Substring(0, 14);
+                txtCPF.SelectionStart = txtCPF.Text.Length;
+            }
+
             CPFlenght = txtCPF.Text.Length;
         }
 
@@ -223,7 +272,43 @@ namespace Almoxarifado_TCC.Popup
 
         }
 
-        
+        private void txtTelefone_TextChanged(object sender, EventArgs e)
+        {
+            // Remover qualquer formatação existente no número de telefone
+            string telefone = txtTelefone.Text.Replace("(", "").Replace(")", "").Replace(" ", "").Replace("-", "");
+            // Verificar se o número de telefone possui 10 ou 11 dígitos
+            if (telefone.Length == 11)
+            {
+                // Formatar o número de telefone no formato (xx) xxxxx-xxxx
+                string formattedTelefone = "";
+
+                if (telefone.Length == 11)
+                {
+                    formattedTelefone = string.Format("({0}) {1}-{2}",
+                        telefone.Substring(0, 2),
+                        telefone.Substring(2, 5),
+                        telefone.Substring(7, 4));
+                }
+
+                // Atualizar o texto selecionado da TextBox com o número de telefone formatado
+                txtTelefone.Text = formattedTelefone;
+                txtTelefone.SelectionStart = txtTelefone.Text.Length;
+            }
+
+            if (txtTelefone.Text.Length > 15)
+            {
+                txtTelefone.Text = txtTelefone.Text.Substring(0, 15);
+                txtTelefone.SelectionStart = txtTelefone.Text.Length;
+            }
+        }
+
+        private void txtTelefone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
 
         private void txtTelefone_Leave(object sender, EventArgs e)
         {

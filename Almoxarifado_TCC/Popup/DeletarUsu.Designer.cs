@@ -34,20 +34,23 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.iconExc = new FontAwesome.Sharp.IconPictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnDeletar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.lblCPF = new System.Windows.Forms.Label();
             this.lblSenha = new System.Windows.Forms.Label();
+            this.iconAviso = new FontAwesome.Sharp.IconPictureBox();
+            this.lblAviso = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconExc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconAviso)).BeginInit();
             this.SuspendLayout();
             // 
             // lineCPF
             // 
             this.lineCPF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.lineCPF.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lineCPF.Location = new System.Drawing.Point(13, 250);
+            this.lineCPF.Location = new System.Drawing.Point(13, 244);
             this.lineCPF.Name = "lineCPF";
             this.lineCPF.Size = new System.Drawing.Size(189, 1);
             this.lineCPF.TabIndex = 21;
@@ -58,7 +61,7 @@
             this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSenha.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
             this.txtSenha.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtSenha.Location = new System.Drawing.Point(12, 234);
+            this.txtSenha.Location = new System.Drawing.Point(12, 228);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(189, 13);
             this.txtSenha.TabIndex = 22;
@@ -71,7 +74,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(13, 198);
+            this.panel1.Location = new System.Drawing.Point(13, 192);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(189, 1);
             this.panel1.TabIndex = 23;
@@ -82,7 +85,7 @@
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsuario.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
             this.txtUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtUsuario.Location = new System.Drawing.Point(12, 182);
+            this.txtUsuario.Location = new System.Drawing.Point(12, 176);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(189, 13);
             this.txtUsuario.TabIndex = 24;
@@ -118,6 +121,17 @@
             this.iconExc.TabIndex = 8;
             this.iconExc.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift Light", 9F);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(33, 102);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(148, 28);
+            this.label2.TabIndex = 52;
+            this.label2.Text = "Preencha as informações \r\nabaixo se deseja continuar";
+            // 
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
@@ -151,23 +165,12 @@
             this.btnDeletar.UseVisualStyleBackColor = false;
             this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift Light", 9F);
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(33, 102);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(148, 28);
-            this.label2.TabIndex = 52;
-            this.label2.Text = "Preencha as informações \r\nabaixo se deseja continuar";
-            // 
             // lblCPF
             // 
             this.lblCPF.AutoSize = true;
             this.lblCPF.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCPF.ForeColor = System.Drawing.Color.DimGray;
-            this.lblCPF.Location = new System.Drawing.Point(61, 166);
+            this.lblCPF.Location = new System.Drawing.Point(61, 160);
             this.lblCPF.Name = "lblCPF";
             this.lblCPF.Size = new System.Drawing.Size(92, 13);
             this.lblCPF.TabIndex = 53;
@@ -179,12 +182,40 @@
             this.lblSenha.AutoSize = true;
             this.lblSenha.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSenha.ForeColor = System.Drawing.Color.DimGray;
-            this.lblSenha.Location = new System.Drawing.Point(33, 217);
+            this.lblSenha.Location = new System.Drawing.Point(33, 211);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(147, 13);
             this.lblSenha.TabIndex = 54;
             this.lblSenha.Text = "SENHA DO ADMINISTRADOR";
             this.lblSenha.Visible = false;
+            // 
+            // iconAviso
+            // 
+            this.iconAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            this.iconAviso.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconAviso.IconChar = FontAwesome.Sharp.IconChar.Warning;
+            this.iconAviso.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconAviso.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconAviso.IconSize = 22;
+            this.iconAviso.Location = new System.Drawing.Point(48, 257);
+            this.iconAviso.Name = "iconAviso";
+            this.iconAviso.Size = new System.Drawing.Size(22, 25);
+            this.iconAviso.TabIndex = 56;
+            this.iconAviso.TabStop = false;
+            this.iconAviso.Visible = false;
+            // 
+            // lblAviso
+            // 
+            this.lblAviso.AutoSize = true;
+            this.lblAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            this.lblAviso.Font = new System.Drawing.Font("Candara", 8.25F);
+            this.lblAviso.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblAviso.Location = new System.Drawing.Point(73, 261);
+            this.lblAviso.Name = "lblAviso";
+            this.lblAviso.Size = new System.Drawing.Size(87, 13);
+            this.lblAviso.TabIndex = 55;
+            this.lblAviso.Text = "Senha em branco";
+            this.lblAviso.Visible = false;
             // 
             // DeletarUsu
             // 
@@ -192,6 +223,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
             this.ClientSize = new System.Drawing.Size(213, 340);
+            this.Controls.Add(this.iconAviso);
+            this.Controls.Add(this.lblAviso);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.lblCPF);
             this.Controls.Add(this.btnCancelar);
@@ -208,6 +241,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconExc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconAviso)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,5 +260,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblCPF;
         private System.Windows.Forms.Label lblSenha;
+        private FontAwesome.Sharp.IconPictureBox iconAviso;
+        private System.Windows.Forms.Label lblAviso;
     }
 }

@@ -54,9 +54,40 @@ namespace Almoxarifado_TCC.Popup
                 }
             }
             
+            else if (txtUsuario.Text == "CPF DO USUÁRIO" || txtUsuario.Text == null)
+            {
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "CPF em branco";
+                iconAviso.Location = new System.Drawing.Point(56, 257);
+                lblAviso.Location = new System.Drawing.Point(81, 261);
+            }
+
+            else if (CPFLength != 11)
+            {
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "CPF inválido";
+                iconAviso.Location = new System.Drawing.Point(59, 257);
+                lblAviso.Location = new System.Drawing.Point(84, 261);
+            }
+
+            else if (txtSenha.Text == "SENHA DO ADMINISTRADOR" || txtSenha.Text == null)
+            {
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "Senha em branco";
+                iconAviso.Location = new System.Drawing.Point(48, 257);
+                lblAviso.Location = new System.Drawing.Point(73, 261);
+            }
+
             else
             {
-                MessageBox.Show("CPF ou senha incorretos. Conta não encontrada.");
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "CPF ou senha incorretos";
+                iconAviso.Location = new System.Drawing.Point(32, 257);
+                lblAviso.Location = new System.Drawing.Point(57, 261);
             }
 
         }
@@ -97,6 +128,8 @@ namespace Almoxarifado_TCC.Popup
             {
                 txtUsuario.Text = "";
                 lblCPF.Visible = true;
+                iconAviso.Visible = false;
+                lblAviso.Visible = false;
             }
         }
 
@@ -116,6 +149,8 @@ namespace Almoxarifado_TCC.Popup
                 txtSenha.Text = "";
                 lblSenha.Visible = true;
                 txtSenha.UseSystemPasswordChar = true;
+                iconAviso.Visible = false;
+                lblAviso.Visible = false;
             }
         }
 
@@ -140,14 +175,16 @@ namespace Almoxarifado_TCC.Popup
 
         #endregion
         string cpf_usuario, senha_admin;
+        int CPFLength;
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
-            if (txtUsuario.Text.Length > 11)
+            if (txtUsuario.Text.Length > 11 && txtUsuario.Text != "CPF DO USUÁRIO")
             {
                 txtUsuario.Text = txtUsuario.Text.Remove(txtUsuario.Text.Length - 1);
                 txtUsuario.Select(11, 0); // Coloca o cursor no final do texto
             }
+            CPFLength = txtUsuario.Text.Length;
         }
 
         private void DeletarUsu_Load(object sender, EventArgs e)

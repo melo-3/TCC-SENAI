@@ -19,7 +19,6 @@ namespace Almoxarifado_TCC.Popup
             InitializeComponent();
             this.TopMost = true;
             txtQuant.Text = "0";
-
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -88,15 +87,27 @@ namespace Almoxarifado_TCC.Popup
 
             if (nome == "" || nome == "Nome")
             {
-                MessageBox.Show("Campo Nome está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "Campo Nome está vazio";
+                iconAviso.Location = new Point(25, 126);
+                lblAviso.Location = new Point(50, 130);
             }
             else if (descricao == "" || descricao == "Descrição")
             {
-                MessageBox.Show("Campo Descrição está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "Campo Descrição está vazio";
+                iconAviso.Location = new Point(16, 126);
+                lblAviso.Location = new Point(41, 130);
             }
             else if (quantidade == "0")
             {
-                MessageBox.Show("Campo Quantidade está vazio!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "Defina uma quantidade";
+                iconAviso.Location = new Point(27, 126);
+                lblAviso.Location = new Point(52, 130);
             }
 
             else
@@ -145,6 +156,11 @@ namespace Almoxarifado_TCC.Popup
             if(Convert.ToInt32(txtQuant.Text) <= 0) {
              txtQuant.Text = "0";
             }
+        }
+
+        private void AddItem_Load(object sender, EventArgs e)
+        {
+            iconCaixa.Focus();
         }
     }
 }
