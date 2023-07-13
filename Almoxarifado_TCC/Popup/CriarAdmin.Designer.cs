@@ -282,13 +282,14 @@
             // 
             this.txtTelefone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTelefone.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefone.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.txtTelefone.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtTelefone.Location = new System.Drawing.Point(128, 360);
+            this.txtTelefone.Location = new System.Drawing.Point(128, 364);
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(265, 20);
+            this.txtTelefone.Size = new System.Drawing.Size(265, 17);
             this.txtTelefone.TabIndex = 8;
             this.txtTelefone.Text = "TELEFONE";
+            this.txtTelefone.TextChanged += new System.EventHandler(this.txtTelefone_TextChanged);
             this.txtTelefone.Enter += new System.EventHandler(this.txtTelefone_Enter);
             this.txtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefone_KeyPress);
             this.txtTelefone.Leave += new System.EventHandler(this.txtTelefone_Leave);

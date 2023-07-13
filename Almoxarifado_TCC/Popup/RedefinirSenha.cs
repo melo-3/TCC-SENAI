@@ -144,9 +144,6 @@ namespace Almoxarifado_TCC.Popup
                     lblAviso.Text = "O campo REPETIR SENHA está em branco";
                 }
             }
-
-          
-
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -171,7 +168,7 @@ namespace Almoxarifado_TCC.Popup
                     comando.ExecuteNonQuery(); // Executa a atualização
                     conexao.Close();
 
-                    MessageBox.Show("Senha alterada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("Senha alterada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                     // Limpa os campos de senha
                     txtSenhaAtual.Text = "";
@@ -180,13 +177,17 @@ namespace Almoxarifado_TCC.Popup
                 }
                 else
                 {
-                    MessageBox.Show("As senhas não coincidem, por favor, verifique e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    iconAviso.Visible = true;
+                    lblAviso.Visible = true;
+                    lblAviso.Text = "As senhas não coincidem";
                 }
             }
             
             else
             {
-                MessageBox.Show("A senha atual não está correta, por favor, verifique e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "A senha atual está incorreta";
             }
 
         }

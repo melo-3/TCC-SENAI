@@ -141,6 +141,7 @@
             this.txtUsuario.Size = new System.Drawing.Size(408, 20);
             this.txtUsuario.TabIndex = 1;
             this.txtUsuario.Text = "CPF";
+            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             this.txtUsuario.Enter += new System.EventHandler(this.txtUsuario_Enter);
             this.txtUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsuario_KeyDown);
             this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);

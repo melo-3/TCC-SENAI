@@ -503,5 +503,29 @@ namespace Almoxarifado_TCC
                 panelLogo.Left = this.Width - panelLogo.Width; // ajuste para a posição original do painel
             }
         }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+            // Remover qualquer formatação existente no CPF
+            string cpf = txtUsuario.Text.Replace(".", "").Replace("-", "");
+
+            // Verificar se o CPF possui 11 dígitos
+            if (cpf.Length == 11)
+            {
+                // Formatar o CPF com os pontos e o traço
+                cpf = $"{cpf.Substring(0, 3)}.{cpf.Substring(3, 3)}.{cpf.Substring(6, 3)}-{cpf.Substring(9)}";
+
+                // Atualizar o texto da TextBox com o CPF formatado
+                txtUsuario.Text = cpf;
+
+                txtUsuario.SelectionStart = txtUsuario.Text.Length;
+            }
+
+            if (txtUsuario.Text.Length > 14)
+            {
+                txtUsuario.Text = txtUsuario.Text.Substring(0, 14);
+                txtUsuario.SelectionStart = txtUsuario.Text.Length;
+            }
+        }
     }
 }

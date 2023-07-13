@@ -188,7 +188,7 @@ namespace Almoxarifado_TCC.Popup
                 lblAviso.Text = "Campo CPF está vazio";
             }
 
-            else if (CPFLenght != 11)
+            else if (CPFLenght != 14)
             {
                 iconAviso.Visible = true;
                 lblAviso.Visible = true;
@@ -249,6 +249,8 @@ namespace Almoxarifado_TCC.Popup
                 {
                     con.desconectar();
                     Gerenciamento.CurrentInstance.apagar_icons();
+                    Gerenciamento.CurrentInstance.reset();
+                    Gerenciamento.CurrentInstance.Fechar();
                 }
             }
         }
@@ -272,12 +274,58 @@ namespace Almoxarifado_TCC.Popup
         int CPFLenght;
         private void txtCPF_TextChanged(object sender, EventArgs e)
         {
-            if (txtCPF.Text.Length > 11)
+            // Remover qualquer formatação existente no CPF
+            string cpf = txtCPF.Text.Replace(".", "").Replace("-", "");
+
+            // Verificar se o CPF possui 11 dígitos
+            if (cpf.Length == 11)
             {
-                txtCPF.Text = txtCPF.Text.Remove(txtCPF.Text.Length - 1);
-                txtCPF.Select(11, 0); // Coloca o cursor no final do texto
+                // Formatar o CPF com os pontos e o traço
+                cpf = $"{cpf.Substring(0, 3)}.{cpf.Substring(3, 3)}.{cpf.Substring(6, 3)}-{cpf.Substring(9)}";
+
+                // Atualizar o texto da TextBox com o CPF formatado
+                txtCPF.Text = cpf;
+
+                txtCPF.SelectionStart = txtCPF.Text.Length;
             }
+
             CPFLenght = txtCPF.Text.Length;
+
+            if (txtCPF.Text.Length > 14)
+            {
+                txtCPF.Text = txtCPF.Text.Substring(0, 14);
+                txtCPF.SelectionStart = txtCPF.Text.Length;
+            }
+        }
+
+        private void txtTelefone_TextChanged(object sender, EventArgs e)
+        {
+            // Remover qualquer formatação existente no número de telefone
+            string telefone = txtTelefone.Text.Replace("(", "").Replace(")", "").Replace(" ", "").Replace("-", "");
+            // Verificar se o número de telefone possui 10 ou 11 dígitos
+            if (telefone.Length == 11)
+            {
+                // Formatar o número de telefone no formato (xx) xxxxx-xxxx
+                string formattedTelefone = "";
+
+                if (telefone.Length == 11)
+                {
+                    formattedTelefone = string.Format("({0}) {1}-{2}",
+                        telefone.Substring(0, 2),
+                        telefone.Substring(2, 5),
+                        telefone.Substring(7, 4));
+                }
+
+                // Atualizar o texto selecionado da TextBox com o número de telefone formatado
+                txtTelefone.Text = formattedTelefone;
+                txtTelefone.SelectionStart = txtTelefone.Text.Length;
+            }
+
+            if (txtTelefone.Text.Length > 15)
+            {
+                txtTelefone.Text = txtTelefone.Text.Substring(0, 15);
+                txtTelefone.SelectionStart = txtTelefone.Text.Length;
+            }
         }
     }
 }

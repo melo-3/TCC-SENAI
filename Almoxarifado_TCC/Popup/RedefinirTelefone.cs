@@ -150,7 +150,7 @@ namespace Almoxarifado_TCC.Popup
                     comando.ExecuteNonQuery(); // Executa a atualização
                     conexao.Close();
 
-                    MessageBox.Show("Telefone Alterado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("Telefone Alterado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                     // Limpa os campos de senha
                     txtSenha.Text = "";
@@ -159,25 +159,95 @@ namespace Almoxarifado_TCC.Popup
                 }
                 else
                 {
-                    MessageBox.Show("O telefone novo é igual ao atual", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    iconAviso.Visible = true;
+                    lblAviso.Visible = true;
+                    lblAviso.Text = "O telefone novo é igual ao atual";
                 }
             }
             
             else
             {
-                MessageBox.Show("A senha não está correta, por favor, verifique e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "Senha incorreta";
             }
 
         }
 
-        private void txtCriarUsu_TextChanged(object sender, EventArgs e)
+        private void txtTelefoneAtual_TextChanged(object sender, EventArgs e)
         {
+            // Remover qualquer formatação existente no número de telefone
+            string telefone = txtTelefoneAtual.Text.Replace("(", "").Replace(")", "").Replace(" ", "").Replace("-", "");
+            // Verificar se o número de telefone possui 10 ou 11 dígitos
+            if (telefone.Length == 11)
+            {
+                // Formatar o número de telefone no formato (xx) xxxxx-xxxx
+                string formattedTelefone = "";
 
+                if (telefone.Length == 11)
+                {
+                    formattedTelefone = string.Format("({0}) {1}-{2}",
+                        telefone.Substring(0, 2),
+                        telefone.Substring(2, 5),
+                        telefone.Substring(7, 4));
+                }
+
+                // Atualizar o texto selecionado da TextBox com o número de telefone formatado
+                txtTelefoneAtual.Text = formattedTelefone;
+                txtTelefoneAtual.SelectionStart = txtTelefoneAtual.Text.Length;
+            }
+
+            if (txtTelefoneAtual.Text.Length > 15)
+            {
+                txtTelefoneAtual.Text = txtTelefoneAtual.Text.Substring(0, 15);
+                txtTelefoneAtual.SelectionStart = txtTelefoneAtual.Text.Length;
+            }
         }
 
-        private void iconTelefone_Click(object sender, EventArgs e)
+        private void txtTelefoneAtual_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
 
+        private void txtTelefone_TextChanged(object sender, EventArgs e)
+        {
+            // Remover qualquer formatação existente no número de telefone
+            string telefone = txtTelefone.Text.Replace("(", "").Replace(")", "").Replace(" ", "").Replace("-", "");
+            // Verificar se o número de telefone possui 10 ou 11 dígitos
+            if (telefone.Length == 11)
+            {
+                // Formatar o número de telefone no formato (xx) xxxxx-xxxx
+                string formattedTelefone = "";
+
+                if (telefone.Length == 11)
+                {
+                    formattedTelefone = string.Format("({0}) {1}-{2}",
+                        telefone.Substring(0, 2),
+                        telefone.Substring(2, 5),
+                        telefone.Substring(7, 4));
+                }
+
+                // Atualizar o texto selecionado da TextBox com o número de telefone formatado
+                txtTelefone.Text = formattedTelefone;
+                txtTelefone.SelectionStart = txtTelefone.Text.Length;
+            }
+
+            if (txtTelefone.Text.Length > 15)
+            {
+                txtTelefone.Text = txtTelefone.Text.Substring(0, 15);
+                txtTelefone.SelectionStart = txtTelefone.Text.Length;
+            }
+        }
+
+        private void txtTelefone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

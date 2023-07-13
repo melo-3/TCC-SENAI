@@ -37,14 +37,12 @@ namespace Almoxarifado_TCC.Popup
         {
             ClassConexao con = new ClassConexao(); //instanciando a classe
 
-            cmbTipo.DataSource = con.Getperfil(); //popula as info do perfil da tabela
-            cmbTipo.DisplayMember = "tipo_usu"; //mostra descrição do campo
-            cmbTipo.ValueMember = "id_tipo_usu"; //pega o codigo do campo
+            
 
             ClassConexao con1 = new ClassConexao();
             MySqlConnection conexao = con1.getConexao();
             String consulta = "";
-            consulta = " SELECT nome_usuario, cpf, telefone, email from tb_usuario where id_usuario = " + cod;
+            consulta = " SELECT nome_usuario, cpf, telefone, email, id_tipo_usu from tb_usuario where id_usuario = " + cod;
             MySqlCommand commando = new MySqlCommand(consulta, conexao);
             conexao.Open();
             MySqlDataReader registro = commando.ExecuteReader();
@@ -53,6 +51,11 @@ namespace Almoxarifado_TCC.Popup
             txtCPF.Text = Convert.ToString(registro["cpf"]);
             txtEmail.Text = Convert.ToString(registro["email"]);
             txtTelefone.Text = Convert.ToString(registro["telefone"]);
+            //string cmb = Convert.ToString(registro["id_tipo_usu"]);
+            cmbTipo.ValueMember = Convert.ToString(registro["id_tipo_usu"]);
+            cmbTipo.DataSource = con.Getperfil(); //popula as info do perfil da tabela
+            cmbTipo.DisplayMember = "tipo_usu"; //mostra descrição do campo
+            //cmbTipo.ValueMember = cmb; //pega o codigo do campo
             conexao.Close();
 
             if (txtTelefone.Text == "")

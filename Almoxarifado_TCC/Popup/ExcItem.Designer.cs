@@ -30,15 +30,18 @@
         {
             this.iconExc = new FontAwesome.Sharp.IconPictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblItem = new System.Windows.Forms.Label();
             this.txtConfirm = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblItem = new System.Windows.Forms.Label();
+            this.iconAviso = new FontAwesome.Sharp.IconPictureBox();
+            this.lblAviso = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.iconExc)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconAviso)).BeginInit();
             this.SuspendLayout();
             // 
             // iconExc
@@ -71,13 +74,25 @@
             this.panel1.Size = new System.Drawing.Size(276, 203);
             this.panel1.TabIndex = 7;
             // 
+            // lblItem
+            // 
+            this.lblItem.AutoSize = true;
+            this.lblItem.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblItem.ForeColor = System.Drawing.Color.DimGray;
+            this.lblItem.Location = new System.Drawing.Point(93, 91);
+            this.lblItem.Name = "lblItem";
+            this.lblItem.Size = new System.Drawing.Size(76, 13);
+            this.lblItem.TabIndex = 21;
+            this.lblItem.Text = "Nome da item";
+            this.lblItem.Visible = false;
+            // 
             // txtConfirm
             // 
             this.txtConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.txtConfirm.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtConfirm.Font = new System.Drawing.Font("Bahnschrift Light", 8.75F, System.Drawing.FontStyle.Bold);
             this.txtConfirm.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtConfirm.Location = new System.Drawing.Point(64, 112);
+            this.txtConfirm.Location = new System.Drawing.Point(64, 106);
             this.txtConfirm.Name = "txtConfirm";
             this.txtConfirm.Size = new System.Drawing.Size(138, 15);
             this.txtConfirm.TabIndex = 9;
@@ -90,7 +105,7 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel2.Location = new System.Drawing.Point(66, 129);
+            this.panel2.Location = new System.Drawing.Point(66, 123);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(133, 2);
             this.panel2.TabIndex = 8;
@@ -101,7 +116,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.label2.Font = new System.Drawing.Font("Bahnschrift Light", 9.25F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(69, 73);
+            this.label2.Location = new System.Drawing.Point(69, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 16);
             this.label2.TabIndex = 4;
@@ -114,7 +129,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(40, 160);
+            this.button1.Location = new System.Drawing.Point(152, 160);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -129,7 +144,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Bold);
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(152, 160);
+            this.button2.Location = new System.Drawing.Point(40, 160);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 1;
@@ -143,23 +158,39 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.label1.Font = new System.Drawing.Font("Bahnschrift Light", 9.25F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(33, 55);
+            this.label1.Location = new System.Drawing.Point(36, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(197, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Você tem certeza que deseja";
             // 
-            // lblItem
+            // iconAviso
             // 
-            this.lblItem.AutoSize = true;
-            this.lblItem.Font = new System.Drawing.Font("Bahnschrift SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItem.ForeColor = System.Drawing.Color.DimGray;
-            this.lblItem.Location = new System.Drawing.Point(93, 97);
-            this.lblItem.Name = "lblItem";
-            this.lblItem.Size = new System.Drawing.Size(76, 13);
-            this.lblItem.TabIndex = 21;
-            this.lblItem.Text = "Nome da item";
-            this.lblItem.Visible = false;
+            this.iconAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
+            this.iconAviso.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconAviso.IconChar = FontAwesome.Sharp.IconChar.Warning;
+            this.iconAviso.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconAviso.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconAviso.IconSize = 22;
+            this.iconAviso.Location = new System.Drawing.Point(108, 126);
+            this.iconAviso.Name = "iconAviso";
+            this.iconAviso.Size = new System.Drawing.Size(22, 25);
+            this.iconAviso.TabIndex = 19;
+            this.iconAviso.TabStop = false;
+            this.iconAviso.Visible = false;
+            // 
+            // lblAviso
+            // 
+            this.lblAviso.AutoSize = true;
+            this.lblAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
+            this.lblAviso.Font = new System.Drawing.Font("Candara", 8.25F);
+            this.lblAviso.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblAviso.Location = new System.Drawing.Point(133, 130);
+            this.lblAviso.Name = "lblAviso";
+            this.lblAviso.Size = new System.Drawing.Size(31, 13);
+            this.lblAviso.TabIndex = 18;
+            this.lblAviso.Text = "Error";
+            this.lblAviso.Visible = false;
             // 
             // ExcItem
             // 
@@ -167,8 +198,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
             this.ClientSize = new System.Drawing.Size(282, 354);
-            this.Controls.Add(this.iconExc);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.iconAviso);
+            this.Controls.Add(this.lblAviso);
+            this.Controls.Add(this.iconExc);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ExcItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -177,7 +210,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconExc)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconAviso)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -192,5 +227,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtConfirm;
         private System.Windows.Forms.Label lblItem;
+        private FontAwesome.Sharp.IconPictureBox iconAviso;
+        private System.Windows.Forms.Label lblAviso;
     }
 }

@@ -168,22 +168,22 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(51, 174);
+            this.label5.Location = new System.Drawing.Point(13, 173);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 14);
+            this.label5.Size = new System.Drawing.Size(88, 14);
             this.label5.TabIndex = 25;
-            this.label5.Text = "SENHA";
+            this.label5.Text = "NOVA SENHA";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(50, 112);
+            this.label4.Location = new System.Drawing.Point(12, 112);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 14);
+            this.label4.Size = new System.Drawing.Size(88, 14);
             this.label4.TabIndex = 24;
-            this.label4.Text = "SENHA";
+            this.label4.Text = "NOVA SENHA";
             // 
             // panel5
             // 

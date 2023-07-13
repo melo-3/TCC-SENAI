@@ -46,6 +46,8 @@ namespace Almoxarifado_TCC.Popup
             {
                 txtConfirm.Text = "";
                 lblItem.Visible = true;
+                iconAviso.Visible = false;
+                lblAviso.Visible = false;
             }
         }
 
@@ -96,7 +98,11 @@ namespace Almoxarifado_TCC.Popup
             }
             else
             {
-                MessageBox.Show("Voce escreveu o item errada");
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "Item não encontrado";
+                iconAviso.Location = new Point(74, 124);
+                lblAviso.Location = new Point(99, 128);
             }
         }
     }

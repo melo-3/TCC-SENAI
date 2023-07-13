@@ -179,12 +179,29 @@ namespace Almoxarifado_TCC.Popup
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
-            if (txtUsuario.Text.Length > 11 && txtUsuario.Text != "CPF DO USUÁRIO")
+            // Remover qualquer formatação existente no CPF
+            string cpf = txtUsuario.Text.Replace(".", "").Replace("-", "");
+
+            // Verificar se o CPF possui 11 dígitos
+            if (cpf.Length == 11)
             {
-                txtUsuario.Text = txtUsuario.Text.Remove(txtUsuario.Text.Length - 1);
-                txtUsuario.Select(11, 0); // Coloca o cursor no final do texto
+                // Formatar o CPF com os pontos e o traço
+                cpf = $"{cpf.Substring(0, 3)}.{cpf.Substring(3, 3)}.{cpf.Substring(6, 3)}-{cpf.Substring(9)}";
+
+                // Atualizar o texto da TextBox com o CPF formatado
+                txtUsuario.Text = cpf;
+
+                txtUsuario.SelectionStart = txtUsuario.Text.Length;
             }
+
             CPFLength = txtUsuario.Text.Length;
+
+            if (txtUsuario.Text.Length > 14)
+            {
+                txtUsuario.Text = txtUsuario.Text.Substring(0, 14);
+                txtUsuario.SelectionStart = txtUsuario.Text.Length;
+            }
+            ;
         }
 
         private void DeletarUsu_Load(object sender, EventArgs e)

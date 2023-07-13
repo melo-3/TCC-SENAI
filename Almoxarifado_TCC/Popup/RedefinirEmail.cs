@@ -114,22 +114,18 @@ namespace Almoxarifado_TCC.Popup
                 usu.logado = true;
 
             }
-
-            
-                if (txtSenha.Text == "SENHA")
-                {
-                    lblAviso.Text = "O campo SENHA está em branco";
-                }
-                if (txtEmailAtual.Text == "EMAIL ATUAL")
-                {
-                    lblAviso.Text = "O campo EMAIL ATUAL está em branco";
-                }
-                if (txtEmailAtual.Text == "NOVO EMAIL")
-                {
-                    lblAviso.Text = "O campo NOVO EMAIL está em branco";
-                }
-            
-
+            if (txtSenha.Text == "SENHA")
+            {
+                lblAviso.Text = "O campo SENHA está em branco";
+            }
+            if (txtEmailAtual.Text == "EMAIL ATUAL")
+            {
+                lblAviso.Text = "O campo EMAIL ATUAL está em branco";
+            }
+            if (txtEmailAtual.Text == "NOVO EMAIL")
+            {
+                lblAviso.Text = "O campo NOVO EMAIL está em branco";
+            }
         }
 
             private void btnAlterar_Click(object sender, EventArgs e)
@@ -155,7 +151,7 @@ namespace Almoxarifado_TCC.Popup
                     comando.ExecuteNonQuery(); // Executa a atualização
                     conexao.Close();
 
-                    MessageBox.Show("Email alterado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("Email alterado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                     // Limpa os campos de senha
                     txtSenha.Text = "";
@@ -164,13 +160,22 @@ namespace Almoxarifado_TCC.Popup
                 }
                 else
                 {
-                    MessageBox.Show("Os emails não coincidem, por favor, verifique e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    iconAviso.Visible = true;
+                    lblAviso.Visible = true;
+                    lblAviso.Text = "O email novo não pode ser igual ao antigo";
                 }
             }
             else
             {
-                MessageBox.Show("A senha não coincide, por favor, verifique e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "Senha incorreta";
             }
+
+        }
+
+        private void RedefinirEmail_Load(object sender, EventArgs e)
+        {
 
         }
     }

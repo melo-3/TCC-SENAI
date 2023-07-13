@@ -168,11 +168,11 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(55, 176);
+            this.label5.Location = new System.Drawing.Point(16, 174);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 14);
+            this.label5.Size = new System.Drawing.Size(85, 14);
             this.label5.TabIndex = 25;
-            this.label5.Text = "EMAIL";
+            this.label5.Text = "NOVO EMAIL";
             // 
             // label4
             // 
@@ -275,6 +275,7 @@
             this.Name = "RedefinirEmail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RedefinirEmail";
+            this.Load += new System.EventHandler(this.RedefinirEmail_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RedefinirEmail_MouseDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

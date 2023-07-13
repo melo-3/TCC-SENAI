@@ -46,6 +46,8 @@ namespace Almoxarifado_TCC.Popup
             {
                 txtConfirm.Text = "";
                 lblSala.Visible = true;
+                iconAviso.Visible = false;
+                lblAviso.Visible = false;
             }
         }
 
@@ -90,7 +92,11 @@ namespace Almoxarifado_TCC.Popup
             }
             else
             {
-                MessageBox.Show("Voce escreveu a sala errada");
+                iconAviso.Visible = true;
+                lblAviso.Visible = true;
+                lblAviso.Text = "Sala não encontrada";
+                iconAviso.Location = new Point(74, 124);
+                lblAviso.Location = new Point(99, 128);
             }
         }
 

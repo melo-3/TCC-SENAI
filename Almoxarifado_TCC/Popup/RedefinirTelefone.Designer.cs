@@ -136,7 +136,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.label1.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(51, 50);
+            this.label1.Location = new System.Drawing.Point(68, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 14);
             this.label1.TabIndex = 28;
@@ -146,7 +146,7 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel2.Location = new System.Drawing.Point(108, 68);
+            this.panel2.Location = new System.Drawing.Point(125, 68);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(269, 2);
             this.panel2.TabIndex = 26;
@@ -157,7 +157,7 @@
             this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSenha.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.txtSenha.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtSenha.Location = new System.Drawing.Point(107, 49);
+            this.txtSenha.Location = new System.Drawing.Point(124, 49);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(269, 17);
             this.txtSenha.TabIndex = 2;
@@ -171,11 +171,11 @@
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.label5.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(29, 174);
+            this.label5.Location = new System.Drawing.Point(7, 174);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 14);
+            this.label5.Size = new System.Drawing.Size(111, 14);
             this.label5.TabIndex = 25;
-            this.label5.Text = "TELEFONE";
+            this.label5.Text = "NOVO TELEFONE";
             // 
             // label4
             // 
@@ -183,7 +183,7 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
             this.label4.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(29, 112);
+            this.label4.Location = new System.Drawing.Point(46, 112);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 14);
             this.label4.TabIndex = 24;
@@ -193,7 +193,7 @@
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel5.Location = new System.Drawing.Point(108, 192);
+            this.panel5.Location = new System.Drawing.Point(125, 192);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(269, 2);
             this.panel5.TabIndex = 22;
@@ -204,19 +204,21 @@
             this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTelefone.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.txtTelefone.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtTelefone.Location = new System.Drawing.Point(107, 173);
+            this.txtTelefone.Location = new System.Drawing.Point(124, 173);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(269, 17);
             this.txtTelefone.TabIndex = 4;
             this.txtTelefone.Text = "NOVO TELEFONE";
+            this.txtTelefone.TextChanged += new System.EventHandler(this.txtTelefone_TextChanged);
             this.txtTelefone.Enter += new System.EventHandler(this.txtTelefone_Enter);
+            this.txtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefone_KeyPress);
             this.txtTelefone.Leave += new System.EventHandler(this.txtTelefone_Leave);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel4.Location = new System.Drawing.Point(107, 130);
+            this.panel4.Location = new System.Drawing.Point(124, 130);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(269, 2);
             this.panel4.TabIndex = 20;
@@ -227,12 +229,14 @@
             this.txtTelefoneAtual.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTelefoneAtual.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
             this.txtTelefoneAtual.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtTelefoneAtual.Location = new System.Drawing.Point(106, 111);
+            this.txtTelefoneAtual.Location = new System.Drawing.Point(123, 111);
             this.txtTelefoneAtual.Name = "txtTelefoneAtual";
             this.txtTelefoneAtual.Size = new System.Drawing.Size(269, 17);
             this.txtTelefoneAtual.TabIndex = 3;
             this.txtTelefoneAtual.Text = "TELEFONE ATUAL";
+            this.txtTelefoneAtual.TextChanged += new System.EventHandler(this.txtTelefoneAtual_TextChanged);
             this.txtTelefoneAtual.Enter += new System.EventHandler(this.txtTelefoneAtual_Enter);
+            this.txtTelefoneAtual.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefoneAtual_KeyPress);
             this.txtTelefoneAtual.Leave += new System.EventHandler(this.txtTelefoneAtual_Leave);
             // 
             // iconTelefone
@@ -248,7 +252,6 @@
             this.iconTelefone.Size = new System.Drawing.Size(80, 80);
             this.iconTelefone.TabIndex = 23;
             this.iconTelefone.TabStop = false;
-            this.iconTelefone.Click += new System.EventHandler(this.iconTelefone_Click);
             this.iconTelefone.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RedefinirTelefone_MouseDown);
             // 
             // txtCriarUsu
@@ -265,7 +268,6 @@
             this.txtCriarUsu.TabIndex = 24;
             this.txtCriarUsu.Text = "             Ao mudar seu telefone enviaremos um SMS\n                        com " +
     "um código de confirmação";
-            this.txtCriarUsu.TextChanged += new System.EventHandler(this.txtCriarUsu_TextChanged);
             this.txtCriarUsu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RedefinirTelefone_MouseDown);
             // 
             // RedefinirTelefone

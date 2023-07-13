@@ -272,7 +272,7 @@
             this.iconAviso.IconColor = System.Drawing.SystemColors.ButtonFace;
             this.iconAviso.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconAviso.IconSize = 22;
-            this.iconAviso.Location = new System.Drawing.Point(28, 126);
+            this.iconAviso.Location = new System.Drawing.Point(65, 123);
             this.iconAviso.Name = "iconAviso";
             this.iconAviso.Size = new System.Drawing.Size(22, 25);
             this.iconAviso.TabIndex = 17;
@@ -285,11 +285,11 @@
             this.lblAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
             this.lblAviso.Font = new System.Drawing.Font("Candara", 8.25F);
             this.lblAviso.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblAviso.Location = new System.Drawing.Point(53, 130);
+            this.lblAviso.Location = new System.Drawing.Point(90, 127);
             this.lblAviso.Name = "lblAviso";
-            this.lblAviso.Size = new System.Drawing.Size(108, 13);
+            this.lblAviso.Size = new System.Drawing.Size(31, 13);
             this.lblAviso.TabIndex = 16;
-            this.lblAviso.Text = "Insira uma quantidade";
+            this.lblAviso.Text = "Error";
             this.lblAviso.Visible = false;
             // 
             // EdtItem

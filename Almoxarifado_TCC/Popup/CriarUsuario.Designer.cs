@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.iconAviso = new FontAwesome.Sharp.IconPictureBox();
+            this.lblAviso = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -51,13 +53,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.iconUsuario = new FontAwesome.Sharp.IconPictureBox();
             this.DataCriacao = new System.Windows.Forms.Timer(this.components);
-            this.iconAviso = new FontAwesome.Sharp.IconPictureBox();
-            this.lblAviso = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconAviso)).BeginInit();
             this.panel4.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconUsuario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconAviso)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -85,6 +85,33 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(594, 396);
             this.panel1.TabIndex = 0;
+            // 
+            // iconAviso
+            // 
+            this.iconAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.iconAviso.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconAviso.IconChar = FontAwesome.Sharp.IconChar.Warning;
+            this.iconAviso.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconAviso.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconAviso.Location = new System.Drawing.Point(96, 281);
+            this.iconAviso.Name = "iconAviso";
+            this.iconAviso.Size = new System.Drawing.Size(32, 33);
+            this.iconAviso.TabIndex = 52;
+            this.iconAviso.TabStop = false;
+            this.iconAviso.Visible = false;
+            // 
+            // lblAviso
+            // 
+            this.lblAviso.AutoSize = true;
+            this.lblAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
+            this.lblAviso.Font = new System.Drawing.Font("Candara", 8.25F);
+            this.lblAviso.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblAviso.Location = new System.Drawing.Point(126, 290);
+            this.lblAviso.Name = "lblAviso";
+            this.lblAviso.Size = new System.Drawing.Size(31, 13);
+            this.lblAviso.TabIndex = 51;
+            this.lblAviso.Text = "Error";
+            this.lblAviso.Visible = false;
             // 
             // label3
             // 
@@ -234,7 +261,9 @@
             this.txtTelefone.TabIndex = 7;
             this.txtTelefone.Text = "TELEFONE";
             this.txtTelefone.Visible = false;
+            this.txtTelefone.TextChanged += new System.EventHandler(this.txtTelefone_TextChanged);
             this.txtTelefone.Enter += new System.EventHandler(this.txtTelefone_Enter);
+            this.txtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefone_KeyPress);
             this.txtTelefone.Leave += new System.EventHandler(this.txtTelefone_Leave);
             // 
             // panel3
@@ -339,33 +368,6 @@
             // 
             this.DataCriacao.Tick += new System.EventHandler(this.DataCriacao_Tick);
             // 
-            // iconAviso
-            // 
-            this.iconAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
-            this.iconAviso.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconAviso.IconChar = FontAwesome.Sharp.IconChar.Warning;
-            this.iconAviso.IconColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconAviso.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconAviso.Location = new System.Drawing.Point(96, 281);
-            this.iconAviso.Name = "iconAviso";
-            this.iconAviso.Size = new System.Drawing.Size(32, 33);
-            this.iconAviso.TabIndex = 52;
-            this.iconAviso.TabStop = false;
-            this.iconAviso.Visible = false;
-            // 
-            // lblAviso
-            // 
-            this.lblAviso.AutoSize = true;
-            this.lblAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(52)))));
-            this.lblAviso.Font = new System.Drawing.Font("Candara", 8.25F);
-            this.lblAviso.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblAviso.Location = new System.Drawing.Point(126, 290);
-            this.lblAviso.Name = "lblAviso";
-            this.lblAviso.Size = new System.Drawing.Size(31, 13);
-            this.lblAviso.TabIndex = 51;
-            this.lblAviso.Text = "Error";
-            this.lblAviso.Visible = false;
-            // 
             // CriarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -383,11 +385,11 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CriarUsuario_MouseDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconAviso)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconUsuario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconAviso)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

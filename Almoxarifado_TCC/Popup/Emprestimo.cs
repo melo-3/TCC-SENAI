@@ -191,5 +191,37 @@ namespace Almoxarifado_TCC.Popup
                 txtCpf.Text = Convert.ToString(registro["cpf"]);
                 conexao.Close();
         }
+
+        private void txtCpf_TextChanged(object sender, EventArgs e)
+        {
+            // Remover qualquer formatação existente no CPF
+            string cpf = txtCpf.Text.Replace(".", "").Replace("-", "");
+
+            // Verificar se o CPF possui 11 dígitos
+            if (cpf.Length == 11)
+            {
+                // Formatar o CPF com os pontos e o traço
+                cpf = $"{cpf.Substring(0, 3)}.{cpf.Substring(3, 3)}.{cpf.Substring(6, 3)}-{cpf.Substring(9)}";
+
+                // Atualizar o texto da TextBox com o CPF formatado
+                txtCpf.Text = cpf;
+
+                txtCpf.SelectionStart = txtCpf.Text.Length;
+            }
+
+            if (txtCpf.Text.Length > 14)
+            {
+                txtCpf.Text = txtCpf.Text.Substring(0, 14);
+                txtCpf.SelectionStart = txtCpf.Text.Length;
+            }
+        }
+
+        private void txtCpf_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
